@@ -163,15 +163,24 @@ function setRate(r){
   });
 }
 
+var bestJPVoice=null;
+function findBestJPVoice(){
+  var voices=window.speechSynthesis.getVoices();
+  var jp=voices.filter(function(v){return v.lang&&v.lang.indexOf('ja')===0});
+  if(!jp.length)return null;
+  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
+  if(enhanced.length)return enhanced[0];
+  var preferred=['Kyoko','O-Ren','Hattori','Otoya','Google 日本語','Microsoft Nanami','Microsoft Ayumi'];
+  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
+  return jp[0];
+}
 function speakJP(text,cb){
   if('speechSynthesis' in window){
     window.speechSynthesis.cancel();
     var u=new SpeechSynthesisUtterance(text);
     u.lang='ja-JP';u.rate=speechRate;u.pitch=1.1;
-    var voices=window.speechSynthesis.getVoices();
-    for(var i=0;i<voices.length;i++){
-      if(voices[i].lang.indexOf('ja')===0){u.voice=voices[i];break;}
-    }
+    if(!bestJPVoice)bestJPVoice=findBestJPVoice();
+    if(bestJPVoice)u.voice=bestJPVoice;
     u.onend=function(){if(cb)cb()};
     u.onerror=function(){if(cb)cb()};
     window.speechSynthesis.speak(u);
@@ -245,7 +254,7 @@ function answer(btn,ck){
 // Init: preload voices
 if('speechSynthesis' in window){
   window.speechSynthesis.getVoices();
-  window.speechSynthesis.onvoiceschanged=function(){window.speechSynthesis.getVoices()};
+  window.speechSynthesis.onvoiceschanged=function(){bestJPVoice=findBestJPVoice()};
 }
 if(quizVocab.length>=4)startQuiz();
 </script>
