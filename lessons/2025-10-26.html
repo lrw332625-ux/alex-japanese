@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>林之恒 亲子日语学习卡片 2025-10-26</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0E8;--card-bg:#FFFEF9;--text:#2D2A24;--text-sub:#7A7468;
+  --accent:#E8573A;--primary:#2B7A98;--secondary:#D4553A;--tertiary:#3A8F5C;
+  --vocab:#7B5EA7;--song:#D4903A;--game:#2B8F8F;
+  --shadow:0 2px 20px rgba(45,42,36,.08);
+  --shadow-lg:0 8px 40px rgba(45,42,36,.12);
+  --r:20px;--rs:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh}
+
+.header{position:relative;overflow:hidden;padding:32px 20px 24px;text-align:center;background:linear-gradient(135deg,#2B7A98 0%,#1E5F7A 50%,#2B7A98 100%);color:#fff}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.08) 0%,transparent 50%)}
+.header h1{font-family:'M PLUS Rounded 1c','Noto Sans SC',sans-serif;font-size:26px;font-weight:900;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,.2);position:relative}
+.header .sub{font-size:13px;opacity:.8;margin-top:4px;position:relative}
+.back-link{position:absolute;left:16px;top:16px;color:#fff;text-decoration:none;font-size:24px;opacity:.7;z-index:10}
+.back-link:hover{opacity:1}
+
+.tab-nav{display:flex;gap:6px;padding:12px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:0;z-index:100;background:var(--bg)}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:8px 16px;border-radius:24px;border:2px solid transparent;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 1px 4px rgba(0,0,0,.04);white-space:nowrap}
+.tab-btn.active{color:#fff;border-color:transparent;transform:scale(1.05);box-shadow:var(--shadow)}
+.tab-btn[data-sec="0"].active{background:var(--primary)}
+.tab-btn[data-sec="1"].active{background:var(--secondary)}
+.tab-btn[data-sec="2"].active{background:var(--game)}
+
+.section{display:none;padding:12px 16px 100px;animation:fadeIn .3s ease}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.sec-title{font-size:22px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.sec-title .icon{font-size:28px}
+.sec-title .jp{font-size:14px;font-weight:400;color:var(--text-sub)}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-bottom:20px}
+.flip-card{perspective:800px;height:180px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-card.playing .flip-inner{box-shadow:0 0 0 3px var(--accent),var(--shadow-lg);border-radius:var(--r)}
+.flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);padding:12px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--card-bg);box-shadow:var(--shadow);border:2px solid #f0ece4;transition:border-color .2s,box-shadow .2s}
+.flip-back{transform:rotateY(180deg);background:#FFF8F0}
+.flip-front .emoji{font-size:42px;line-height:1.1;margin-bottom:4px}
+.flip-front .kanji{font-family:'M PLUS Rounded 1c',sans-serif;font-size:26px;font-weight:900}
+.flip-front .kana{font-size:14px;color:var(--text-sub);margin-top:2px}
+.flip-front .speaker{position:absolute;top:8px;right:10px;font-size:16px;opacity:.3;transition:opacity .2s}
+.flip-card.playing .speaker{opacity:1}
+.flip-back .romaji{font-size:16px;font-weight:700;color:var(--accent);background:#FFF0EC;padding:4px 12px;border-radius:8px;margin-bottom:6px}
+.flip-back .chinese{font-size:18px;font-weight:700;color:#C04030}
+.flip-back .hint-text{font-size:11px;color:var(--text-sub);margin-top:6px;text-align:center}
+.reviewed .flip-front{border-color:#B8E6C8}
+.reviewed .flip-front::after{content:'✓';position:absolute;bottom:6px;right:8px;font-size:14px;color:#3A8F5C;font-weight:900}
+
+.sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden}
+.sent-card:active{transform:scale(.98)}
+.sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow-lg)}
+.sent-card .jp-text{font-family:'M PLUS Rounded 1c',sans-serif;font-size:20px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.sent-card .kana-text{font-size:14px;color:var(--primary);padding-left:28px}
+.sent-card .romaji-text{font-size:12px;color:#bbb;font-style:italic;padding-left:28px}
+.sent-card .cn-text{font-size:15px;color:#C04030;font-weight:600;padding-left:28px;margin-top:4px}
+.sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--secondary));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.sent-card.playing .wave{transform:scaleX(1);transition:transform 2s linear}
+
+.tip-box{background:#FAF7F0;border-left:4px solid var(--text-sub);border-radius:0 var(--rs) var(--rs) 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--text-sub);line-height:1.6}
+.tip-box b{color:var(--text)}
+
+.quiz-area{padding:8px 0}
+.quiz-card{background:var(--card-bg);border-radius:var(--r);padding:24px;text-align:center;box-shadow:var(--shadow);margin-bottom:16px;border:2px solid #f0ece4}
+.quiz-emoji{font-size:64px;margin-bottom:12px}
+.quiz-prompt{font-size:16px;color:var(--text-sub);margin-bottom:16px}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quiz-opt{padding:14px;border-radius:var(--rs);border:2px solid #e8e4dc;font-size:16px;font-weight:700;cursor:pointer;background:#fff;transition:all .2s;font-family:'M PLUS Rounded 1c',sans-serif}
+.quiz-opt:active{transform:scale(.96)}
+.quiz-opt.correct{background:#D4EDDA;border-color:#3A8F5C;color:#2D6A3F}
+.quiz-opt.wrong{background:#F8D7DA;border-color:#C0392B;color:#8B1A1A}
+.quiz-score{text-align:center;padding:20px;font-size:18px;font-weight:700}
+.quiz-btn{display:block;margin:16px auto;padding:12px 32px;border-radius:24px;border:none;font-size:15px;font-weight:700;cursor:pointer;color:#fff;background:var(--game);box-shadow:var(--shadow);transition:all .2s}
+.quiz-btn:active{transform:scale(.96)}
+
+.practice{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.practice b{color:var(--game)}
+.practice-title{font-size:16px;font-weight:700;margin-bottom:6px}
+
+.controls{display:flex;align-items:center;gap:8px;padding:8px 16px;margin:0 0 12px;background:#fff;border-radius:var(--rs);box-shadow:var(--shadow)}
+.play-all-btn{margin-left:auto;padding:6px 16px;border-radius:20px;border:none;font-size:12px;font-weight:700;cursor:pointer;color:#fff;transition:all .2s}
+.play-all-btn:active{transform:scale(.95)}
+.play-all-btn.stop{background:#C0392B!important}
+.progress-bar{flex:1;height:4px;background:#e8e4dc;border-radius:2px;margin:0 8px;min-width:40px;overflow:hidden}
+.progress-fill{height:100%;border-radius:2px;transition:width .4s ease;width:0}
+
+.speed-toggle{display:flex;border-radius:20px;overflow:hidden;border:2px solid #e8e4dc}
+.speed-btn{padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-sub);transition:all .2s}
+.speed-btn.on{background:var(--text);color:#fff}
+
+.footer{text-align:center;padding:24px 16px;font-size:12px;color:var(--text-sub)}
+
+@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.bounce{animation:bounce .3s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.shake{animation:shake .3s ease}
+
+@media(max-width:400px){
+  .card-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+  .flip-card{height:160px}
+  .flip-front .emoji{font-size:34px}
+  .flip-front .kanji{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a class="back-link" href="../index.html">←</a>
+  <h1>🎌 林之恒 日语学习卡片</h1>
+  <div class="sub">2025年10月26日 · 要坐船 · 点击翻转+发音</div>
+</div>
+
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" data-sec="0" onclick="switchTab(0)">📚 词汇</button><button class="tab-btn" data-sec="1" onclick="switchTab(1)">🗣️ 句子</button>
+</nav>
+
+<div class="section active" id="sec0">
+<div class="controls">
+  <div class="speed-toggle"><button class="speed-btn on" onclick="setRate(1)">常速</button><button class="speed-btn" onclick="setRate(0.6)">慢速</button></div>
+  <div class="progress-bar"><div class="progress-fill" id="prog0" style="background:var(--primary)"></div></div>
+  <button class="play-all-btn" style="background:var(--primary)" onclick="playAllTTS(this)">▶ 全部</button>
+</div>
+<div class="sec-title" style="color:var(--primary)"><span class="icon">📚</span>词汇学习</div>
+<div class="card-grid" id="grid0">
+<div class="flip-card" data-k="fune" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚢</div><div class="kanji">船</div><div class="kana">ふね</div></div><div class="flip-back"><div class="romaji">fune</div><div class="chinese">船</div></div></div></div>
+<div class="flip-card" data-k="jitensha" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚗</div><div class="kanji">自転車</div><div class="kana">じてんしゃ</div></div><div class="flip-back"><div class="romaji">jitensha</div><div class="chinese">自行车</div></div></div></div>
+</div>
+</div>
+
+<div class="section" id="sec1">
+<div class="sec-title" style="color:var(--secondary)"><span class="icon">🗣️</span>句子练习</div>
+<div class="sent-card" data-k="sent0" onclick="playSentTTS(this, '船に乗りました。')">
+  <div class="jp-text">🔈 船に乗りました。</div>
+  <div class="kana-text">ふねにのりました。</div>
+  <div class="romaji-text">fune ni norimashita.</div>
+  <div class="cn-text">已经坐船了</div>
+  <div class="wave"></div>
+</div>
+<div class="sent-card" data-k="sent1" onclick="playSentTTS(this, '男の子は船に乗ります。')">
+  <div class="jp-text">🔈 男の子は船に乗ります。</div>
+  <div class="kana-text">おとこのこはふねにのります。</div>
+  <div class="romaji-text">otokonoko wa fune ni norimasu.</div>
+  <div class="cn-text">男孩子要坐船</div>
+  <div class="wave"></div>
+</div>
+<div class="sent-card" data-k="sent2" onclick="playSentTTS(this, '男の子は船に乗りました。')">
+  <div class="jp-text">🔈 男の子は船に乗りました。</div>
+  <div class="kana-text">おとこのこはふねにのりました。</div>
+  <div class="romaji-text">otokonoko wa fune ni norimashita.</div>
+  <div class="cn-text">男孩坐了船</div>
+  <div class="wave"></div>
+</div>
+<div class="sent-card" data-k="sent3" onclick="playSentTTS(this, 'ゾウさんは自転車に乗ります。')">
+  <div class="jp-text">🔈 ゾウさんは自転車に乗ります。</div>
+  <div class="kana-text">ぞうさんはじてんしゃにのります。</div>
+  <div class="romaji-text">zou-san wa jitensha ni norimasu.</div>
+  <div class="cn-text">的称呼）要骑自行车</div>
+  <div class="wave"></div>
+</div>
+<div class="sent-card" data-k="sent4" onclick="playSentTTS(this, 'ゾウさんは自転車に乗りました。')">
+  <div class="jp-text">🔈 ゾウさんは自転車に乗りました。</div>
+  <div class="kana-text">ぞうさんはじてんしゃにのりました。</div>
+  <div class="romaji-text">zou-san wa jitensha ni norimashita.</div>
+  <div class="cn-text">大象先生（ぞうさん）骑了自行车</div>
+  <div class="wave"></div>
+</div>
+<div class="sent-card" data-k="sent5" onclick="playSentTTS(this, 'バスで図書館へ行きます。')">
+  <div class="jp-text">🔈 バスで図書館へ行きます。</div>
+  <div class="kana-text">ばすで としょかん へ
+いきます。</div>
+  <div class="romaji-text">basu de toshokan e ikimasu.</div>
+  <div class="cn-text">乘坐公交车去图书馆</div>
+  <div class="wave"></div>
+</div>
+
+</div>
+
+<div class="footer">📱 点击卡片翻转学习 · 点击发音按钮听日语 · <a href="../index.html" style="color:var(--primary)">返回课程列表</a></div>
+
+<script>
+var activeTab=0,speechRate=1,curEl=null,running=false;
+var reviewed={};
+var vocabKeys=["fune", "jitensha"];
+var quizVocab=[{"k": "fune", "e": "🚢", "jp": "船", "cn": "船"}, {"k": "jitensha", "e": "🚗", "jp": "自転車", "cn": "自行车"}];
+var quizTotal=Math.min(5,quizVocab.length);
+var quizQ=0,quizScore=0,quizList=[];
+
+function switchTab(i){
+  if(running)stopAll();activeTab=i;
+  document.querySelectorAll('.section').forEach(function(s,idx){s.classList.toggle('active',idx===i)});
+  document.querySelectorAll('.tab-btn').forEach(function(b,idx){b.classList.toggle('active',idx===i)});
+  document.querySelectorAll('.tab-btn')[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+}
+
+function setRate(r){
+  speechRate=r;
+  document.querySelectorAll('.speed-btn').forEach(function(b){
+    b.classList.toggle('on',r===1?(b.textContent==='常速'):(b.textContent==='慢速'));
+  });
+}
+
+function speakJP(text,cb){
+  if('speechSynthesis' in window){
+    window.speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(text);
+    u.lang='ja-JP';u.rate=speechRate;u.pitch=1.1;
+    var voices=window.speechSynthesis.getVoices();
+    for(var i=0;i<voices.length;i++){
+      if(voices[i].lang.indexOf('ja')===0){u.voice=voices[i];break;}
+    }
+    u.onend=function(){if(cb)cb()};
+    u.onerror=function(){if(cb)cb()};
+    window.speechSynthesis.speak(u);
+  } else if(cb) cb();
+}
+
+function tapCard(el){
+  var k=el.getAttribute('data-k');
+  el.classList.toggle('flipped');
+  if(curEl)curEl.classList.remove('playing');
+  el.classList.add('playing');curEl=el;
+  // Get kana text for TTS
+  var kana=el.querySelector('.kana');
+  if(kana) speakJP(kana.textContent, function(){el.classList.remove('playing');el.classList.add('reviewed');reviewed[k]=true;updateProgress()});
+}
+
+function playSentTTS(el,jp){
+  document.querySelectorAll('.sent-card').forEach(function(s){s.classList.remove('playing')});
+  el.classList.add('playing');
+  speakJP(jp,function(){el.classList.remove('playing')});
+}
+
+function playAllTTS(btn){
+  if(running){stopAll();btn.textContent='▶ 全部';btn.classList.remove('stop');return}
+  running=true;btn.textContent='⏹ 停止';btn.classList.add('stop');
+  var cards=document.querySelectorAll('#grid0 .flip-card');
+  var i=0;
+  function next(){
+    if(i>=cards.length||!running){running=false;btn.textContent='▶ 全部';btn.classList.remove('stop');return}
+    var el=cards[i];
+    el.classList.add('playing');if(curEl&&curEl!==el)curEl.classList.remove('playing');curEl=el;
+    var kana=el.querySelector('.kana');
+    if(kana)speakJP(kana.textContent,function(){el.classList.remove('playing');el.classList.add('reviewed');reviewed[el.getAttribute('data-k')]=true;updateProgress();i++;next()});
+    else{i++;next()}
+  }
+  next();
+}
+
+function stopAll(){running=false;window.speechSynthesis.cancel();if(curEl){curEl.classList.remove('playing');curEl=null}}
+
+function updateProgress(){
+  var done=vocabKeys.filter(function(k){return reviewed[k]}).length;
+  var pct=vocabKeys.length?Math.round(done/vocabKeys.length*100):0;
+  var bar=document.getElementById('prog0');if(bar)bar.style.width=pct+'%';
+}
+
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function startQuiz(){quizQ=0;quizScore=0;quizList=shuffle(quizVocab.slice()).slice(0,quizTotal);showQuestion()}
+function showQuestion(){
+  var area=document.getElementById('quizArea');
+  if(quizQ>=quizList.length){
+    area.innerHTML='<div class="quiz-card"><div class="quiz-emoji">🎉</div><div class="quiz-score">得分：'+quizScore+' / '+quizTotal+'</div><div style="font-size:14px;color:var(--text-sub)">'+(quizScore>=Math.ceil(quizTotal*0.8)?'太棒了Alex！🌟':'继续加油！💪')+'</div></div><button class="quiz-btn" onclick="startQuiz()">再来一次！</button>';
+    return;
+  }
+  var q=quizList[quizQ],opts=[q],pool=quizVocab.filter(function(v){return v.k!==q.k});
+  shuffle(pool);for(var i=0;i<3&&i<pool.length;i++)opts.push(pool[i]);shuffle(opts);
+  var h='<div class="quiz-card"><div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">第 '+(quizQ+1)+' / '+quizTotal+' 题</div>';
+  h+='<div class="quiz-emoji">'+q.e+'</div><div class="quiz-prompt">这个用日语怎么说？</div><div class="quiz-options">';
+  opts.forEach(function(o){h+='<button class="quiz-opt" data-correct="'+(o.k===q.k?'1':'0')+'" data-k="'+o.k+'" onclick="answer(this,\''+q.k+'\')">'+o.jp+'</button>'});
+  h+='</div></div>';area.innerHTML=h;
+  // Speak the word
+  speakJP(q.jp);
+}
+function answer(btn,ck){
+  var ok=btn.getAttribute('data-correct')==='1';
+  btn.parentElement.querySelectorAll('.quiz-opt').forEach(function(b){b.onclick=null;if(b.getAttribute('data-k')===ck)b.classList.add('correct');else if(b===btn&&!ok)b.classList.add('wrong')});
+  if(ok){quizScore++;btn.classList.add('bounce')}else{btn.classList.add('shake')}
+  setTimeout(function(){quizQ++;showQuestion()},1200);
+}
+
+// Init: preload voices
+if('speechSynthesis' in window){
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged=function(){window.speechSynthesis.getVoices()};
+}
+if(quizVocab.length>=4)startQuiz();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex 日语学习 🎌</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=M+PLUS+Rounded+1c:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F0E8;--card:#FFFEF9;--text:#2D2A24;--sub:#7A7468;--accent:#2B7A98}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.header{padding:40px 20px 32px;text-align:center;background:linear-gradient(135deg,#2B7A98,#1E5F7A);color:#fff;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.08),transparent 50%)}
+.header h1{font-family:'M PLUS Rounded 1c',sans-serif;font-size:32px;font-weight:900;position:relative;letter-spacing:2px}
+.header .sub{font-size:14px;opacity:.8;margin-top:6px;position:relative}
+.header .stats{font-size:13px;opacity:.7;margin-top:10px;position:relative}
+.container{max-width:640px;margin:0 auto;padding:24px 16px 60px}
+.month-label{font-size:14px;font-weight:700;color:var(--accent);padding:16px 4px 8px;border-bottom:2px solid #e8e4dc;margin-bottom:12px;margin-top:8px}
+.lesson-list{display:flex;flex-direction:column;gap:12px}
+.lesson-card{
+  display:flex;align-items:center;gap:16px;
+  background:var(--card);border-radius:16px;padding:18px 20px;
+  text-decoration:none;color:var(--text);
+  box-shadow:0 2px 16px rgba(45,42,36,.06);
+  border:2px solid #f0ece4;
+  transition:all .2s cubic-bezier(.4,0,.2,1);
+}
+.lesson-card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(45,42,36,.12);border-color:var(--accent)}
+.lesson-card:active{transform:scale(.98)}
+.lesson-icon{font-size:36px;flex-shrink:0}
+.lesson-info{flex:1}
+.lesson-date{font-size:13px;color:var(--sub);margin-bottom:2px}
+.lesson-title{font-size:17px;font-weight:700}
+.lesson-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:11px;padding:3px 8px;border-radius:10px;background:#EBF5FF;color:var(--accent);font-weight:600}
+.arrow{color:var(--sub);font-size:20px;flex-shrink:0}
+.empty{text-align:center;padding:60px 20px;color:var(--sub)}
+.footer{text-align:center;padding:24px;font-size:12px;color:var(--sub)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎌 Alex の日本語</h1>
+  <div class="sub">林之恒 亲子日语学习卡片集</div>
+  <div class="stats">共 47 节课 · 2025年6月 - 2026年2月</div>
+</div>
+
+<div class="container">
+  <div class="lesson-list" id="lessons">
+
+    <a class="lesson-card" href="lessons/2026-02-06.html">
+      <div class="lesson-icon">🌊</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年2月6日</div>
+        <div class="lesson-title">海洋动物 · 日本料理 · 交通工具</div>
+        <div class="lesson-tags">
+          <span class="tag">9个海洋词汇</span><span class="tag">实用句子</span><span class="tag">五十音歌曲</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-26.html">
+      <div class="lesson-icon">❄️</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月26日</div>
+        <div class="lesson-title">这是青蛙</div>
+        <div class="lesson-tags">
+          <span class="tag">7个词汇</span><span class="tag">10个句子</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-25.html">
+      <div class="lesson-icon">🌈</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月25日</div>
+        <div class="lesson-title">企鹅</div>
+        <div class="lesson-tags">
+          <span class="tag">1个词汇</span><span class="tag">3个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-22.html">
+      <div class="lesson-icon">🌸</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月22日</div>
+        <div class="lesson-title">伞、螃蟹和青蛙</div>
+        <div class="lesson-tags">
+          <span class="tag">3个词汇</span><span class="tag">4个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-20.html">
+      <div class="lesson-icon">🐾</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月20日</div>
+        <div class="lesson-title">这是什么？那是火车</div>
+        <div class="lesson-tags">
+          <span class="tag">1个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-18.html">
+      <div class="lesson-icon">🍎</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月18日</div>
+        <div class="lesson-title">这里是警察局</div>
+        <div class="lesson-tags">
+          <span class="tag">3个词汇</span><span class="tag">6个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-15.html">
+      <div class="lesson-icon">🎯</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月15日</div>
+        <div class="lesson-title">樱花好漂亮</div>
+        <div class="lesson-tags">
+          <span class="tag">6个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-13.html">
+      <div class="lesson-icon">🏠</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月13日</div>
+        <div class="lesson-title">继续复习</div>
+        <div class="lesson-tags">
+          <span class="tag">2个词汇</span><span class="tag">10个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-11.html">
+      <div class="lesson-icon">🎯</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月11日</div>
+        <div class="lesson-title">考察已学绘本4本</div>
+        <div class="lesson-tags">
+          <span class="tag">10个词汇</span><span class="tag">10个句子</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-09.html">
+      <div class="lesson-icon">🌸</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月9日</div>
+        <div class="lesson-title">考察已学绘本3本</div>
+        <div class="lesson-tags">
+          <span class="tag">10个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-06.html">
+      <div class="lesson-icon">🌈</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月6日</div>
+        <div class="lesson-title">我的爸爸脖子很长</div>
+        <div class="lesson-tags">
+          <span class="tag">1个词汇</span><span class="tag">3个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2026-01-04.html">
+      <div class="lesson-icon">🌸</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2026年1月4日</div>
+        <div class="lesson-title">我的爸爸是哪一个呢？继续</div>
+        <div class="lesson-tags">
+          <span class="tag">1个词汇</span><span class="tag">3个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-28.html">
+      <div class="lesson-icon">🐾</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月28日</div>
+        <div class="lesson-title">便便，一二三</div>
+        <div class="lesson-tags">
+          <span class="tag">1个词汇</span><span class="tag">10个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-25.html">
+      <div class="lesson-icon">🚗</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月25日</div>
+        <div class="lesson-title">数数</div>
+        <div class="lesson-tags">
+          <span class="tag">10个词汇</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-23.html">
+      <div class="lesson-icon">🗣️</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月23日</div>
+        <div class="lesson-title">妈妈做的</div>
+        <div class="lesson-tags">
+          <span class="tag">1个词汇</span><span class="tag">5个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-21.html">
+      <div class="lesson-icon">🍎</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月21日</div>
+        <div class="lesson-title">啊！是食蚁兽！</div>
+        <div class="lesson-tags">
+          <span class="tag">8个词汇</span><span class="tag">8个句子</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-18.html">
+      <div class="lesson-icon">🎯</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月18日</div>
+        <div class="lesson-title">蚂蚁乘公交车出门------绘本</div>
+        <div class="lesson-tags">
+          <span class="tag">3个词汇</span><span class="tag">6个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-16.html">
+      <div class="lesson-icon">🎵</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月16日</div>
+        <div class="lesson-title">谁的尾巴</div>
+        <div class="lesson-tags">
+          <span class="tag">7个词汇</span><span class="tag">2个句子</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-14.html">
+      <div class="lesson-icon">🌊</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月14日</div>
+        <div class="lesson-title">可爱的鱼------绘本</div>
+        <div class="lesson-tags">
+          <span class="tag">6个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-11.html">
+      <div class="lesson-icon">📖</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月11日</div>
+        <div class="lesson-title">正在看的是谁呢？</div>
+        <div class="lesson-tags">
+          <span class="tag">2个词汇</span><span class="tag">10个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-09.html">
+      <div class="lesson-icon">🌈</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月9日</div>
+        <div class="lesson-title">狐狸要回家</div>
+        <div class="lesson-tags">
+          <span class="tag">6个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-07.html">
+      <div class="lesson-icon">❄️</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月7日</div>
+        <div class="lesson-title">好热啊</div>
+        <div class="lesson-tags">
+          <span class="tag">1个词汇</span><span class="tag">9个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-04.html">
+      <div class="lesson-icon">🚗</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月4日</div>
+        <div class="lesson-title">小猪摘了苹果</div>
+        <div class="lesson-tags">
+          <span class="tag">2个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-12-02.html">
+      <div class="lesson-icon">🍎</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年12月2日</div>
+        <div class="lesson-title">兔子买了冰激凌</div>
+        <div class="lesson-tags">
+          <span class="tag">4个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-30.html">
+      <div class="lesson-icon">🌈</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月30日</div>
+        <div class="lesson-title">结尾游戏</div>
+        <div class="lesson-tags">
+          <span class="tag">1个词汇</span><span class="tag">1个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-27.html">
+      <div class="lesson-icon">❄️</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月27日</div>
+        <div class="lesson-title">房间很脏</div>
+        <div class="lesson-tags">
+          <span class="tag">2个词汇</span><span class="tag">6个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-25.html">
+      <div class="lesson-icon">🌈</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月25日</div>
+        <div class="lesson-title">兔子可爱</div>
+        <div class="lesson-tags">
+          <span class="tag">1个词汇</span><span class="tag">10个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-23.html">
+      <div class="lesson-icon">🎯</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月23日</div>
+        <div class="lesson-title">小兔子吃了很多的萝卜</div>
+        <div class="lesson-tags">
+          <span class="tag">1个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-19.html">
+      <div class="lesson-icon">🏠</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月19日</div>
+        <div class="lesson-title">兔子看到了萝卜</div>
+        <div class="lesson-tags">
+          <span class="tag">2个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-18.html">
+      <div class="lesson-icon">🎵</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月18日</div>
+        <div class="lesson-title">男孩子也正在玩雪</div>
+        <div class="lesson-tags">
+          <span class="tag">2个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-16.html">
+      <div class="lesson-icon">🌈</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月16日</div>
+        <div class="lesson-title">哥哥吃了香蕉</div>
+        <div class="lesson-tags">
+          <span class="tag">3个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-13.html">
+      <div class="lesson-icon">🐾</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月13日</div>
+        <div class="lesson-title">在医院</div>
+        <div class="lesson-tags">
+          <span class="tag">4个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-11.html">
+      <div class="lesson-icon">🚗</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月11日</div>
+        <div class="lesson-title">冬天来了</div>
+        <div class="lesson-tags">
+          <span class="tag">4个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-08.html">
+      <div class="lesson-icon">🏠</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月8日</div>
+        <div class="lesson-title">男孩子去了医院</div>
+        <div class="lesson-tags">
+          <span class="tag">2个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-06.html">
+      <div class="lesson-icon">🗣️</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月6日</div>
+        <div class="lesson-title">小女孩正在教室里学习</div>
+        <div class="lesson-tags">
+          <span class="tag">1个词汇</span><span class="tag">3个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-04.html">
+      <div class="lesson-icon">❄️</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月4日</div>
+        <div class="lesson-title">男孩子感冒了</div>
+        <div class="lesson-tags">
+          <span class="tag">3个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-11-01.html">
+      <div class="lesson-icon">🎵</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年11月1日</div>
+        <div class="lesson-title">写了"お"</div>
+        <div class="lesson-tags">
+          <span class="tag">1个词汇</span><span class="tag">4个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-10-30.html">
+      <div class="lesson-icon">❄️</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年10月30日</div>
+        <div class="lesson-title">画了线</div>
+        <div class="lesson-tags">
+          <span class="tag">2个词汇</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-10-26.html">
+      <div class="lesson-icon">🏠</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年10月26日</div>
+        <div class="lesson-title">要坐船</div>
+        <div class="lesson-tags">
+          <span class="tag">2个词汇</span><span class="tag">7个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-10-24.html">
+      <div class="lesson-icon">📖</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年10月24日</div>
+        <div class="lesson-title">乘坐出租车</div>
+        <div class="lesson-tags">
+          <span class="tag">3个词汇</span><span class="tag">8个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-10-21.html">
+      <div class="lesson-icon">🌈</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年10月21日</div>
+        <div class="lesson-title">一个苹果</div>
+        <div class="lesson-tags">
+          <span class="tag">3个词汇</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-10-19.html">
+      <div class="lesson-icon">📖</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年10月19日</div>
+        <div class="lesson-title">老鼠和气球被风刮走了</div>
+        <div class="lesson-tags">
+          <span class="tag">1个句子</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-10-00.html">
+      <div class="lesson-icon">🎵</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年10月</div>
+        <div class="lesson-title">给了什么东西？（给别人） · 小鸟要飞 · 红蜻蜓 等7课</div>
+        <div class="lesson-tags">
+          <span class="tag">11个词汇</span><span class="tag">10个句子</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-09-00.html">
+      <div class="lesson-icon">🗣️</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年9月</div>
+        <div class="lesson-title">名字是什么？ · 在音乐室 · 词语接龙d：马、牛和兔子 等13课</div>
+        <div class="lesson-tags">
+          <span class="tag">36个词汇</span><span class="tag">10个句子</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-08-00.html">
+      <div class="lesson-icon">🗣️</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年8月</div>
+        <div class="lesson-title">在\*的后面 · 在\*的前面 · 喝茶 等13课</div>
+        <div class="lesson-tags">
+          <span class="tag">37个词汇</span><span class="tag">10个句子</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-07-00.html">
+      <div class="lesson-icon">🎵</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年7月</div>
+        <div class="lesson-title">时间 · 苹果汁 · 寿司 等14课</div>
+        <div class="lesson-tags">
+          <span class="tag">93个词汇</span><span class="tag">10个句子</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="lesson-card" href="lessons/2025-06-00.html">
+      <div class="lesson-icon">🗣️</div>
+      <div class="lesson-info">
+        <div class="lesson-date">2025年6月</div>
+        <div class="lesson-title">小鸟吃果子 · 数数1-10 · 小动物 等15课</div>
+        <div class="lesson-tags">
+          <span class="tag">69个词汇</span><span class="tag">10个句子</span><span class="tag">小测验</span>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+    </a>
+
+  </div>
+</div>
+
+<div class="footer">📱 所有课程支持离线使用 · 点击进入任意课程开始学习</div>
+
+</body>
+</html>
