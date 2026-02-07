@@ -188,6 +188,9 @@ desu</div>
 
 <div class="footer">📱 点击卡片翻转学习 · 点击发音按钮听日语 · <a href="../index.html" style="color:var(--primary)">返回课程列表</a></div>
 
+<script src="../scripts/cache-control.js"></script>
+<script src="../scripts/audio.js"></script>
+<script src="../scripts/emoji-data.js"></script>
 <script>
 var activeTab=0,speechRate=1,curEl=null,running=false;
 var reviewed={};
@@ -339,29 +342,6 @@ if(quizVocab.length>=4)startQuiz();
 
 
 <script>
-var emojiImgMap={"☂️":"../img/umbrella.png?v2","☕":"../img/coffee.png?v2","✅":"../img/check_mark.png?v2","✈️":"../img/airplane.png?v2","✏️":"../img/pencil.png?v2","✨":"../img/sparkles.png?v2","❄️":"../img/snowflake.png?v2","❌":"../img/cross_mark.png?v2","❓":"../img/question.png?v2","❗":"../img/exclamation.png?v2","⭐":"../img/star.png?v2","⭕":"../img/circle.png?v2","🌈":"../img/rainbow.png?v2","🌊":"../img/wave.png?v2","🌟":"../img/glowing_star.png?v2","🌸":"../img/sakura.png?v2","🍇":"../img/grapes.png?v2","🍉":"../img/watermelon.png?v2","🍊":"../img/orange.png?v2","🍌":"../img/banana.png?v2","🍎":"../img/apple.png?v2","🍚":"../img/rice.png?v2","🍜":"../img/ramen.png?v2","🍣":"../img/sushi.png?v2","🍰":"../img/cake.png?v2","🍱":"../img/bento.png?v2","🎈":"../img/balloon.png?v2","🎉":"../img/party_popper.png?v2","🎌":"../img/crossed_flags.png?v2","🎓":"../img/graduation_cap.png?v2","🎮":"../img/game.png?v2","🎯":"../img/target.png?v2","🎵":"../img/music.png?v2","🎶":"../img/notes.png?v2","🎸":"../img/guitar.png?v2","🎹":"../img/piano.png?v2","🎺":"../img/trumpet.png?v2","🏆":"../img/trophy.png?v2","🏠":"../img/house.png?v2","🏥":"../img/hospital.png?v2","🏪":"../img/store.png?v2","🏫":"../img/school.png?v2","🐁":"../img/mouse.png?v2","🐂":"../img/ox.png?v2","🐃":"../img/buffalo.png?v2","🐄":"../img/cow.png?v2","🐇":"../img/rabbit2.png?v2","🐈":"../img/cat2.png?v2","🐊":"../img/crocodile.png?v2","🐋":"../img/whale.png?v2","🐍":"../img/snake.png?v2","🐎":"../img/racehorse.png?v2","🐏":"../img/ram.png?v2","🐑":"../img/sheep.png?v2","🐒":"../img/monkey.png?v2","🐓":"../img/rooster.png?v2","🐕":"../img/dog2.png?v2","🐖":"../img/pig2.png?v2","🐘":"../img/elephant.png?v2","🐛":"../img/bug.png?v2","🐜":"../img/ant.png?v2","🐝":"../img/bee.png?v2","🐞":"../img/ladybug.png?v2","🐟":"../img/fish.png?v2","🐠":"../img/tropical_fish.png?v2","🐡":"../img/blowfish.png?v2","🐢":"../img/turtle.png?v2","🐥":"../img/chick.png?v2","🐦":"../img/bird.png?v2","🐧":"../img/penguin.png?v2","🐩":"../img/poodle.png?v2","🐫":"../img/camel.png?v2","🐬":"../img/dolphin.png?v2","🐰":"../img/rabbit.png?v2","🐱":"../img/cat.png?v2","🐲":"../img/dragon_face.png?v2","🐳":"../img/whale2.png?v2","🐴":"../img/horse.png?v2","🐵":"../img/monkey_face.png?v2","🐶":"../img/dog.png?v2","🐷":"../img/pig.png?v2","🐸":"../img/frog.png?v2","🐺":"../img/wolf.png?v2","🐻":"../img/bear.png?v2","🐼":"../img/panda.png?v2","🐾":"../img/paw.png?v2","🐿️":"../img/squirrel.png?v2","👂":"../img/ear.png?v2","👅":"../img/tongue.png?v2","👆":"../img/index_pointing_up.png?v2","👍":"../img/thumbsup.png?v2","👏":"../img/clapping.png?v2","💡":"../img/light_bulb.png?v2","💪":"../img/flexed_biceps.png?v2","💻":"../img/laptop.png?v2","📖":"../img/book.png?v2","📚":"../img/books.png?v2","📝":"../img/memo.png?v2","📱":"../img/mobile_phone.png?v2","🔁":"../img/repeat.png?v2","🔈":"../img/speaker_low.png?v2","🔊":"../img/speaker_high.png?v2","🔔":"../img/bell.png?v2","🔤":"../img/abc.png?v2","🔥":"../img/fire.png?v2","🖊️":"../img/pen.png?v2","🗂️":"../img/card_index.png?v2","🗣️":"../img/speaking.png?v2","😊":"../img/smiling.png?v2","😋":"../img/yum.png?v2","🙌":"../img/raising_hands.png?v2","🚁":"../img/helicopter.png?v2","🚄":"../img/shinkansen.png?v2","🚌":"../img/bus.png?v2","🚔":"../img/police_car.png?v2","🚕":"../img/taxi.png?v2","🚗":"../img/car.png?v2","🚜":"../img/tractor.png?v2","🚢":"../img/ship.png?v2","🚲":"../img/bicycle.png?v2","🤔":"../img/thinking.png?v2","🤗":"../img/hugging.png?v2","🥛":"../img/milk.png?v2","🦀":"../img/crab.png?v2","🦁":"../img/lion.png?v2","🦃":"../img/turkey.png?v2","🦅":"../img/eagle.png?v2","🦆":"../img/duck.png?v2","🦈":"../img/shark.png?v2","🦉":"../img/owl.png?v2","🦊":"../img/fox.png?v2","🦋":"../img/butterfly.png?v2","🦌":"../img/deer.png?v2","🦎":"../img/lizard.png?v2","🦏":"../img/rhino.png?v2","🦐":"../img/shrimp.png?v2","🦑":"../img/squid.png?v2","🦒":"../img/giraffe.png?v2","🦓":"../img/zebra.png?v2","🦔":"../img/hedgehog.png?v2","🦘":"../img/kangaroo.png?v2","🦛":"../img/hippo.png?v2","🦜":"../img/parrot.png?v2","🦢":"../img/swan.png?v2","🦥":"../img/sloth.png?v2","🦦":"../img/otter.png?v2","🦧":"../img/orangutan.png?v2","🦩":"../img/flamingo.png?v2","🦭":"../img/seal.png?v2","🧠":"../img/brain.png?v2","🪑":"../img/chair.png?v2","🪼":"../img/jellyfish.png?v2"};
-function replaceEmojiWithImg(){
-  // Direct replacement for elements that contain just an emoji
-  document.querySelectorAll('.emoji,.quiz-emoji,.lesson-icon,.note').forEach(function(el){
-    var t=el.textContent.trim();
-    if(emojiImgMap[t]){
-      el.innerHTML='<img src="'+emojiImgMap[t]+'" alt="'+t+'" style="width:1em;height:1em;display:inline-block;vertical-align:middle">';
-    }
-  });
-  // For mixed text+emoji elements, walk text nodes
-  document.querySelectorAll('.tab-btn,.tip-box,.practice-title,h1,.footer,.song-title').forEach(function(el){
-    if(el.querySelector('img'))return;
-    var html=el.innerHTML;
-    var changed=false;
-    for(var e in emojiImgMap){
-      if(html.indexOf(e)!==-1){
-        html=html.split(e).join('<img src="'+emojiImgMap[e]+'" alt="'+e+'" style="width:1.2em;height:1.2em;display:inline-block;vertical-align:middle;margin:0 1px">');
-        changed=true;
-      }
-    }
-    if(changed)el.innerHTML=html;
-  });
-}
 replaceEmojiWithImg();
 var _origShowQ=typeof showQuestion==='function'?showQuestion:null;
 if(_origShowQ){

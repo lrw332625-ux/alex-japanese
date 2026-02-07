@@ -187,6 +187,9 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
   <a href="../index.html">&#8592; 返回课程列表</a>
 </div>
 
+<script src="../scripts/audio.js"></script>
+<script src="../scripts/cache-control.js"></script>
+<script src="../scripts/emoji-data.js"></script>
 <script>
 // ============================================================
 // DATA
@@ -264,30 +267,7 @@ var mode='hira'; // hira, kata, both
 var activeTab=0;
 var progress=JSON.parse(localStorage.getItem('gojuon_progress')||'{}');
 
-// ============================================================
-// AUDIO (3-tier: local MP3 > Google TTS > Web Speech)
-// ============================================================
-var currentAudio=null;
-function speakJP(text,cb){
-  if(currentAudio){try{currentAudio.pause()}catch(e){}}
-  var clean=text.replace(/[\u{1F300}-\u{1F9FF}]/gu,'').trim();
-  if(!clean){if(cb)cb();return}
-  // Try Google TTS
-  var url='https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(clean);
-  var a=new Audio(url);
-  currentAudio=a;
-  a.onended=function(){currentAudio=null;if(cb)cb()};
-  a.onerror=function(){
-    // Fallback: Web Speech
-    if(window.speechSynthesis){
-      var u=new SpeechSynthesisUtterance(clean);
-      u.lang='ja-JP';u.rate=0.8;
-      u.onend=function(){if(cb)cb()};
-      window.speechSynthesis.speak(u);
-    }else{if(cb)cb()}
-  };
-  a.play().catch(function(){a.onerror()});
-}
+// Audio: now using shared ../scripts/audio.js (3-tier: local MP3 > Google TTS > Web Speech)
 
 // ============================================================
 // MODE TOGGLE
@@ -415,7 +395,10 @@ function renderRowDetail(rowIdx){
     html+='</div>';
   });
   html+='</div>';
+  html+='<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">';
+  html+='<button class="quiz-btn" style="background:'+row.color+'" onclick="playRow('+rowIdx+',this)">🔊 连续播放</button>';
   html+='<button class="quiz-btn" style="background:'+row.color+'" onclick="startRowQuiz('+rowIdx+')">练习 '+row.name+'</button>';
+  html+='</div>';
   html+='</div>';
   sec.innerHTML=html;
 }
@@ -434,6 +417,36 @@ function playCard(el,kana,word){
     el.classList.add('learned');
     updateProgress();
   }
+}
+
+// Play all kana in a row sequentially
+var playingRow=false;
+function playRow(rowIdx,btn){
+  if(playingRow){playingRow=false;return}
+  var row=ROWS[rowIdx];
+  var chars=row.chars;
+  playingRow=true;
+  if(btn){btn.textContent='⏹ 停止';btn.style.opacity='0.7'}
+  var i=0;
+  function next(){
+    if(!playingRow||i>=chars.length){
+      playingRow=false;
+      if(btn){btn.textContent='🔊 连续播放';btn.style.opacity='1'}
+      return;
+    }
+    var c=chars[i];i++;
+    // Highlight the card
+    var cards=document.querySelectorAll('#sec'+(rowIdx+1)+' .kana-card');
+    cards.forEach(function(cd){cd.classList.remove('playing')});
+    if(cards[i-1])cards[i-1].classList.add('playing');
+    speakJP(c.h,function(){
+      setTimeout(function(){
+        if(cards[i-1])cards[i-1].classList.remove('playing');
+        next();
+      },400);
+    });
+  }
+  next();
 }
 
 function updateProgress(){
