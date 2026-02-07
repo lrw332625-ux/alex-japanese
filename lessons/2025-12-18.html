@@ -217,6 +217,7 @@ function setRate(r){
 }
 
 var currentAudio=null;
+var audioMap={"山が見えてきました。":"../audio/e08e9a97c0db.mp3","ガタガタ　ゴトゴト":"../audio/17b9b8e3d54f.mp3","ラクダが 唐辛子を 食べました。":"../audio/b54584535680.mp3","ありの おでかけ":"../audio/3e0ef6c4207b.mp3","らくだです":"../audio/7cbbeeef10da.mp3","ぶーぶー":"../audio/5c534c7a2b4f.mp3","ころころ りんご":"../audio/497823d728f4.mp3","ありちゃんは バスで おでかけです":"../audio/ba9f1d63377a.mp3"};
 var bestJPVoice=null;
 function findBestJPVoice(){
   var voices=window.speechSynthesis.getVoices();
@@ -224,7 +225,7 @@ function findBestJPVoice(){
   if(!jp.length)return null;
   var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
   if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya','Google 日本語','Microsoft Nanami','Microsoft Ayumi'];
+  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
   for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
   return jp[0];
 }
@@ -239,6 +240,34 @@ function speakJPLocal(text,cb){
     u.onerror=function(){if(cb)cb()};
     window.speechSynthesis.speak(u);
   } else if(cb) cb();
+}
+function speakJPOnline(text,cb){
+  try{
+    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
+    currentAudio=a;
+    if(speechRate!==1)a.playbackRate=speechRate;
+    a.onended=function(){currentAudio=null;if(cb)cb()};
+    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
+    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
+  }catch(e){speakJPLocal(text,cb)}
+}
+function speakJP(text,cb){
+  if(currentAudio){currentAudio.pause();currentAudio=null}
+  window.speechSynthesis&&window.speechSynthesis.cancel();
+  text=text.replace(/[\u{1F4E3}\u{1F508}\u{1F509}\u{1F50A}\u{1F3B6}\u{1F3B5}]/gu,'').trim();
+  var path=audioMap[text];
+  if(path){
+    try{
+      var a=new Audio(path);
+      currentAudio=a;
+      if(speechRate!==1)a.playbackRate=speechRate;
+      a.onended=function(){currentAudio=null;if(cb)cb()};
+      a.onerror=function(){currentAudio=null;speakJPOnline(text,cb)};
+      a.play().catch(function(){currentAudio=null;speakJPOnline(text,cb)});
+      return;
+    }catch(e){}
+  }
+  speakJPOnline(text,cb);
 }
 function speakJP(text,cb){
   if(currentAudio){currentAudio.pause();currentAudio=null}

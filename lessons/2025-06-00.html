@@ -230,6 +230,7 @@ function setRate(r){
 }
 
 var currentAudio=null;
+var audioMap={"きつね":"../audio/af75c581f1f4.mp3","しろい くるま":"../audio/fd4610d869a8.mp3","アヒル":"../audio/689838985b1f.mp3","朝ご飯よ。":"../audio/8ad0f99df64d.mp3","朝ご飯を食べます":"../audio/4eb0f4bbed7d.mp3","朝ご飯を食べました":"../audio/1119970a0ef4.mp3","こぶた":"../audio/2747864943b5.mp3","あり":"../audio/beb409a658b8.mp3","あかい／あか":"../audio/d5629b3315ad.mp3","あかい くるま":"../audio/d8fc4966c5ae.mp3","みどり の くるま":"../audio/c8fbe6b3a41e.mp3","黄色の車":"../audio/c94510cbbacb.mp3","ラーメンを食べました":"../audio/56adc3caeac9.mp3","ラーメンを食べます":"../audio/f84b7e0520f6.mp3","きいろ の くるま":"../audio/79b16ecff9fb.mp3","ねこ":"../audio/fcedeb3e47d7.mp3","たぬき":"../audio/a8f99c5be9d0.mp3","あおい くるま":"../audio/518717ebfbd3.mp3"};
 var bestJPVoice=null;
 function findBestJPVoice(){
   var voices=window.speechSynthesis.getVoices();
@@ -237,7 +238,7 @@ function findBestJPVoice(){
   if(!jp.length)return null;
   var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
   if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya','Google 日本語','Microsoft Nanami','Microsoft Ayumi'];
+  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
   for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
   return jp[0];
 }
@@ -252,6 +253,34 @@ function speakJPLocal(text,cb){
     u.onerror=function(){if(cb)cb()};
     window.speechSynthesis.speak(u);
   } else if(cb) cb();
+}
+function speakJPOnline(text,cb){
+  try{
+    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
+    currentAudio=a;
+    if(speechRate!==1)a.playbackRate=speechRate;
+    a.onended=function(){currentAudio=null;if(cb)cb()};
+    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
+    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
+  }catch(e){speakJPLocal(text,cb)}
+}
+function speakJP(text,cb){
+  if(currentAudio){currentAudio.pause();currentAudio=null}
+  window.speechSynthesis&&window.speechSynthesis.cancel();
+  text=text.replace(/[\u{1F4E3}\u{1F508}\u{1F509}\u{1F50A}\u{1F3B6}\u{1F3B5}]/gu,'').trim();
+  var path=audioMap[text];
+  if(path){
+    try{
+      var a=new Audio(path);
+      currentAudio=a;
+      if(speechRate!==1)a.playbackRate=speechRate;
+      a.onended=function(){currentAudio=null;if(cb)cb()};
+      a.onerror=function(){currentAudio=null;speakJPOnline(text,cb)};
+      a.play().catch(function(){currentAudio=null;speakJPOnline(text,cb)});
+      return;
+    }catch(e){}
+  }
+  speakJPOnline(text,cb);
 }
 function speakJP(text,cb){
   if(currentAudio){currentAudio.pause();currentAudio=null}

@@ -234,6 +234,7 @@ function setRate(r){
 }
 
 var currentAudio=null;
+var audioMap={"このいえのうしろです":"../audio/1924fb8e9152.mp3","なんですか":"../audio/b1914d70fd6c.mp3","お名前は？":"../audio/1b6a7186e1dd.mp3","らっぱ":"../audio/8197c906ab96.mp3","ぼくはうしです":"../audio/0e9e0a7905a4.mp3","このいえ":"../audio/f5a4895c1d8c.mp3","この道を左に曲がってください。":"../audio/bef1cb3e3ac3.mp3","曲がってください":"../audio/db1ba667e5da.mp3","ひだりに":"../audio/f913c268c761.mp3","ぎたー":"../audio/14c095eee495.mp3","何ですか":"../audio/1b91dd22ea23.mp3","ぴあの":"../audio/b3cad204d22e.mp3","请问，你的名字是什么？：すみません、お名前は何ですか？":"../audio/dd0123d1ccd3.mp3","ぼくは牛です":"../audio/9ffe22213ec5.mp3","おんがくしつに":"../audio/64be4aef1979.mp3","まがってください":"../audio/d1ba832a87b1.mp3"};
 var bestJPVoice=null;
 function findBestJPVoice(){
   var voices=window.speechSynthesis.getVoices();
@@ -241,7 +242,7 @@ function findBestJPVoice(){
   if(!jp.length)return null;
   var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
   if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya','Google 日本語','Microsoft Nanami','Microsoft Ayumi'];
+  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
   for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
   return jp[0];
 }
@@ -256,6 +257,34 @@ function speakJPLocal(text,cb){
     u.onerror=function(){if(cb)cb()};
     window.speechSynthesis.speak(u);
   } else if(cb) cb();
+}
+function speakJPOnline(text,cb){
+  try{
+    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
+    currentAudio=a;
+    if(speechRate!==1)a.playbackRate=speechRate;
+    a.onended=function(){currentAudio=null;if(cb)cb()};
+    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
+    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
+  }catch(e){speakJPLocal(text,cb)}
+}
+function speakJP(text,cb){
+  if(currentAudio){currentAudio.pause();currentAudio=null}
+  window.speechSynthesis&&window.speechSynthesis.cancel();
+  text=text.replace(/[\u{1F4E3}\u{1F508}\u{1F509}\u{1F50A}\u{1F3B6}\u{1F3B5}]/gu,'').trim();
+  var path=audioMap[text];
+  if(path){
+    try{
+      var a=new Audio(path);
+      currentAudio=a;
+      if(speechRate!==1)a.playbackRate=speechRate;
+      a.onended=function(){currentAudio=null;if(cb)cb()};
+      a.onerror=function(){currentAudio=null;speakJPOnline(text,cb)};
+      a.play().catch(function(){currentAudio=null;speakJPOnline(text,cb)});
+      return;
+    }catch(e){}
+  }
+  speakJPOnline(text,cb);
 }
 function speakJP(text,cb){
   if(currentAudio){currentAudio.pause();currentAudio=null}
