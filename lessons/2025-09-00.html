@@ -59,6 +59,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .reviewed .flip-front{border-color:#B8E6C8}
 .reviewed .flip-front::after{content:'✓';position:absolute;bottom:6px;right:8px;font-size:14px;color:#3A8F5C;font-weight:900}
 
+.sent-card .sent-img{width:64px;height:64px;float:right;margin:-4px -4px 4px 8px;border-radius:8px;object-fit:contain}
 .sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden}
 .sent-card:active{transform:scale(.98)}
 .sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow-lg)}
@@ -167,6 +168,7 @@ ushiro desu</div><div class="chinese">在这所房子的后面</div></div></div>
 <div class="section" id="sec1">
 <div class="sec-title" style="color:var(--secondary)"><span class="icon">🗣️</span>句子练习</div>
 <div class="sent-card" data-k="sent0" onclick="playSentTTS(this, 'お名前は？')">
+  <img class="sent-img" src="../img/sentences/sent_019.png" alt="" loading="lazy">
   <div class="jp-text">🔈 お名前は？</div>
   <div class="kana-text">おなまえは？</div>
   <div class="romaji-text">o-namae
@@ -175,6 +177,7 @@ wa?</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent1" onclick="playSentTTS(this, '何ですか')">
+  <img class="sent-img" src="../img/sentences/sent_022.png" alt="" loading="lazy">
   <div class="jp-text">🔈 何ですか</div>
   <div class="kana-text">なんですか</div>
   <div class="romaji-text">nan desu ka</div>
@@ -189,6 +192,7 @@ wa?</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent3" onclick="playSentTTS(this, 'ぼくは牛です')">
+  <img class="sent-img" src="../img/sentences/sent_021.png" alt="" loading="lazy">
   <div class="jp-text">🔈 ぼくは牛です</div>
   <div class="kana-text">ぼくはうしです</div>
   <div class="romaji-text">Boku wa ushi desu</div>
@@ -196,6 +200,7 @@ wa?</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent4" onclick="playSentTTS(this, '曲がってください')">
+  <img class="sent-img" src="../img/sentences/sent_023.png" alt="" loading="lazy">
   <div class="jp-text">🔈 曲がってください</div>
   <div class="kana-text">まがってください</div>
   <div class="romaji-text">magatte kudasai</div>
@@ -203,6 +208,7 @@ wa?</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent5" onclick="playSentTTS(this, 'この道を左に曲がってください。')">
+  <img class="sent-img" src="../img/sentences/sent_020.png" alt="" loading="lazy">
   <div class="jp-text">🔈 この道を左に曲がってください。</div>
   <div class="kana-text">このみちを ひだりに
 まがってください</div>

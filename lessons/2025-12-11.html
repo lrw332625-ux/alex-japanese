@@ -59,6 +59,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .reviewed .flip-front{border-color:#B8E6C8}
 .reviewed .flip-front::after{content:'✓';position:absolute;bottom:6px;right:8px;font-size:14px;color:#3A8F5C;font-weight:900}
 
+.sent-card .sent-img{width:64px;height:64px;float:right;margin:-4px -4px 4px 8px;border-radius:8px;object-fit:contain}
 .sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden}
 .sent-card:active{transform:scale(.98)}
 .sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow-lg)}
@@ -168,6 +169,7 @@ no wa dare desu ka?</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent2" onclick="playSentTTS(this, 'おじさん')">
+  <img class="sent-img" src="../img/sentences/sent_102.png" alt="" loading="lazy">
   <div class="jp-text">🔈 おじさん</div>
   <div class="kana-text">おじさん</div>
   <div class="romaji-text">ojisan</div>
@@ -175,6 +177,7 @@ no wa dare desu ka?</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent3" onclick="playSentTTS(this, '見てる、見てる、ねずみ見てる。')">
+  <img class="sent-img" src="../img/sentences/sent_106.png" alt="" loading="lazy">
   <div class="jp-text">🔈 見てる、見てる、ねずみ見てる。</div>
   <div class="kana-text">みてる、みてる、ねずみ
 みてる。</div>
@@ -183,6 +186,7 @@ no wa dare desu ka?</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent4" onclick="playSentTTS(this, '見てる、見てる、ねこ見てる。')">
+  <img class="sent-img" src="../img/sentences/sent_105.png" alt="" loading="lazy">
   <div class="jp-text">🔈 見てる、見てる、ねこ見てる。</div>
   <div class="kana-text">みてる、みてる、ねこ
 みてる。</div>
@@ -191,6 +195,7 @@ no wa dare desu ka?</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent5" onclick="playSentTTS(this, '見てる、見てる、狼見てる。')">
+  <img class="sent-img" src="../img/sentences/sent_107.png" alt="" loading="lazy">
   <div class="jp-text">🔈 見てる、見てる、狼見てる。</div>
   <div class="kana-text">みてる、みてる、おおかみ みてる。</div>
   <div class="romaji-text">miteru, miteru, ookami miteru</div>

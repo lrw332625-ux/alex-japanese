@@ -59,6 +59,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .reviewed .flip-front{border-color:#B8E6C8}
 .reviewed .flip-front::after{content:'✓';position:absolute;bottom:6px;right:8px;font-size:14px;color:#3A8F5C;font-weight:900}
 
+.sent-card .sent-img{width:64px;height:64px;float:right;margin:-4px -4px 4px 8px;border-radius:8px;object-fit:contain}
 .sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden}
 .sent-card:active{transform:scale(.98)}
 .sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow-lg)}
@@ -153,6 +154,7 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
 <div class="section" id="sec1">
 <div class="sec-title" style="color:var(--secondary)"><span class="icon">🗣️</span>句子练习</div>
 <div class="sent-card" data-k="sent0" onclick="playSentTTS(this, '黒い鳥が飛びます。')">
+  <img class="sent-img" src="../img/sentences/sent_146.png" alt="" loading="lazy">
   <div class="jp-text">🔈 黒い鳥が飛びます。</div>
   <div class="kana-text">くろい とりが とびます。</div>
   <div class="romaji-text">kuroi
@@ -161,6 +163,7 @@ tori ga tobimasu</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent1" onclick="playSentTTS(this, '黒い鳥が飛びました。')">
+  <img class="sent-img" src="../img/sentences/sent_145.png" alt="" loading="lazy">
   <div class="jp-text">🔈 黒い鳥が飛びました。</div>
   <div class="kana-text">くろい とりが とびました。</div>
   <div class="romaji-text">kuroi tori ga tobimashita</div>
@@ -168,6 +171,7 @@ tori ga tobimasu</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent2" onclick="playSentTTS(this, '鳥が飛んでいます。')">
+  <img class="sent-img" src="../img/sentences/sent_141.png" alt="" loading="lazy">
   <div class="jp-text">🔈 鳥が飛んでいます。</div>
   <div class="kana-text">とりが とんでいます。</div>
   <div class="romaji-text">tori ga tonde
@@ -176,6 +180,7 @@ imasu</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent3" onclick="playSentTTS(this, '鳥は赤い実を食べました。赤くなりました。')">
+  <img class="sent-img" src="../img/sentences/sent_143.png" alt="" loading="lazy">
   <div class="jp-text">🔈 鳥は赤い実を食べました。赤くなりました。</div>
   <div class="kana-text">とりは
 あかい みを たべました。あかく なりました。</div>
@@ -185,6 +190,7 @@ tabemashita. akaku narimashita</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent4" onclick="playSentTTS(this, '鳥は青い実を食べました。青くなりました。')">
+  <img class="sent-img" src="../img/sentences/sent_144.png" alt="" loading="lazy">
   <div class="jp-text">🔈 鳥は青い実を食べました。青くなりました。</div>
   <div class="kana-text">とりは
 あおい みを たべました。あおく なりました。</div>
@@ -194,6 +200,7 @@ tabemashita. aoku narimashita</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent5" onclick="playSentTTS(this, '鳥は白い実を食べました。白くなりました。')">
+  <img class="sent-img" src="../img/sentences/sent_142.png" alt="" loading="lazy">
   <div class="jp-text">🔈 鳥は白い実を食べました。白くなりました。</div>
   <div class="kana-text">とりは
 しろい みを たべました。しろく なりました。</div>

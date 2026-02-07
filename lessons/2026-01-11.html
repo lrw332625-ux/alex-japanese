@@ -59,6 +59,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .reviewed .flip-front{border-color:#B8E6C8}
 .reviewed .flip-front::after{content:'✓';position:absolute;bottom:6px;right:8px;font-size:14px;color:#3A8F5C;font-weight:900}
 
+.sent-card .sent-img{width:64px;height:64px;float:right;margin:-4px -4px 4px 8px;border-radius:8px;object-fit:contain}
 .sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden}
 .sent-card:active{transform:scale(.98)}
 .sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow-lg)}
@@ -164,6 +165,7 @@ dōbutsuen desu</div><div class="chinese">这里是动物园</div></div></div></
 <div class="section" id="sec1">
 <div class="sec-title" style="color:var(--secondary)"><span class="icon">🗣️</span>句子练习</div>
 <div class="sent-card" data-k="sent0" onclick="playSentTTS(this, 'ありの おでかけ')">
+  <img class="sent-img" src="../img/sentences/sent_115.png" alt="" loading="lazy">
   <div class="jp-text">🔈 ありの おでかけ</div>
   <div class="kana-text">ありの おでかけ</div>
   <div class="romaji-text">ari no odekake</div>
@@ -171,6 +173,7 @@ dōbutsuen desu</div><div class="chinese">这里是动物园</div></div></div></
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent1" onclick="playSentTTS(this, 'ありちゃんは バスで おでかけです')">
+  <img class="sent-img" src="../img/sentences/sent_114.png" alt="" loading="lazy">
   <div class="jp-text">🔈 ありちゃんは バスで おでかけです</div>
   <div class="kana-text">ありちゃんは
 ばすで おでかけです</div>
@@ -179,6 +182,7 @@ dōbutsuen desu</div><div class="chinese">这里是动物园</div></div></div></
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent2" onclick="playSentTTS(this, 'ガタガタ　ゴトゴト')">
+  <img class="sent-img" src="../img/sentences/sent_117.png" alt="" loading="lazy">
   <div class="jp-text">🔈 ガタガタ　ゴトゴト</div>
   <div class="kana-text">がたがた　ごとごと</div>
   <div class="romaji-text">gata-gata goto-goto</div>
@@ -186,6 +190,7 @@ dōbutsuen desu</div><div class="chinese">这里是动物园</div></div></div></
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent3" onclick="playSentTTS(this, '山が見えてきました。')">
+  <img class="sent-img" src="../img/sentences/sent_119.png" alt="" loading="lazy">
   <div class="jp-text">🔈 山が見えてきました。</div>
   <div class="kana-text">やまが
 みえてきました</div>
@@ -194,6 +199,7 @@ dōbutsuen desu</div><div class="chinese">这里是动物园</div></div></div></
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent4" onclick="playSentTTS(this, '森が見えてきました。')">
+  <img class="sent-img" src="../img/sentences/sent_121.png" alt="" loading="lazy">
   <div class="jp-text">🔈 森が見えてきました。</div>
   <div class="kana-text">もり が みえて きました</div>
   <div class="romaji-text">mori ga miete kimashita</div>
@@ -201,6 +207,7 @@ dōbutsuen desu</div><div class="chinese">这里是动物园</div></div></div></
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent5" onclick="playSentTTS(this, 'ここは動物園です。')">
+  <img class="sent-img" src="../img/sentences/sent_120.png" alt="" loading="lazy">
   <div class="jp-text">🔈 ここは動物園です。</div>
   <div class="kana-text">ここ は どうぶつえん です</div>
   <div class="romaji-text">koko wa

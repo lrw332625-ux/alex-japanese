@@ -59,6 +59,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .reviewed .flip-front{border-color:#B8E6C8}
 .reviewed .flip-front::after{content:'✓';position:absolute;bottom:6px;right:8px;font-size:14px;color:#3A8F5C;font-weight:900}
 
+.sent-card .sent-img{width:64px;height:64px;float:right;margin:-4px -4px 4px 8px;border-radius:8px;object-fit:contain}
 .sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden}
 .sent-card:active{transform:scale(.98)}
 .sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow-lg)}
@@ -171,6 +172,7 @@ imasu</div><div class="chinese">正在飞</div></div></div></div>
 <div class="section" id="sec1">
 <div class="sec-title" style="color:var(--secondary)"><span class="icon">🗣️</span>句子练习</div>
 <div class="sent-card" data-k="sent0" onclick="playSentTTS(this, 'おじいちゃんが来ました')">
+  <img class="sent-img" src="../img/sentences/sent_025.png" alt="" loading="lazy">
   <div class="jp-text">🔈 おじいちゃんが来ました</div>
   <div class="kana-text">おじいちゃんがきました</div>
   <div class="romaji-text">ojiichan ga kimashita</div>
@@ -178,6 +180,7 @@ imasu</div><div class="chinese">正在飞</div></div></div></div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent1" onclick="playSentTTS(this, '小鳥ちゃんは飛びます。')">
+  <img class="sent-img" src="../img/sentences/sent_028.png" alt="" loading="lazy">
   <div class="jp-text">🔈 小鳥ちゃんは飛びます。</div>
   <div class="kana-text">とりちゃんはとびます</div>
   <div class="romaji-text">tori-chan wa
@@ -186,6 +189,7 @@ tobimasu.</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent2" onclick="playSentTTS(this, '鳥ちゃんは飛びました。')">
+  <img class="sent-img" src="../img/sentences/sent_030.png" alt="" loading="lazy">
   <div class="jp-text">🔈 鳥ちゃんは飛びました。</div>
   <div class="kana-text">とりちゃんはとびました</div>
   <div class="romaji-text">tori-chan wa
@@ -194,6 +198,7 @@ tobimashita</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent3" onclick="playSentTTS(this, 'ヘリコプター')">
+  <img class="sent-img" src="../img/sentences/sent_027.png" alt="" loading="lazy">
   <div class="jp-text">🔈 ヘリコプター</div>
   <div class="kana-text">へりこぷたー</div>
   <div class="romaji-text">herikoputā</div>
@@ -201,6 +206,7 @@ tobimashita</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent4" onclick="playSentTTS(this, 'ウルトラマンを見たいです。')">
+  <img class="sent-img" src="../img/sentences/sent_026.png" alt="" loading="lazy">
   <div class="jp-text">🔈 ウルトラマンを見たいです。</div>
   <div class="kana-text">うるとらまんをみたいです。</div>
   <div class="romaji-text">Urutoraman o mitai desu.</div>
@@ -208,6 +214,7 @@ tobimashita</div>
   <div class="wave"></div>
 </div>
 <div class="sent-card" data-k="sent5" onclick="playSentTTS(this, '赤とんぼ')">
+  <img class="sent-img" src="../img/sentences/sent_029.png" alt="" loading="lazy">
   <div class="jp-text">🔈 赤とんぼ</div>
   <div class="kana-text">あかとんぼ</div>
   <div class="romaji-text">aka
