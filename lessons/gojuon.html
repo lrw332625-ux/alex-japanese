@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>林之恒 五十音图</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0E8;--card-bg:#FFFEF9;--text:#2D2A24;--text-sub:#7A7468;
+  --shadow:0 2px 20px rgba(45,42,36,.08);--r:20px;--rs:12px;
+  --row-a:#E8573A;--row-ka:#2B7A98;--row-sa:#3A8F5C;--row-ta:#7B5EA7;
+  --row-na:#D4903A;--row-ha:#2B8F8F;--row-ma:#D4557A;--row-ya:#B8860B;
+  --row-ra:#4A90D9;--row-wa:#7A7468;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh}
+
+.header{position:relative;overflow:hidden;padding:32px 20px 24px;text-align:center;background:linear-gradient(135deg,#E8573A 0%,#D4553A 50%,#C04030 100%);color:#fff}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.08) 0%,transparent 50%)}
+.header h1{font-family:'M PLUS Rounded 1c','Noto Sans SC',sans-serif;font-size:26px;font-weight:900;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,.2);position:relative}
+.header .sub{font-size:13px;opacity:.8;margin-top:4px;position:relative}
+.back-link{position:absolute;left:16px;top:16px;color:#fff;text-decoration:none;font-size:24px;opacity:.7;z-index:10}
+.back-link:hover{opacity:1}
+
+.mode-bar{display:flex;gap:8px;padding:12px 16px;justify-content:center;background:var(--bg);position:sticky;top:0;z-index:100}
+.mode-btn{padding:8px 20px;border-radius:24px;border:2px solid #e0dcd4;font-size:14px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .2s}
+.mode-btn.active{background:var(--row-a);color:#fff;border-color:var(--row-a)}
+
+.tab-nav{display:flex;gap:6px;padding:8px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:52px;z-index:99;background:var(--bg)}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:6px 14px;border-radius:20px;border:2px solid transparent;font-size:12px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .2s;white-space:nowrap}
+.tab-btn.active{color:#fff;border-color:transparent}
+
+.progress-area{padding:8px 16px}
+.progress-bar{height:6px;background:#e8e4dc;border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--row-a),var(--row-ka),var(--row-sa));border-radius:3px;transition:width .4s ease;width:0}
+.progress-text{font-size:12px;color:var(--text-sub);text-align:center;margin-top:4px}
+
+.section{display:none;padding:12px 16px 24px}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+@keyframes celebrate{0%{transform:scale(1)}50%{transform:scale(1.1) rotate(2deg)}100%{transform:scale(1)}}
+
+/* === CHART VIEW === */
+.chart-grid{display:grid;grid-template-columns:40px repeat(5,1fr);gap:4px;margin:12px 0}
+.chart-header{font-size:11px;font-weight:700;color:var(--text-sub);text-align:center;padding:4px 0}
+.chart-row-label{font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;color:#fff;border-radius:8px;min-height:52px}
+.chart-cell{background:var(--card-bg);border-radius:10px;padding:6px 4px;text-align:center;cursor:pointer;border:2px solid #f0ece4;transition:all .2s;min-height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.chart-cell:active{transform:scale(.95)}
+.chart-cell.playing{border-color:var(--row-a);box-shadow:0 0 0 2px var(--row-a)}
+.chart-cell.learned::after{content:'✓';position:absolute;top:2px;right:4px;font-size:10px;color:#3A8F5C;font-weight:900}
+.chart-cell .kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:22px;font-weight:900;line-height:1.2}
+.chart-cell .roma{font-size:9px;color:var(--text-sub)}
+.chart-cell.empty{background:transparent;border-color:transparent;cursor:default}
+
+/* === ROW DETAIL VIEW === */
+.row-section{margin:16px 0;animation:fadeIn .3s ease}
+.row-header{font-size:18px;font-weight:900;padding:10px 16px;border-radius:var(--rs);color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.row-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+
+.kana-card{background:var(--card-bg);border-radius:var(--r);padding:16px 12px;text-align:center;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s}
+.kana-card:active{transform:scale(.97)}
+.kana-card.playing{border-color:var(--row-a);box-shadow:0 0 0 2px var(--row-a),var(--shadow)}
+.kana-card .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:48px;font-weight:900;line-height:1.1}
+.kana-card .sub-kana{font-size:16px;color:var(--text-sub);margin-top:2px}
+.kana-card .romaji{font-size:14px;font-weight:700;color:var(--row-a);margin-top:4px}
+.kana-card .word-row{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:8px;padding-top:8px;border-top:1px solid #f0ece4}
+.kana-card .word-row img{width:32px;height:32px;object-fit:contain}
+.kana-card .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;font-weight:700}
+.kana-card .word-cn{font-size:11px;color:var(--text-sub)}
+.kana-card .mnemonic{font-size:11px;color:var(--text-sub);margin-top:6px;font-style:italic}
+.kana-card.learned{border-color:#B8E6C8}
+
+/* === QUIZ === */
+.quiz-box{background:var(--card-bg);border-radius:var(--r);padding:24px 16px;margin:16px 0;box-shadow:var(--shadow);text-align:center}
+.quiz-prompt{font-family:'M PLUS Rounded 1c',sans-serif;font-size:56px;font-weight:900;margin:16px 0}
+.quiz-prompt.small{font-size:20px;font-weight:700;color:var(--text-sub)}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.quiz-opt{padding:14px;border-radius:var(--rs);border:2px solid #e8e4dc;background:#fff;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s}
+.quiz-opt:active{transform:scale(.95)}
+.quiz-opt.correct{background:#d4edda;border-color:#3A8F5C;color:#3A8F5C}
+.quiz-opt.wrong{background:#f8d7da;border-color:#C04030;color:#C04030}
+.quiz-score{font-size:16px;font-weight:700;margin:12px 0}
+.quiz-btn{padding:10px 24px;border-radius:24px;border:none;font-size:14px;font-weight:700;cursor:pointer;color:#fff;background:var(--row-a);transition:all .2s;margin:4px}
+.quiz-btn:active{transform:scale(.95)}
+.quiz-btn.secondary{background:var(--row-ka)}
+
+.home-btn{text-align:center;padding:20px 16px}
+.home-btn a{display:inline-block;padding:12px 32px;border-radius:24px;background:var(--row-a);color:#fff;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 2px 12px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a class="back-link" href="../index.html">&#8592;</a>
+  <h1>🎌 五十音图 ごじゅうおん</h1>
+  <div class="sub">点击假名听发音 · 左右滑动切换</div>
+</div>
+
+<div class="mode-bar">
+  <button class="mode-btn active" onclick="setMode('hira')">ひらがな</button>
+  <button class="mode-btn" onclick="setMode('kata')">カタカナ</button>
+  <button class="mode-btn" onclick="setMode('both')">両方</button>
+</div>
+
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" data-sec="0" onclick="switchTab(0)" style="background:var(--row-a);color:#fff">五十音表</button>
+  <button class="tab-btn" data-sec="1" onclick="switchTab(1)">あ行</button>
+  <button class="tab-btn" data-sec="2" onclick="switchTab(2)">か行</button>
+  <button class="tab-btn" data-sec="3" onclick="switchTab(3)">さ行</button>
+  <button class="tab-btn" data-sec="4" onclick="switchTab(4)">た行</button>
+  <button class="tab-btn" data-sec="5" onclick="switchTab(5)">な行</button>
+  <button class="tab-btn" data-sec="6" onclick="switchTab(6)">は行</button>
+  <button class="tab-btn" data-sec="7" onclick="switchTab(7)">ま行</button>
+  <button class="tab-btn" data-sec="8" onclick="switchTab(8)">や行</button>
+  <button class="tab-btn" data-sec="9" onclick="switchTab(9)">ら行</button>
+  <button class="tab-btn" data-sec="10" onclick="switchTab(10)">わ行</button>
+  <button class="tab-btn" data-sec="11" onclick="switchTab(11)">🎮 测验</button>
+</nav>
+
+<div class="progress-area">
+  <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+  <div class="progress-text" id="progText">已学习 0/46 个假名</div>
+</div>
+
+<!-- SEC 0: Full Chart -->
+<div class="section active" id="sec0"></div>
+
+<!-- SEC 1-10: Row details (generated by JS) -->
+<div class="section" id="sec1"></div>
+<div class="section" id="sec2"></div>
+<div class="section" id="sec3"></div>
+<div class="section" id="sec4"></div>
+<div class="section" id="sec5"></div>
+<div class="section" id="sec6"></div>
+<div class="section" id="sec7"></div>
+<div class="section" id="sec8"></div>
+<div class="section" id="sec9"></div>
+<div class="section" id="sec10"></div>
+
+<!-- SEC 11: Quiz -->
+<div class="section" id="sec11">
+  <div class="quiz-box" id="quizBox">
+    <div style="font-size:18px;font-weight:700;margin-bottom:16px">五十音测验</div>
+    <p style="color:var(--text-sub);margin-bottom:16px">选择测验类型开始练习</p>
+    <button class="quiz-btn" onclick="startQuiz('listen')">🔊 听音选字</button>
+    <button class="quiz-btn secondary" onclick="startQuiz('read')">👀 看字选音</button>
+    <button class="quiz-btn" style="background:var(--row-sa)" onclick="startQuiz('word')">🎯 单词首字</button>
+  </div>
+</div>
+
+<!-- YouTube Videos -->
+<div style="padding:12px 16px">
+  <div style="font-size:18px;font-weight:900;margin-bottom:12px">🎬 推荐视频</div>
+  <div style="display:grid;gap:12px">
+    <div style="background:var(--card-bg);border-radius:var(--r);padding:12px;box-shadow:var(--shadow)">
+      <div style="font-weight:700;margin-bottom:6px">🎵 あいうえおのうた (AIUEO Song)</div>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none" src="https://www.youtube.com/embed/plvSpVSdJWU" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <div style="background:var(--card-bg);border-radius:var(--r);padding:12px;box-shadow:var(--shadow)">
+      <div style="font-weight:700;margin-bottom:6px">✏️ Hiragana Writing (JapanesePod101)</div>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none" src="https://www.youtube.com/embed/6p9Il_j0zjc" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <div style="background:var(--card-bg);border-radius:var(--r);padding:12px;box-shadow:var(--shadow)">
+      <div style="font-weight:700;margin-bottom:6px">🎌 しまじろう ひらがなのうた</div>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none" src="https://www.youtube.com/embed/8IpHIUxhdaI" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <div style="background:var(--card-bg);border-radius:var(--r);padding:12px;box-shadow:var(--shadow)">
+      <div style="font-weight:700;margin-bottom:6px">カタカナ Katakana Song</div>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none" src="https://www.youtube.com/embed/s6DKRgtVLGA" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="home-btn">
+  <a href="../index.html">&#8592; 返回课程列表</a>
+</div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+var ROWS = [
+  {name:'あ行',color:'var(--row-a)',hex:'#E8573A',chars:[
+    {h:'あ',k:'ア',r:'a',word:'あり',cn:'蚂蚁',img:'ant.png',memo:'张开嘴说 a!'},
+    {h:'い',k:'イ',r:'i',word:'いぬ',cn:'狗',img:'dog.png',memo:'两条线像说 i'},
+    {h:'う',k:'ウ',r:'u',word:'うさぎ',cn:'兔子',img:'rabbit.png',memo:'嘴巴嘟起来 u'},
+    {h:'え',k:'エ',r:'e',word:'えび',cn:'虾',img:'shrimp.png',memo:'像一只虾弯着身体'},
+    {h:'お',k:'オ',r:'o',word:'おさかな',cn:'鱼',img:'fish.png',memo:'圆圆的嘴说 o'}
+  ]},
+  {name:'か行',color:'var(--row-ka)',hex:'#2B7A98',chars:[
+    {h:'か',k:'カ',r:'ka',word:'かに',cn:'螃蟹',img:'crab.png',memo:'力气大的螃蟹 ka!'},
+    {h:'き',k:'キ',r:'ki',word:'きりん',cn:'长颈鹿',img:'giraffe.png',memo:'像一把钥匙 key'},
+    {h:'く',k:'ク',r:'ku',word:'くじら',cn:'鲸鱼',img:'whale.png',memo:'嘴巴张开 ku'},
+    {h:'け',k:'ケ',r:'ke',word:'けむし',cn:'毛毛虫',img:'bug.png',memo:'毛毛虫在爬'},
+    {h:'こ',k:'コ',r:'ko',word:'ことり',cn:'小鸟',img:'bird.png',memo:'两条横线像嘴巴'}
+  ]},
+  {name:'さ行',color:'var(--row-sa)',hex:'#3A8F5C',chars:[
+    {h:'さ',k:'サ',r:'sa',word:'さかな',cn:'鱼',img:'fish.png',memo:'像鱼在游泳 sa~'},
+    {h:'し',k:'シ',r:'shi',word:'しか',cn:'鹿',img:'deer.png',memo:'像一个鱼钩'},
+    {h:'す',k:'ス',r:'su',word:'すし',cn:'寿司',img:'sushi.png',memo:'寿司好吃 su!'},
+    {h:'せ',k:'セ',r:'se',word:'せんろ',cn:'铁路',img:'shinkansen.png',memo:'新干线飞驰'},
+    {h:'そ',k:'ソ',r:'so',word:'そら',cn:'天空',img:'rainbow.png',memo:'彩虹在天空 so beautiful'}
+  ]},
+  {name:'た行',color:'var(--row-ta)',hex:'#7B5EA7',chars:[
+    {h:'た',k:'タ',r:'ta',word:'たこ',cn:'章鱼',img:'squid.png',memo:'像一个十字架 ta'},
+    {h:'ち',k:'チ',r:'chi',word:'ちょう',cn:'蝴蝶',img:'butterfly.png',memo:'蝴蝶翩翩飞 chi~'},
+    {h:'つ',k:'ツ',r:'tsu',word:'つき',cn:'月亮',img:'star.png',memo:'像一个微笑 tsu'},
+    {h:'て',k:'テ',r:'te',word:'てんとう',cn:'瓢虫',img:'ladybug.png',memo:'伸出手 te'},
+    {h:'と',k:'ト',r:'to',word:'とり',cn:'鸟',img:'eagle.png',memo:'鸟儿飞 to~'}
+  ]},
+  {name:'な行',color:'var(--row-na)',hex:'#D4903A',chars:[
+    {h:'な',k:'ナ',r:'na',word:'なまけもの',cn:'树懒',img:'sloth.png',memo:'慢吞吞 na~'},
+    {h:'に',k:'ニ',r:'ni',word:'にわとり',cn:'公鸡',img:'rooster.png',memo:'公鸡叫 ni!'},
+    {h:'ぬ',k:'ヌ',r:'nu',word:'ぬいぐるみ',cn:'毛绒玩具',img:'bear.png',memo:'抱着玩具 nu'},
+    {h:'ね',k:'ネ',r:'ne',word:'ねこ',cn:'猫',img:'cat.png',memo:'猫咪叫 ne~'},
+    {h:'の',k:'ノ',r:'no',word:'のうさぎ',cn:'野兔',img:'rabbit2.png',memo:'像一个旋涡 no'}
+  ]},
+  {name:'は行',color:'var(--row-ha)',hex:'#2B8F8F',chars:[
+    {h:'は',k:'ハ',r:'ha',word:'はち',cn:'蜜蜂',img:'bee.png',memo:'蜜蜂嗡嗡 ha~'},
+    {h:'ひ',k:'ヒ',r:'hi',word:'ひつじ',cn:'绵羊',img:'sheep.png',memo:'绵羊咩咩 hi'},
+    {h:'ふ',k:'フ',r:'fu',word:'ふね',cn:'船',img:'ship.png',memo:'船在海上 fu~'},
+    {h:'へ',k:'ヘ',r:'he',word:'へび',cn:'蛇',img:'snake.png',memo:'像一座小山 he'},
+    {h:'ほ',k:'ホ',r:'ho',word:'ほし',cn:'星星',img:'star.png',memo:'星星闪闪 ho!'}
+  ]},
+  {name:'ま行',color:'var(--row-ma)',hex:'#D4557A',chars:[
+    {h:'ま',k:'マ',r:'ma',word:'うま',cn:'马',img:'horse.png',memo:'妈妈 mama!'},
+    {h:'み',k:'ミ',r:'mi',word:'みみ',cn:'耳朵',img:'ear.png',memo:'三条线像耳朵 mi'},
+    {h:'む',k:'ム',r:'mu',word:'むし',cn:'虫子',img:'bug.png',memo:'虫子在爬 mu~'},
+    {h:'め',k:'メ',r:'me',word:'めだか',cn:'青鳉鱼',img:'tropical_fish.png',memo:'眼睛 me'},
+    {h:'も',k:'モ',r:'mo',word:'もも',cn:'桃子',img:'apple.png',memo:'桃子好吃 mo~'}
+  ]},
+  {name:'や行',color:'var(--row-ya)',hex:'#B8860B',chars:[
+    {h:'や',k:'ヤ',r:'ya',word:'やぎ',cn:'山羊',img:'ram.png',memo:'山羊叫 ya!'},
+    {h:'ゆ',k:'ユ',r:'yu',word:'ゆき',cn:'雪',img:'snowflake.png',memo:'雪花飘 yu~'},
+    {h:'よ',k:'ヨ',r:'yo',word:'よる',cn:'夜晚',img:'owl.png',memo:'猫头鹰 yo!'}
+  ]},
+  {name:'ら行',color:'var(--row-ra)',hex:'#4A90D9',chars:[
+    {h:'ら',k:'ラ',r:'ra',word:'らくだ',cn:'骆驼',img:'camel.png',memo:'骆驼走沙漠 ra~'},
+    {h:'り',k:'リ',r:'ri',word:'りす',cn:'松鼠',img:'squirrel.png',memo:'松鼠吃坚果 ri'},
+    {h:'る',k:'ル',r:'ru',word:'るす',cn:'不在家',img:'house.png',memo:'家里没人 ru'},
+    {h:'れ',k:'レ',r:'re',word:'れんこん',cn:'莲藕',img:'sakura.png',memo:'莲花盛开 re'},
+    {h:'ろ',k:'ロ',r:'ro',word:'ろば',cn:'驴',img:'horse.png',memo:'驴子走路 ro~'}
+  ]},
+  {name:'わ行',color:'var(--row-wa)',hex:'#7A7468',chars:[
+    {h:'わ',k:'ワ',r:'wa',word:'わに',cn:'鳄鱼',img:'crocodile.png',memo:'鳄鱼张嘴 wa!'},
+    {h:'を',k:'ヲ',r:'wo',word:'(助词)',cn:'助词',img:'book.png',memo:'句子里常用的助词'},
+    {h:'ん',k:'ン',r:'n',word:'みかん',cn:'橘子',img:'orange.png',memo:'鼻子哼 n~'}
+  ]}
+];
+
+var mode='hira'; // hira, kata, both
+var activeTab=0;
+var progress=JSON.parse(localStorage.getItem('gojuon_progress')||'{}');
+
+// ============================================================
+// AUDIO (3-tier: local MP3 > Google TTS > Web Speech)
+// ============================================================
+var currentAudio=null;
+function speakJP(text,cb){
+  if(currentAudio){try{currentAudio.pause()}catch(e){}}
+  var clean=text.replace(/[\u{1F300}-\u{1F9FF}]/gu,'').trim();
+  if(!clean){if(cb)cb();return}
+  // Try Google TTS
+  var url='https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(clean);
+  var a=new Audio(url);
+  currentAudio=a;
+  a.onended=function(){currentAudio=null;if(cb)cb()};
+  a.onerror=function(){
+    // Fallback: Web Speech
+    if(window.speechSynthesis){
+      var u=new SpeechSynthesisUtterance(clean);
+      u.lang='ja-JP';u.rate=0.8;
+      u.onend=function(){if(cb)cb()};
+      window.speechSynthesis.speak(u);
+    }else{if(cb)cb()}
+  };
+  a.play().catch(function(){a.onerror()});
+}
+
+// ============================================================
+// MODE TOGGLE
+// ============================================================
+function setMode(m){
+  mode=m;
+  document.querySelectorAll('.mode-btn').forEach(function(b,i){
+    b.classList.toggle('active',['hira','kata','both'][i]===m);
+  });
+  renderAll();
+}
+
+// ============================================================
+// TAB SWITCHING
+// ============================================================
+var tabColors=['var(--row-a)','var(--row-a)','var(--row-ka)','var(--row-sa)','var(--row-ta)','var(--row-na)','var(--row-ha)','var(--row-ma)','var(--row-ya)','var(--row-ra)','var(--row-wa)','var(--row-a)'];
+function switchTab(i){
+  activeTab=i;
+  document.querySelectorAll('.tab-btn').forEach(function(b,idx){
+    var isActive=idx===i;
+    b.classList.toggle('active',isActive);
+    if(isActive){b.style.background=tabColors[idx];b.style.color='#fff'}
+    else{b.style.background='#fff';b.style.color='var(--text-sub)'}
+  });
+  document.querySelectorAll('.section').forEach(function(s,idx){
+    s.classList.toggle('active',idx===i);
+  });
+  // Scroll tab into view
+  var btn=document.querySelectorAll('.tab-btn')[i];
+  if(btn)btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+
+// Swipe
+var tx=0;
+document.addEventListener('touchstart',function(e){tx=e.changedTouches[0].screenX},{passive:true});
+document.addEventListener('touchend',function(e){
+  var d=tx-e.changedTouches[0].screenX;
+  if(Math.abs(d)>60){var n=activeTab+(d>0?1:-1);if(n>=0&&n<=11)switchTab(n)}
+},{passive:true});
+
+// ============================================================
+// RENDER
+// ============================================================
+function getDisplay(c){
+  if(mode==='hira')return c.h;
+  if(mode==='kata')return c.k;
+  return c.h+'<span style="font-size:.5em;color:var(--text-sub);display:block">'+c.k+'</span>';
+}
+
+function renderChart(){
+  var sec=document.getElementById('sec0');
+  var html='<div class="chart-grid">';
+  // Header row
+  html+='<div class="chart-header"></div>';
+  ['あ段','い段','う段','え段','お段'].forEach(function(h){
+    html+='<div class="chart-header">'+h+'</div>';
+  });
+  // Data rows
+  ROWS.forEach(function(row){
+    html+='<div class="chart-row-label" style="background:'+row.color+'">'+row.name.charAt(0)+'</div>';
+    var cols=[null,null,null,null,null];
+    row.chars.forEach(function(c){
+      var vi='aiueo'.indexOf(c.r.slice(-1));
+      // Handle special cases
+      if(c.r==='shi')vi=1;
+      if(c.r==='chi')vi=1;
+      if(c.r==='tsu')vi=2;
+      if(c.r==='fu')vi=2;
+      if(c.r==='ya')vi=0;
+      if(c.r==='yu')vi=2;
+      if(c.r==='yo')vi=4;
+      if(c.r==='wa')vi=0;
+      if(c.r==='wo')vi=4;
+      if(c.r==='n')vi=0;
+      cols[vi]=c;
+    });
+    cols.forEach(function(c,ci){
+      if(c){
+        var learned=progress[c.h]?'learned':'';
+        html+='<div class="chart-cell '+learned+'" onclick="playChart(this,\''+c.h+'\',\''+c.r+'\')" data-kana="'+c.h+'">';
+        html+='<div class="kana">'+getDisplay(c)+'</div>';
+        html+='<div class="roma">'+c.r+'</div>';
+        html+='</div>';
+      }else{
+        html+='<div class="chart-cell empty"></div>';
+      }
+    });
+  });
+  html+='</div>';
+  sec.innerHTML=html;
+}
+
+function playChart(el,kana,roma){
+  document.querySelectorAll('.chart-cell.playing').forEach(function(c){c.classList.remove('playing')});
+  el.classList.add('playing');
+  el.style.animation='bounce .3s ease';
+  setTimeout(function(){el.style.animation=''},300);
+  speakJP(kana,function(){el.classList.remove('playing')});
+  // Mark as learned
+  if(!progress[kana]){
+    progress[kana]={date:Date.now()};
+    localStorage.setItem('gojuon_progress',JSON.stringify(progress));
+    el.classList.add('learned');
+    updateProgress();
+  }
+}
+
+function renderRowDetail(rowIdx){
+  var row=ROWS[rowIdx];
+  var sec=document.getElementById('sec'+(rowIdx+1));
+  var html='<div class="row-section">';
+  html+='<div class="row-header" style="background:'+row.color+'">'+row.name+' ('+row.chars.map(function(c){return c.r}).join(', ')+')</div>';
+  html+='<div class="row-cards">';
+  row.chars.forEach(function(c){
+    var learned=progress[c.h]?'learned':'';
+    html+='<div class="kana-card '+learned+'" onclick="playCard(this,\''+c.h+'\',\''+c.word+'\')" data-kana="'+c.h+'">';
+    html+='<div class="big-kana">'+getDisplay(c)+'</div>';
+    if(mode!=='both')html+='<div class="sub-kana">'+(mode==='hira'?c.k:c.h)+'</div>';
+    html+='<div class="romaji" style="color:'+row.color+'">'+c.r+'</div>';
+    html+='<div class="word-row">';
+    html+='<img src="../img/'+c.img+'" alt="'+c.cn+'">';
+    html+='<div><div class="word-jp">'+c.word+'</div><div class="word-cn">'+c.cn+'</div></div>';
+    html+='</div>';
+    html+='<div class="mnemonic">💡 '+c.memo+'</div>';
+    html+='</div>';
+  });
+  html+='</div>';
+  html+='<button class="quiz-btn" style="background:'+row.color+'" onclick="startRowQuiz('+rowIdx+')">练习 '+row.name+'</button>';
+  html+='</div>';
+  sec.innerHTML=html;
+}
+
+function playCard(el,kana,word){
+  document.querySelectorAll('.kana-card.playing').forEach(function(c){c.classList.remove('playing')});
+  el.classList.add('playing');
+  speakJP(kana,function(){
+    setTimeout(function(){
+      speakJP(word,function(){el.classList.remove('playing')});
+    },300);
+  });
+  if(!progress[kana]){
+    progress[kana]={date:Date.now()};
+    localStorage.setItem('gojuon_progress',JSON.stringify(progress));
+    el.classList.add('learned');
+    updateProgress();
+  }
+}
+
+function updateProgress(){
+  var total=0;
+  ROWS.forEach(function(r){total+=r.chars.length});
+  var learned=Object.keys(progress).length;
+  document.getElementById('progFill').style.width=(learned/total*100)+'%';
+  document.getElementById('progText').textContent='已学习 '+learned+'/'+total+' 个假名';
+}
+
+function renderAll(){
+  renderChart();
+  for(var i=0;i<ROWS.length;i++)renderRowDetail(i);
+  updateProgress();
+}
+
+// ============================================================
+// QUIZ
+// ============================================================
+var quizMode='',quizData=[],quizIdx=0,quizScore=0,quizTotal=10,quizRowIdx=-1;
+
+function getAllChars(){
+  var all=[];
+  ROWS.forEach(function(r){r.chars.forEach(function(c){all.push(c)})});
+  return all;
+}
+
+function shuffle(arr){
+  for(var i=arr.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=arr[i];arr[i]=arr[j];arr[j]=t}
+  return arr;
+}
+
+function startQuiz(type){
+  quizMode=type;quizIdx=0;quizScore=0;quizRowIdx=-1;
+  quizData=shuffle(getAllChars().slice()).slice(0,quizTotal);
+  showQuizQ();
+}
+
+function startRowQuiz(ri){
+  quizMode='listen';quizIdx=0;quizScore=0;quizRowIdx=ri;
+  quizData=shuffle(ROWS[ri].chars.slice());
+  quizTotal=quizData.length;
+  switchTab(11);
+  showQuizQ();
+}
+
+function showQuizQ(){
+  if(quizIdx>=quizData.length){showQuizResult();return}
+  var c=quizData[quizIdx];
+  var all=quizRowIdx>=0?ROWS[quizRowIdx].chars:getAllChars();
+  var opts=shuffle(all.filter(function(x){return x.h!==c.h}).slice(0,3));
+  opts.push(c);opts=shuffle(opts);
+
+  var box=document.getElementById('quizBox');
+  var html='<div style="font-size:13px;color:var(--text-sub)">第 '+(quizIdx+1)+'/'+quizData.length+' 题</div>';
+
+  if(quizMode==='listen'){
+    html+='<div class="quiz-prompt">🔊</div>';
+    html+='<div class="quiz-prompt small">听发音，选正确的假名</div>';
+    html+='<div class="quiz-options">';
+    opts.forEach(function(o,i){
+      html+='<button class="quiz-opt" onclick="quizAnswer(this,'+i+',\''+o.h+'\',\''+c.h+'\')" style="font-family:\'M PLUS Rounded 1c\',sans-serif;font-size:28px">'+getDisplay(o)+'</button>';
+    });
+    html+='</div>';
+    box.innerHTML=html;
+    speakJP(c.h);
+  }else if(quizMode==='read'){
+    html+='<div class="quiz-prompt" style="font-family:\'M PLUS Rounded 1c\',sans-serif">'+getDisplay(c)+'</div>';
+    html+='<div class="quiz-prompt small">这个假名的读音是？</div>';
+    html+='<div class="quiz-options">';
+    opts.forEach(function(o,i){
+      html+='<button class="quiz-opt" onclick="quizAnswer(this,'+i+',\''+o.h+'\',\''+c.h+'\')">'+o.r+'</button>';
+    });
+    html+='</div>';
+    box.innerHTML=html;
+  }else if(quizMode==='word'){
+    html+='<div style="margin:12px 0"><img src="../img/'+c.img+'" style="width:64px;height:64px;object-fit:contain"></div>';
+    html+='<div class="quiz-prompt small">'+c.cn+' ('+c.word+') 的第一个假名是？</div>';
+    html+='<div class="quiz-options">';
+    opts.forEach(function(o,i){
+      html+='<button class="quiz-opt" onclick="quizAnswer(this,'+i+',\''+o.h+'\',\''+c.h+'\')" style="font-family:\'M PLUS Rounded 1c\',sans-serif;font-size:28px">'+getDisplay(o)+'</button>';
+    });
+    html+='</div>';
+    box.innerHTML=html;
+  }
+}
+
+function quizAnswer(el,idx,picked,correct){
+  var btns=document.querySelectorAll('.quiz-opt');
+  btns.forEach(function(b){b.onclick=null});
+  if(picked===correct){
+    el.classList.add('correct');quizScore++;
+    speakJP(correct);
+  }else{
+    el.classList.add('wrong');
+    btns.forEach(function(b){
+      if(b.textContent.trim().indexOf(correct)>=0||b.getAttribute('onclick').indexOf("'"+correct+"'")>=0){
+        // Find the correct button — highlight it
+      }
+    });
+    // Find correct button
+    btns.forEach(function(b){
+      var onc=b.getAttribute('onclick')||'';
+      // Check by extracting the picked value from onclick
+    });
+  }
+  if(!progress[correct]){
+    progress[correct]={date:Date.now()};
+    localStorage.setItem('gojuon_progress',JSON.stringify(progress));
+    updateProgress();
+  }
+  setTimeout(function(){quizIdx++;showQuizQ()},1000);
+}
+
+function showQuizResult(){
+  var box=document.getElementById('quizBox');
+  var pct=Math.round(quizScore/quizData.length*100);
+  var stars=pct>=90?'⭐⭐⭐':pct>=70?'⭐⭐':'⭐';
+  var msg=pct>=90?'太棒了Alex！':pct>=70?'做得不错！':'继续加油！';
+  var html='<div style="font-size:48px;margin:12px 0">'+stars+'</div>';
+  html+='<div class="quiz-score">'+msg+' '+quizScore+'/'+quizData.length+' ('+pct+'%)</div>';
+  html+='<button class="quiz-btn" onclick="startQuiz(\''+quizMode+'\')">再来一次</button>';
+  html+='<button class="quiz-btn secondary" onclick="switchTab(0)">返回五十音表</button>';
+  box.innerHTML=html;
+}
+
+// ============================================================
+// INIT
+// ============================================================
+renderAll();
+switchTab(0);
+</script>
+</body>
+</html>
