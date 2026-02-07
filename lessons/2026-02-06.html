@@ -21,9 +21,11 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .header{position:relative;overflow:hidden;padding:32px 20px 24px;text-align:center;background:linear-gradient(135deg,#2B7A98 0%,#1E5F7A 50%,#2B7A98 100%);color:#fff}
 .header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.08) 0%,transparent 50%)}
 .header h1{font-family:'M PLUS Rounded 1c','Noto Sans SC',sans-serif;font-size:26px;font-weight:900;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,.2);position:relative}
+.back-link{position:absolute;left:16px;top:16px;color:#fff;text-decoration:none;font-size:24px;opacity:.7;z-index:10}
+.back-link:hover{opacity:1}
 .header .sub{font-size:13px;opacity:.8;margin-top:4px;position:relative}
 
-.tab-nav{display:flex;gap:6px;padding:12px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:0;z-index:100;background:var(--bg)}
+.tab-nav{display:none;gap:6px;padding:12px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:0;z-index:100;background:var(--bg)}
 .tab-nav::-webkit-scrollbar{display:none}
 .tab-btn{flex-shrink:0;padding:8px 16px;border-radius:24px;border:2px solid transparent;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 1px 4px rgba(0,0,0,.04);white-space:nowrap}
 .tab-btn.active{color:#fff;border-color:transparent;transform:scale(1.05);box-shadow:var(--shadow)}
@@ -44,8 +46,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .progress-bar{flex:1;height:4px;background:#e8e4dc;border-radius:2px;margin:0 8px;min-width:40px;overflow:hidden}
 .progress-fill{height:100%;border-radius:2px;transition:width .4s ease;width:0}
 
-.section{display:none;padding:12px 16px 100px;animation:fadeIn .3s ease}
-.section.active{display:block}
+.section{display:block;padding:12px 16px 24px}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 .sec-title{font-size:22px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:10px}
@@ -129,6 +130,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 <body>
 
 <div class="header">
+  <a class="back-link" href="../index.html">&#8592;</a>
   <h1>🎌 林之恒 日语学习卡片</h1>
   <div class="sub">2026年2月6日 · 点击翻转+发音 · 左右滑动切换</div>
 </div>
@@ -166,7 +168,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 </div>
 
 <!-- Section 1 -->
-<div class="section" id="sec1">
+<div class="section active" id="sec1">
 <div class="controls">
   <div class="speed-toggle"><button class="speed-btn on" onclick="setSlow(false)">常速</button><button class="speed-btn" onclick="setSlow(true)">慢速</button></div>
   <div class="progress-bar"><div class="progress-fill" id="prog1" style="background:var(--food)"></div></div>
@@ -187,7 +189,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 </div>
 
 <!-- Section 2 -->
-<div class="section" id="sec2">
+<div class="section active" id="sec2">
 <div class="controls">
   <div class="speed-toggle"><button class="speed-btn on" onclick="setSlow(false)">常速</button><button class="speed-btn" onclick="setSlow(true)">慢速</button></div>
   <div class="progress-bar"><div class="progress-fill" id="prog2" style="background:var(--transport)"></div></div>
@@ -204,7 +206,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 </div>
 
 <!-- Section 3 -->
-<div class="section" id="sec3">
+<div class="section active" id="sec3">
 <div class="controls">
   <div class="speed-toggle"><button class="speed-btn on" onclick="setSlow(false)">常速</button><button class="speed-btn" onclick="setSlow(true)">慢速</button></div>
   <div class="progress-bar"><div class="progress-fill" id="prog3" style="background:var(--vocab)"></div></div>
@@ -221,7 +223,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 </div>
 
 <!-- Section 4 -->
-<div class="section" id="sec4">
+<div class="section active" id="sec4">
 <div class="sec-title" style="color:var(--song)"><span class="icon">🎵</span>五、歌曲学习</div>
 <div class="song-card" data-k="aiueo" onclick="playSong(this)">
   <div class="note">🎶</div>
@@ -233,7 +235,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 </div>
 
 <!-- Section 5 -->
-<div class="section" id="sec5">
+<div class="section active" id="sec5">
 <div class="sec-title" style="color:var(--game)"><span class="icon">🎮</span>亲子互动练习</div>
 <div class="practice"><div class="practice-title">🎯 练习1：看图说日语 👆</div>指着卡片上的图标，Alex说日语名。说对了点卡片验证！</div>
 <div class="practice"><div class="practice-title">👂 练习2：听音猜词</div>爸爸/妈妈点卡片播放发音，Alex猜是什么！</div>
@@ -242,6 +244,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 <div id="quizArea" class="quiz-area"><button class="quiz-btn" onclick="startQuiz()">开始小测验！</button></div>
 </div>
 
+<div style="text-align:center;padding:20px 16px"><a href="../index.html" style="display:inline-block;padding:12px 32px;border-radius:24px;background:var(--primary,#2B7A98);color:#fff;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 2px 12px rgba(0,0,0,.1)">&#8592; &#x8FD4;&#x56DE;&#x8BFE;&#x7A0B;&#x5217;&#x8868;</a></div>
 <div class="footer">💡 使用系统日语语音 · 建议在Mac/iPhone上使用效果最佳 · 点击卡片翻转+发音 · 左右滑动切换板块</div>
 
 <script>
@@ -424,13 +427,7 @@ function answer(btn,ck){
   quizQ++;setTimeout(showQuestion,1200);
 }
 
-// Swipe
-var tx=0;
-document.addEventListener('touchstart',function(e){tx=e.changedTouches[0].screenX},{passive:true});
-document.addEventListener('touchend',function(e){
-  var d=tx-e.changedTouches[0].screenX;
-  if(Math.abs(d)>60){var n=activeTab+(d>0?1:-1);if(n>=0&&n<=5)switchTab(n)}
-},{passive:true});
+
 
 // Init: preload voices as fallback
 if('speechSynthesis' in window){
