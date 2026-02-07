@@ -113,6 +113,12 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
   .flip-front .emoji{font-size:34px}
   .flip-front .kanji{font-size:22px}
 }
+
+.flip-front .emoji img{width:42px;height:42px;object-fit:contain}
+.quiz-emoji img{width:64px;height:64px;object-fit:contain}
+.lesson-icon img{width:36px;height:36px;object-fit:contain}
+.song-card .note img{width:48px;height:48px;object-fit:contain}
+@media(max-width:400px){.flip-front .emoji img{width:34px;height:34px}}
 </style>
 </head>
 <body>
@@ -340,5 +346,22 @@ if('speechSynthesis' in window){
 if(quizVocab.length>=4)startQuiz();
 </script>
 
+
+<script>
+var emojiImgMap={"☂️":"../img/umbrella.png","☕":"../img/coffee.png","✈️":"../img/airplane.png","❄️":"../img/snowflake.png","❗":"../img/exclamation.png","⭐":"../img/star.png","🌈":"../img/rainbow.png","🌊":"../img/wave.png","🌸":"../img/sakura.png","🍇":"../img/grapes.png","🍉":"../img/watermelon.png","🍊":"../img/orange.png","🍌":"../img/banana.png","🍎":"../img/apple.png","🍚":"../img/rice.png","🍜":"../img/ramen.png","🍣":"../img/sushi.png","🍰":"../img/cake.png","🍱":"../img/bento.png","🎈":"../img/balloon.png","🎮":"../img/game.png","🎯":"../img/target.png","🎵":"../img/music.png","🎶":"../img/notes.png","🎸":"../img/guitar.png","🎹":"../img/piano.png","🎺":"../img/trumpet.png","🏠":"../img/house.png","🏥":"../img/hospital.png","🏪":"../img/store.png","🏫":"../img/school.png","🐁":"../img/mouse.png","🐃":"../img/buffalo.png","🐄":"../img/cow.png","🐈":"../img/cat2.png","🐊":"../img/crocodile.png","🐋":"../img/whale.png","🐍":"../img/snake.png","🐑":"../img/sheep.png","🐒":"../img/monkey.png","🐓":"../img/rooster.png","🐕":"../img/dog2.png","🐘":"../img/elephant.png","🐛":"../img/bug.png","🐜":"../img/ant.png","🐝":"../img/bee.png","🐟":"../img/fish.png","🐢":"../img/turtle.png","🐥":"../img/chick.png","🐦":"../img/bird.png","🐧":"../img/penguin.png","🐫":"../img/camel.png","🐬":"../img/dolphin.png","🐰":"../img/rabbit.png","🐱":"../img/cat.png","🐳":"../img/whale2.png","🐴":"../img/horse.png","🐵":"../img/monkey_face.png","🐶":"../img/dog.png","🐷":"../img/pig.png","🐸":"../img/frog.png","🐺":"../img/wolf.png","🐻":"../img/bear.png","🐼":"../img/panda.png","🐾":"../img/paw.png","🐿️":"../img/squirrel.png","👅":"../img/tongue.png","👍":"../img/thumbsup.png","💻":"../img/laptop.png","📖":"../img/book.png","📝":"../img/memo.png","🗣️":"../img/speaking.png","😋":"../img/yum.png","🚁":"../img/helicopter.png","🚄":"../img/shinkansen.png","🚌":"../img/bus.png","🚔":"../img/police_car.png","🚕":"../img/taxi.png","🚗":"../img/car.png","🚜":"../img/tractor.png","🚢":"../img/ship.png","🚲":"../img/bicycle.png","🥛":"../img/milk.png","🦀":"../img/crab.png","🦁":"../img/lion.png","🦃":"../img/turkey.png","🦅":"../img/eagle.png","🦆":"../img/duck.png","🦈":"../img/shark.png","🦊":"../img/fox.png","🦋":"../img/butterfly.png","🦌":"../img/deer.png","🦏":"../img/rhino.png","🦐":"../img/shrimp.png","🦑":"../img/squid.png","🦒":"../img/giraffe.png","🦓":"../img/zebra.png","🦔":"../img/hedgehog.png","🦢":"../img/swan.png","🦩":"../img/flamingo.png","🪑":"../img/chair.png","🪼":"../img/jellyfish.png"};
+function replaceEmojiWithImg(){
+  document.querySelectorAll('.emoji,.quiz-emoji,.lesson-icon,.note').forEach(function(el){
+    var t=el.textContent.trim();
+    if(emojiImgMap[t]){
+      el.innerHTML='<img src="'+emojiImgMap[t]+'" alt="'+t+'" style="width:1em;height:1em;display:inline-block;vertical-align:middle">';
+    }
+  });
+}
+replaceEmojiWithImg();
+var _origShowQ=typeof showQuestion==='function'?showQuestion:null;
+if(_origShowQ){
+  showQuestion=function(){_origShowQ.apply(this,arguments);setTimeout(replaceEmojiWithImg,50)};
+}
+</script>
 </body>
 </html>
