@@ -217,6 +217,7 @@ function setRate(r){
   });
 }
 
+var currentAudio=null;
 var bestJPVoice=null;
 function findBestJPVoice(){
   var voices=window.speechSynthesis.getVoices();
@@ -228,7 +229,7 @@ function findBestJPVoice(){
   for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
   return jp[0];
 }
-function speakJP(text,cb){
+function speakJPLocal(text,cb){
   if('speechSynthesis' in window){
     window.speechSynthesis.cancel();
     var u=new SpeechSynthesisUtterance(text);
@@ -239,6 +240,18 @@ function speakJP(text,cb){
     u.onerror=function(){if(cb)cb()};
     window.speechSynthesis.speak(u);
   } else if(cb) cb();
+}
+function speakJP(text,cb){
+  if(currentAudio){currentAudio.pause();currentAudio=null}
+  window.speechSynthesis&&window.speechSynthesis.cancel();
+  try{
+    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
+    currentAudio=a;
+    if(speechRate!==1)a.playbackRate=speechRate;
+    a.onended=function(){currentAudio=null;if(cb)cb()};
+    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
+    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
+  }catch(e){speakJPLocal(text,cb)}
 }
 
 function tapCard(el){
@@ -273,7 +286,7 @@ function playAllTTS(btn){
   next();
 }
 
-function stopAll(){running=false;window.speechSynthesis.cancel();if(curEl){curEl.classList.remove('playing');curEl=null}}
+function stopAll(){running=false;if(currentAudio){currentAudio.pause();currentAudio=null}window.speechSynthesis&&window.speechSynthesis.cancel();if(curEl){curEl.classList.remove('playing');curEl=null}}
 
 function updateProgress(){
   var done=vocabKeys.filter(function(k){return reviewed[k]}).length;
@@ -305,7 +318,7 @@ function answer(btn,ck){
   setTimeout(function(){quizQ++;showQuestion()},1200);
 }
 
-// Init: preload voices
+// Init: preload voices as fallback
 if('speechSynthesis' in window){
   window.speechSynthesis.getVoices();
   window.speechSynthesis.onvoiceschanged=function(){bestJPVoice=findBestJPVoice()};
