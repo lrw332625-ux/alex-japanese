@@ -63,7 +63,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 
 .kana-card{background:var(--card-bg);border-radius:var(--r);padding:16px 12px;text-align:center;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s}
 .kana-card:active{transform:scale(.97)}
-.kana-card.playing{border-color:var(--row-a);box-shadow:0 0 0 2px var(--row-a),var(--shadow)}
+.kana-card.playing{border-color:var(--row-a);box-shadow:0 0 0 3px var(--row-a),0 4px 24px rgba(232,87,58,.25);transition:all .3s ease}
 .kana-card .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:48px;font-weight:900;line-height:1.1}
 .kana-card .sub-kana{font-size:16px;color:var(--text-sub);margin-top:2px}
 .kana-card .romaji{font-size:14px;font-weight:700;color:var(--row-a);margin-top:4px}
@@ -429,22 +429,32 @@ function playRow(rowIdx,btn){
   playingRow=true;
   if(btn){btn.textContent='⏹ 停止';btn.style.opacity='0.7'}
   var i=0;
+  var cards=document.querySelectorAll('#sec'+(rowIdx+1)+' .kana-card');
   function next(){
     if(!playingRow||i>=chars.length){
       playingRow=false;
+      cards.forEach(function(cd){cd.classList.remove('playing');cd.style.transform='';cd.style.zIndex=''});
       if(btn){btn.textContent='🔊 连续播放';btn.style.opacity='1'}
       return;
     }
-    var c=chars[i];i++;
-    // Highlight the card
-    var cards=document.querySelectorAll('#sec'+(rowIdx+1)+' .kana-card');
-    cards.forEach(function(cd){cd.classList.remove('playing')});
-    if(cards[i-1])cards[i-1].classList.add('playing');
+    var c=chars[i];
+    // Reset all cards
+    cards.forEach(function(cd){cd.classList.remove('playing');cd.style.transform='';cd.style.zIndex=''});
+    // Highlight current card: scale up + border
+    if(cards[i]){
+      cards[i].classList.add('playing');
+      cards[i].style.transform='scale(1.08)';
+      cards[i].style.zIndex='10';
+      cards[i].scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+    i++;
     speakJP(c.h,function(){
       setTimeout(function(){
-        if(cards[i-1])cards[i-1].classList.remove('playing');
-        next();
-      },400);
+        // Also play the example word after the kana
+        speakJP(c.word,function(){
+          setTimeout(next,300);
+        });
+      },200);
     });
   }
   next();

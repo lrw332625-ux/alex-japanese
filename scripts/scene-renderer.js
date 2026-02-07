@@ -188,18 +188,32 @@ window.playAllVocab = function(){
   playingAll = true;
   var i = 0;
   var cards = document.querySelectorAll('.flip-card');
+  var btn = document.querySelector('.play-all-btn');
+  if(btn){ btn.textContent = '⏹ 停止播放'; btn.style.opacity = '0.7'; }
 
   function next(){
     if(!playingAll || i >= vocab.length){
       playingAll = false;
-      cards.forEach(function(c){ c.classList.remove('playing'); });
+      cards.forEach(function(c){ c.classList.remove('playing','flipped'); });
+      if(btn){ btn.textContent = '🔊 连续播放全部'; btn.style.opacity = '1'; }
       return;
     }
-    cards.forEach(function(c){ c.classList.remove('playing'); });
-    if(cards[i]) cards[i].classList.add('playing');
+    // Reset previous card
+    cards.forEach(function(c){ c.classList.remove('playing','flipped'); });
+    var card = cards[i];
+    if(card){
+      // Scroll into view
+      card.scrollIntoView({behavior:'smooth',block:'nearest'});
+      // Highlight and flip
+      card.classList.add('playing','flipped');
+    }
     var v = vocab[i]; i++;
     speakJP(v.kana, function(){
-      setTimeout(next, 400);
+      // Keep flipped briefly, then unflip before moving on
+      setTimeout(function(){
+        if(card) card.classList.remove('flipped');
+        setTimeout(next, 300);
+      }, 600);
     });
   }
   next();
