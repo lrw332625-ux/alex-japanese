@@ -1,0 +1,1741 @@
+[
+  {
+    "id": "sent_001",
+    "jp": "ラーメンを食べました",
+    "kana": "らーめんを たべました",
+    "romaji": "ramen o\ntabemashita",
+    "cn": "已经吃了拉面",
+    "sources": [
+      "2025-06-00"
+    ]
+  },
+  {
+    "id": "sent_002",
+    "jp": "ラーメンを食べます",
+    "kana": "らーめんを たべます",
+    "romaji": "ramen o tabemasu",
+    "cn": "要吃拉面",
+    "sources": [
+      "2025-06-00"
+    ]
+  },
+  {
+    "id": "sent_003",
+    "jp": "朝ご飯よ。",
+    "kana": "あさごはんよ",
+    "romaji": "asagohan yo",
+    "cn": "早饭好了哦！／吃早饭啦",
+    "sources": [
+      "2025-06-00"
+    ]
+  },
+  {
+    "id": "sent_004",
+    "jp": "朝ご飯を食べました",
+    "kana": "あさごはんを たべました",
+    "romaji": "asagohan o\ntabemashita",
+    "cn": "已经吃了早饭",
+    "sources": [
+      "2025-06-00"
+    ]
+  },
+  {
+    "id": "sent_005",
+    "jp": "朝ご飯を食べます",
+    "kana": "あさごはんを たべます",
+    "romaji": "asagohan o tabemasu",
+    "cn": "要吃早饭",
+    "sources": [
+      "2025-06-00"
+    ]
+  },
+  {
+    "id": "sent_006",
+    "jp": "黄色の車",
+    "kana": "きいろ の くるま",
+    "romaji": "kiiro no kuruma",
+    "cn": "黄色的车",
+    "sources": [
+      "2025-06-00"
+    ]
+  },
+  {
+    "id": "sent_007",
+    "jp": "りんごジュースを飲みます",
+    "kana": "りんごじゅーすをのみます",
+    "romaji": "ringo jūsu\no nomimasu",
+    "cn": "喝苹果汁",
+    "sources": [
+      "2025-07-00"
+    ]
+  },
+  {
+    "id": "sent_008",
+    "jp": "寿司を食べました",
+    "kana": "すしをたべました",
+    "romaji": "sushi o tabemashita",
+    "cn": "已经吃了寿司",
+    "sources": [
+      "2025-07-00"
+    ]
+  },
+  {
+    "id": "sent_009",
+    "jp": "寿司を食べます",
+    "kana": "すしをたべます",
+    "romaji": "sushi o tabemasu",
+    "cn": "要吃寿司",
+    "sources": [
+      "2025-07-00"
+    ]
+  },
+  {
+    "id": "sent_010",
+    "jp": "寿司屋で",
+    "kana": "すしやで",
+    "romaji": "sushiya de",
+    "cn": "在寿司店",
+    "sources": [
+      "2025-07-00"
+    ]
+  },
+  {
+    "id": "sent_011",
+    "jp": "弟が牛乳を飲みます",
+    "kana": "おとうとがぎゅうにゅうをのみます",
+    "romaji": "otōto\nga gyūnyū o nomimasu",
+    "cn": "弟弟喝牛奶",
+    "sources": [
+      "2025-07-00"
+    ]
+  },
+  {
+    "id": "sent_012",
+    "jp": "黄色い猫が水を飲みます",
+    "kana": "きいろいねこがみずをのみます",
+    "romaji": "kiiroi neko ga mizu o nomimasu",
+    "cn": "黄色的猫喝水",
+    "sources": [
+      "2025-07-00"
+    ]
+  },
+  {
+    "id": "sent_013",
+    "jp": "イカの前は誰ですか？",
+    "kana": "いかのまえはだれですか？",
+    "romaji": "ika\nno mae wa dare desu ka?",
+    "cn": "鱿鱼的前面是谁呢？",
+    "sources": [
+      "2025-08-00"
+    ]
+  },
+  {
+    "id": "sent_014",
+    "jp": "イカの後ろは誰ですか？",
+    "kana": "いかのうしろはだれですか？",
+    "romaji": "Ika no ushiro wa dare desu ka?",
+    "cn": "鱿鱼的后面是谁呢？",
+    "sources": [
+      "2025-08-00"
+    ]
+  },
+  {
+    "id": "sent_015",
+    "jp": "犬の前は誰ですか？",
+    "kana": "いぬのまえはだれですか？",
+    "romaji": "inu no\nmae wa dare desu ka?",
+    "cn": "狗的前面是谁呢？",
+    "sources": [
+      "2025-08-00"
+    ]
+  },
+  {
+    "id": "sent_016",
+    "jp": "私の前は",
+    "kana": "わたしのまえは",
+    "romaji": "watashi no mae wa",
+    "cn": "我的前面",
+    "sources": [
+      "2025-08-00"
+    ]
+  },
+  {
+    "id": "sent_017",
+    "jp": "私の前は誰ですか？",
+    "kana": "わたしのまえはだれですか？",
+    "romaji": "watashi\nno mae wa dare desu ka?",
+    "cn": "我的前面是谁呢？",
+    "sources": [
+      "2025-08-00"
+    ]
+  },
+  {
+    "id": "sent_018",
+    "jp": "部屋にパソコンがあります。",
+    "kana": "へやにぱそこんがあります。",
+    "romaji": "heya ni pasokon ga arimasu",
+    "cn": "房间里有电脑",
+    "sources": [
+      "2025-08-00"
+    ]
+  },
+  {
+    "id": "sent_019",
+    "jp": "お名前は？",
+    "kana": "おなまえは？",
+    "romaji": "o-namae\nwa?",
+    "cn": "您的名字是？",
+    "sources": [
+      "2025-09-00"
+    ]
+  },
+  {
+    "id": "sent_020",
+    "jp": "この道を左に曲がってください。",
+    "kana": "このみちを ひだりに\nまがってください",
+    "romaji": "Kono michi o hidari ni magatte kudasai.",
+    "cn": "请在这条路向左拐",
+    "sources": [
+      "2025-09-00"
+    ]
+  },
+  {
+    "id": "sent_021",
+    "jp": "ぼくは牛です",
+    "kana": "ぼくはうしです",
+    "romaji": "Boku wa ushi desu",
+    "cn": "我是小牛/我是牛",
+    "sources": [
+      "2025-09-00"
+    ]
+  },
+  {
+    "id": "sent_022",
+    "jp": "何ですか",
+    "kana": "なんですか",
+    "romaji": "nan desu ka",
+    "cn": "是什么？/什么呢？",
+    "sources": [
+      "2025-09-00"
+    ]
+  },
+  {
+    "id": "sent_023",
+    "jp": "曲がってください",
+    "kana": "まがってください",
+    "romaji": "magatte kudasai",
+    "cn": "请拐弯 / 请转弯",
+    "sources": [
+      "2025-09-00"
+    ]
+  },
+  {
+    "id": "sent_024",
+    "jp": "请问，你的名字是什么？：すみません、お名前は何ですか？",
+    "kana": "すみません、おなまえはなんですか？",
+    "romaji": "Sumimasen, onamae wa nan desu ka?",
+    "cn": "完整的句子",
+    "sources": [
+      "2025-09-00"
+    ]
+  },
+  {
+    "id": "sent_025",
+    "jp": "おじいちゃんが来ました",
+    "kana": "おじいちゃんがきました",
+    "romaji": "ojiichan ga kimashita",
+    "cn": "爷爷来了（已经来了",
+    "sources": [
+      "2025-10-00"
+    ]
+  },
+  {
+    "id": "sent_026",
+    "jp": "ウルトラマンを見たいです。",
+    "kana": "うるとらまんをみたいです。",
+    "romaji": "Urutoraman o mitai desu.",
+    "cn": "我想看奥特曼",
+    "sources": [
+      "2025-10-00"
+    ]
+  },
+  {
+    "id": "sent_027",
+    "jp": "ヘリコプター",
+    "kana": "へりこぷたー",
+    "romaji": "herikoputā",
+    "cn": "直升飞机",
+    "sources": [
+      "2025-10-00"
+    ]
+  },
+  {
+    "id": "sent_028",
+    "jp": "小鳥ちゃんは飛びます。",
+    "kana": "とりちゃんはとびます",
+    "romaji": "tori-chan wa\ntobimasu.",
+    "cn": "小鸟要飞了",
+    "sources": [
+      "2025-10-00"
+    ]
+  },
+  {
+    "id": "sent_029",
+    "jp": "赤とんぼ",
+    "kana": "あかとんぼ",
+    "romaji": "aka\ntonbo",
+    "cn": "红蜻蜓（红色的蜻蜓",
+    "sources": [
+      "2025-10-00"
+    ]
+  },
+  {
+    "id": "sent_030",
+    "jp": "鳥ちゃんは飛びました。",
+    "kana": "とりちゃんはとびました",
+    "romaji": "tori-chan wa\ntobimashita",
+    "cn": "小鸟飞走了",
+    "sources": [
+      "2025-10-00"
+    ]
+  },
+  {
+    "id": "sent_031",
+    "jp": "ねずみと風船が風で飛びます。",
+    "kana": "ねずみとふうせんがかぜでとびます。",
+    "romaji": "nezumi to fuusen ga kaze de tobimasu",
+    "cn": "因为刮风，老鼠和气球会飞",
+    "sources": [
+      "2025-10-19"
+    ]
+  },
+  {
+    "id": "sent_032",
+    "jp": "タクシー",
+    "kana": "たくしー",
+    "romaji": "/ takushī",
+    "cn": "出租车，计程车",
+    "sources": [
+      "2025-10-24"
+    ]
+  },
+  {
+    "id": "sent_033",
+    "jp": "タクシーに乗りました。",
+    "kana": "たくしーにのりました",
+    "romaji": "takushii ni\nnorimashita",
+    "cn": "我/他/她坐了出租车。／（已经）乘坐了出租车",
+    "sources": [
+      "2025-10-24"
+    ]
+  },
+  {
+    "id": "sent_034",
+    "jp": "タクシーに乗ります。",
+    "kana": "たくしーにのります。",
+    "romaji": "takushii ni\nnorimasu",
+    "cn": "我要坐出租车／我将乘出租车",
+    "sources": [
+      "2025-10-24"
+    ]
+  },
+  {
+    "id": "sent_035",
+    "jp": "乗ります",
+    "kana": "のります",
+    "romaji": "/\nnorimasu",
+    "cn": "乘、上（交通工具）/登上",
+    "sources": [
+      "2025-10-24"
+    ]
+  },
+  {
+    "id": "sent_036",
+    "jp": "男性はタクシーに乗りました。",
+    "kana": "だんせいはたくしーにのりました",
+    "romaji": "dansei wa takushii ni norimashita",
+    "cn": "那位/那个男人坐了出租车。／男人已经坐了出租车",
+    "sources": [
+      "2025-10-24"
+    ]
+  },
+  {
+    "id": "sent_037",
+    "jp": "男性はタクシーに乗ります。",
+    "kana": "だんせいはたくしーにのります",
+    "romaji": "dansei wa takushii ni norimasu",
+    "cn": "那位/那个男人要坐出租车/男人要坐出租车",
+    "sources": [
+      "2025-10-24"
+    ]
+  },
+  {
+    "id": "sent_038",
+    "jp": "ゾウさんは自転車に乗りました。",
+    "kana": "ぞうさんはじてんしゃにのりました。",
+    "romaji": "zou-san wa jitensha ni norimashita.",
+    "cn": "大象先生（ぞうさん）骑了自行车",
+    "sources": [
+      "2025-10-26"
+    ]
+  },
+  {
+    "id": "sent_039",
+    "jp": "ゾウさんは自転車に乗ります。",
+    "kana": "ぞうさんはじてんしゃにのります。",
+    "romaji": "zou-san wa jitensha ni norimasu.",
+    "cn": "的称呼）要骑自行车",
+    "sources": [
+      "2025-10-26"
+    ]
+  },
+  {
+    "id": "sent_040",
+    "jp": "バスで図書館へ行きます。",
+    "kana": "ばすで としょかん へ\nいきます。",
+    "romaji": "basu de toshokan e ikimasu.",
+    "cn": "乘坐公交车去图书馆",
+    "sources": [
+      "2025-10-26"
+    ]
+  },
+  {
+    "id": "sent_041",
+    "jp": "男の子は船に乗りました。",
+    "kana": "おとこのこはふねにのりました。",
+    "romaji": "otokonoko wa fune ni norimashita.",
+    "cn": "男孩坐了船",
+    "sources": [
+      "2025-10-26"
+    ]
+  },
+  {
+    "id": "sent_042",
+    "jp": "男の子は船に乗ります。",
+    "kana": "おとこのこはふねにのります。",
+    "romaji": "otokonoko wa fune ni norimasu.",
+    "cn": "男孩子要坐船",
+    "sources": [
+      "2025-10-26"
+    ]
+  },
+  {
+    "id": "sent_043",
+    "jp": "船に乗りました。",
+    "kana": "ふねにのりました。",
+    "romaji": "fune ni norimashita.",
+    "cn": "已经坐船了",
+    "sources": [
+      "2025-10-26"
+    ]
+  },
+  {
+    "id": "sent_044",
+    "jp": "おの字をなぞりました。",
+    "kana": "おのじをなぞりました",
+    "romaji": "o no ji o nazorimashita.",
+    "cn": "1）我描了\"お\"这个字形/我描摹了\"お\"",
+    "sources": [
+      "2025-11-01"
+    ]
+  },
+  {
+    "id": "sent_045",
+    "jp": "おの字を書きました。",
+    "kana": "おのじをかきました。",
+    "romaji": "o no ji o\nkakimashita.",
+    "cn": "我写了\"お\"",
+    "sources": [
+      "2025-11-01"
+    ]
+  },
+  {
+    "id": "sent_046",
+    "jp": "なぞりました",
+    "kana": "なぞりました",
+    "romaji": "nazorimashita",
+    "cn": "我描了 / 我描摹了（过去式，敬体",
+    "sources": [
+      "2025-11-01"
+    ]
+  },
+  {
+    "id": "sent_047",
+    "jp": "字を書いてみましょう。",
+    "kana": "じをかいてみましょう。",
+    "romaji": "ji o kaite mimashou.",
+    "cn": "来试着写这个字吧（邀请或建议，敬体",
+    "sources": [
+      "2025-11-01"
+    ]
+  },
+  {
+    "id": "sent_048",
+    "jp": "男の子は風邪をひきました",
+    "kana": "おとこのこはかぜをひきました",
+    "romaji": "otokonoko wa kaze o hikimashita",
+    "cn": "1）男孩子感冒了",
+    "sources": [
+      "2025-11-04"
+    ]
+  },
+  {
+    "id": "sent_049",
+    "jp": "絵をなぞってみましょう。",
+    "kana": "えをなぞってみましょう",
+    "romaji": "e o nazotte mimashou",
+    "cn": "2）试着描（这幅）画吧/试着描摹这幅画吧",
+    "sources": [
+      "2025-11-04"
+    ]
+  },
+  {
+    "id": "sent_050",
+    "jp": "線をなぞってみましょう。",
+    "kana": "せんをなぞってみましょう。",
+    "romaji": "sen o nazotte mimashou",
+    "cn": "试着描一下线吧/试着沿着线描一下",
+    "sources": [
+      "2025-11-04"
+    ]
+  },
+  {
+    "id": "sent_051",
+    "jp": "女の子は教室で勉強しています。",
+    "kana": "おんなのこは\nきょうしつで べんきょうしています。",
+    "romaji": "onnanoko wa kyoushitsu de benkyou\nshiteimasu",
+    "cn": "1）女孩子在教室里正在学习",
+    "sources": [
+      "2025-11-06"
+    ]
+  },
+  {
+    "id": "sent_052",
+    "jp": "正在学习。由名词\"勉強",
+    "kana": "べんきょう",
+    "romaji": "/ benkyō",
+    "cn": "shiteimasu",
+    "sources": [
+      "2025-11-06"
+    ]
+  },
+  {
+    "id": "sent_053",
+    "jp": "猫ちゃんは風で飛ばされました。",
+    "kana": "ねこちゃんは かぜで\nとばされました。",
+    "romaji": "neko-chan wa kaze de tobasaremashita",
+    "cn": "2）风把小猫吹飞了",
+    "sources": [
+      "2025-11-06"
+    ]
+  },
+  {
+    "id": "sent_054",
+    "jp": "去了。\"行く",
+    "kana": "いく",
+    "romaji": "/\niku",
+    "cn": "行きました（いきました / ikimashita",
+    "sources": [
+      "2025-11-08"
+    ]
+  },
+  {
+    "id": "sent_055",
+    "jp": "男の子は病院へ行きました。",
+    "kana": "おとこのこは\nびょういんへ いきました",
+    "romaji": "otokonoko wa byōin e ikimashita",
+    "cn": "1）男孩子去了医院",
+    "sources": [
+      "2025-11-08"
+    ]
+  },
+  {
+    "id": "sent_056",
+    "jp": "冬が来ました。",
+    "kana": "ふゆが きました",
+    "romaji": "fuyu ga kimashita",
+    "cn": "1）冬天来了",
+    "sources": [
+      "2025-11-11"
+    ]
+  },
+  {
+    "id": "sent_057",
+    "jp": "寒くなりました。",
+    "kana": "さむく なりました。",
+    "romaji": "samuku narimashita",
+    "cn": "2）变冷了",
+    "sources": [
+      "2025-11-11",
+      "2025-11-13"
+    ]
+  },
+  {
+    "id": "sent_058",
+    "jp": "寒冷地、变冷。是形容词\\\"寒い",
+    "kana": "さむい",
+    "romaji": "/\nsamui",
+    "cn": "寒く（さむく / samuku",
+    "sources": [
+      "2025-11-11"
+    ]
+  },
+  {
+    "id": "sent_059",
+    "jp": "来了、到了。是\\\"来る",
+    "kana": "くる",
+    "romaji": "/\nkuru",
+    "cn": "来ました（きました / kimashita",
+    "sources": [
+      "2025-11-11"
+    ]
+  },
+  {
+    "id": "sent_060",
+    "jp": "女の子が雪遊びをしています。",
+    "kana": "おんなのこが\nゆきあそびを しています。",
+    "romaji": "onnanoko ga yuki asobi o shite imasu",
+    "cn": "4）女孩子正在玩雪",
+    "sources": [
+      "2025-11-13"
+    ]
+  },
+  {
+    "id": "sent_061",
+    "jp": "病院でたくさんの子どもが風邪をひきました。",
+    "kana": "びょういんで\nたくさんの こどもが かぜを ひきました。",
+    "romaji": "byōin de takusan no kodomo ga\nkaze o hikimashita",
+    "cn": "1）在医院里，许多孩子感冒了",
+    "sources": [
+      "2025-11-13"
+    ]
+  },
+  {
+    "id": "sent_062",
+    "jp": "雪が降っています。",
+    "kana": "ゆきが ふっています。",
+    "romaji": "yuki ga futte\nimasu",
+    "cn": "2）正在下雪",
+    "sources": [
+      "2025-11-13"
+    ]
+  },
+  {
+    "id": "sent_063",
+    "jp": "お兄さんはスーパーマンになりました。",
+    "kana": "おにいさんは\nすーぱーまんに なりました。",
+    "romaji": "oniisan wa sūpāman ni narimashita",
+    "cn": "2）哥哥变成了超人",
+    "sources": [
+      "2025-11-16"
+    ]
+  },
+  {
+    "id": "sent_064",
+    "jp": "お兄さんはバナナを食べました。",
+    "kana": "おにいさんは ばななを\nたべました。",
+    "romaji": "oniisan wa banana o tabemashita",
+    "cn": "1）哥哥吃了香蕉",
+    "sources": [
+      "2025-11-16"
+    ]
+  },
+  {
+    "id": "sent_065",
+    "jp": "お兄さんは泥棒を捕まえました。",
+    "kana": "おにいさんは\nどろぼうを つかまえました。",
+    "romaji": "oniisan wa dorobō o tsukamaemashita",
+    "cn": "3）哥哥抓住了小偷",
+    "sources": [
+      "2025-11-16"
+    ]
+  },
+  {
+    "id": "sent_066",
+    "jp": "男の子はスキーをしています。",
+    "kana": "おとこのこは すきーを\nしています。",
+    "romaji": "otokonoko wa sukī o shite imasu",
+    "cn": "2）男孩子正在滑雪",
+    "sources": [
+      "2025-11-18"
+    ]
+  },
+  {
+    "id": "sent_067",
+    "jp": "男の子も雪遊びをしています。",
+    "kana": "おとこのこも\nゆきあそびを しています。",
+    "romaji": "otokonoko mo yuki asobi o shite imasu",
+    "cn": "1）男孩子也正在玩雪",
+    "sources": [
+      "2025-11-18"
+    ]
+  },
+  {
+    "id": "sent_068",
+    "jp": "おとこのこは ねつが あります。",
+    "kana": "おとこのこ は\nねつ が あります。",
+    "romaji": "otokonoko wa netsu ga arimasu.",
+    "cn": "2）男孩子有发烧（有烧",
+    "sources": [
+      "2025-11-19"
+    ]
+  },
+  {
+    "id": "sent_069",
+    "jp": "おとこのこは ねつが でています。",
+    "kana": "おとこのこ は ねつ\nが でています",
+    "romaji": "otokonoko wa netsu ga deteimasu.",
+    "cn": "4）男孩子发烧了",
+    "sources": [
+      "2025-11-19"
+    ]
+  },
+  {
+    "id": "sent_070",
+    "jp": "うさぎちゃんは にくが みえました。",
+    "kana": "うさぎちゃん は\nにく が みえました。",
+    "romaji": "usagi-chan wa niku ga miemashita.",
+    "cn": "2）小兔子看到了肉",
+    "sources": [
+      "2025-11-23"
+    ]
+  },
+  {
+    "id": "sent_071",
+    "jp": "うさぎちゃんはかわいいです。",
+    "kana": "うさぎちゃんは\nかわいいです。",
+    "romaji": "usagi-chan wa kawaii desu",
+    "cn": "1）兔子很可爱",
+    "sources": [
+      "2025-11-25"
+    ]
+  },
+  {
+    "id": "sent_072",
+    "jp": "うさぎちゃんはこわくないです。",
+    "kana": "うさぎちゃんは\nこわくないです。",
+    "romaji": "usagi-chan wa kowakunai desu",
+    "cn": "5）兔子不可怕",
+    "sources": [
+      "2025-11-25"
+    ]
+  },
+  {
+    "id": "sent_073",
+    "jp": "おおかみはこわいです。",
+    "kana": "おおかみは こわいです。",
+    "romaji": "ōkami wa\nkowai desu",
+    "cn": "4）狼很可怕",
+    "sources": [
+      "2025-11-25"
+    ]
+  },
+  {
+    "id": "sent_074",
+    "jp": "ねこちゃんはかわいくない。",
+    "kana": "ねこちゃんは かわいくない",
+    "romaji": "neko-chan wa kawaikunai",
+    "cn": "2）猫不可爱",
+    "sources": [
+      "2025-11-25"
+    ]
+  },
+  {
+    "id": "sent_075",
+    "jp": "肉おいしくない。",
+    "kana": "にく おいしくない",
+    "romaji": "niku\noishikunai.",
+    "cn": "口语里也常说得更短一些",
+    "sources": [
+      "2025-11-25"
+    ]
+  },
+  {
+    "id": "sent_076",
+    "jp": "肉はおいしくないです。",
+    "kana": "にくは おいしくないです。",
+    "romaji": "niku wa\noishikunai desu",
+    "cn": "3）肉不好吃",
+    "sources": [
+      "2025-11-25"
+    ]
+  },
+  {
+    "id": "sent_077",
+    "jp": "りすちゃんはねむいです。",
+    "kana": "りすちゃんは ねむいです。",
+    "romaji": "risu-chan wa nemui desu",
+    "cn": "3）松鼠很困",
+    "sources": [
+      "2025-11-27"
+    ]
+  },
+  {
+    "id": "sent_078",
+    "jp": "りすちゃんは眠くないです。",
+    "kana": "りすちゃんは ねむくないです。",
+    "romaji": "risu-chan wa nemukunai desu",
+    "cn": "4）松鼠不困",
+    "sources": [
+      "2025-11-27"
+    ]
+  },
+  {
+    "id": "sent_079",
+    "jp": "新年快乐：あけましておめでとうございます。",
+    "kana": "あけまして おめでとうございます。",
+    "romaji": "akemashite omedetou gozaimasu",
+    "cn": "对长辈、正式场合（更礼貌",
+    "sources": [
+      "2025-11-27"
+    ]
+  },
+  {
+    "id": "sent_080",
+    "jp": "来自动词 \\*\\*明ける / 開ける",
+    "kana": "あける",
+    "romaji": "/\nakeru",
+    "cn": "あけまして（akemashite",
+    "sources": [
+      "2025-11-27"
+    ]
+  },
+  {
+    "id": "sent_081",
+    "jp": "部屋は汚いです。",
+    "kana": "へやは きたないです。",
+    "romaji": "heya wa kitanai\ndesu",
+    "cn": "1）房间很脏",
+    "sources": [
+      "2025-11-27"
+    ]
+  },
+  {
+    "id": "sent_082",
+    "jp": "部屋は汚くないです。",
+    "kana": "へやは きたなくないです。",
+    "romaji": "heya wa\nkitanakunai desu",
+    "cn": "2）房间不脏",
+    "sources": [
+      "2025-11-27"
+    ]
+  },
+  {
+    "id": "sent_083",
+    "jp": "今日はうさぎちゃんの誕生日です。",
+    "kana": "きょうは\nうさぎちゃんの たんじょうびです。",
+    "romaji": "kyou wa usagi-chan no tanjoubi desu",
+    "cn": "4）今天是兔兔的生日",
+    "sources": [
+      "2025-11-30"
+    ]
+  },
+  {
+    "id": "sent_084",
+    "jp": "うさぎちゃんはアイスクリームを買いました。",
+    "kana": "うさぎちゃんは\nあいすくりーむを かいました。",
+    "romaji": "usagi-chan wa aisukuriimu o kaimashita",
+    "cn": "1）兔兔买了冰激凌",
+    "sources": [
+      "2025-12-02"
+    ]
+  },
+  {
+    "id": "sent_085",
+    "jp": "うさぎちゃんは柿をとりました。",
+    "kana": "うさぎちゃんは かきを\nとりました。",
+    "romaji": "usagi-chan wa kaki o torimashita",
+    "cn": "3）兔兔摘了柿子",
+    "sources": [
+      "2025-12-02"
+    ]
+  },
+  {
+    "id": "sent_086",
+    "jp": "来自动词 行く",
+    "kana": "いく",
+    "romaji": "/ iku",
+    "cn": "いきます（ikimasu",
+    "sources": [
+      "2025-12-02"
+    ]
+  },
+  {
+    "id": "sent_087",
+    "jp": "来自动词：買う",
+    "kana": "かう",
+    "romaji": "/ kau",
+    "cn": "買いました（かいました / kaimashita",
+    "sources": [
+      "2025-12-02"
+    ]
+  },
+  {
+    "id": "sent_088",
+    "jp": "うまちゃんは プレゼントを 買いました。",
+    "kana": "うまちゃんは\nぷれぜんとを かいました。",
+    "romaji": "uma-chan wa purezento o kaimashita",
+    "cn": "3）小马买了礼物",
+    "sources": [
+      "2025-12-04"
+    ]
+  },
+  {
+    "id": "sent_089",
+    "jp": "ねこちゃんは ぶどうを とりました。",
+    "kana": "ねこちゃんは\nぶどうを とりました。",
+    "romaji": "neko-chan wa budou o torimashita",
+    "cn": "2）小猫摘了葡萄",
+    "sources": [
+      "2025-12-04"
+    ]
+  },
+  {
+    "id": "sent_090",
+    "jp": "おにぎりが食べたいです。",
+    "kana": "おにぎりが たべたいです。",
+    "romaji": "onigiri ga tabetai desu",
+    "cn": "5）想吃饭团",
+    "sources": [
+      "2025-12-07"
+    ]
+  },
+  {
+    "id": "sent_091",
+    "jp": "お父さんはスイカを取りました。",
+    "kana": "おとうさんは すいかを\nとりました。",
+    "romaji": "otousan wa suika o torimashita",
+    "cn": "3）爸爸摘了西瓜",
+    "sources": [
+      "2025-12-07"
+    ]
+  },
+  {
+    "id": "sent_092",
+    "jp": "今日は暑いですね。",
+    "kana": "きょうは あついですね。",
+    "romaji": "Kyou wa atsui\ndesu ne.",
+    "cn": "今天好热啊",
+    "sources": [
+      "2025-12-07"
+    ]
+  },
+  {
+    "id": "sent_093",
+    "jp": "暑いですね。",
+    "kana": "あついですね。",
+    "romaji": "atsui desu ne",
+    "cn": "1）好热啊",
+    "sources": [
+      "2025-12-07"
+    ]
+  },
+  {
+    "id": "sent_094",
+    "jp": "来自动词：食べる",
+    "kana": "たべる",
+    "romaji": "/ taberu",
+    "cn": "たべたい（tabetai",
+    "sources": [
+      "2025-12-07"
+    ]
+  },
+  {
+    "id": "sent_095",
+    "jp": "私はスイカが食べたいです。",
+    "kana": "わたしは すいかが\nたべたいです",
+    "romaji": "watashi wa suika ga tabetai desu",
+    "cn": "2）我想吃西瓜",
+    "sources": [
+      "2025-12-07"
+    ]
+  },
+  {
+    "id": "sent_096",
+    "jp": "いぬちゃんのお母さんは海苔を買いました。",
+    "kana": "いぬちゃん\nの おかあさん は のり を かいました。",
+    "romaji": "inu-chan no okaasan wa nori o\nkaimashita",
+    "cn": "小狗的妈妈买了海苔",
+    "sources": [
+      "2025-12-09"
+    ]
+  },
+  {
+    "id": "sent_097",
+    "jp": "いぬちゃんは家で勉強しています。",
+    "kana": "いぬちゃん は\nいえ で べんきょう しています。",
+    "romaji": "inu-chan wa ie de benkyou shiteimasu",
+    "cn": "4）小狗正在家里学习",
+    "sources": [
+      "2025-12-09"
+    ]
+  },
+  {
+    "id": "sent_098",
+    "jp": "たぬきちゃんは家に帰りました。",
+    "kana": "たぬきちゃん は\nいえ に かえりました。",
+    "romaji": "tanuki-chan wa ie ni kaerimashita",
+    "cn": "2）小浣熊已经回家了",
+    "sources": [
+      "2025-12-09"
+    ]
+  },
+  {
+    "id": "sent_099",
+    "jp": "动词「取る",
+    "kana": "とる",
+    "romaji": "/ toru",
+    "cn": "とりました（torimashita",
+    "sources": [
+      "2025-12-09"
+    ]
+  },
+  {
+    "id": "sent_100",
+    "jp": "动词：\\*\\*帰る",
+    "kana": "かえる",
+    "romaji": "/ kaeru",
+    "cn": "かえります（kaerimasu",
+    "sources": [
+      "2025-12-09"
+    ]
+  },
+  {
+    "id": "sent_101",
+    "jp": "狐ちゃんは家に帰ります。",
+    "kana": "きつねちゃん は いえ に\nかえります。",
+    "romaji": "kitsune-chan wa ie ni kaerimasu",
+    "cn": "1）狐狸要回家",
+    "sources": [
+      "2025-12-09"
+    ]
+  },
+  {
+    "id": "sent_102",
+    "jp": "おじさん",
+    "kana": "おじさん",
+    "romaji": "ojisan",
+    "cn": "叔叔 / 大叔 / 中年男人",
+    "sources": [
+      "2025-12-11"
+    ]
+  },
+  {
+    "id": "sent_103",
+    "jp": "动词「見る",
+    "kana": "みる",
+    "romaji": "/ miru",
+    "cn": "みている（miteiru",
+    "sources": [
+      "2025-12-11"
+    ]
+  },
+  {
+    "id": "sent_104",
+    "jp": "見ているのは誰ですか？",
+    "kana": "みている の は だれ です か？",
+    "romaji": "miteiru\nno wa dare desu ka?",
+    "cn": "完整说法",
+    "sources": [
+      "2025-12-11"
+    ]
+  },
+  {
+    "id": "sent_105",
+    "jp": "見てる、見てる、ねこ見てる。",
+    "kana": "みてる、みてる、ねこ\nみてる。",
+    "romaji": "miteru, miteru, neko miteru",
+    "cn": "正在看，正在看，小猫正在看",
+    "sources": [
+      "2025-12-11",
+      "2026-01-09"
+    ]
+  },
+  {
+    "id": "sent_106",
+    "jp": "見てる、見てる、ねずみ見てる。",
+    "kana": "みてる、みてる、ねずみ\nみてる。",
+    "romaji": "miteru, miteru, nezumi miteru",
+    "cn": "正在看，正在看，小老鼠正在看",
+    "sources": [
+      "2025-12-11",
+      "2026-01-09"
+    ]
+  },
+  {
+    "id": "sent_107",
+    "jp": "見てる、見てる、狼見てる。",
+    "kana": "みてる、みてる、おおかみ みてる。",
+    "romaji": "miteru, miteru, ookami miteru",
+    "cn": "正在看，正在看，狼正在看",
+    "sources": [
+      "2025-12-11",
+      "2026-01-09"
+    ]
+  },
+  {
+    "id": "sent_108",
+    "jp": "かわいい魚。",
+    "kana": "かわいい さかな。",
+    "romaji": "kawaii sakana",
+    "cn": "可爱的鱼",
+    "sources": [
+      "2025-12-14"
+    ]
+  },
+  {
+    "id": "sent_109",
+    "jp": "けろけろ、かえる。",
+    "kana": "けろけろ、かえる。",
+    "romaji": "kero kero, kaeru",
+    "cn": "呱呱，青蛙",
+    "sources": [
+      "2025-12-14"
+    ]
+  },
+  {
+    "id": "sent_110",
+    "jp": "ぴよぴよ、ひよこ。",
+    "kana": "ぴよぴよ、ひよこ。",
+    "romaji": "piyo piyo, hiyoko",
+    "cn": "叽叽，小鸡",
+    "sources": [
+      "2025-12-14"
+    ]
+  },
+  {
+    "id": "sent_111",
+    "jp": "わ、ねこだ。",
+    "kana": "わ、ねこだ。",
+    "romaji": "wa, neko da",
+    "cn": "哇，是猫",
+    "sources": [
+      "2025-12-14"
+    ]
+  },
+  {
+    "id": "sent_112",
+    "jp": "ガーガー、アヒルよ。",
+    "kana": "がーがー、あひる よ。",
+    "romaji": "gā gā, ahiru\nyo",
+    "cn": "嘎嘎，是鸭子",
+    "sources": [
+      "2025-12-14"
+    ]
+  },
+  {
+    "id": "sent_113",
+    "jp": "ワンワン、犬です。",
+    "kana": "わんわん、いぬです。",
+    "romaji": "wan wan, inu\ndesu",
+    "cn": "汪汪，是小狗",
+    "sources": [
+      "2025-12-14"
+    ]
+  },
+  {
+    "id": "sent_114",
+    "jp": "ありちゃんは バスで おでかけです",
+    "kana": "ありちゃんは\nばすで おでかけです",
+    "romaji": "ari chan wa basu de odekake desu",
+    "cn": "蚂蚁乘坐公交车出门",
+    "sources": [
+      "2025-12-16",
+      "2025-12-18",
+      "2025-12-21",
+      "2026-01-11"
+    ]
+  },
+  {
+    "id": "sent_115",
+    "jp": "ありの おでかけ",
+    "kana": "ありの おでかけ",
+    "romaji": "ari no odekake",
+    "cn": "蚂蚁出门",
+    "sources": [
+      "2025-12-16",
+      "2025-12-18",
+      "2025-12-21",
+      "2026-01-11"
+    ]
+  },
+  {
+    "id": "sent_116",
+    "jp": "ころころ りんご",
+    "kana": "ころころ りんご",
+    "romaji": "koro-koro ringo",
+    "cn": "咕噜咕噜的苹果/滚来滚去的苹果",
+    "sources": [
+      "2025-12-18",
+      "2025-12-23"
+    ]
+  },
+  {
+    "id": "sent_117",
+    "jp": "ガタガタ　ゴトゴト",
+    "kana": "がたがた　ごとごと",
+    "romaji": "gata-gata goto-goto",
+    "cn": "咯噔咯噔、咕咚咕咚（公交车颠簸行驶的声音",
+    "sources": [
+      "2025-12-18",
+      "2025-12-21",
+      "2026-01-11"
+    ]
+  },
+  {
+    "id": "sent_118",
+    "jp": "ラクダが 唐辛子を 食べました。",
+    "kana": "らくだが とうがらしを\nたべました",
+    "romaji": "rakuda ga tōgarashi o tabemashita",
+    "cn": "骆驼吃了辣椒",
+    "sources": [
+      "2025-12-18"
+    ]
+  },
+  {
+    "id": "sent_119",
+    "jp": "山が見えてきました。",
+    "kana": "やまが\nみえてきました",
+    "romaji": "yama ga miete kimashita",
+    "cn": "山渐渐看见了/山越来越近、越来越清楚了",
+    "sources": [
+      "2025-12-18",
+      "2025-12-21",
+      "2026-01-11"
+    ]
+  },
+  {
+    "id": "sent_120",
+    "jp": "ここは動物園です。",
+    "kana": "ここ は どうぶつえん です",
+    "romaji": "koko wa\ndōbutsuen desu",
+    "cn": "这里是动物园",
+    "sources": [
+      "2025-12-21",
+      "2026-01-11"
+    ]
+  },
+  {
+    "id": "sent_121",
+    "jp": "森が見えてきました。",
+    "kana": "もり が みえて きました",
+    "romaji": "mori ga miete kimashita",
+    "cn": "森林渐渐出现在眼前了",
+    "sources": [
+      "2025-12-21",
+      "2026-01-11"
+    ]
+  },
+  {
+    "id": "sent_122",
+    "jp": "しるしる バナナ",
+    "kana": "しるしる ばなな",
+    "romaji": "shiru shiru banana",
+    "cn": "滑滑的香蕉",
+    "sources": [
+      "2025-12-23"
+    ]
+  },
+  {
+    "id": "sent_123",
+    "jp": "スペシャルな ケーキ",
+    "kana": "すぺしゃるな けーき",
+    "romaji": "supesharu na\nkēki",
+    "cn": "特别的蛋糕",
+    "sources": [
+      "2025-12-23"
+    ]
+  },
+  {
+    "id": "sent_124",
+    "jp": "ママ、くだものって おいしいね。",
+    "kana": "まま、くだものって\nおいしいね。",
+    "romaji": "mama, kudamono tte oishii ne",
+    "cn": "妈妈，水果真好吃",
+    "sources": [
+      "2025-12-23"
+    ]
+  },
+  {
+    "id": "sent_125",
+    "jp": "ママが 作った。",
+    "kana": "ままが つくった",
+    "romaji": "mama ga tsukutta",
+    "cn": "妈妈做的",
+    "sources": [
+      "2025-12-23"
+    ]
+  },
+  {
+    "id": "sent_126",
+    "jp": "うまさん、ぶぶっと おならして。",
+    "kana": "うまさん、ぶぶっと\nおならして。",
+    "romaji": "uma-san, bubutto onara shite",
+    "cn": "马噗噗地放屁",
+    "sources": [
+      "2025-12-28"
+    ]
+  },
+  {
+    "id": "sent_127",
+    "jp": "うんち、いち、に、さん",
+    "kana": "うんち、いち、に、さん",
+    "romaji": "unchi, ichi, ni, san",
+    "cn": "便便，一个，两个，三个",
+    "sources": [
+      "2025-12-28"
+    ]
+  },
+  {
+    "id": "sent_128",
+    "jp": "こぶた、ごこ うんちを した。",
+    "kana": "こぶた、ごこ うんちを\nした。",
+    "romaji": "kobuta, goko unchi o shita",
+    "cn": "小猪拉了五个便便",
+    "sources": [
+      "2025-12-28"
+    ]
+  },
+  {
+    "id": "sent_129",
+    "jp": "にわとり、よんこ うんちを した。",
+    "kana": "にわとり、よんこ\nうんちを した。",
+    "romaji": "niwa tori, yonko unchi o shita",
+    "cn": "鸡拉了四个便便",
+    "sources": [
+      "2025-12-28"
+    ]
+  },
+  {
+    "id": "sent_130",
+    "jp": "ひつじ、ろっこ うんちを した。",
+    "kana": "ひつじ、ろっこ\nうんちを した。",
+    "romaji": "hitsuji, rokko unchi o shita",
+    "cn": "羊拉了六个便便",
+    "sources": [
+      "2025-12-28"
+    ]
+  },
+  {
+    "id": "sent_131",
+    "jp": "リスちゃん、にこ うんちを した。",
+    "kana": "りすちゃん、にこ\nうんちを した。",
+    "romaji": "risa chan, niko unchi o shita",
+    "cn": "松鼠拉了两个便便",
+    "sources": [
+      "2025-12-28"
+    ]
+  },
+  {
+    "id": "sent_132",
+    "jp": "ぼくの おとうさん",
+    "kana": "ぼくの おとうさん",
+    "romaji": "boku no otōsan",
+    "cn": "我的爸爸",
+    "sources": [
+      "2026-01-04"
+    ]
+  },
+  {
+    "id": "sent_133",
+    "jp": "ぼくの おとうさんは かおが あかいです。",
+    "kana": "ぼくの\nおとうさんは かおが あかいです。",
+    "romaji": "boku no otōsan wa kao ga akai desu",
+    "cn": "我的爸爸脸是红色的",
+    "sources": [
+      "2026-01-04"
+    ]
+  },
+  {
+    "id": "sent_134",
+    "jp": "ぼくの おとうさんは これ です。",
+    "kana": "ぼくの おとうさんは\nこれ です。",
+    "romaji": "boku no otōsan wa kore desu",
+    "cn": "这是我的爸爸",
+    "sources": [
+      "2026-01-04"
+    ]
+  },
+  {
+    "id": "sent_135",
+    "jp": "これです。",
+    "kana": "これです。",
+    "romaji": "kore desu",
+    "cn": "是这个（指着某样东西时",
+    "sources": [
+      "2026-01-06"
+    ]
+  },
+  {
+    "id": "sent_136",
+    "jp": "僕の お父さんは 羽根が 白いです。",
+    "kana": "ぼくの\nおとうさんは はねが しろいです。",
+    "romaji": "boku no otōsan wa hane ga shiroi desu",
+    "cn": "我的爸爸的翅膀是白色的",
+    "sources": [
+      "2026-01-06"
+    ]
+  },
+  {
+    "id": "sent_137",
+    "jp": "僕の お父さんは 首が 長いです。",
+    "kana": "ぼくの おとうさんは\nくびが ながいです。",
+    "romaji": "boku no otōsan wa kubi ga nagai desu",
+    "cn": "我的爸爸脖子很长",
+    "sources": [
+      "2026-01-06"
+    ]
+  },
+  {
+    "id": "sent_138",
+    "jp": "見てる、見てる、烏見てる。",
+    "kana": "みてる、みてる、からす\nみてる。",
+    "romaji": "miteru, miteru, karasu miteru",
+    "cn": "正在看，正在看，乌鸦正在看",
+    "sources": [
+      "2026-01-09"
+    ]
+  },
+  {
+    "id": "sent_139",
+    "jp": "見てる、見てる、猿見てる。",
+    "kana": "みてる、みてる、さる\nみてる。",
+    "romaji": "miteru, miteru, saru miteru",
+    "cn": "正在看，正在看，猴子正在看",
+    "sources": [
+      "2026-01-09"
+    ]
+  },
+  {
+    "id": "sent_140",
+    "jp": "見てる、見てる、虎見てる。",
+    "kana": "みてる、みてる、とら\nみてる。",
+    "romaji": "miteru, miteru, tora miteru",
+    "cn": "正在看，正在看，老虎正在看",
+    "sources": [
+      "2026-01-09"
+    ]
+  },
+  {
+    "id": "sent_141",
+    "jp": "鳥が飛んでいます。",
+    "kana": "とりが とんでいます。",
+    "romaji": "tori ga tonde\nimasu",
+    "cn": "小鸟正在飞",
+    "sources": [
+      "2026-01-13"
+    ]
+  },
+  {
+    "id": "sent_142",
+    "jp": "鳥は白い実を食べました。白くなりました。",
+    "kana": "とりは\nしろい みを たべました。しろく なりました。",
+    "romaji": "tori wa shiroi mi o\ntabemashita. shiroku narimashita",
+    "cn": "小鸟吃了白色的果子（白色的果实），变白了",
+    "sources": [
+      "2026-01-13"
+    ]
+  },
+  {
+    "id": "sent_143",
+    "jp": "鳥は赤い実を食べました。赤くなりました。",
+    "kana": "とりは\nあかい みを たべました。あかく なりました。",
+    "romaji": "tori wa akai mi o\ntabemashita. akaku narimashita",
+    "cn": "小鸟吃了红色的果子（红色的果实），变红了",
+    "sources": [
+      "2026-01-13"
+    ]
+  },
+  {
+    "id": "sent_144",
+    "jp": "鳥は青い実を食べました。青くなりました。",
+    "kana": "とりは\nあおい みを たべました。あおく なりました。",
+    "romaji": "tori wa aoi mi o\ntabemashita. aoku narimashita",
+    "cn": "小鸟吃了蓝色的果子（蓝色的果实），变蓝了",
+    "sources": [
+      "2026-01-13"
+    ]
+  },
+  {
+    "id": "sent_145",
+    "jp": "黒い鳥が飛びました。",
+    "kana": "くろい とりが とびました。",
+    "romaji": "kuroi tori ga tobimashita",
+    "cn": "黑色的小鸟已经飞了",
+    "sources": [
+      "2026-01-13"
+    ]
+  },
+  {
+    "id": "sent_146",
+    "jp": "黒い鳥が飛びます。",
+    "kana": "くろい とりが とびます。",
+    "romaji": "kuroi\ntori ga tobimasu",
+    "cn": "黑色的小鸟要飞",
+    "sources": [
+      "2026-01-13"
+    ]
+  },
+  {
+    "id": "sent_147",
+    "jp": "あれは何ですか。 あれは猫です。",
+    "kana": "あれは\nなんですか。 あれは ねこ です。",
+    "romaji": "are wa nan desu ka? are wa neko desu.",
+    "cn": "9）那是什么呢？那是猫",
+    "sources": [
+      "2026-01-15",
+      "2026-01-18"
+    ]
+  },
+  {
+    "id": "sent_148",
+    "jp": "これは何ですか。 それは猫です。",
+    "kana": "これは\nなんですか。 それは ねこ です。",
+    "romaji": "kore wa nan desu ka? sore wa neko\ndesu.",
+    "cn": "8）这是什么呢？那是猫",
+    "sources": [
+      "2026-01-15",
+      "2026-01-18"
+    ]
+  },
+  {
+    "id": "sent_149",
+    "jp": "さくら は きれい です ねい。",
+    "kana": "さくら は きれい です\nねい。",
+    "romaji": "sakura wa kileii desu nei",
+    "cn": "1）樱花好漂亮",
+    "sources": [
+      "2026-01-15"
+    ]
+  },
+  {
+    "id": "sent_150",
+    "jp": "それはバナナです。",
+    "kana": "それは ばなな です。",
+    "romaji": "sore wa banana\ndesu",
+    "cn": "5）那是香蕉",
+    "sources": [
+      "2026-01-15"
+    ]
+  },
+  {
+    "id": "sent_151",
+    "jp": "万里の長城に着きました。",
+    "kana": "ばんり の ちょうじょう に\nつきました。",
+    "romaji": "banri no chōjō ni tsukimashita",
+    "cn": "3）到达了长城",
+    "sources": [
+      "2026-01-15"
+    ]
+  },
+  {
+    "id": "sent_152",
+    "jp": "寿司屋に着きました。",
+    "kana": "すしや に つきました。",
+    "romaji": "sushiya ni\ntsukimashita",
+    "cn": "2）到寿司店了",
+    "sources": [
+      "2026-01-15"
+    ]
+  },
+  {
+    "id": "sent_153",
+    "jp": "お寿司を食べます。",
+    "kana": "おすし を たべます。",
+    "romaji": "o-sushi o\ntabemasu",
+    "cn": "3）要吃寿司",
+    "sources": [
+      "2026-01-18"
+    ]
+  },
+  {
+    "id": "sent_154",
+    "jp": "ここは警察署です。",
+    "kana": "ここは けいさつしょ です。",
+    "romaji": "koko\nwa keisatsusho desu.",
+    "cn": "1）这里是警察局",
+    "sources": [
+      "2026-01-18"
+    ]
+  },
+  {
+    "id": "sent_155",
+    "jp": "それは何ですか。これは猫です。",
+    "kana": "それは\nなんですか。これは ねこ です。",
+    "romaji": "sore wa nan desu ka? kore wa neko desu.",
+    "cn": "那个是什么？这是猫",
+    "sources": [
+      "2026-01-18"
+    ]
+  },
+  {
+    "id": "sent_156",
+    "jp": "警察署に行きます。",
+    "kana": "けいさつしょ に いきます。",
+    "romaji": "keisatsusho ni ikimasu.",
+    "cn": "2）去警察局",
+    "sources": [
+      "2026-01-18"
+    ]
+  },
+  {
+    "id": "sent_157",
+    "jp": "これは何ですか。それは菊です。",
+    "kana": "これは\nなんですか。それは きく です。",
+    "romaji": "kore wa nan desu ka? sore wa kiku desu.",
+    "cn": "2）这是什么？那个是菊花",
+    "sources": [
+      "2026-01-20"
+    ]
+  },
+  {
+    "id": "sent_158",
+    "jp": "いいえ、そうじゃありません。鳥です。",
+    "kana": "いいえ、そうじゃありません。とり\nです。",
+    "romaji": "iie, sojia arimasen, tori desu.",
+    "cn": "不是的，是鸟",
+    "sources": [
+      "2026-01-22"
+    ]
+  },
+  {
+    "id": "sent_159",
+    "jp": "はい、そうです。",
+    "kana": "はい、そうです。",
+    "romaji": "hai, sō\ndesu.",
+    "cn": "是的。/ 对的",
+    "sources": [
+      "2026-01-22"
+    ]
+  },
+  {
+    "id": "sent_160",
+    "jp": "はい、アリです。",
+    "kana": "はい、あり です。",
+    "romaji": "hai, ari\ndesu.",
+    "cn": "是的，是蚂蚁",
+    "sources": [
+      "2026-01-22"
+    ]
+  },
+  {
+    "id": "sent_161",
+    "jp": "はい、鳥です。",
+    "kana": "はい、とり です。",
+    "romaji": "hai, tori\ndesu.",
+    "cn": "是的，是鸟",
+    "sources": [
+      "2026-01-22"
+    ]
+  },
+  {
+    "id": "sent_162",
+    "jp": "そうですね、かわいいですね。",
+    "kana": "そうですね、かわいいですね",
+    "romaji": "sō desu ne, kawaii desu ne.",
+    "cn": "3）是啊，真可爱呢",
+    "sources": [
+      "2026-01-25"
+    ]
+  },
+  {
+    "id": "sent_163",
+    "jp": "それはペンギンです。",
+    "kana": "それは ぺんぎん です",
+    "romaji": "sore wa\npengin desu",
+    "cn": "那是企鹅",
+    "sources": [
+      "2026-01-25"
+    ]
+  },
+  {
+    "id": "sent_164",
+    "jp": "ペンギンさんはかわいいですね。",
+    "kana": "ぺんぎんさんは\nかわいい ですね。",
+    "romaji": "pengin-san wa kawaii desu ne",
+    "cn": "2）企鹅好可爱啊",
+    "sources": [
+      "2026-01-25"
+    ]
+  },
+  {
+    "id": "sent_165",
+    "jp": "これはカエルです",
+    "kana": "これは かえる です。",
+    "romaji": "kore wa kaeru\ndesu.",
+    "cn": "1）这是青蛙",
+    "sources": [
+      "2026-01-26"
+    ]
+  },
+  {
+    "id": "sent_166",
+    "jp": "これはカバです。",
+    "kana": "これは かば です。",
+    "romaji": "kore wa kaba desu.",
+    "cn": "2）这是河马",
+    "sources": [
+      "2026-01-26"
+    ]
+  },
+  {
+    "id": "sent_167",
+    "jp": "そうですね、カエルちゃんは大きいですね。",
+    "kana": "そうですね、かえるちゃんは\nおおきい ですね。",
+    "romaji": "sou desu ne, kaeru-chan wa ookii desu ne.",
+    "cn": "是啊，青蛙好大啊",
+    "sources": [
+      "2026-01-26"
+    ]
+  },
+  {
+    "id": "sent_168",
+    "jp": "そうですね、大きいですね。",
+    "kana": "そうですね、おおきいですね。",
+    "romaji": "sou desu ne, ookii desu ne.",
+    "cn": "是啊，真大呢",
+    "sources": [
+      "2026-01-26"
+    ]
+  },
+  {
+    "id": "sent_169",
+    "jp": "カエルちゃんは大きいですね。",
+    "kana": "かえるちゃんは おおきい\nですね。",
+    "romaji": "kaeru-chan wa ookii desu ne.",
+    "cn": "青蛙好大啊",
+    "sources": [
+      "2026-01-26"
+    ]
+  },
+  {
+    "id": "sent_170",
+    "jp": "カバちゃんの口は大きいですね。",
+    "kana": "かばちゃんの\nくちは おおきい ですね。",
+    "romaji": "kaba-chan no kuchi wa ookii desu ne.",
+    "cn": "河马（宝宝/小河马）的嘴巴好大呢",
+    "sources": [
+      "2026-01-26"
+    ]
+  },
+  {
+    "id": "sent_171",
+    "jp": "日本料理は本当においしいですね。",
+    "kana": "にほんりょうりは ほんとうに おいしいですね。",
+    "romaji": "nihon ryouri wa hontou ni oishii desu ne.",
+    "cn": "日本料理真的好好吃啊。",
+    "sources": [
+      "2026-02-06"
+    ]
+  },
+  {
+    "id": "sent_172",
+    "jp": "美味しいですね！",
+    "kana": "おいしいですね！",
+    "romaji": "oishii desu ne!",
+    "cn": "好好吃啊！",
+    "sources": [
+      "2026-02-06"
+    ]
+  }
+]

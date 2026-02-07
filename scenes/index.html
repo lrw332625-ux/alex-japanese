@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>场景学习 - Alex 日语学习</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=M+PLUS+Rounded+1c:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F0E8;--card:#FFFEF9;--text:#2D2A24;--sub:#7A7468;--accent:#2B7A98}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.header{padding:32px 20px 24px;text-align:center;background:linear-gradient(135deg,#2B7A98,#1E5F7A);color:#fff;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.08),transparent 50%)}
+.header h1{font-family:'M PLUS Rounded 1c',sans-serif;font-size:26px;font-weight:900;position:relative;letter-spacing:1px}
+.header .sub{font-size:13px;opacity:.8;margin-top:4px;position:relative}
+.back-link{position:absolute;left:16px;top:16px;color:#fff;text-decoration:none;font-size:24px;opacity:.7;z-index:10}
+.back-link:hover{opacity:1}
+
+.container{max-width:640px;margin:0 auto;padding:20px 16px 60px}
+.intro{text-align:center;padding:16px 0;color:var(--sub);font-size:14px}
+
+.scene-list{display:flex;flex-direction:column;gap:12px}
+.scene-card{
+  display:flex;align-items:center;gap:16px;
+  background:var(--card);border-radius:16px;padding:18px 20px;
+  text-decoration:none;color:var(--text);
+  box-shadow:0 2px 16px rgba(45,42,36,.06);
+  border:2px solid #f0ece4;
+  transition:all .2s cubic-bezier(.4,0,.2,1);
+}
+.scene-card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(45,42,36,.12)}
+.scene-card:active{transform:scale(.98)}
+.scene-icon{font-size:36px;flex-shrink:0}
+.scene-info{flex:1}
+.scene-name{font-size:17px;font-weight:700}
+.scene-name-jp{font-size:13px;color:var(--sub);margin-top:2px}
+.scene-desc{font-size:12px;color:var(--sub);margin-top:4px}
+.scene-stats{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:11px;padding:3px 8px;border-radius:10px;background:#EBF5FF;color:var(--accent);font-weight:600}
+.arrow{color:var(--sub);font-size:20px;flex-shrink:0}
+
+.home-btn{text-align:center;padding:20px 16px}
+.home-btn a{display:inline-block;padding:12px 32px;border-radius:24px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 2px 12px rgba(0,0,0,.1)}
+
+.flip-front .emoji img{width:42px;height:42px;object-fit:contain}
+.lesson-icon img,.scene-icon img{width:36px;height:36px;object-fit:contain}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a class="back-link" href="../index.html">&#8592;</a>
+  <h1>🎬 场景学习</h1>
+  <div class="sub">按场景分类学习日语词汇和句子</div>
+</div>
+
+<div class="container">
+  <div class="intro">选择一个场景，开始学习相关的词汇和句子</div>
+  <div class="scene-list" id="sceneList">
+    <!-- Dynamically loaded by scene-renderer.js -->
+  </div>
+</div>
+
+<div class="home-btn">
+  <a href="../index.html">&#8592; 返回课程列表</a>
+</div>
+
+<script src="../scripts/cache-control.js"></script>
+<script src="../scripts/audio.js"></script>
+<script src="../scripts/emoji-data.js"></script>
+<script src="../scripts/scene-renderer.js"></script>
+<script>
+renderSceneList();
+</script>
+</body>
+</html>

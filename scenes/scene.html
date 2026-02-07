@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>场景学习 - Alex 日语学习</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0E8;--card:#FFFEF9;--text:#2D2A24;--sub:#7A7468;--accent:#2B7A98;
+  --shadow:0 2px 20px rgba(45,42,36,.08);--r:16px;--rs:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+
+.header{position:relative;overflow:hidden;padding:32px 20px 24px;text-align:center;color:#fff}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.08) 0%,transparent 50%)}
+.header h1{font-family:'M PLUS Rounded 1c','Noto Sans SC',sans-serif;font-size:24px;font-weight:900;position:relative}
+.header .sub{font-size:13px;opacity:.8;margin-top:4px;position:relative}
+.back-link{position:absolute;left:16px;top:16px;color:#fff;text-decoration:none;font-size:24px;opacity:.7;z-index:10}
+.back-link:hover{opacity:1}
+
+.tab-nav{display:flex;gap:8px;padding:12px 16px;justify-content:center;background:var(--bg);position:sticky;top:0;z-index:100}
+.tab-btn{padding:10px 24px;border-radius:24px;border:2px solid #e0dcd4;font-size:14px;font-weight:700;cursor:pointer;background:#fff;color:var(--sub);transition:all .2s}
+.tab-btn.active{color:#fff;border-color:transparent}
+
+#app{max-width:640px;margin:0 auto;padding:12px 16px 24px}
+
+/* FLIP CARDS */
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.flip-card{perspective:600px;cursor:pointer;height:170px}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 8px}
+.flip-front{background:var(--card);box-shadow:var(--shadow);border:2px solid #f0ece4}
+.flip-back{background:#fff;box-shadow:var(--shadow);border:2px solid #e8e4dc;transform:rotateY(180deg)}
+.flip-front .speaker{position:absolute;top:8px;right:8px;font-size:14px;opacity:.5}
+.flip-front .emoji{font-size:36px;margin-bottom:4px}
+.flip-front .kanji{font-family:'M PLUS Rounded 1c',sans-serif;font-size:22px;font-weight:900;line-height:1.2}
+.flip-front .kana{font-size:13px;color:var(--sub);margin-top:2px}
+.flip-back .romaji{font-size:16px;font-weight:700;color:var(--accent)}
+.flip-back .chinese{font-size:18px;font-weight:700;margin-top:6px}
+.flip-card.playing .flip-front{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+
+.play-all-btn{padding:10px 24px;border-radius:24px;border:none;color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s}
+.play-all-btn:active{transform:scale(.95)}
+
+/* SENTENCE CARDS */
+.sent-list{display:flex;flex-direction:column;gap:12px}
+.sent-card{background:var(--card);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);cursor:pointer;border:2px solid #f0ece4;transition:all .2s;display:flex;gap:12px;align-items:flex-start}
+.sent-card:active{transform:scale(.98)}
+.sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.sent-img-wrap{flex-shrink:0;width:80px;height:80px;border-radius:12px;overflow:hidden;background:#f5f0e8}
+.sent-img{width:100%;height:100%;object-fit:cover}
+.sent-content{flex:1;min-width:0}
+.jp-text{font-family:'M PLUS Rounded 1c',sans-serif;font-size:17px;font-weight:700;margin-bottom:4px;color:#2B7A98}
+.jp-text span{margin-right:4px;font-size:14px}
+.kana-text{font-size:13px;color:#E8573A;font-weight:600}
+.romaji-text{font-size:12px;color:#7B5EA7;font-style:italic}
+.cn-text{font-size:14px;margin-top:4px;padding-top:4px;border-top:1px solid #f0ece4;color:#3A8F5C;font-weight:600}
+
+/* QUIZ */
+.quiz-box{background:var(--card);border-radius:var(--r);padding:24px 16px;box-shadow:var(--shadow);text-align:center}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.quiz-opt{padding:16px 10px;border-radius:var(--rs);border:2px solid #e8e4dc;background:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;text-align:center}
+.quiz-opt:active{transform:scale(.95)}
+.quiz-opt.correct{background:#d4edda;border-color:#3A8F5C;color:#3A8F5C}
+.quiz-opt.wrong{background:#f8d7da;border-color:#C04030;color:#C04030}
+.quiz-btn{padding:10px 24px;border-radius:24px;border:none;font-size:14px;font-weight:700;cursor:pointer;color:#fff;transition:all .2s;margin:4px}
+.quiz-btn:active{transform:scale(.95)}
+
+.home-btn{text-align:center;padding:20px 16px}
+.home-btn a{display:inline-block;padding:12px 32px;border-radius:24px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 2px 12px rgba(0,0,0,.1)}
+
+.flip-front .emoji img{width:36px;height:36px;object-fit:contain}
+.quiz-opt img{width:32px;height:32px;object-fit:contain}
+.scene-icon img{width:36px;height:36px;object-fit:contain}
+@media(max-width:400px){
+  .vocab-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+  .flip-card{height:155px}
+  .flip-front .kanji{font-size:18px}
+  .sent-img-wrap{width:64px;height:64px}
+}
+</style>
+</head>
+<body>
+
+<div class="header" id="sceneHeader" style="background:linear-gradient(135deg,#2B7A98,#1E5F7A)">
+  <a class="back-link" href="index.html">&#8592;</a>
+  <h1 id="sceneTitle">加载中...</h1>
+  <div class="sub" id="sceneSubtitle"></div>
+</div>
+
+<nav class="tab-nav" id="tabNav">
+  <!-- Generated by JS -->
+</nav>
+
+<div id="app">
+  <!-- Content rendered by scene-renderer.js -->
+</div>
+
+<div class="home-btn">
+  <a href="index.html">&#8592; 返回场景列表</a>
+</div>
+
+<script src="../scripts/cache-control.js"></script>
+<script src="../scripts/audio.js"></script>
+<script src="../scripts/emoji-data.js"></script>
+<script src="../scripts/scene-renderer.js"></script>
+<script>
+renderScene();
+</script>
+</body>
+</html>
