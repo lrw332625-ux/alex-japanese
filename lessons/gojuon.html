@@ -267,7 +267,58 @@ var mode='hira'; // hira, kata, both
 var activeTab=0;
 var progress=JSON.parse(localStorage.getItem('gojuon_progress')||'{}');
 
-// Audio: now using shared ../scripts/audio.js (3-tier: local MP3 > Google TTS > Web Speech)
+// ============================================================
+// AUDIO: 3-tier (Local MP3 > Google TTS > Web Speech)
+// ============================================================
+var currentAudio=null;
+var bestJPVoice=null;
+var speechRate=1;
+function findBestJPVoice(){
+  var voices=speechSynthesis.getVoices();
+  var jpVoices=voices.filter(function(v){return v.lang==='ja-JP'||v.lang.startsWith('ja')});
+  if(!jpVoices.length)return null;
+  var pref=['Kyoko','O-Ren','Otoya','Google','Microsoft'];
+  for(var i=0;i<pref.length;i++){
+    for(var j=0;j<jpVoices.length;j++){
+      if(jpVoices[j].name.indexOf(pref[i])!==-1)return jpVoices[j];
+    }
+  }
+  return jpVoices[0];
+}
+if('speechSynthesis' in window){
+  speechSynthesis.onvoiceschanged=function(){bestJPVoice=findBestJPVoice()};
+  bestJPVoice=findBestJPVoice();
+}
+function speakJPLocal(text,cb){
+  if('speechSynthesis' in window){
+    window.speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(text);
+    u.lang='ja-JP';u.rate=speechRate;u.pitch=1.1;
+    if(!bestJPVoice)bestJPVoice=findBestJPVoice();
+    if(bestJPVoice)u.voice=bestJPVoice;
+    u.onend=function(){if(cb)cb()};
+    u.onerror=function(){if(cb)cb()};
+    window.speechSynthesis.speak(u);
+  } else if(cb) cb();
+}
+function speakJPOnline(text,cb){
+  try{
+    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
+    currentAudio=a;
+    if(speechRate!==1)a.playbackRate=speechRate;
+    a.onended=function(){currentAudio=null;if(cb)cb()};
+    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
+    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
+  }catch(e){speakJPLocal(text,cb)}
+}
+function speakJP(text,cb){
+  if(currentAudio){try{currentAudio.pause()}catch(e){}}
+  if(window.speechSynthesis)window.speechSynthesis.cancel();
+  currentAudio=null;
+  text=text.replace(/[\u{1F300}-\u{1F9FF}]/gu,'').trim();
+  if(!text){if(cb)cb();return}
+  speakJPOnline(text,cb);
+}
 
 // ============================================================
 // MODE TOGGLE
