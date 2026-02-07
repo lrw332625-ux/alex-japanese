@@ -253,18 +253,7 @@ function speakJP(text,cb){
   }
   speakJPOnline(text,cb);
 }
-function speakJP(text,cb){
-  if(currentAudio){currentAudio.pause();currentAudio=null}
-  window.speechSynthesis&&window.speechSynthesis.cancel();
-  try{
-    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
-    currentAudio=a;
-    if(speechRate!==1)a.playbackRate=speechRate;
-    a.onended=function(){currentAudio=null;if(cb)cb()};
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 
 function tapCard(el){
   var k=el.getAttribute('data-k');
