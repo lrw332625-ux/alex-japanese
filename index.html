@@ -2,24 +2,47 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#2B7A98">
 <title>Alex 日语学习 🎌</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=M+PLUS+Rounded+1c:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F5F0E8;--card:#FFFEF9;--text:#2D2A24;--sub:#7A7468;--accent:#2B7A98}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-.header{padding:40px 20px 32px;text-align:center;background:linear-gradient(135deg,#2B7A98,#1E5F7A);color:#fff;position:relative;overflow:hidden}
+body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-tap-highlight-color:transparent}
+.header{padding:24px 20px 20px;text-align:center;background:linear-gradient(135deg,#2B7A98,#1E5F7A);color:#fff;position:relative;overflow:hidden}
 .header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.08),transparent 50%)}
-.header h1{font-family:'M PLUS Rounded 1c',sans-serif;font-size:32px;font-weight:900;position:relative;letter-spacing:2px}
-.header .sub{font-size:14px;opacity:.8;margin-top:6px;position:relative}
-.header .stats{font-size:13px;opacity:.7;margin-top:10px;position:relative}
-.container{max-width:640px;margin:0 auto;padding:24px 16px 60px}
+.header h1{font-family:'M PLUS Rounded 1c',sans-serif;font-size:28px;font-weight:900;position:relative;letter-spacing:2px}
+.header .sub{font-size:13px;opacity:.8;margin-top:4px;position:relative}
+.header .stats{font-size:12px;opacity:.7;margin-top:6px;position:relative}
+
+/* Sticky search bar */
+.search-bar{position:sticky;top:0;z-index:100;background:rgba(245,240,232,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.06)}
+.search-wrap{max-width:640px;margin:0 auto;position:relative;display:flex;align-items:center;gap:8px}
+.search-input{width:100%;padding:12px 40px 12px 44px;border:2px solid #e8e4dc;border-radius:14px;font-size:16px;font-family:inherit;background:#fff;color:var(--text);outline:none;transition:border-color .2s}
+.search-input:focus{border-color:var(--accent)}
+.search-input::placeholder{color:#b5b0a6}
+.search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:18px;color:#b5b0a6;pointer-events:none}
+.search-clear{position:absolute;right:70px;top:50%;transform:translateY(-50%);width:28px;height:28px;border:none;background:#e0ddd6;color:#7a7468;border-radius:50%;font-size:16px;cursor:pointer;display:none;align-items:center;justify-content:center;line-height:1}
+.search-clear:hover{background:#d0cdc6}
+.search-count{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--sub);white-space:nowrap;pointer-events:none;display:none}
+
+/* Quick navigation */
+.quick-nav{display:flex;gap:10px;max-width:640px;margin:0 auto;padding:16px 16px 0}
+.quick-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 12px;border-radius:14px;text-decoration:none;font-size:15px;font-weight:700;font-family:inherit;color:#fff;border:none;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.quick-btn:active{transform:scale(.96)}
+.quick-btn.gojuon{background:linear-gradient(135deg,#E8573A,#D4553A)}
+.quick-btn.scene{background:linear-gradient(135deg,#2B8F8F,#1E7A7A)}
+.quick-btn-icon{font-size:22px;flex-shrink:0}
+
+.container{max-width:640px;margin:0 auto;padding:12px 16px 60px}
 .month-label{font-size:14px;font-weight:700;color:var(--accent);padding:16px 4px 8px;border-bottom:2px solid #e8e4dc;margin-bottom:12px;margin-top:8px}
-.lesson-list{display:flex;flex-direction:column;gap:12px}
+.lesson-list{display:flex;flex-direction:column;gap:10px}
 .lesson-card{
   display:flex;align-items:center;gap:16px;
-  background:var(--card);border-radius:16px;padding:18px 20px;
+  background:var(--card);border-radius:16px;padding:16px 18px;
   text-decoration:none;color:var(--text);
   box-shadow:0 2px 16px rgba(45,42,36,.06);
   border:2px solid #f0ece4;
@@ -27,6 +50,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 }
 .lesson-card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(45,42,36,.12);border-color:var(--accent)}
 .lesson-card:active{transform:scale(.98)}
+.lesson-card.hidden{display:none}
 .lesson-icon{font-size:36px;flex-shrink:0}
 .lesson-info{flex:1}
 .lesson-date{font-size:13px;color:var(--sub);margin-bottom:2px}
@@ -36,6 +60,10 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .arrow{color:var(--sub);font-size:20px;flex-shrink:0}
 .empty{text-align:center;padding:60px 20px;color:var(--sub)}
 .footer{text-align:center;padding:24px;font-size:12px;color:var(--sub)}
+
+/* No result message */
+.no-result{display:none;text-align:center;padding:48px 20px;color:var(--sub);font-size:15px}
+.no-result-icon{font-size:48px;margin-bottom:12px}
 
 .flip-front .emoji img{width:42px;height:42px;object-fit:contain}
 .quiz-emoji img{width:64px;height:64px;object-fit:contain}
@@ -52,39 +80,25 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
   <div class="stats">共 47 节课 · 2025年6月 - 2026年2月</div>
 </div>
 
+<div class="search-bar">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="search-input" id="searchInput" type="text" placeholder="搜索课程标题、内容..." autocomplete="off">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+    <span class="search-count" id="searchCount"></span>
+  </div>
+</div>
+
+<div class="quick-nav">
+  <a class="quick-btn gojuon" href="lessons/gojuon.html">
+    <span class="quick-btn-icon">あ</span> 五十音图
+  </a>
+  <a class="quick-btn scene" href="scenes/index.html">
+    <span class="quick-btn-icon">🎬</span> 场景学习
+  </a>
+</div>
+
 <div class="container">
-  <!-- Special Reference Pages -->
-  <a class="lesson-card" href="lessons/gojuon.html" style="background:linear-gradient(135deg,#E8573A,#D4553A);color:#fff;border:none;margin:0 0 16px">
-    <div class="lesson-icon" style="font-size:32px">あ</div>
-    <div class="lesson-info">
-      <div class="lesson-date" style="color:rgba(255,255,255,.8)">基础参考</div>
-      <div class="lesson-title" style="color:#fff;font-size:17px">五十音图 ごじゅうおん</div>
-      <div class="lesson-tags">
-        <span class="tag" style="background:rgba(255,255,255,.2);color:#fff">平假名</span>
-        <span class="tag" style="background:rgba(255,255,255,.2);color:#fff">片假名</span>
-        <span class="tag" style="background:rgba(255,255,255,.2);color:#fff">发音练习</span>
-        <span class="tag" style="background:rgba(255,255,255,.2);color:#fff">互动测验</span>
-      </div>
-    </div>
-    <div class="arrow" style="color:#fff">→</div>
-  </a>
-
-  <!-- Scene Learning Entry -->
-  <a class="lesson-card" href="scenes/index.html" style="background:linear-gradient(135deg,#2B8F8F,#1E7A7A);color:#fff;border:none;margin:0 0 16px">
-    <div class="lesson-icon" style="font-size:32px">🎬</div>
-    <div class="lesson-info">
-      <div class="lesson-date" style="color:rgba(255,255,255,.8)">场景学习</div>
-      <div class="lesson-title" style="color:#fff;font-size:17px">场景学习 シーン学習</div>
-      <div class="lesson-tags">
-        <span class="tag" style="background:rgba(255,255,255,.2);color:#fff">动物园</span>
-        <span class="tag" style="background:rgba(255,255,255,.2);color:#fff">餐厅</span>
-        <span class="tag" style="background:rgba(255,255,255,.2);color:#fff">交通</span>
-        <span class="tag" style="background:rgba(255,255,255,.2);color:#fff">7个场景</span>
-      </div>
-    </div>
-    <div class="arrow" style="color:#fff">→</div>
-  </a>
-
   <div class="lesson-list" id="lessons">
 
     <a class="lesson-card" href="lessons/2026-02-06.html">
@@ -652,6 +666,10 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
     </a>
 
   </div>
+  <div class="no-result" id="noResult">
+    <div class="no-result-icon">🔍</div>
+    <div>没有找到相关课程</div>
+  </div>
 </div>
 
 <div class="footer">📱 所有课程支持离线使用 · 点击进入任意课程开始学习</div>
@@ -665,6 +683,46 @@ replaceEmojiWithImg();
 var _origShowQ=typeof showQuestion==='function'?showQuestion:null;
 if(_origShowQ){
   showQuestion=function(){_origShowQ.apply(this,arguments);setTimeout(replaceEmojiWithImg,50)};
+}
+
+// Search functionality
+var searchInput=document.getElementById('searchInput');
+var searchClear=document.getElementById('searchClear');
+var searchCount=document.getElementById('searchCount');
+var noResult=document.getElementById('noResult');
+var lessonCards=document.querySelectorAll('#lessons .lesson-card');
+var totalCards=lessonCards.length;
+
+searchInput.addEventListener('input',filterLessons);
+
+function filterLessons(){
+  var q=searchInput.value.trim().toLowerCase();
+  searchClear.style.display=q?'flex':'none';
+  searchCount.style.display=q?'inline':'none';
+  if(!q){
+    lessonCards.forEach(function(c){c.classList.remove('hidden')});
+    noResult.style.display='none';
+    return;
+  }
+  var matched=0;
+  lessonCards.forEach(function(card){
+    var title=(card.querySelector('.lesson-title')||{}).textContent||'';
+    var tags=card.querySelectorAll('.tag');
+    var tagText='';
+    tags.forEach(function(t){tagText+=' '+t.textContent});
+    var date=(card.querySelector('.lesson-date')||{}).textContent||'';
+    var text=(title+' '+tagText+' '+date).toLowerCase();
+    if(text.indexOf(q)!==-1){card.classList.remove('hidden');matched++}
+    else{card.classList.add('hidden')}
+  });
+  searchCount.textContent=matched+'/'+totalCards;
+  noResult.style.display=matched===0?'block':'none';
+}
+
+function clearSearch(){
+  searchInput.value='';
+  searchInput.focus();
+  filterLessons();
 }
 </script>
 </body>
