@@ -124,6 +124,24 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
 .tip-box img{width:20px;height:20px;object-fit:contain;vertical-align:middle}
 @media(max-width:400px){.flip-front .emoji img{width:34px;height:34px}}
+
+.reviewed .flip-front::after{display:none}
+.mark-btns{position:absolute;bottom:4px;right:6px;display:flex;gap:4px;z-index:5}
+.mark-btn{width:30px;height:30px;border-radius:50%;font-size:15px;font-weight:900;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid;transition:all .2s;line-height:1;opacity:.5}
+.mark-btn:active{transform:scale(.85)}
+.mark-btn.btn-ok{background:#E8F5E9;color:#43A047;border-color:#A5D6A7}
+.mark-btn.btn-ng{background:#FFEBEE;color:#E53935;border-color:#EF9A9A}
+.flip-card.marked-ok .mark-btn.btn-ok{background:#43A047;color:#fff;border-color:#2E7D32;opacity:1}
+.flip-card.marked-ng .mark-btn.btn-ng{background:#E53935;color:#fff;border-color:#C62828;opacity:1}
+.flip-card.marked-ok .mark-btn{opacity:1}
+.flip-card.marked-ng .mark-btn{opacity:1}
+.flip-card.marked-ok .flip-front,.flip-card.marked-ok .flip-back{border-color:#43A047;box-shadow:0 0 0 2px rgba(67,160,71,.25),var(--shadow)}
+.flip-card.marked-ng .flip-front,.flip-card.marked-ng .flip-back{border-color:#E53935;box-shadow:0 0 0 2px rgba(229,57,53,.25),var(--shadow)}
+.stats-float{position:fixed;bottom:20px;right:20px;background:rgba(45,42,36,.92);color:#fff;padding:10px 18px;border-radius:24px;font-size:13px;font-weight:700;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:none;gap:12px;align-items:center;transition:all .3s}
+.stats-float .st{display:flex;align-items:center;gap:4px}
+.stats-float .st-n{font-size:16px}
+.stats-float .st-ok{color:#6BCB77}
+.stats-float .st-ng{color:#FF6B6B}
 </style>
 </head>
 <body>
@@ -146,13 +164,13 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
 </div>
 <div class="sec-title" style="color:var(--primary)"><span class="icon">📚</span>词汇学习</div>
 <div class="card-grid" id="grid0">
-<div class="flip-card" data-k="ebi" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🦐</div><div class="kanji">エビ</div><div class="kana">えび</div></div><div class="flip-back"><div class="romaji">ebi</div><div class="chinese">虾</div></div></div></div>
-<div class="flip-card" data-k="shoberukā" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚜</div><div class="kanji">ショベルカー</div><div class="kana">しょべるかー</div></div><div class="flip-back"><div class="romaji">shoberukā</div><div class="chinese">挖掘机</div></div></div></div>
-<div class="flip-card" data-k="basu" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚌</div><div class="kanji">バス</div><div class="kana">ばす</div></div><div class="flip-back"><div class="romaji">basu</div><div class="chinese">公交车</div></div></div></div>
-<div class="flip-card" data-k="takushī" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚕</div><div class="kanji">タクシー</div><div class="kana">たくしー</div></div><div class="flip-back"><div class="romaji">takushī</div><div class="chinese">出租车，计程车</div></div></div></div>
-<div class="flip-card" data-k="torakku." onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚜</div><div class="kanji">トラック。</div><div class="kana">とらっく</div></div><div class="flip-back"><div class="romaji">torakku.</div><div class="chinese">货车 / 卡车</div></div></div></div>
-<div class="flip-card" data-k="herikoputā" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚁</div><div class="kanji">ヘリコプター</div><div class="kana">へりこぷたー</div></div><div class="flip-back"><div class="romaji">herikoputā</div><div class="chinese">直升飞机</div></div></div></div>
-<div class="flip-card" data-k="hikōki" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">✈️</div><div class="kanji">飛行機</div><div class="kana">ひこうき</div></div><div class="flip-back"><div class="romaji">hikōki</div><div class="chinese">飞机</div></div></div></div>
+<div class="flip-card" data-k="ebi" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🦐</div><div class="kanji">エビ</div><div class="kana">えび</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div><div class="flip-back"><div class="romaji">ebi</div><div class="chinese">虾</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div></div></div>
+<div class="flip-card" data-k="shoberukā" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚜</div><div class="kanji">ショベルカー</div><div class="kana">しょべるかー</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div><div class="flip-back"><div class="romaji">shoberukā</div><div class="chinese">挖掘机</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div></div></div>
+<div class="flip-card" data-k="basu" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚌</div><div class="kanji">バス</div><div class="kana">ばす</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div><div class="flip-back"><div class="romaji">basu</div><div class="chinese">公交车</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div></div></div>
+<div class="flip-card" data-k="takushī" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚕</div><div class="kanji">タクシー</div><div class="kana">たくしー</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div><div class="flip-back"><div class="romaji">takushī</div><div class="chinese">出租车，计程车</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div></div></div>
+<div class="flip-card" data-k="torakku." onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚜</div><div class="kanji">トラック。</div><div class="kana">とらっく</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div><div class="flip-back"><div class="romaji">torakku.</div><div class="chinese">货车 / 卡车</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div></div></div>
+<div class="flip-card" data-k="herikoputā" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚁</div><div class="kanji">ヘリコプター</div><div class="kana">へりこぷたー</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div><div class="flip-back"><div class="romaji">herikoputā</div><div class="chinese">直升飞机</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div></div></div>
+<div class="flip-card" data-k="hikōki" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">✈️</div><div class="kanji">飛行機</div><div class="kana">ひこうき</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div><div class="flip-back"><div class="romaji">hikōki</div><div class="chinese">飞机</div><div class="mark-btns"><div class="mark-btn btn-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</div><div class="mark-btn btn-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</div></div></div></div></div>
 </div>
 </div>
 
@@ -227,6 +245,36 @@ desu.</div>
 <script>
 var activeTab=0,speechRate=1,curEl=null,running=false;
 var reviewed={};
+var okSet={},ngSet={};
+function markOk(el,ev){
+  if(ev){ev.stopPropagation();ev.preventDefault();}
+  var k=el.getAttribute('data-k');
+  if(ngSet[k]){delete ngSet[k];el.classList.remove('marked-ng')}
+  if(okSet[k]){delete okSet[k];el.classList.remove('marked-ok')}
+  else{okSet[k]=true;el.classList.add('marked-ok')}
+  if(!reviewed[k]){reviewed[k]=true;el.classList.add('reviewed');updateProgress()}updateStats()
+  updateStats();
+}
+function markNg(el,ev){
+  if(ev){ev.stopPropagation();ev.preventDefault();}
+  var k=el.getAttribute('data-k');
+  if(okSet[k]){delete okSet[k];el.classList.remove('marked-ok')}
+  if(ngSet[k]){delete ngSet[k];el.classList.remove('marked-ng')}
+  else{ngSet[k]=true;el.classList.add('marked-ng')}
+  if(!reviewed[k]){reviewed[k]=true;el.classList.add('reviewed');updateProgress()}
+  updateStats();
+}
+function updateStats(){
+  var cards=document.querySelectorAll('.flip-card[data-k]');
+  var ok=0,ng=0;
+  cards.forEach(function(c){var k=c.getAttribute('data-k');if(okSet[k])ok++;if(ngSet[k])ng++});
+  var p=document.getElementById('statsFloat');
+  if(p){
+    if(ok>0||ng>0){p.style.display='flex';p.innerHTML='<span class="st st-ok"><span class="st-n">'+ok+'</span>✓会</span><span class="st st-ng"><span class="st-n">'+ng+'</span>✗不会</span>';}
+    else{p.style.display='none';}
+  }
+}
+
 var vocabKeys=["ebi", "shoberuk\u0101", "basu", "takush\u012b", "torakku.", "herikoput\u0101", "hik\u014dki"];
 var quizVocab=[{"k": "ebi", "e": "🦐", "jp": "エビ", "cn": "虾"}, {"k": "shoberukā", "e": "🚜", "jp": "ショベルカー", "cn": "挖掘机"}, {"k": "basu", "e": "🚌", "jp": "バス", "cn": "公交车"}, {"k": "takushī", "e": "🚕", "jp": "タクシー", "cn": "出租车，计程车"}, {"k": "torakku.", "e": "🚜", "jp": "トラック。", "cn": "货车 / 卡车"}, {"k": "herikoputā", "e": "🚁", "jp": "ヘリコプター", "cn": "直升飞机"}, {"k": "hikōki", "e": "✈️", "jp": "飛行機", "cn": "飞机"}];
 var quizTotal=Math.min(5,quizVocab.length);
@@ -308,7 +356,7 @@ function tapCard(el){
   el.classList.add('playing');curEl=el;
   // Get kana text for TTS
   var kana=el.querySelector('.kana');
-  if(kana) speakJP(kana.textContent, function(){el.classList.remove('playing');el.classList.add('reviewed');reviewed[k]=true;updateProgress()});
+  if(kana) speakJP(kana.textContent, function(){el.classList.remove('playing');el.classList.add('reviewed');reviewed[k]=true;updateProgress();updateStats()});
 }
 
 function playSentTTS(el,jp){
@@ -381,5 +429,6 @@ if(_origShowQ){
   showQuestion=function(){_origShowQ.apply(this,arguments);setTimeout(replaceEmojiWithImg,50)};
 }
 </script>
+<div class="stats-float" id="statsFloat"></div>
 </body>
 </html>
