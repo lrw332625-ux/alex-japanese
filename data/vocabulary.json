@@ -47,7 +47,7 @@
     "key": "akaikurumagataifuudetobasaremashita",
     "emoji": "🚗",
     "kanji": "赤い車が台風で飛ばされました。",
-    "kana": "あかい くるま が\nたいふう で とばされました",
+    "kana": "あかい くるま がたいふう で とばされました",
     "romaji": "akai kuruma ga taifuu de tobasaremashita",
     "chinese": "红色的汽车被台风吹走了",
     "sources": [
@@ -114,7 +114,7 @@
     "key": "bijutsushitsunifudetategaarimasu.",
     "emoji": "💬",
     "kanji": "美術室に筆立てがあります。",
-    "kana": "びじゅつしつに ふでたて が\nあります",
+    "kana": "びじゅつしつに ふでたて があります",
     "romaji": "bijutsushitsu ni fudetate ga arimasu.",
     "chinese": "美术室里有笔筒",
     "sources": [
@@ -832,7 +832,7 @@
     "key": "konomichiohidarinimagattekudasai.",
     "emoji": "🙏",
     "kanji": "この道を左に曲がってください。",
-    "kana": "このみちを ひだりに\nまがってください",
+    "kana": "このみちを ひだりにまがってください",
     "romaji": "Kono michi o hidari ni magatte kudasai.",
     "chinese": "请在这条路向左拐",
     "sources": [
@@ -1224,7 +1224,7 @@
     "key": "ongakushitsunipianogaarimasu",
     "emoji": "🎹",
     "kanji": "音楽室にピアノがあります。",
-    "kana": "おんがくしつに ぴあのが\nあります",
+    "kana": "おんがくしつに ぴあのがあります",
     "romaji": "ongaku shitsu ni piano ga arimasu",
     "chinese": "音乐室里有钢琴",
     "sources": [
@@ -1808,7 +1808,7 @@
     "key": "yamagamietekimashita",
     "emoji": "⛰️",
     "kanji": "山が見えてきました。",
-    "kana": "やまが\nみえてきました",
+    "kana": "やまがみえてきました",
     "romaji": "yama ga miete kimashita",
     "chinese": "山渐渐看见了/山越来越近、越来越清楚了",
     "sources": [
