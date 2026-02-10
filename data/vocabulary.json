@@ -168,6 +168,17 @@
     ]
   },
   {
+    "key": "e_particle",
+    "emoji": "➡️",
+    "kanji": "へ",
+    "kana": "へ（え）",
+    "romaji": "e",
+    "chinese": "方向助词（表示\"去的方向\"）",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
     "key": "ebi",
     "emoji": "🦐",
     "kanji": "エビ",
@@ -198,6 +209,17 @@
     "chinese": "船",
     "sources": [
       "2025-10-26"
+    ]
+  },
+  {
+    "key": "furusato",
+    "emoji": "🏡",
+    "kanji": "故郷",
+    "kana": "ふるさと",
+    "romaji": "furusato",
+    "chinese": "故乡/家乡",
+    "sources": [
+      "2026-02-06"
     ]
   },
   {
@@ -365,6 +387,7 @@
     "romaji": "hitode",
     "chinese": "海星",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -420,7 +443,19 @@
     "romaji": "ika",
     "chinese": "鱿鱼",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
+    ]
+  },
+  {
+    "key": "ikimashita",
+    "emoji": "🚶",
+    "kanji": "行きました",
+    "kana": "いきました",
+    "romaji": "ikimashita",
+    "chinese": "去了（过去式）",
+    "sources": [
+      "2026-02-09"
     ]
   },
   {
@@ -457,6 +492,39 @@
     ]
   },
   {
+    "key": "iku",
+    "emoji": "🚶",
+    "kanji": "行く",
+    "kana": "いく",
+    "romaji": "iku",
+    "chinese": "去（原形）",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
+    "key": "imakara",
+    "emoji": "⏰",
+    "kanji": "今から",
+    "kana": "いまから",
+    "romaji": "ima kara",
+    "chinese": "从现在起",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
+    "key": "ippai",
+    "emoji": "🔢",
+    "kanji": "いっぱい",
+    "kana": "いっぱい",
+    "romaji": "ippai",
+    "chinese": "很多/满满的",
+    "sources": [
+      "2026-02-06"
+    ]
+  },
+  {
     "key": "iruka",
     "emoji": "🐬",
     "kanji": "イルカ",
@@ -464,6 +532,7 @@
     "romaji": "iruka",
     "chinese": "海豚",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -487,6 +556,7 @@
     "chinese": "自行车",
     "sources": [
       "2025-10-26",
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -524,6 +594,17 @@
     ]
   },
   {
+    "key": "kai",
+    "emoji": "🐚",
+    "kanji": "貝",
+    "kana": "かい",
+    "romaji": "kai",
+    "chinese": "贝壳",
+    "sources": [
+      "2026-02-02"
+    ]
+  },
+  {
     "key": "kame",
     "emoji": "🐢",
     "kanji": "カメ",
@@ -531,6 +612,7 @@
     "romaji": "kame",
     "chinese": "乌龟",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -543,6 +625,7 @@
     "chinese": "螃蟹",
     "sources": [
       "2026-01-22",
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -580,6 +663,17 @@
     ]
   },
   {
+    "key": "kawaii",
+    "emoji": "🥰",
+    "kanji": "かわいい",
+    "kana": "かわいい",
+    "romaji": "kawaii",
+    "chinese": "可爱",
+    "sources": [
+      "2026-02-06"
+    ]
+  },
+  {
     "key": "kayōbi",
     "emoji": "📅",
     "kanji": "火曜日",
@@ -613,6 +707,28 @@
     ]
   },
   {
+    "key": "kimashita",
+    "emoji": "🚶",
+    "kanji": "来ました",
+    "kana": "きました",
+    "romaji": "kimashita",
+    "chinese": "来了（过去式）",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
+    "key": "kinou",
+    "emoji": "📅",
+    "kanji": "昨日",
+    "kana": "きのう",
+    "romaji": "kinou",
+    "chinese": "昨天",
+    "sources": [
+      "2026-02-06"
+    ]
+  },
+  {
     "key": "kinyōbi",
     "emoji": "📅",
     "kanji": "金曜日",
@@ -621,6 +737,17 @@
     "chinese": "星期五",
     "sources": [
       "2025-12-16"
+    ]
+  },
+  {
+    "key": "kirei",
+    "emoji": "✨",
+    "kanji": "きれい",
+    "kana": "きれい",
+    "romaji": "kirei",
+    "chinese": "漂亮/美丽",
+    "sources": [
+      "2026-02-06"
     ]
   },
   {
@@ -654,6 +781,17 @@
     "chinese": "小猪",
     "sources": [
       "2025-06-00"
+    ]
+  },
+  {
+    "key": "koko",
+    "emoji": "📍",
+    "kanji": "ここ",
+    "kana": "ここ",
+    "romaji": "koko",
+    "chinese": "这里",
+    "sources": [
+      "2026-02-06"
     ]
   },
   {
@@ -702,6 +840,28 @@
     ]
   },
   {
+    "key": "konnichiwa",
+    "emoji": "☀️",
+    "kanji": "こんにちは",
+    "kana": "こんにちは",
+    "romaji": "konnichiwa",
+    "chinese": "你好",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
+    "key": "korekara",
+    "emoji": "➡️",
+    "kanji": "これから",
+    "kana": "これから",
+    "romaji": "korekara",
+    "chinese": "接下来/从现在开始",
+    "sources": [
+      "2026-02-06"
+    ]
+  },
+  {
     "key": "kuji",
     "emoji": "⏰",
     "kanji": "九時",
@@ -720,6 +880,7 @@
     "romaji": "kujira",
     "chinese": "鲸鱼",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -731,7 +892,19 @@
     "romaji": "kurage",
     "chinese": "水母",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
+    ]
+  },
+  {
+    "key": "kuru",
+    "emoji": "🚶",
+    "kanji": "来る",
+    "kana": "くる",
+    "romaji": "kuru",
+    "chinese": "来（原形）",
+    "sources": [
+      "2026-02-09"
     ]
   },
   {
@@ -891,6 +1064,28 @@
     ]
   },
   {
+    "key": "nemui",
+    "emoji": "😴",
+    "kanji": "眠い",
+    "kana": "ねむい",
+    "romaji": "nemui",
+    "chinese": "困/想睡觉",
+    "sources": [
+      "2026-02-06"
+    ]
+  },
+  {
+    "key": "ni_particle",
+    "emoji": "📍",
+    "kanji": "に",
+    "kana": "に",
+    "romaji": "ni",
+    "chinese": "位置助词（表示到达的地点）",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
     "key": "nichiyōbi",
     "emoji": "📅",
     "kanji": "日曜日",
@@ -909,6 +1104,7 @@
     "romaji": "nihon ryouri",
     "chinese": "日本料理",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -958,6 +1154,17 @@
     ]
   },
   {
+    "key": "o_particle",
+    "emoji": "🎯",
+    "kanji": "を",
+    "kana": "を",
+    "romaji": "o",
+    "chinese": "对象助词（表示动作的对象）",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
     "key": "oishii",
     "emoji": "😋",
     "kanji": "美味しい",
@@ -965,6 +1172,7 @@
     "romaji": "oishii",
     "chinese": "好吃",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -977,6 +1185,28 @@
     "chinese": "叔叔 / 大叔 / 中年男人",
     "sources": [
       "2025-12-11"
+    ]
+  },
+  {
+    "key": "okurimasu",
+    "emoji": "📮",
+    "kanji": "送ります",
+    "kana": "おくります",
+    "romaji": "okurimasu",
+    "chinese": "寄/发送（礼貌形）",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
+    "key": "okuru",
+    "emoji": "📮",
+    "kanji": "送る",
+    "kana": "おくる",
+    "romaji": "okuru",
+    "chinese": "寄/送（原形）",
+    "sources": [
+      "2026-02-09"
     ]
   },
   {
@@ -1064,6 +1294,7 @@
     "romaji": "patokaa",
     "chinese": "警车",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -1155,6 +1386,7 @@
     "romaji": "sakana",
     "chinese": "鱼",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -1166,6 +1398,7 @@
     "romaji": "same",
     "chinese": "鲨鱼",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -1204,6 +1437,28 @@
     ]
   },
   {
+    "key": "shibaraku",
+    "emoji": "⏳",
+    "kanji": "しばらく",
+    "kana": "しばらく",
+    "romaji": "shibaraku",
+    "chinese": "一会儿/一段时间",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
+    "key": "shibarakushite",
+    "emoji": "⏳",
+    "kanji": "しばらくして",
+    "kana": "しばらくして",
+    "romaji": "shibaraku shite",
+    "chinese": "过了一会儿（固定搭配）",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
     "key": "shichiji",
     "emoji": "⏰",
     "kanji": "七時",
@@ -1222,6 +1477,7 @@
     "romaji": "shika",
     "chinese": "鹿",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -1233,6 +1489,7 @@
     "romaji": "shimauma",
     "chinese": "斑马",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -1244,6 +1501,7 @@
     "romaji": "shinkansen",
     "chinese": "新干线(高铁)",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -1266,6 +1524,7 @@
     "romaji": "shita",
     "chinese": "舌头",
     "sources": [
+      "2026-02-02",
       "2026-02-06"
     ]
   },
@@ -1325,6 +1584,39 @@
     ]
   },
   {
+    "key": "taiko",
+    "emoji": "🥁",
+    "kanji": "太鼓",
+    "kana": "たいこ",
+    "romaji": "taiko",
+    "chinese": "鼓",
+    "sources": [
+      "2026-02-02"
+    ]
+  },
+  {
+    "key": "taki",
+    "emoji": "💧",
+    "kanji": "滝",
+    "kana": "たき",
+    "romaji": "taki",
+    "chinese": "瀑布",
+    "sources": [
+      "2026-02-02"
+    ]
+  },
+  {
+    "key": "tako",
+    "emoji": "🐙",
+    "kanji": "蛸",
+    "kana": "たこ",
+    "romaji": "tako",
+    "chinese": "章鱼",
+    "sources": [
+      "2026-02-02"
+    ]
+  },
+  {
     "key": "takushī",
     "emoji": "🚕",
     "kanji": "タクシー",
@@ -1334,6 +1626,28 @@
     "sources": [
       "2025-10-24",
       "2026-01-26"
+    ]
+  },
+  {
+    "key": "tanoshii",
+    "emoji": "😄",
+    "kanji": "楽しい",
+    "kana": "たのしい",
+    "romaji": "tanoshii",
+    "chinese": "开心/快乐",
+    "sources": [
+      "2026-02-06"
+    ]
+  },
+  {
+    "key": "tanoshikatta",
+    "emoji": "😄",
+    "kanji": "楽しかった",
+    "kana": "たのしかった",
+    "romaji": "tanoshikatta",
+    "chinese": "很开心（过去式）",
+    "sources": [
+      "2026-02-06"
     ]
   },
   {
@@ -1356,6 +1670,17 @@
     "chinese": "...架/...座/...筒日语",
     "sources": [
       "2025-08-00"
+    ]
+  },
+  {
+    "key": "tegami",
+    "emoji": "✉️",
+    "kanji": "手紙",
+    "kana": "てがみ",
+    "romaji": "tegami",
+    "chinese": "信",
+    "sources": [
+      "2026-02-09"
     ]
   },
   {
@@ -1425,6 +1750,17 @@
     ]
   },
   {
+    "key": "tsuki",
+    "emoji": "🌙",
+    "kanji": "月",
+    "kana": "つき",
+    "romaji": "tsuki",
+    "chinese": "月亮",
+    "sources": [
+      "2026-02-06"
+    ]
+  },
+  {
     "key": "uchūjinuchuujin",
     "emoji": "💬",
     "kanji": "宇宙人",
@@ -1444,6 +1780,17 @@
     "chinese": "马",
     "sources": [
       "2025-11-30"
+    ]
+  },
+  {
+    "key": "watashi",
+    "emoji": "👤",
+    "kanji": "私",
+    "kana": "わたし",
+    "romaji": "watashi",
+    "chinese": "我",
+    "sources": [
+      "2026-02-06"
     ]
   },
   {
@@ -1490,6 +1837,28 @@
     "chinese": "四个",
     "sources": [
       "2025-12-25"
+    ]
+  },
+  {
+    "key": "youchien",
+    "emoji": "🏫",
+    "kanji": "幼稚園",
+    "kana": "ようちえん",
+    "romaji": "yōchien",
+    "chinese": "幼儿园",
+    "sources": [
+      "2026-02-09"
+    ]
+  },
+  {
+    "key": "yuubinkyoku",
+    "emoji": "🏣",
+    "kanji": "郵便局",
+    "kana": "ゆうびんきょく",
+    "romaji": "yūbinkyoku",
+    "chinese": "邮局",
+    "sources": [
+      "2026-02-06"
     ]
   },
   {

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>林之恒 亲子日语学习卡片 2026.02.09</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0E8;--card-bg:#FFFEF9;--text:#2D2A24;--text-sub:#7A7468;
+  --accent:#E8573A;--ocean:#5B8C5A;--food:#2B7A98;--transport:#7B5EA7;
+  --vocab:#2B8F8F;--song:#D4903A;--game:#2B8F8F;
+  --shadow:0 2px 20px rgba(45,42,36,.08);
+  --shadow-lg:0 8px 40px rgba(45,42,36,.12);
+  --r:20px;--rs:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh}
+
+.header{position:relative;overflow:hidden;padding:32px 20px 24px;text-align:center;background:linear-gradient(135deg,#5B8C5A 0%,#4A7A4A 50%,#5B8C5A 100%);color:#fff}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.08) 0%,transparent 50%)}
+.header h1{font-family:'M PLUS Rounded 1c','Noto Sans SC',sans-serif;font-size:26px;font-weight:900;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,.2);position:relative}
+.back-link{position:absolute;left:16px;top:16px;color:#fff;text-decoration:none;font-size:24px;opacity:.7;z-index:10}
+.back-link:hover{opacity:1}
+.header .sub{font-size:13px;opacity:.8;margin-top:4px;position:relative}
+
+.tab-nav{display:flex;gap:6px;padding:12px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:0;z-index:100;background:var(--bg)}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:8px 16px;border-radius:24px;border:2px solid transparent;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 1px 4px rgba(0,0,0,.04);white-space:nowrap}
+.tab-btn.active{color:#fff;border-color:transparent;transform:scale(1.05);box-shadow:var(--shadow)}
+.tab-btn[data-sec="0"].active{background:var(--ocean)}
+.tab-btn[data-sec="1"].active{background:var(--food)}
+.tab-btn[data-sec="2"].active{background:var(--transport)}
+.tab-btn[data-sec="3"].active{background:var(--vocab)}
+
+.controls{display:flex;align-items:center;gap:8px;padding:8px 16px;margin:0 0 12px;background:#fff;border-radius:var(--rs);box-shadow:var(--shadow)}
+.speed-toggle{display:flex;border-radius:20px;overflow:hidden;border:2px solid #e8e4dc}
+.speed-btn{padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-sub);transition:all .2s}
+.speed-btn.on{background:var(--text);color:#fff}
+.play-all-btn{margin-left:auto;padding:6px 16px;border-radius:20px;border:none;font-size:12px;font-weight:700;cursor:pointer;color:#fff;transition:all .2s}
+.play-all-btn:active{transform:scale(.95)}
+.play-all-btn.stop{background:#C0392B!important}
+.progress-bar{flex:1;height:4px;background:#e8e4dc;border-radius:2px;margin:0 8px;min-width:40px;overflow:hidden}
+.progress-fill{height:100%;border-radius:2px;transition:width .4s ease;width:0}
+
+.section{display:none;padding:12px 16px 80px;animation:fadeIn .3s ease}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.sec-title{font-size:22px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.sec-title .icon{font-size:28px}
+.sec-title .jp{font-size:14px;font-weight:400;color:var(--text-sub)}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-bottom:20px}
+.flip-card{perspective:800px;height:180px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-card.playing .flip-inner{box-shadow:0 0 0 3px var(--accent),var(--shadow-lg);border-radius:var(--r)}
+.flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);padding:12px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--card-bg);box-shadow:var(--shadow);border:2px solid #f0ece4;transition:border-color .2s,box-shadow .2s}
+.flip-back{transform:rotateY(180deg);background:#FFF8F0}
+.flip-front .emoji{font-size:42px;line-height:1.1;margin-bottom:4px}
+.flip-front .kanji{font-family:'M PLUS Rounded 1c',sans-serif;font-size:26px;font-weight:900}
+.flip-front .kana{font-size:14px;color:var(--text-sub);margin-top:2px}
+.flip-front .speaker{position:absolute;top:8px;right:10px;font-size:16px;opacity:.3;transition:opacity .2s}
+.flip-card.playing .speaker{opacity:1}
+.flip-back .romaji{font-size:16px;font-weight:700;color:var(--accent);background:#FFF0EC;padding:4px 12px;border-radius:8px;margin-bottom:6px}
+.flip-back .chinese{font-size:18px;font-weight:700;color:#C04030}
+.flip-back .hint-text{font-size:11px;color:var(--text-sub);margin-top:6px;text-align:center}
+.reviewed .flip-front{border-color:#B8E6C8}
+.reviewed .flip-front::after{content:'';display:none}
+
+.sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden}
+.sent-card:active{transform:scale(.98)}
+.sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow-lg)}
+.sent-card .jp-text{font-family:'M PLUS Rounded 1c',sans-serif;font-size:20px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.sent-card .kana-text{font-size:14px;color:var(--ocean);padding-left:28px}
+.sent-card .romaji-text{font-size:12px;color:#bbb;font-style:italic;padding-left:28px}
+.sent-card .cn-text{font-size:15px;color:#C04030;font-weight:600;padding-left:28px;margin-top:4px}
+.sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--food));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.sent-card.playing .wave{transform:scaleX(1);transition:transform 2s linear}
+
+.tip-box{background:#FAF7F0;border-left:4px solid var(--text-sub);border-radius:0 var(--rs) var(--rs) 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--text-sub);line-height:1.6}
+.tip-box b{color:var(--text)}
+
+.quiz-area{padding:8px 0}
+.quiz-card{background:var(--card-bg);border-radius:var(--r);padding:24px;text-align:center;box-shadow:var(--shadow);margin-bottom:16px;border:2px solid #f0ece4}
+.quiz-emoji{font-size:64px;margin-bottom:12px}
+.quiz-prompt{font-size:16px;color:var(--text-sub);margin-bottom:16px}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quiz-opt{padding:14px;border-radius:var(--rs);border:2px solid #e8e4dc;font-size:16px;font-weight:700;cursor:pointer;background:#fff;transition:all .2s;font-family:'M PLUS Rounded 1c',sans-serif}
+.quiz-opt:active{transform:scale(.96)}
+.quiz-opt.correct{background:#D4EDDA;border-color:#3A8F5C;color:#2D6A3F}
+.quiz-opt.wrong{background:#F8D7DA;border-color:#C0392B;color:#8B1A1A}
+.quiz-score{text-align:center;padding:20px;font-size:18px;font-weight:700}
+.quiz-btn{display:block;margin:16px auto;padding:12px 32px;border-radius:24px;border:none;font-size:15px;font-weight:700;cursor:pointer;color:#fff;background:var(--vocab);box-shadow:var(--shadow);transition:all .2s}
+.quiz-btn:active{transform:scale(.96)}
+.practice{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.practice b{color:var(--vocab)}
+.practice-title{font-size:16px;font-weight:700;margin-bottom:6px}
+.footer{text-align:center;padding:24px 16px;font-size:12px;color:var(--text-sub)}
+
+@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.bounce{animation:bounce .3s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.shake{animation:shake .3s ease}
+
+@media(max-width:400px){
+  .card-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+  .flip-card{height:160px}
+  .flip-front .emoji{font-size:34px}
+  .flip-front .kanji{font-size:22px}
+}
+
+.flip-front .emoji img{width:42px;height:42px;object-fit:contain}
+.quiz-emoji img{width:64px;height:64px;object-fit:contain}
+.tab-btn img{width:18px;height:18px;object-fit:contain;vertical-align:middle;margin-right:2px}
+h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
+.tip-box img{width:20px;height:20px;object-fit:contain;vertical-align:middle}
+@media(max-width:400px){.flip-front .emoji img{width:34px;height:34px}}
+
+.mark-badge{position:absolute;top:6px;right:6px;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700;color:#fff;z-index:6;white-space:nowrap;display:none;text-shadow:0 1px 1px rgba(0,0,0,.15);letter-spacing:.3px}
+.mark-badge.has-data{display:block}
+.mark-btns{position:absolute;bottom:4px;right:6px;display:flex;gap:4px;z-index:5}
+.mark-ok,.mark-ng{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;cursor:pointer;border:2px solid;transition:all .15s;line-height:1}
+.mark-ok{background:#E8F5E9;color:#43A047;border-color:#C8E6C9}
+.mark-ng{background:#FFEBEE;color:#E53935;border-color:#FFCDD2}
+.mark-ok:active,.mark-ng:active{transform:scale(.85)}
+.mark-ok.active{background:#43A047;color:#fff;border-color:#2E7D32;transform:scale(1.08)}
+.mark-ng.active{background:#E53935;color:#fff;border-color:#C62828;transform:scale(1.08)}
+.stats-float{position:fixed;bottom:20px;right:20px;background:rgba(45,42,36,.92);color:#fff;padding:8px 16px 8px 10px;border-radius:24px;font-size:13px;font-weight:700;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:none;align-items:center;gap:8px;transition:all .3s}
+.stats-ring{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:900;flex-shrink:0;text-shadow:0 1px 1px rgba(0,0,0,.2)}
+
+.grammar-box{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:16px;box-shadow:var(--shadow);border:2px solid #f0ece4}
+.grammar-box .grammar-title{font-size:16px;font-weight:900;color:var(--transport);margin-bottom:8px}
+.grammar-box .arrow-chain{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0;font-size:15px;font-weight:700}
+.grammar-box .arrow-chain .form{padding:6px 12px;border-radius:10px;background:#F0ECF8}
+.grammar-box .arrow-chain .arr{color:var(--transport);font-size:18px}
+.grammar-box .note{font-size:13px;color:var(--text-sub);margin-top:6px}
+.compare-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:14px}
+.compare-table th{background:#F0ECF8;padding:8px;text-align:left;font-weight:700;border-radius:6px 6px 0 0}
+.compare-table td{padding:8px;border-bottom:1px solid #f0ece4}
+.compare-table .jp{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a class="back-link" href="../index.html">&#8592;</a>
+  <h1>🎌 林之恒 日语学习卡片</h1>
+  <div class="sub">2026年2月9日 · 绘本：邮局与幼儿园 · 点击翻转+发音</div>
+</div>
+
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" data-sec="0" onclick="switchTab(0)">🏣 邮局</button>
+  <button class="tab-btn" data-sec="1" onclick="switchTab(1)">🏫 幼儿园</button>
+  <button class="tab-btn" data-sec="2" onclick="switchTab(2)">📝 语法</button>
+  <button class="tab-btn" data-sec="3" onclick="switchTab(3)">🎮 互动</button>
+</nav>
+
+<!-- Section 0: 邮局 -->
+<div class="section active" id="sec0">
+<div class="controls">
+  <div class="speed-toggle"><button class="speed-btn on" onclick="setSlow(false)">常速</button><button class="speed-btn" onclick="setSlow(true)">慢速</button></div>
+  <div class="progress-bar"><div class="progress-fill" id="prog0" style="background:var(--ocean)"></div></div>
+  <button class="play-all-btn" style="background:var(--ocean)" onclick="playAllCards(0,this)">▶ 全部</button>
+</div>
+<div class="sec-title" style="color:var(--ocean)"><span class="icon">🏣</span>一、邮局<span class="jp">ゆうびんきょく</span></div>
+<div class="card-grid" id="grid0">
+<div class="flip-card" data-k="shibaraku" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">⏳</div><div class="kanji">しばらく</div><div class="kana">しばらく</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">shibaraku</div><div class="chinese">一会儿</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="shibarakushite" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">⏳</div><div class="kanji">しばらくして</div><div class="kana">しばらくして</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">shibaraku shite</div><div class="chinese">过了一会儿</div><div class="hint-text">固定搭配！</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="yuubinkyoku" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🏣</div><div class="kanji">郵便局</div><div class="kana">ゆうびんきょく</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">yūbinkyoku</div><div class="chinese">邮局</div><div class="hint-text">ゆう(邮)+びん(信)+きょく(局)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="kimashita" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚶</div><div class="kanji">来ました</div><div class="kana">きました</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">kimashita</div><div class="chinese">来了（过去式）</div><div class="hint-text">原形：来る(kuru)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="imakara" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">⏰</div><div class="kanji">今から</div><div class="kana">いまから</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">ima kara</div><div class="chinese">从现在起</div><div class="hint-text">强调"这一刻"</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="tegami" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">✉️</div><div class="kanji">手紙</div><div class="kana">てがみ</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">tegami</div><div class="chinese">信</div><div class="hint-text">て(手)+がみ(纸)=手写的纸=信</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="okurimasu" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">📮</div><div class="kanji">送ります</div><div class="kana">おくります</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">okurimasu</div><div class="chinese">寄/发送</div><div class="hint-text">原形：送る(okuru)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="koko" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">📍</div><div class="kanji">ここ</div><div class="kana">ここ</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">koko</div><div class="chinese">这里</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+</div>
+<div class="tip-box" style="border-color:var(--ocean)">💡 <b>しばらくして</b> = しばらく(一会儿) + して(然后) → 固定搭配"过了一会儿"</div>
+<div class="tip-box" style="border-color:var(--ocean)">💡 <b>手紙</b>(てがみ) = 手(て) + 紙(がみ) = "手写的纸" = 信</div>
+
+<div style="font-weight:700;color:var(--text);margin:20px 0 12px;font-size:16px">📝 绘本句子（点击听整句）：</div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="jp-text"><span>🔊</span>しばらくして、郵便局に来ました。</div><div class="kana-text">しばらくして、ゆうびんきょくに きました。</div><div class="romaji-text">shibaraku shite, yūbinkyoku ni kimashita.</div><div class="cn-text">过了一会儿，来到了邮局。</div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="jp-text"><span>🔊</span>ここは郵便局です。</div><div class="kana-text">ここは ゆうびんきょく です。</div><div class="romaji-text">koko wa yūbinkyoku desu.</div><div class="cn-text">这里是邮局。</div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="jp-text"><span>🔊</span>今から手紙を送ります。</div><div class="kana-text">いまから てがみ を おくります。</div><div class="romaji-text">ima kara tegami o okurimasu.</div><div class="cn-text">从现在开始要寄信。</div></div>
+</div>
+
+<!-- Section 1: 幼儿园 -->
+<div class="section" id="sec1">
+<div class="controls">
+  <div class="speed-toggle"><button class="speed-btn on" onclick="setSlow(false)">常速</button><button class="speed-btn" onclick="setSlow(true)">慢速</button></div>
+  <div class="progress-bar"><div class="progress-fill" id="prog1" style="background:var(--food)"></div></div>
+  <button class="play-all-btn" style="background:var(--food)" onclick="playAllCards(1,this)">▶ 全部</button>
+</div>
+<div class="sec-title" style="color:var(--food)"><span class="icon">🏫</span>二、幼儿园<span class="jp">ようちえん</span></div>
+<div class="card-grid" id="grid1">
+<div class="flip-card" data-k="youchien" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🏫</div><div class="kanji">幼稚園</div><div class="kana">ようちえん</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">yōchien</div><div class="chinese">幼儿园</div><div class="hint-text">よう(幼)+ち(稚)+えん(园)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="korekara" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">➡️</div><div class="kanji">これから</div><div class="kana">これから</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">korekara</div><div class="chinese">接下来</div><div class="hint-text">这(これ)+从(から)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="ikimasu" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚶</div><div class="kanji">行きます</div><div class="kana">いきます</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">ikimasu</div><div class="chinese">去</div><div class="hint-text">原形：行く(iku)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="ikimashita" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚶</div><div class="kanji">行きました</div><div class="kana">いきました</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">ikimashita</div><div class="chinese">去了（过去式）</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="kuru" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚶</div><div class="kanji">来る</div><div class="kana">くる</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">kuru</div><div class="chinese">来（原形）</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="iku" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚶</div><div class="kanji">行く</div><div class="kana">いく</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">iku</div><div class="chinese">去（原形）</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+</div>
+<div class="tip-box" style="border-color:var(--food)">💡 <b>へ</b>(读作e) 表示"去的方向"：幼稚園<b>へ</b>行きます</div>
+<div class="tip-box" style="border-color:var(--food)">💡 <b>に</b> 表示"到达的地点"：幼稚園<b>に</b>来ました</div>
+
+<div style="font-weight:700;color:var(--text);margin:20px 0 12px;font-size:16px">📝 绘本句子（点击听整句）：</div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="jp-text"><span>🔊</span>これから幼稚園へ行きます。</div><div class="kana-text">これから ようちえん へ いきます。</div><div class="romaji-text">korekara yōchien e ikimasu.</div><div class="cn-text">接下来要去幼儿园。</div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="jp-text"><span>🔊</span>今から幼稚園へ行きます。</div><div class="kana-text">いまから ようちえん へ いきます。</div><div class="romaji-text">ima kara yōchien e ikimasu.</div><div class="cn-text">现在要去幼儿园。</div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="jp-text"><span>🔊</span>しばらくして、幼稚園に来ました。</div><div class="kana-text">しばらくして、ようちえん に きました。</div><div class="romaji-text">shibaraku shite, yōchien ni kimashita.</div><div class="cn-text">过了一会儿，来到了幼儿园。</div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="jp-text"><span>🔊</span>ここは幼稚園です。</div><div class="kana-text">ここは ようちえん です。</div><div class="romaji-text">koko wa yōchien desu.</div><div class="cn-text">这里是幼儿园。</div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="jp-text"><span>🔊</span>幼稚園へ行きました。</div><div class="kana-text">ようちえん へ いきました。</div><div class="romaji-text">yōchien e ikimashita.</div><div class="cn-text">已经去了幼儿园。</div></div>
+<div class="tip-box" style="border-color:var(--food)">💡 <b>行きます</b>（要去）→ <b>行きました</b>（去了）：把 masu 变成 mashita 就是过去式！</div>
+</div>
+
+<!-- Section 2: 语法 -->
+<div class="section" id="sec2">
+<div class="controls">
+  <div class="speed-toggle"><button class="speed-btn on" onclick="setSlow(false)">常速</button><button class="speed-btn" onclick="setSlow(true)">慢速</button></div>
+  <div class="progress-bar"><div class="progress-fill" id="prog2" style="background:var(--transport)"></div></div>
+  <button class="play-all-btn" style="background:var(--transport)" onclick="playAllCards(2,this)">▶ 全部</button>
+</div>
+<div class="sec-title" style="color:var(--transport)"><span class="icon">📝</span>三、语法要点<span class="jp">ぶんぽう</span></div>
+<div class="card-grid" id="grid2">
+<div class="flip-card" data-k="o_particle" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🎯</div><div class="kanji">を</div><div class="kana">を</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">o</div><div class="chinese">对象助词</div><div class="hint-text">手紙<b>を</b>送ります</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="e_particle" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">➡️</div><div class="kanji">へ</div><div class="kana">へ</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">e</div><div class="chinese">方向助词</div><div class="hint-text">幼稚園<b>へ</b>行きます</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="ni_particle" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">📍</div><div class="kanji">に</div><div class="kana">に</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">ni</div><div class="chinese">位置助词</div><div class="hint-text">郵便局<b>に</b>来ました</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="okuru" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">📮</div><div class="kanji">送る</div><div class="kana">おくる</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="romaji">okuru</div><div class="chinese">寄/送（原形）</div><div class="hint-text">→送ります(敬体)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+</div>
+
+<div class="grammar-box">
+  <div class="grammar-title">📖 动词变化：原形 → 礼貌形 → 过去式</div>
+  <div class="arrow-chain"><span class="form">行く(iku)</span><span class="arr">→</span><span class="form">行きます(ikimasu)</span><span class="arr">→</span><span class="form">行きました(ikimashita)</span></div>
+  <div class="arrow-chain"><span class="form">来る(kuru)</span><span class="arr">→</span><span class="form">来ます(kimasu)</span><span class="arr">→</span><span class="form">来ました(kimashita)</span></div>
+  <div class="arrow-chain"><span class="form">送る(okuru)</span><span class="arr">→</span><span class="form">送ります(okurimasu)</span><span class="arr">→</span><span class="form">送りました(okurimashita)</span></div>
+  <div class="note">规律：把 <b>masu</b> 变成 <b>mashita</b> 就变成过去式！</div>
+</div>
+
+<div class="grammar-box">
+  <div class="grammar-title">📖 へ vs に 的区别</div>
+  <table class="compare-table">
+    <tr><th>助词</th><th>用法</th><th>例句</th></tr>
+    <tr><td><b>へ</b>(e)</td><td>方向（朝着...去）</td><td class="jp">幼稚園<b>へ</b>行きます</td></tr>
+    <tr><td><b>に</b>(ni)</td><td>到达（到达了...）</td><td class="jp">郵便局<b>に</b>来ました</td></tr>
+  </table>
+  <div class="note">常搭配：へ + 行きます（去某地） / に + 来ました（到达某地）</div>
+</div>
+
+<div class="grammar-box">
+  <div class="grammar-title">📖 これから vs 今から</div>
+  <table class="compare-table">
+    <tr><th>表达</th><th>含义</th><th>语感</th></tr>
+    <tr><td class="jp"><b>これから</b></td><td>接下来/后面</td><td>强调"后面的安排"</td></tr>
+    <tr><td class="jp"><b>今から</b></td><td>从现在起</td><td>强调"此刻马上"</td></tr>
+  </table>
+  <div class="note">两者很接近！これから偏"接下来"，今から偏"现在就"</div>
+</div>
+</div>
+
+<!-- Section 3: 互动 -->
+<div class="section" id="sec3">
+<div class="sec-title" style="color:var(--vocab)"><span class="icon">🎮</span>亲子互动练习</div>
+<div class="practice"><div class="practice-title">🎯 练习1：绘本角色扮演</div>和Alex一起演绘本！Alex当小熊，爸爸/妈妈旁白。走到"邮局"说日语！</div>
+<div class="practice"><div class="practice-title">👂 练习2：听音选地点</div>爸爸/妈妈说"ゆうびんきょく"或"ようちえん"，Alex指出对应的卡片！</div>
+<div class="practice"><div class="practice-title">🗂️ 练习3：时态猜猜看</div>给Alex说一个动作，让他判断是"要去"(行きます)还是"去了"(行きました)！</div>
+<div style="margin-top:20px;font-weight:700;font-size:16px;color:var(--vocab)">🧠 小测验</div>
+<div id="quizArea" class="quiz-area"><button class="quiz-btn" onclick="startQuiz()">开始小测验！</button></div>
+</div>
+
+<div style="text-align:center;padding:20px 16px"><a href="../index.html" style="display:inline-block;padding:12px 32px;border-radius:24px;background:#5B8C5A;color:#fff;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 2px 12px rgba(0,0,0,.1)">&#8592; 返回课程列表</a></div>
+<div class="footer">💡 绘本教学：邮局与幼儿园 · 点击卡片翻转+发音 · 左右滑动切换板块</div>
+
+<script src="../scripts/cache-control.js"></script>
+<script src="../scripts/audio.js"></script>
+<script src="../scripts/emoji-data.js"></script>
+<script>
+var activeTab=0,speechRate=1,curEl=null,running=false;
+var reviewed={};
+var sessionMark={};
+var _lid=location.pathname.split('/').pop().replace('.html','');
+var _mh=JSON.parse(localStorage.getItem('marks_'+_lid)||'{}');
+function _eh(k){if(!_mh[k])_mh[k]={total:0,ok:0}}
+function _sv(){localStorage.setItem('marks_'+_lid,JSON.stringify(_mh))}
+function _gc(ratio){
+  var r=Math.round(67+(229-67)*(1-ratio)),g=Math.round(160+(57-160)*(1-ratio)),b=Math.round(71+(53-71)*(1-ratio));
+  return'rgb('+r+','+g+','+b+')';
+}
+function updateBadge(el){
+  var k=el.getAttribute('data-k');_eh(k);var h=_mh[k];
+  el.querySelectorAll('.mark-badge').forEach(function(b){
+    if(h.total>0){b.textContent='\u5b66'+h.total+' \u5bf9'+h.ok;b.style.background=_gc(h.ok/h.total);b.classList.add('has-data')}
+    else{b.classList.remove('has-data')}
+  });
+  el.querySelectorAll('.mark-ok').forEach(function(b){b.classList.toggle('active',sessionMark[k]==='ok')});
+  el.querySelectorAll('.mark-ng').forEach(function(b){b.classList.toggle('active',sessionMark[k]==='ng')});
+}
+function markOk(el,ev){
+  if(ev){ev.stopPropagation();ev.preventDefault()}
+  var k=el.getAttribute('data-k');_eh(k);var h=_mh[k];
+  if(sessionMark[k]==='ok'){h.total--;h.ok--;delete sessionMark[k]}
+  else{if(sessionMark[k]==='ng'){h.ok++}else{h.total++;h.ok++}sessionMark[k]='ok'}
+  _sv();updateBadge(el);updateStats();
+  if(!reviewed[k]){reviewed[k]=true;el.classList.add('reviewed');updateProgress()}
+}
+function markNg(el,ev){
+  if(ev){ev.stopPropagation();ev.preventDefault()}
+  var k=el.getAttribute('data-k');_eh(k);var h=_mh[k];
+  if(sessionMark[k]==='ng'){h.total--;delete sessionMark[k]}
+  else{if(sessionMark[k]==='ok'){h.ok--}else{h.total++}sessionMark[k]='ng'}
+  _sv();updateBadge(el);updateStats();
+  if(!reviewed[k]){reviewed[k]=true;el.classList.add('reviewed');updateProgress()}
+}
+function updateStats(){
+  var cards=document.querySelectorAll('.flip-card[data-k]');
+  var tOk=0,tT=0,sOk=0,sNg=0;
+  cards.forEach(function(c){var k=c.getAttribute('data-k');_eh(k);tOk+=_mh[k].ok;tT+=_mh[k].total;if(sessionMark[k]==='ok')sOk++;if(sessionMark[k]==='ng')sNg++});
+  var p=document.getElementById('statsFloat');if(!p)return;
+  var sT=sOk+sNg;
+  if(sT===0&&tT===0){p.style.display='none';return}
+  p.style.display='flex';
+  var ratio=tT>0?tOk/tT:1;
+  p.innerHTML='<span class="stats-ring" style="background:'+_gc(ratio)+'">'+Math.round(ratio*100)+'</span><span>\u672c\u6b21 \u2713'+sOk+' \u2717'+sNg+'</span>';
+}
+(function(){document.querySelectorAll('.flip-card[data-k]').forEach(function(c){updateBadge(c)});updateStats()})();
+
+var secKeys=[
+  ['shibaraku','shibarakushite','yuubinkyoku','kimashita','imakara','tegami','okurimasu','koko'],
+  ['youchien','korekara','ikimasu','ikimashita','kuru','iku'],
+  ['o_particle','e_particle','ni_particle','okuru'],
+  []
+];
+var quizVocab=[
+  {k:'shibaraku',e:'⏳',jp:'しばらく',cn:'一会儿'},
+  {k:'yuubinkyoku',e:'🏣',jp:'郵便局',cn:'邮局'},
+  {k:'tegami',e:'✉️',jp:'手紙',cn:'信'},
+  {k:'okurimasu',e:'📮',jp:'送ります',cn:'寄/发送'},
+  {k:'ikimasu',e:'🚶',jp:'行きます',cn:'去'},
+  {k:'kimashita',e:'🚶',jp:'来ました',cn:'来了'},
+  {k:'youchien',e:'🏫',jp:'幼稚園',cn:'幼儿园'},
+  {k:'korekara',e:'➡️',jp:'これから',cn:'接下来'},
+  {k:'imakara',e:'⏰',jp:'今から',cn:'从现在起'},
+  {k:'koko',e:'📍',jp:'ここ',cn:'这里'}
+];
+
+function switchTab(i){
+  if(running)stopAll();activeTab=i;
+  document.querySelectorAll('.section').forEach(function(s,idx){s.classList.toggle('active',idx===i)});
+  document.querySelectorAll('.tab-btn').forEach(function(b,idx){b.classList.toggle('active',idx===i)});
+  document.querySelectorAll('.tab-btn')[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+}
+
+function setSlow(v){
+  speechRate=v?0.6:1;
+  document.querySelectorAll('.speed-btn').forEach(function(b){
+    b.classList.toggle('on',v?(b.textContent==='慢速'):(b.textContent==='常速'));
+  });
+}
+
+var currentAudio=null;
+var audioMap={"いきました":"../audio/ef9674acb882.mp3","いきます":"../audio/bfdfc1e1b947.mp3","いく":"../audio/8e5f230d767f.mp3","いまから":"../audio/602db2b96998.mp3","おくります":"../audio/0b233aa127bf.mp3","おくる":"../audio/db6ec419d841.mp3","きました":"../audio/5c1c565aadee.mp3","くる":"../audio/70145327f513.mp3","ここ":"../audio/844d12f0e6ca.mp3","ここは幼稚園です。":"../audio/23373ea97235.mp3","ここは郵便局です。":"../audio/663592f0ed0b.mp3","これから":"../audio/5f7d5436c2ec.mp3","これから幼稚園へ行きます。":"../audio/1013d4a25975.mp3","しばらく":"../audio/bbdb088e210a.mp3","しばらくして":"../audio/46f7190ad285.mp3","しばらくして、幼稚園に来ました。":"../audio/586dccd195d6.mp3","しばらくして、郵便局に来ました。":"../audio/2c1e68b4e515.mp3","てがみ":"../audio/cc8e1c491e70.mp3","に":"../audio/8b63626ad336.mp3","へ":"../audio/40346ed000e4.mp3","ゆうびんきょく":"../audio/0ff59eb8301e.mp3","ようちえん":"../audio/a2129d2d0857.mp3","を":"../audio/96ac23a7525c.mp3","今から":"../audio/c4c18a4aa358.mp3","今から幼稚園へ行きます。":"../audio/7150ad3cb3ce.mp3","今から手紙を送ります。":"../audio/811c62a4be2b.mp3","幼稚園":"../audio/bdf7429dec53.mp3","幼稚園へ行きました。":"../audio/171dd9f824b2.mp3","手紙":"../audio/415004b62cd7.mp3","来ました":"../audio/5e491715c81d.mp3","来る":"../audio/540887393040.mp3","行きました":"../audio/cb524c367737.mp3","行きます":"../audio/1c50a01efe6d.mp3","行く":"../audio/1f84251300c5.mp3","送ります":"../audio/1e0bcd096508.mp3","送る":"../audio/a8ea5c72089d.mp3","郵便局":"../audio/93577ce85934.mp3"};
+var bestJPVoice=null;
+function findBestJPVoice(){
+  var voices=window.speechSynthesis.getVoices();
+  var jp=voices.filter(function(v){return v.lang&&v.lang.indexOf('ja')===0});
+  if(!jp.length)return null;
+  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
+  if(enhanced.length)return enhanced[0];
+  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
+  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
+  return jp[0];
+}
+function speakJPLocal(text,cb){
+  if('speechSynthesis' in window){
+    window.speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(text);
+    u.lang='ja-JP';u.rate=speechRate;u.pitch=1.1;
+    if(!bestJPVoice)bestJPVoice=findBestJPVoice();
+    if(bestJPVoice)u.voice=bestJPVoice;
+    u.onend=function(){if(cb)cb()};
+    u.onerror=function(){if(cb)cb()};
+    window.speechSynthesis.speak(u);
+  } else if(cb) cb();
+}
+function speakJPOnline(text,cb){
+  try{
+    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
+    currentAudio=a;
+    if(speechRate!==1)a.playbackRate=speechRate;
+    a.onended=function(){currentAudio=null;if(cb)cb()};
+    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
+    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
+  }catch(e){speakJPLocal(text,cb)}
+}
+function speakJP(text,cb){
+  if(currentAudio){currentAudio.pause();currentAudio=null}
+  window.speechSynthesis&&window.speechSynthesis.cancel();
+  text=text.replace(/[\u{1F4E3}\u{1F508}\u{1F509}\u{1F50A}\u{1F3B6}\u{1F3B5}]/gu,'').trim();
+  var path=audioMap[text];
+  if(path){
+    try{
+      var a=new Audio(path);
+      currentAudio=a;
+      if(speechRate!==1)a.playbackRate=speechRate;
+      a.onended=function(){currentAudio=null;if(cb)cb()};
+      a.onerror=function(){currentAudio=null;speakJPOnline(text,cb)};
+      a.play().catch(function(){currentAudio=null;speakJPOnline(text,cb)});
+      return;
+    }catch(e){}
+  }
+  speakJPOnline(text,cb);
+}
+
+function tapCard(el){
+  var k=el.getAttribute('data-k');
+  el.classList.toggle('flipped');
+  if(curEl)curEl.classList.remove('playing');
+  el.classList.add('playing');curEl=el;
+  var kana=el.querySelector('.kana');
+  if(kana) speakJP(kana.textContent,function(){
+    el.classList.remove('playing');
+    if(!reviewed[k]){reviewed[k]=true;el.classList.add('reviewed');updateProgress()}
+  });
+}
+
+function playSent(el){
+  document.querySelectorAll('.sent-card').forEach(function(s){s.classList.remove('playing')});
+  el.classList.add('playing');
+  var jpEl=el.querySelector('.jp-text');
+  var text=jpEl?jpEl.textContent.replace(/[\u{1F4E3}\u{1F508}\u{1F509}\u{1F50A}]/gu,'').trim():'';
+  speakJP(text,function(){el.classList.remove('playing')});
+}
+
+function playAllCards(si,btn){
+  if(running){stopAll();btn.textContent='\u25b6 全部';btn.classList.remove('stop');return}
+  running=true;btn.textContent='\u23f9 停止';btn.classList.add('stop');
+  var grid=document.getElementById('grid'+si);
+  var cards=grid?grid.querySelectorAll('.flip-card'):[];
+  var i=0;
+  function next(){
+    if(i>=cards.length||!running){running=false;btn.textContent='\u25b6 全部';btn.classList.remove('stop');return}
+    var el=cards[i];
+    el.classList.add('playing');if(curEl&&curEl!==el)curEl.classList.remove('playing');curEl=el;
+    var kana=el.querySelector('.kana');
+    if(kana)speakJP(kana.textContent,function(){
+      el.classList.remove('playing');el.classList.add('reviewed');
+      reviewed[el.getAttribute('data-k')]=true;updateProgress();
+      i++;setTimeout(next,350);
+    });
+    else{i++;next()}
+  }
+  next();
+}
+
+function stopAll(){running=false;if(currentAudio){currentAudio.pause();currentAudio=null}window.speechSynthesis&&window.speechSynthesis.cancel();if(curEl){curEl.classList.remove('playing');curEl=null}}
+
+function updateProgress(){
+  for(var s=0;s<3;s++){
+    var keys=secKeys[s];var done=keys.filter(function(k){return reviewed[k]}).length;
+    var pct=keys.length?Math.round(done/keys.length*100):0;
+    var bar=document.getElementById('prog'+s);if(bar)bar.style.width=pct+'%';
+  }
+}
+
+// Quiz
+var quizQ=0,quizScore=0,quizTotal=5,quizList=[];
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function startQuiz(){quizQ=0;quizScore=0;quizList=shuffle(quizVocab.slice()).slice(0,quizTotal);showQuestion()}
+function showQuestion(){
+  var area=document.getElementById('quizArea');
+  if(quizQ>=quizList.length){
+    area.innerHTML='<div class="quiz-card"><div class="quiz-emoji">\u{1F389}</div><div class="quiz-score">得分：'+quizScore+' / '+quizTotal+'</div><div style="font-size:14px;color:var(--text-sub)">'+(quizScore>=4?'太棒了Alex！\u{1F31F}':'继续加油！\u{1F4AA}')+'</div></div><button class="quiz-btn" onclick="startQuiz()">再来一次！</button>';
+    return;
+  }
+  var q=quizList[quizQ],opts=[q],pool=quizVocab.filter(function(v){return v.k!==q.k});
+  shuffle(pool);for(var i=0;i<3&&i<pool.length;i++)opts.push(pool[i]);shuffle(opts);
+  var h='<div class="quiz-card"><div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">第 '+(quizQ+1)+' / '+quizTotal+' 题</div>';
+  h+='<div class="quiz-emoji">'+q.e+'</div><div class="quiz-prompt">这个用日语怎么说？</div><div class="quiz-options">';
+  opts.forEach(function(o){h+='<button class="quiz-opt" data-correct="'+(o.k===q.k?'1':'0')+'" data-k="'+o.k+'" onclick="answer(this,\''+q.k+'\')">'+o.jp+'</button>'});
+  h+='</div></div>';area.innerHTML=h;
+  speakJP(q.jp);
+}
+function answer(btn,ck){
+  var ok=btn.getAttribute('data-correct')==='1';
+  btn.parentElement.querySelectorAll('.quiz-opt').forEach(function(b){b.onclick=null;if(b.getAttribute('data-k')===ck)b.classList.add('correct');else if(b===btn&&!ok)b.classList.add('wrong')});
+  if(ok){quizScore++;btn.classList.add('bounce')}else{btn.classList.add('shake')}
+  var correct=quizVocab.find(function(v){return v.k===ck});
+  if(correct)speakJP(correct.jp);
+  quizQ++;setTimeout(showQuestion,1200);
+}
+
+if('speechSynthesis' in window){
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged=function(){bestJPVoice=findBestJPVoice()};
+}
+</script>
+
+<script>
+replaceEmojiWithImg();
+var _origShowQ=typeof showQuestion==='function'?showQuestion:null;
+if(_origShowQ){
+  showQuestion=function(){_origShowQ.apply(this,arguments);setTimeout(replaceEmojiWithImg,50)};
+}
+</script>
+<div class="stats-float" id="statsFloat"></div>
+</body>
+</html>

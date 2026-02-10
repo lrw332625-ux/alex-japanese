@@ -1737,5 +1737,245 @@
     "sources": [
       "2026-02-06"
     ]
+  },
+  {
+    "jp": "日本料理はおいしいですね。",
+    "kana": "にほんりょうりは おいしいですね。",
+    "romaji": "nihon ryouri wa oishii desu ne.",
+    "cn": "日本料理好好吃啊。",
+    "sources": [
+      "2026-02-02"
+    ],
+    "id": "sent_173"
+  },
+  {
+    "jp": "月がきれいですね。",
+    "kana": "つき が きれい です ね。",
+    "romaji": "tsuki ga kirei desu ne.",
+    "cn": "月亮好漂亮啊。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_174"
+  },
+  {
+    "jp": "本当にきれいですね。",
+    "kana": "ほんとうに きれい です ね。",
+    "romaji": "hontou ni kirei desu ne.",
+    "cn": "真的好漂亮啊。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_175"
+  },
+  {
+    "jp": "ねこちゃん、かわいいですね。",
+    "kana": "ねこちゃん、かわいいですね。",
+    "romaji": "neko-chan, kawaii desu ne.",
+    "cn": "小猫好可爱啊。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_176"
+  },
+  {
+    "jp": "本当にかわいいですね。",
+    "kana": "ほんとうに かわいい です ね。",
+    "romaji": "hontou ni kawaii desu ne.",
+    "cn": "真的好可爱啊。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_177"
+  },
+  {
+    "jp": "今日は楽しかったですね。",
+    "kana": "きょう は たのしかった です ね。",
+    "romaji": "kyou wa tanoshikatta desu ne.",
+    "cn": "今天玩得好开心啊。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_178"
+  },
+  {
+    "jp": "本当に楽しかったですね。",
+    "kana": "ほんとうに たのしかった です ね。",
+    "romaji": "hontou ni tanoshikatta desu ne.",
+    "cn": "真的好开心啊。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_179"
+  },
+  {
+    "jp": "昨日いっぱいごはんを食べました。",
+    "kana": "きのう いっぱい ごはん を たべました。",
+    "romaji": "kinou ippai gohan o tabemashita.",
+    "cn": "昨天吃了很多饭。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_180"
+  },
+  {
+    "jp": "昨日は楽しかったですね。",
+    "kana": "きのう は たのしかった です ね。",
+    "romaji": "kinou wa tanoshikatta desu ne.",
+    "cn": "昨天好开心啊。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_181"
+  },
+  {
+    "jp": "リスちゃんは眠いですね。",
+    "kana": "りすちゃん は ねむい です ね。",
+    "romaji": "risu-chan wa nemui desu ne.",
+    "cn": "松鼠困了啊。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_182"
+  },
+  {
+    "jp": "本当に眠いですね。",
+    "kana": "ほんとうに ねむい です ね。",
+    "romaji": "hontou ni nemui desu ne.",
+    "cn": "真的好困啊。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_183"
+  },
+  {
+    "jp": "ここは私のふるさとです。",
+    "kana": "ここ は わたし の ふるさと です。",
+    "romaji": "koko wa watashi no furusato desu.",
+    "cn": "这里是我的家乡。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_184"
+  },
+  {
+    "jp": "これから郵便局へ行きます。",
+    "kana": "これから ゆうびんきょく へ いきます。",
+    "romaji": "korekara yūbinkyoku e ikimasu.",
+    "cn": "接下来要去邮局。",
+    "sources": [
+      "2026-02-06"
+    ],
+    "id": "sent_185"
+  },
+  {
+    "jp": "しばらくして、郵便局に来ました。",
+    "kana": "しばらく して、ゆうびんきょく に きました。",
+    "romaji": "shibaraku shite, yūbinkyoku ni kimashita.",
+    "cn": "过了一会儿，来到了邮局。",
+    "sources": [
+      "2026-02-09"
+    ],
+    "id": "sent_186"
+  },
+  {
+    "jp": "ここは郵便局です。",
+    "kana": "ここ は ゆうびんきょく です。",
+    "romaji": "koko wa yūbinkyoku desu.",
+    "cn": "这里是邮局。",
+    "sources": [
+      "2026-02-09"
+    ],
+    "id": "sent_187"
+  },
+  {
+    "jp": "今から手紙を送ります。",
+    "kana": "いまから てがみ を おくります。",
+    "romaji": "ima kara tegami o okurimasu.",
+    "cn": "从现在开始要寄信。",
+    "sources": [
+      "2026-02-09"
+    ],
+    "id": "sent_188"
+  },
+  {
+    "jp": "これから幼稚園へ行きます。",
+    "kana": "これから ようちえん へ いきます。",
+    "romaji": "korekara yōchien e ikimasu.",
+    "cn": "接下来要去幼儿园。",
+    "sources": [
+      "2026-02-09"
+    ],
+    "id": "sent_189"
+  },
+  {
+    "jp": "今から幼稚園へ行きます。",
+    "kana": "いまから ようちえん へ いきます。",
+    "romaji": "ima kara yōchien e ikimasu.",
+    "cn": "现在要去幼儿园。",
+    "sources": [
+      "2026-02-09"
+    ],
+    "id": "sent_190"
+  },
+  {
+    "jp": "しばらくして、幼稚園に来ました。",
+    "kana": "しばらく して、ようちえん に きました。",
+    "romaji": "shibaraku shite, yōchien ni kimashita.",
+    "cn": "过了一会儿，来到了幼儿园。",
+    "sources": [
+      "2026-02-09"
+    ],
+    "id": "sent_191"
+  },
+  {
+    "jp": "ここは幼稚園です。",
+    "kana": "ここ は ようちえん です。",
+    "romaji": "koko wa yōchien desu.",
+    "cn": "这里是幼儿园。",
+    "sources": [
+      "2026-02-09"
+    ],
+    "id": "sent_192"
+  },
+  {
+    "jp": "幼稚園へ行きました。",
+    "kana": "ようちえん へ いきました。",
+    "romaji": "yōchien e ikimashita.",
+    "cn": "已经去了幼儿园。",
+    "sources": [
+      "2026-02-09"
+    ],
+    "id": "sent_193"
+  },
+  {
+    "jp": "本当においしいですね。",
+    "kana": "ほんとうに おいしい です ね。",
+    "romaji": "hontou ni oishii desu ne.",
+    "cn": "真的好好吃啊。",
+    "sources": [
+      "2026-02-02"
+    ],
+    "id": "sent_194"
+  },
+  {
+    "jp": "こんにちは、こんにちは。",
+    "kana": "こんにちは、こんにちは。",
+    "romaji": "konnichiwa, konnichiwa.",
+    "cn": "你好，你好。（到达幼儿园时和同学们打招呼）",
+    "sources": [
+      "2026-02-09"
+    ],
+    "id": "sent_195"
+  },
+  {
+    "jp": "ここは私の故郷です！",
+    "kana": "ここ は わたし の ふるさと です！",
+    "romaji": "koko wa watashi no furusato desu!",
+    "cn": "这里是我的故乡！（绘本：小熊的故乡）",
+    "sources": [
+      "2026-02-09"
+    ],
+    "id": "sent_196"
   }
 ]
