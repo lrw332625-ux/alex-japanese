@@ -1788,84 +1788,96 @@
           "jp": "ここは私のふるさとです。",
           "kana": "ここはわたしのふるさとです。",
           "romaji": "koko wa watashi no furusato desu.",
-          "cn": "这里是我的家乡。"
+          "cn": "这里是我的家乡。",
+          "img": "plc_s01.png"
         },
         {
           "id": "plc_s02",
           "jp": "これから幼稚園へ行きます。",
           "kana": "これからようちえんへいきます。",
           "romaji": "korekara yōchien e ikimasu.",
-          "cn": "接下来要去幼儿园。"
+          "cn": "接下来要去幼儿园。",
+          "img": "plc_s02.png"
         },
         {
           "id": "plc_s11",
           "jp": "今から幼稚園へ行きます。",
           "kana": "いまからようちえんへいきます。",
           "romaji": "ima kara yōchien e ikimasu.",
-          "cn": "现在要去幼儿园。"
+          "cn": "现在要去幼儿园。",
+          "img": "plc_s11.png"
         },
         {
           "id": "plc_s03",
           "jp": "しばらくして、幼稚園に来ました。",
           "kana": "しばらくして、ようちえんにきました。",
           "romaji": "shibaraku shite, yōchien ni kimashita.",
-          "cn": "过了一会儿，来到了幼儿园。"
+          "cn": "过了一会儿，来到了幼儿园。",
+          "img": "plc_s03.png"
         },
         {
           "id": "plc_s04",
           "jp": "ここは幼稚園です。",
           "kana": "ここはようちえんです。",
           "romaji": "koko wa yōchien desu.",
-          "cn": "这里是幼儿园。"
+          "cn": "这里是幼儿园。",
+          "img": "plc_s04.png"
         },
         {
           "id": "plc_s05",
           "jp": "幼稚園へ行きました。",
           "kana": "ようちえんへいきました。",
           "romaji": "yōchien e ikimashita.",
-          "cn": "已经去了幼儿园。"
+          "cn": "已经去了幼儿园。",
+          "img": "plc_s05.png"
         },
         {
           "id": "plc_s06",
           "jp": "これから郵便局へ行きます。",
           "kana": "これからゆうびんきょくへいきます。",
           "romaji": "korekara yūbinkyoku e ikimasu.",
-          "cn": "接下来要去邮局。"
+          "cn": "接下来要去邮局。",
+          "img": "plc_s06.png"
         },
         {
           "id": "plc_s07",
           "jp": "しばらくして、郵便局に来ました。",
           "kana": "しばらくして、ゆうびんきょくにきました。",
           "romaji": "shibaraku shite, yūbinkyoku ni kimashita.",
-          "cn": "过了一会儿，来到了邮局。"
+          "cn": "过了一会儿，来到了邮局。",
+          "img": "plc_s07.png"
         },
         {
           "id": "plc_s08",
           "jp": "ここは郵便局です。",
           "kana": "ここはゆうびんきょくです。",
           "romaji": "koko wa yūbinkyoku desu.",
-          "cn": "这里是邮局。"
+          "cn": "这里是邮局。",
+          "img": "plc_s08.png"
         },
         {
           "id": "plc_s09",
           "jp": "今から手紙を送ります。",
           "kana": "いまからてがみをおくります。",
           "romaji": "ima kara tegami o okurimasu.",
-          "cn": "现在要寄信。"
+          "cn": "现在要寄信。",
+          "img": "plc_s09.png"
         },
         {
           "id": "plc_s10",
           "jp": "月がきれいですね。",
           "kana": "つきがきれいですね。",
           "romaji": "tsuki ga kirei desu ne.",
-          "cn": "月亮好漂亮啊。"
+          "cn": "月亮好漂亮啊。",
+          "img": "plc_s10.png"
         },
         {
           "id": "plc_s12",
           "jp": "こんにちは、こんにちは。",
           "kana": "こんにちは、こんにちは。",
           "romaji": "konnichiwa, konnichiwa.",
-          "cn": "你好，你好。（到达幼儿园和同学打招呼）"
+          "cn": "你好，你好。（到达幼儿园和同学打招呼）",
+          "img": "plc_s12.png"
         }
       ]
     }
