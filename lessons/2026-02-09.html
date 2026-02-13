@@ -46,7 +46,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .sec-title{font-size:22px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .sec-title .icon{font-size:28px}
 .sec-title .jp{font-size:14px;font-weight:400;color:var(--text-sub)}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-bottom:20px}
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
 .flip-card{perspective:800px;height:180px;cursor:pointer}
 .flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
 .flip-card.flipped .flip-inner{transform:rotateY(180deg)}
@@ -94,9 +94,10 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .bounce{animation:bounce .3s ease}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 .shake{animation:shake .3s ease}
+@media(min-width:600px){.card-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.card-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:400px){
-  .card-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
-  .flip-card{height:160px}
+.flip-card{height:160px}
   .flip-front .emoji{font-size:34px}
   .flip-front .chinese{font-size:20px}
 }
@@ -127,6 +128,10 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
 .compare-table th{background:#F0ECF8;padding:8px;text-align:left;font-weight:700;border-radius:6px 6px 0 0}
 .compare-table td{padding:8px;border-bottom:1px solid #f0ece4}
 .compare-table .jp{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:700}
+
+.lang-toggle{display:flex;gap:0;margin:8px 16px;border-radius:20px;overflow:hidden;border:2px solid #e8e4dc;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.lang-btn{flex:1;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-sub);transition:all .2s;text-align:center;white-space:nowrap}
+.lang-btn.on{background:var(--accent,#E8573A);color:#fff}
 </style>
 </head>
 <body>
@@ -141,6 +146,11 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
   <button class="tab-btn" data-sec="2" onclick="switchTab(2)">📝 语法</button>
   <button class="tab-btn" data-sec="3" onclick="switchTab(3)">🎮 互动</button>
 </nav>
+<div class="lang-toggle" id="langToggle">
+  <button class="lang-btn on" data-lang="cn" onclick="applyFrontLang('cn')">🇨🇳 看中文学日文</button>
+  <button class="lang-btn" data-lang="jp" onclick="applyFrontLang('jp')">🇯🇵 看日文学中文</button>
+</div>
+
 <!-- Section 0: 邮局 -->
 <div class="section active" id="sec0">
 <div class="controls">
@@ -154,9 +164,11 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
 <div class="flip-card" data-k="shibarakushite" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_shibarakushite.png" alt="shibarakushite" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">过了一会儿</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">しばらくして</div><div class="kana">しばらくして</div><div class="romaji">shibaraku shite</div><div class="hint-text">固定搭配！</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="yuubinkyoku" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🏣</div><div class="chinese">邮局</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">郵便局</div><div class="kana">ゆうびんきょく</div><div class="romaji">yūbinkyoku</div><div class="hint-text">ゆう(邮)+びん(信)+きょく(局)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="kimashita" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_kimashita.png" alt="kimashita" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">来了（过去式）</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">来ました</div><div class="kana">きました</div><div class="romaji">kimashita</div><div class="hint-text">原形：来る(kuru)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
+<div class="flip-card" data-k="kuru" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_kuru.png" alt="kuru" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">来（原形）</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">来る</div><div class="kana">くる</div><div class="romaji">kuru</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="imakara" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_imakara.png" alt="imakara" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">从现在起</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">今から</div><div class="kana">いまから</div><div class="romaji">ima kara</div><div class="hint-text">强调"这一刻"</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="tegami" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">✉️</div><div class="chinese">信</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">手紙</div><div class="kana">てがみ</div><div class="romaji">tegami</div><div class="hint-text">て(手)+がみ(纸)=手写的纸=信</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="okurimasu" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">📮</div><div class="chinese">寄/发送</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">送ります</div><div class="kana">おくります</div><div class="romaji">okurimasu</div><div class="hint-text">原形：送る(okuru)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
+<div class="flip-card" data-k="okuru" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_okuru.png" alt="okuru" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">寄/送（原形）</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">送る</div><div class="kana">おくる</div><div class="romaji">okuru</div><div class="hint-text">→送ります(敬体)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="koko" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">📍</div><div class="chinese">这里</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">ここ</div><div class="kana">ここ</div><div class="romaji">koko</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 </div>
 <div class="tip-box" style="border-color:var(--ocean)">💡 <b>しばらくして</b> = しばらく(一会儿) + して(然后) → 固定搭配"过了一会儿"</div>
@@ -179,7 +191,6 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
 <div class="flip-card" data-k="korekara" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">➡️</div><div class="chinese">接下来</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">これから</div><div class="kana">これから</div><div class="romaji">korekara</div><div class="hint-text">这(これ)+从(から)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="ikimasu" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_ikimasu.png" alt="ikimasu" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">去</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">行きます</div><div class="kana">いきます</div><div class="romaji">ikimasu</div><div class="hint-text">原形：行く(iku)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="ikimashita" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_ikimashita.png" alt="ikimashita" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">去了（过去式）</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">行きました</div><div class="kana">いきました</div><div class="romaji">ikimashita</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
-<div class="flip-card" data-k="kuru" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_kuru.png" alt="kuru" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">来（原形）</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">来る</div><div class="kana">くる</div><div class="romaji">kuru</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="iku" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_iku.png" alt="iku" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">去（原形）</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">行く</div><div class="kana">いく</div><div class="romaji">iku</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 </div>
 <div class="tip-box" style="border-color:var(--food)">💡 <b>へ</b>(读作e) 表示"去的方向"：幼稚園<b>へ</b>行きます</div>
@@ -204,7 +215,6 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
 <div class="flip-card" data-k="o_particle" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🎯</div><div class="chinese">对象助词</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">を</div><div class="kana">を</div><div class="romaji">o</div><div class="hint-text">手紙<b>を</b>送ります</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="e_particle" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_e_particle.png" alt="e_particle" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">方向助词</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">へ</div><div class="kana">へ</div><div class="romaji">e</div><div class="hint-text">幼稚園<b>へ</b>行きます</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 <div class="flip-card" data-k="ni_particle" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_ni_particle.png" alt="ni_particle" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">位置助词</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">に</div><div class="kana">に</div><div class="romaji">ni</div><div class="hint-text">郵便局<b>に</b>来ました</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
-<div class="flip-card" data-k="okuru" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_okuru.png" alt="okuru" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">寄/送（原形）</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">送る</div><div class="kana">おくる</div><div class="romaji">okuru</div><div class="hint-text">→送ります(敬体)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div></div>
 </div>
 <div class="grammar-box">
   <div class="grammar-title">📖 动词变化：原形 → 礼貌形 → 过去式</div>
@@ -296,9 +306,9 @@ function updateStats(){
 }
 (function(){document.querySelectorAll('.flip-card[data-k]').forEach(function(c){updateBadge(c)});updateStats()})();
 var secKeys=[
-  ['shibaraku','shibarakushite','yuubinkyoku','kimashita','imakara','tegami','okurimasu','koko'],
-  ['youchien','korekara','ikimasu','ikimashita','kuru','iku'],
-  ['o_particle','e_particle','ni_particle','okuru'],
+  ['shibaraku','shibarakushite','yuubinkyoku','kimashita','kuru','imakara','tegami','okurimasu','okuru','koko'],
+  ['youchien','korekara','ikimasu','ikimashita','iku'],
+  ['o_particle','e_particle','ni_particle'],
   []
 ];
 var quizVocab=[
@@ -311,7 +321,11 @@ var quizVocab=[
   {k:'youchien',e:'🏫',jp:'幼稚園',cn:'幼儿园'},
   {k:'korekara',e:'➡️',jp:'これから',cn:'接下来'},
   {k:'imakara',e:'⏰',jp:'今から',cn:'从现在起'},
-  {k:'koko',e:'📍',jp:'ここ',cn:'这里'}
+  {k:'koko',e:'📍',jp:'ここ',cn:'这里'},
+  {k:'kuru',e:'🚶',jp:'来る',cn:'来（原形）'},
+  {k:'okuru',e:'📮',jp:'送る',cn:'寄/送（原形）'},
+  {k:'iku',e:'🚶',jp:'行く',cn:'去（原形）'},
+  {k:'ikimashita',e:'🚶',jp:'行きました',cn:'去了'}
 ];
 function switchTab(i){
   if(running)stopAll();activeTab=i;
@@ -463,5 +477,44 @@ if(_origShowQ){
 }
 </script>
 <div class="stats-float" id="statsFloat"></div>
+<script>
+(function(){
+  var _fl=localStorage.getItem('frontLang')||'cn';
+  function initLD(){
+    document.querySelectorAll('.flip-card').forEach(function(c){
+      var f=c.querySelector('.flip-front'),b=c.querySelector('.flip-back');
+      if(!f||!b)return;
+      var cn=f.querySelector('.chinese'),kj=b.querySelector('.kanji'),kn=b.querySelector('.kana');
+      if(cn)c.dataset.origCn=cn.textContent;
+      if(kj)c.dataset.origKanji=kj.innerHTML;
+      if(kn)c.dataset.origKana=kn.textContent;
+    });
+  }
+  window.applyFrontLang=function(lang){
+    _fl=lang;localStorage.setItem('frontLang',lang);
+    document.querySelectorAll('.flip-card').forEach(function(c){
+      var f=c.querySelector('.flip-front'),b=c.querySelector('.flip-back');
+      if(!f||!b)return;
+      var cnDiv=f.querySelector('.chinese'),kjDiv=b.querySelector('.kanji');
+      if(!cnDiv||!kjDiv)return;
+      if(lang==='jp'){
+        cnDiv.textContent=c.dataset.origKanji?c.dataset.origKanji.replace(/<[^>]*>/g,''):'';
+        cnDiv.style.fontFamily="'M PLUS Rounded 1c',sans-serif";
+        kjDiv.innerHTML='<span style="color:#C04030;font-family:\'Noto Sans SC\',sans-serif">'+(c.dataset.origCn||'')+'</span>';
+      }else{
+        cnDiv.textContent=c.dataset.origCn||'';
+        cnDiv.style.fontFamily='';
+        kjDiv.innerHTML=c.dataset.origKanji||'';
+      }
+      c.classList.remove('flipped');
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('on',b.dataset.lang===lang);
+    });
+  };
+  initLD();
+  if(_fl==='jp')setTimeout(function(){applyFrontLang('jp')},100);
+})();
+</script>
 </body>
 </html>
