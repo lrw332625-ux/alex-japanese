@@ -109,7 +109,11 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .quiz-emoji img{width:64px;height:64px;object-fit:contain}
 .sent-img{width:100%;max-height:160px;object-fit:cover;border-radius:12px;margin-bottom:8px}
 .word-breakdown{display:flex;flex-wrap:wrap;gap:2px 6px;padding:6px 0 2px 0;margin-top:4px;border-top:1px dashed #e8e4dc}
-.wb-word{display:flex;flex-direction:column;align-items:center;padding:3px 5px;border-radius:6px;background:#FAF7F0;min-width:36px}
+.wb-word{display:flex;flex-direction:column;align-items:center;padding:3px 5px;border-radius:6px;background:#FAF7F0;min-width:36px;cursor:pointer;transition:all .2s;user-select:none;-webkit-user-select:none}
+.wb-word:active{transform:scale(.92)}
+.wb-word:hover{background:#EDE8DD;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.wb-word.wb-playing{background:#FFF0EC;box-shadow:0 0 0 2px var(--accent);transform:scale(1.05)}
+.wb-word .wb-speaker{font-size:10px;opacity:.4;margin-top:1px}
 .wb-word .wb-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;font-weight:700;color:var(--text)}
 .wb-word .wb-rd{font-size:10px;color:#bbb;font-style:italic}
 .wb-word .wb-cn{font-size:11px;color:var(--food);font-weight:600}
@@ -316,7 +320,7 @@ function setSlow(v){
   });
 }
 var currentAudio=null;
-var audioMap={"ふるさと":"../audio/8db5b72fc5ef.mp3","わたし":"../audio/df551410e7c3.mp3","こんびに":"../audio/d18b4ad55aeb.mp3","あいすくりーむ":"../audio/fcf81d37c8b7.mp3","かいます":"../audio/4c195b9b0479.mp3","かいました":"../audio/36850e654ebb.mp3","かう":"../audio/714c2e99d6f3.mp3","は":"../audio/b7a83b3be2f3.mp3","の":"../audio/359ebee169e2.mp3","ここは私のふるさとです。":"../audio/43024e95dc92.mp3","これからコンビニへ行きます。":"../audio/96aa2fd1ca52.mp3","しばらくして、コンビニに来ました。":"../audio/98adc0a63d4b.mp3","ここはコンビニです。":"../audio/0b9fed7a29e3.mp3","今からアイスクリームを買います。":"../audio/c68d31d2f5ee.mp3","アイスクリームを買いました。":"../audio/f35c43c651fc.mp3","私":"../audio/b511e6815bc8.mp3","コンビニ":"../audio/82bfc76940fb.mp3","アイスクリーム":"../audio/72571f56c0e7.mp3","買います":"../audio/7f2b1f2bd31f.mp3","買いました":"../audio/4458237bda92.mp3","買う":"../audio/3d70b012cddf.mp3"};
+var audioMap={"ふるさと":"../audio/8db5b72fc5ef.mp3","わたし":"../audio/df551410e7c3.mp3","こんびに":"../audio/d18b4ad55aeb.mp3","あいすくりーむ":"../audio/fcf81d37c8b7.mp3","かいます":"../audio/4c195b9b0479.mp3","かいました":"../audio/36850e654ebb.mp3","かう":"../audio/714c2e99d6f3.mp3","は":"../audio/b7a83b3be2f3.mp3","の":"../audio/359ebee169e2.mp3","ここは私のふるさとです。":"../audio/43024e95dc92.mp3","これからコンビニへ行きます。":"../audio/96aa2fd1ca52.mp3","しばらくして、コンビニに来ました。":"../audio/98adc0a63d4b.mp3","ここはコンビニです。":"../audio/0b9fed7a29e3.mp3","今からアイスクリームを買います。":"../audio/c68d31d2f5ee.mp3","アイスクリームを買いました。":"../audio/f35c43c651fc.mp3","私":"../audio/b511e6815bc8.mp3","コンビニ":"../audio/82bfc76940fb.mp3","アイスクリーム":"../audio/72571f56c0e7.mp3","買います":"../audio/7f2b1f2bd31f.mp3","買いました":"../audio/4458237bda92.mp3","買う":"../audio/3d70b012cddf.mp3","ここ":"../audio/koko_wb.mp3","私の":"../audio/watashino_wb.mp3","です":"../audio/desu_wb.mp3","これから":"../audio/korekara_wb.mp3","へ":"../audio/e_wb.mp3","行きます":"../audio/ikimasu_wb.mp3","しばらくして":"../audio/shibarakushite_wb.mp3","に":"../audio/ni_wb.mp3","来ました":"../audio/kimashita_wb.mp3","今から":"../audio/imakara_wb.mp3","を":"../audio/o_wb.mp3"};
 var bestJPVoice=null;
 function findBestJPVoice(){
   var voices=window.speechSynthesis.getVoices();
@@ -443,6 +447,22 @@ if('speechSynthesis' in window){
   window.speechSynthesis.getVoices();
   window.speechSynthesis.onvoiceschanged=function(){bestJPVoice=findBestJPVoice()};
 }
+// Word breakdown click-to-speak
+(function(){
+  document.querySelectorAll('.wb-word').forEach(function(w){
+    var sp=document.createElement('div');sp.className='wb-speaker';sp.textContent='🔈';
+    w.appendChild(sp);
+    w.addEventListener('click',function(e){
+      e.stopPropagation();
+      var jp=w.querySelector('.wb-jp');
+      if(!jp)return;
+      var text=jp.textContent.trim();
+      document.querySelectorAll('.wb-word').forEach(function(x){x.classList.remove('wb-playing')});
+      w.classList.add('wb-playing');
+      speakJP(text,function(){w.classList.remove('wb-playing')});
+    });
+  });
+})();
 </script>
 <script>
 replaceEmojiWithImg();
