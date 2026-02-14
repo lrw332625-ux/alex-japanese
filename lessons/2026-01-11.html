@@ -53,16 +53,29 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .flip-back .hint-text{font-size:11px;color:var(--text-sub);margin-top:6px;text-align:center}
 .reviewed .flip-front{border-color:#B8E6C8}
 .reviewed .flip-front::after{content:'✓';position:absolute;bottom:6px;right:8px;font-size:14px;color:#3A8F5C;font-weight:900}
-.sent-card .sent-img{width:64px;height:64px;float:right;margin:-4px -4px 4px 8px;border-radius:8px;object-fit:contain}
-.sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden}
+
+.sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden;display:flex;gap:12px;align-items:stretch}
 .sent-card:active{transform:scale(.98)}
 .sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow-lg)}
+.sent-card .sent-img-area{flex:0 0 140px;display:flex;align-items:center;justify-content:center;border-radius:12px;overflow:hidden;background:#F5F0E8}
+.sent-card .sent-img-area img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.sent-card .sent-text-area{flex:1;min-width:0}
 .sent-card .jp-text{font-family:'M PLUS Rounded 1c',sans-serif;font-size:20px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
-.sent-card .kana-text{font-size:14px;color:var(--primary);padding-left:28px}
+.sent-card .kana-text{font-size:14px;color:var(--primary,var(--food,var(--ocean,#2B7A98)));padding-left:28px}
 .sent-card .romaji-text{font-size:12px;color:#bbb;font-style:italic;padding-left:28px}
 .sent-card .cn-text{font-size:15px;color:#C04030;font-weight:600;padding-left:28px;margin-top:4px}
-.sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--secondary));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent,#E8573A),var(--food,var(--secondary,#2B7A98)));transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .sent-card.playing .wave{transform:scaleX(1);transition:transform 2s linear}
+@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:120px;width:100%}}
+.word-breakdown{display:flex;flex-wrap:wrap;gap:2px 6px;padding:6px 0 2px 0;margin-top:4px;border-top:1px dashed #e8e4dc}
+.wb-word{display:flex;flex-direction:column;align-items:center;padding:3px 5px;border-radius:6px;background:#FAF7F0;min-width:36px;cursor:pointer;transition:all .2s;user-select:none;-webkit-user-select:none}
+.wb-word:active{transform:scale(.92)}
+.wb-word:hover{background:#EDE8DD;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.wb-word.wb-playing{background:#FFF0EC;box-shadow:0 0 0 2px var(--accent,#E8573A);transform:scale(1.05)}
+.wb-word .wb-speaker{font-size:10px;opacity:.4;margin-top:1px}
+.wb-word .wb-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;font-weight:700;color:var(--text,#2D2A24)}
+.wb-word .wb-rd{font-size:10px;color:#bbb;font-style:italic}
+.wb-word .wb-cn{font-size:11px;color:var(--food,var(--primary,#2B7A98));font-weight:600}
 .tip-box{background:#FAF7F0;border-left:4px solid var(--text-sub);border-radius:0 var(--rs) var(--rs) 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--text-sub);line-height:1.6}
 .tip-box b{color:var(--text)}
 .quiz-area{padding:8px 0}
@@ -166,57 +179,14 @@ dōbutsuen desu</div><div class="chinese">这里是动物园</div></div></div></
 </div>
 <div class="section" id="sec1">
 <div class="sec-title" style="color:var(--secondary)"><span class="icon">🗣️</span>句子练习</div>
-<div class="sent-card" data-k="sent0" onclick="playSentTTS(this, 'ありの おでかけ')">
-  <img class="sent-img" src="../img/sentences/sent_115.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 ありの おでかけ</div>
-  <div class="kana-text">ありの おでかけ</div>
-  <div class="romaji-text">ari no odekake</div>
-  <div class="cn-text">蚂蚁出门</div>
-  <div class="wave"></div>
-</div>
-<div class="sent-card" data-k="sent1" onclick="playSentTTS(this, 'ありちゃんは バスで おでかけです')">
-  <img class="sent-img" src="../img/sentences/sent_114.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 ありちゃんは バスで おでかけです</div>
-  <div class="kana-text">ありちゃんは
-ばすで おでかけです</div>
-  <div class="romaji-text">ari chan wa basu de odekake desu</div>
-  <div class="cn-text">蚂蚁乘坐公交车出门</div>
-  <div class="wave"></div>
-</div>
-<div class="sent-card" data-k="sent2" onclick="playSentTTS(this, 'ガタガタ　ゴトゴト')">
-  <img class="sent-img" src="../img/sentences/sent_117.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 ガタガタ　ゴトゴト</div>
-  <div class="kana-text">がたがた　ごとごと</div>
-  <div class="romaji-text">gata-gata goto-goto</div>
-  <div class="cn-text">咯噔咯噔、咕咚咕咚（公交车颠簸行驶的声音</div>
-  <div class="wave"></div>
-</div>
-<div class="sent-card" data-k="sent3" onclick="playSentTTS(this, '山が見えてきました。')">
-  <img class="sent-img" src="../img/sentences/sent_119.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 山が見えてきました。</div>
-  <div class="kana-text">やまが
-みえてきました</div>
-  <div class="romaji-text">yama ga miete kimashita</div>
-  <div class="cn-text">山渐渐看见了/山越来越近、越来越清楚了</div>
-  <div class="wave"></div>
-</div>
-<div class="sent-card" data-k="sent4" onclick="playSentTTS(this, '森が見えてきました。')">
-  <img class="sent-img" src="../img/sentences/sent_121.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 森が見えてきました。</div>
-  <div class="kana-text">もり が みえて きました</div>
-  <div class="romaji-text">mori ga miete kimashita</div>
-  <div class="cn-text">森林渐渐出现在眼前了</div>
-  <div class="wave"></div>
-</div>
-<div class="sent-card" data-k="sent5" onclick="playSentTTS(this, 'ここは動物園です。')">
-  <img class="sent-img" src="../img/sentences/sent_120.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 ここは動物園です。</div>
-  <div class="kana-text">ここ は どうぶつえん です</div>
-  <div class="romaji-text">koko wa
-dōbutsuen desu</div>
-  <div class="cn-text">这里是动物园</div>
-  <div class="wave"></div>
-</div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_115.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>ありの おでかけ</div><div class="kana-text">ありの おでかけ</div><div class="romaji-text">ari no odekake</div><div class="cn-text">蚂蚁出门</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">あり</div><div class="wb-rd">ari</div><div class="wb-cn">蚂蚁</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">の</div><div class="wb-rd">no</div><div class="wb-cn">的</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">おでかけ</div><div class="wb-rd">odekake</div><div class="wb-cn">出门</div><div class="wb-speaker">🔈</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_114.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>ありちゃんは バスで おでかけです</div><div class="kana-text">ありちゃんは
+ばすで おでかけです</div><div class="romaji-text">ari chan wa basu de odekake desu</div><div class="cn-text">蚂蚁乘坐公交车出门</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">ありちゃん</div><div class="wb-rd">ari-chan</div><div class="wb-cn">蚂蚁</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">(主题)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">バス</div><div class="wb-rd">basu</div><div class="wb-cn">公交车</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">で</div><div class="wb-rd">de</div><div class="wb-cn">乘坐</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">おでかけ</div><div class="wb-rd">odekake</div><div class="wb-cn">出门</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">です</div><div class="wb-rd">desu</div><div class="wb-cn">是</div><div class="wb-speaker">🔈</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_117.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>ガタガタ　ゴトゴト</div><div class="kana-text">がたがた　ごとごと</div><div class="romaji-text">gata-gata goto-goto</div><div class="cn-text">咯噔咯噔、咕咚咕咚（公交车颠簸行驶的声音</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">ガタガタ</div><div class="wb-rd">gata gata</div><div class="wb-cn">咯噔咯噔</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">ゴトゴト</div><div class="wb-rd">goto goto</div><div class="wb-cn">咕咚咕咚</div><div class="wb-speaker">🔈</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_119.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>山が見えてきました。</div><div class="kana-text">やまが
+みえてきました</div><div class="romaji-text">yama ga miete kimashita</div><div class="cn-text">山渐渐看见了/山越来越近、越来越清楚了</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">山</div><div class="wb-rd">yama</div><div class="wb-cn">山</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">が</div><div class="wb-rd">ga</div><div class="wb-cn">(主语)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">見えて</div><div class="wb-rd">miete</div><div class="wb-cn">看见</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">きました</div><div class="wb-rd">kimashita</div><div class="wb-cn">渐渐…了</div><div class="wb-speaker">🔈</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_121.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>森が見えてきました。</div><div class="kana-text">もり が みえて きました</div><div class="romaji-text">mori ga miete kimashita</div><div class="cn-text">森林渐渐出现在眼前了</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">森</div><div class="wb-rd">mori</div><div class="wb-cn">森林</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">が</div><div class="wb-rd">ga</div><div class="wb-cn">(主语)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">見えて</div><div class="wb-rd">miete</div><div class="wb-cn">看见</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">きました</div><div class="wb-rd">kimashita</div><div class="wb-cn">渐渐…了</div><div class="wb-speaker">🔈</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_120.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>ここは動物園です。</div><div class="kana-text">ここ は どうぶつえん です</div><div class="romaji-text">koko wa dōbutsuen desu</div><div class="cn-text">这里是动物园</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">ここ</div><div class="wb-rd">koko</div><div class="wb-cn">这里</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">(主题)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">動物園</div><div class="wb-rd">dōbutsuen</div><div class="wb-cn">动物园</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">です</div><div class="wb-rd">desu</div><div class="wb-cn">是</div><div class="wb-speaker">🔈</div></div></div></div></div>
 </div>
 <div class="section" id="sec2">
 <div class="sec-title" style="color:var(--game)"><span class="icon">🎮</span>小测验</div>
@@ -456,6 +426,30 @@ if(_origShowQ){
   initLD();
   if(_fl==='jp')setTimeout(function(){applyFrontLang('jp')},100);
 })();
+
+  function playSent(el){
+    document.querySelectorAll('.sent-card').forEach(function(s){s.classList.remove('playing')});
+    el.classList.add('playing');
+    var jpEl = el.querySelector('.jp-text');
+    if(jpEl){
+      var text = jpEl.textContent.replace('🔊','').trim();
+      speakJP(text);
+    }
+    setTimeout(function(){el.classList.remove('playing')},3000);
+  }
+
+  // Word breakdown click handler
+  document.querySelectorAll('.wb-word').forEach(function(w){
+    w.addEventListener('click', function(ev){
+      ev.stopPropagation();
+      var jpText = this.querySelector('.wb-jp').textContent.trim();
+      if(!jpText) return;
+      document.querySelectorAll('.wb-word').forEach(function(x){x.classList.remove('wb-playing')});
+      this.classList.add('wb-playing');
+      speakJP(jpText);
+      setTimeout(function(){w.classList.remove('wb-playing')},1200);
+    });
+  });
 </script>
 </body>
 </html>

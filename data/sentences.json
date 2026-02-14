@@ -7,6 +7,24 @@
     "cn": "已经吃了拉面",
     "sources": [
       "2025-06-00"
+    ],
+    "img": "sentences/sent_001.png",
+    "wb": [
+      {
+        "jp": "ラーメン",
+        "romaji": "ramen",
+        "cn": "拉面"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べました",
+        "romaji": "tabemashita",
+        "cn": "吃了"
+      }
     ]
   },
   {
@@ -17,6 +35,24 @@
     "cn": "要吃拉面",
     "sources": [
       "2025-06-00"
+    ],
+    "img": "sentences/sent_002.png",
+    "wb": [
+      {
+        "jp": "ラーメン",
+        "romaji": "ramen",
+        "cn": "拉面"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べます",
+        "romaji": "tabemasu",
+        "cn": "要吃"
+      }
     ]
   },
   {
@@ -27,6 +63,19 @@
     "cn": "早饭好了哦！／吃早饭啦",
     "sources": [
       "2025-06-00"
+    ],
+    "img": "sentences/sent_003.png",
+    "wb": [
+      {
+        "jp": "朝ご飯",
+        "romaji": "asagohan",
+        "cn": "早饭"
+      },
+      {
+        "jp": "よ",
+        "romaji": "yo",
+        "cn": "哦(语气)"
+      }
     ]
   },
   {
@@ -37,6 +86,24 @@
     "cn": "已经吃了早饭",
     "sources": [
       "2025-06-00"
+    ],
+    "img": "sentences/sent_004.png",
+    "wb": [
+      {
+        "jp": "朝ご飯",
+        "romaji": "asagohan",
+        "cn": "早饭"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べました",
+        "romaji": "tabemashita",
+        "cn": "吃了"
+      }
     ]
   },
   {
@@ -47,6 +114,24 @@
     "cn": "要吃早饭",
     "sources": [
       "2025-06-00"
+    ],
+    "img": "sentences/sent_005.png",
+    "wb": [
+      {
+        "jp": "朝ご飯",
+        "romaji": "asagohan",
+        "cn": "早饭"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べます",
+        "romaji": "tabemasu",
+        "cn": "要吃"
+      }
     ]
   },
   {
@@ -57,6 +142,24 @@
     "cn": "黄色的车",
     "sources": [
       "2025-06-00"
+    ],
+    "img": "sentences/sent_006.png",
+    "wb": [
+      {
+        "jp": "黄色",
+        "romaji": "kiiro",
+        "cn": "黄色"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "車",
+        "romaji": "kuruma",
+        "cn": "车"
+      }
     ]
   },
   {
@@ -67,6 +170,24 @@
     "cn": "喝苹果汁",
     "sources": [
       "2025-07-00"
+    ],
+    "img": "sentences/sent_007.png",
+    "wb": [
+      {
+        "jp": "りんごジュース",
+        "romaji": "ringo jūsu",
+        "cn": "苹果汁"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "飲みます",
+        "romaji": "nomimasu",
+        "cn": "喝"
+      }
     ]
   },
   {
@@ -77,6 +198,24 @@
     "cn": "已经吃了寿司",
     "sources": [
       "2025-07-00"
+    ],
+    "img": "sentences/sent_008.png",
+    "wb": [
+      {
+        "jp": "寿司",
+        "romaji": "sushi",
+        "cn": "寿司"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べました",
+        "romaji": "tabemashita",
+        "cn": "吃了"
+      }
     ]
   },
   {
@@ -87,6 +226,24 @@
     "cn": "要吃寿司",
     "sources": [
       "2025-07-00"
+    ],
+    "img": "sentences/sent_009.png",
+    "wb": [
+      {
+        "jp": "寿司",
+        "romaji": "sushi",
+        "cn": "寿司"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べます",
+        "romaji": "tabemasu",
+        "cn": "要吃"
+      }
     ]
   },
   {
@@ -97,6 +254,19 @@
     "cn": "在寿司店",
     "sources": [
       "2025-07-00"
+    ],
+    "img": "sentences/sent_010.png",
+    "wb": [
+      {
+        "jp": "寿司屋",
+        "romaji": "sushiya",
+        "cn": "寿司店"
+      },
+      {
+        "jp": "で",
+        "romaji": "de",
+        "cn": "在"
+      }
     ]
   },
   {
@@ -107,6 +277,34 @@
     "cn": "弟弟喝牛奶",
     "sources": [
       "2025-07-00"
+    ],
+    "img": "sentences/sent_011.png",
+    "wb": [
+      {
+        "jp": "弟",
+        "romaji": "otōto",
+        "cn": "弟弟"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "牛乳",
+        "romaji": "gyūnyū",
+        "cn": "牛奶"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "飲みます",
+        "romaji": "nomimasu",
+        "cn": "喝"
+      }
     ]
   },
   {
@@ -117,6 +315,39 @@
     "cn": "黄色的猫喝水",
     "sources": [
       "2025-07-00"
+    ],
+    "img": "sentences/sent_012.png",
+    "wb": [
+      {
+        "jp": "黄色い",
+        "romaji": "kiiroi",
+        "cn": "黄色的"
+      },
+      {
+        "jp": "猫",
+        "romaji": "neko",
+        "cn": "猫"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "水",
+        "romaji": "mizu",
+        "cn": "水"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "飲みます",
+        "romaji": "nomimasu",
+        "cn": "喝"
+      }
     ]
   },
   {
@@ -127,6 +358,39 @@
     "cn": "鱿鱼的前面是谁呢？",
     "sources": [
       "2025-08-00"
+    ],
+    "img": "sentences/sent_013.png",
+    "wb": [
+      {
+        "jp": "イカ",
+        "romaji": "ika",
+        "cn": "鱿鱼"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "前",
+        "romaji": "mae",
+        "cn": "前面"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "誰",
+        "romaji": "dare",
+        "cn": "谁"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…吗"
+      }
     ]
   },
   {
@@ -137,6 +401,39 @@
     "cn": "鱿鱼的后面是谁呢？",
     "sources": [
       "2025-08-00"
+    ],
+    "img": "sentences/sent_014.png",
+    "wb": [
+      {
+        "jp": "イカ",
+        "romaji": "ika",
+        "cn": "鱿鱼"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "後ろ",
+        "romaji": "ushiro",
+        "cn": "后面"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "誰",
+        "romaji": "dare",
+        "cn": "谁"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…吗"
+      }
     ]
   },
   {
@@ -147,6 +444,39 @@
     "cn": "狗的前面是谁呢？",
     "sources": [
       "2025-08-00"
+    ],
+    "img": "sentences/sent_015.png",
+    "wb": [
+      {
+        "jp": "犬",
+        "romaji": "inu",
+        "cn": "狗"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "前",
+        "romaji": "mae",
+        "cn": "前面"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "誰",
+        "romaji": "dare",
+        "cn": "谁"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…吗"
+      }
     ]
   },
   {
@@ -157,6 +487,29 @@
     "cn": "我的前面",
     "sources": [
       "2025-08-00"
+    ],
+    "img": "sentences/sent_016.png",
+    "wb": [
+      {
+        "jp": "私",
+        "romaji": "watashi",
+        "cn": "我"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "前",
+        "romaji": "mae",
+        "cn": "前面"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      }
     ]
   },
   {
@@ -167,6 +520,39 @@
     "cn": "我的前面是谁呢？",
     "sources": [
       "2025-08-00"
+    ],
+    "img": "sentences/sent_017.png",
+    "wb": [
+      {
+        "jp": "私",
+        "romaji": "watashi",
+        "cn": "我"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "前",
+        "romaji": "mae",
+        "cn": "前面"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "誰",
+        "romaji": "dare",
+        "cn": "谁"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…吗"
+      }
     ]
   },
   {
@@ -177,6 +563,34 @@
     "cn": "房间里有电脑",
     "sources": [
       "2025-08-00"
+    ],
+    "img": "sentences/sent_018.png",
+    "wb": [
+      {
+        "jp": "部屋",
+        "romaji": "heya",
+        "cn": "房间"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "在"
+      },
+      {
+        "jp": "パソコン",
+        "romaji": "pasokon",
+        "cn": "电脑"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "あります",
+        "romaji": "arimasu",
+        "cn": "有"
+      }
     ]
   },
   {
@@ -187,6 +601,19 @@
     "cn": "您的名字是？",
     "sources": [
       "2025-09-00"
+    ],
+    "img": "sentences/sent_019.png",
+    "wb": [
+      {
+        "jp": "お名前",
+        "romaji": "o-namae",
+        "cn": "名字"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      }
     ]
   },
   {
@@ -197,6 +624,44 @@
     "cn": "请在这条路向左拐",
     "sources": [
       "2025-09-00"
+    ],
+    "img": "sentences/sent_020.png",
+    "wb": [
+      {
+        "jp": "この",
+        "romaji": "kono",
+        "cn": "这"
+      },
+      {
+        "jp": "道",
+        "romaji": "michi",
+        "cn": "路"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "左",
+        "romaji": "hidari",
+        "cn": "左"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "往"
+      },
+      {
+        "jp": "曲がって",
+        "romaji": "magatte",
+        "cn": "转弯"
+      },
+      {
+        "jp": "ください",
+        "romaji": "kudasai",
+        "cn": "请"
+      }
     ]
   },
   {
@@ -207,6 +672,29 @@
     "cn": "我是小牛/我是牛",
     "sources": [
       "2025-09-00"
+    ],
+    "img": "sentences/sent_021.png",
+    "wb": [
+      {
+        "jp": "ぼく",
+        "romaji": "boku",
+        "cn": "我"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "牛",
+        "romaji": "ushi",
+        "cn": "牛"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -217,6 +705,19 @@
     "cn": "是什么？/什么呢？",
     "sources": [
       "2025-09-00"
+    ],
+    "img": "sentences/sent_022.png",
+    "wb": [
+      {
+        "jp": "何",
+        "romaji": "nan",
+        "cn": "什么"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…呢"
+      }
     ]
   },
   {
@@ -227,6 +728,19 @@
     "cn": "请拐弯 / 请转弯",
     "sources": [
       "2025-09-00"
+    ],
+    "img": "sentences/sent_023.png",
+    "wb": [
+      {
+        "jp": "曲がって",
+        "romaji": "magatte",
+        "cn": "转弯"
+      },
+      {
+        "jp": "ください",
+        "romaji": "kudasai",
+        "cn": "请"
+      }
     ]
   },
   {
@@ -237,6 +751,34 @@
     "cn": "完整的句子",
     "sources": [
       "2025-09-00"
+    ],
+    "img": "sentences/sent_024.png",
+    "wb": [
+      {
+        "jp": "すみません",
+        "romaji": "sumimasen",
+        "cn": "请问"
+      },
+      {
+        "jp": "お名前",
+        "romaji": "o-namae",
+        "cn": "名字"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "何",
+        "romaji": "nan",
+        "cn": "什么"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…吗"
+      }
     ]
   },
   {
@@ -247,6 +789,24 @@
     "cn": "爷爷来了（已经来了",
     "sources": [
       "2025-10-00"
+    ],
+    "img": "sentences/sent_025.png",
+    "wb": [
+      {
+        "jp": "おじいちゃん",
+        "romaji": "ojiichan",
+        "cn": "爷爷"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "来ました",
+        "romaji": "kimashita",
+        "cn": "来了"
+      }
     ]
   },
   {
@@ -257,6 +817,24 @@
     "cn": "我想看奥特曼",
     "sources": [
       "2025-10-00"
+    ],
+    "img": "sentences/sent_026.png",
+    "wb": [
+      {
+        "jp": "ウルトラマン",
+        "romaji": "urutoraman",
+        "cn": "奥特曼"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "見たいです",
+        "romaji": "mitai desu",
+        "cn": "想看"
+      }
     ]
   },
   {
@@ -267,6 +845,14 @@
     "cn": "直升飞机",
     "sources": [
       "2025-10-00"
+    ],
+    "img": "sentences/sent_027.png",
+    "wb": [
+      {
+        "jp": "ヘリコプター",
+        "romaji": "herikoputā",
+        "cn": "直升飞机"
+      }
     ]
   },
   {
@@ -277,6 +863,24 @@
     "cn": "小鸟要飞了",
     "sources": [
       "2025-10-00"
+    ],
+    "img": "sentences/sent_028.png",
+    "wb": [
+      {
+        "jp": "小鳥ちゃん",
+        "romaji": "tori-chan",
+        "cn": "小鸟"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "飛びます",
+        "romaji": "tobimasu",
+        "cn": "飞"
+      }
     ]
   },
   {
@@ -287,6 +891,19 @@
     "cn": "红蜻蜓（红色的蜻蜓",
     "sources": [
       "2025-10-00"
+    ],
+    "img": "sentences/sent_029.png",
+    "wb": [
+      {
+        "jp": "赤",
+        "romaji": "aka",
+        "cn": "红"
+      },
+      {
+        "jp": "とんぼ",
+        "romaji": "tonbo",
+        "cn": "蜻蜓"
+      }
     ]
   },
   {
@@ -297,6 +914,24 @@
     "cn": "小鸟飞走了",
     "sources": [
       "2025-10-00"
+    ],
+    "img": "sentences/sent_030.png",
+    "wb": [
+      {
+        "jp": "鳥ちゃん",
+        "romaji": "tori-chan",
+        "cn": "小鸟"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "飛びました",
+        "romaji": "tobimashita",
+        "cn": "飞了"
+      }
     ]
   },
   {
@@ -307,6 +942,44 @@
     "cn": "因为刮风，老鼠和气球会飞",
     "sources": [
       "2025-10-19"
+    ],
+    "img": "sentences/sent_031.png",
+    "wb": [
+      {
+        "jp": "ねずみ",
+        "romaji": "nezumi",
+        "cn": "老鼠"
+      },
+      {
+        "jp": "と",
+        "romaji": "to",
+        "cn": "和"
+      },
+      {
+        "jp": "風船",
+        "romaji": "fūsen",
+        "cn": "气球"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "風",
+        "romaji": "kaze",
+        "cn": "风"
+      },
+      {
+        "jp": "で",
+        "romaji": "de",
+        "cn": "因为"
+      },
+      {
+        "jp": "飛びます",
+        "romaji": "tobimasu",
+        "cn": "飞"
+      }
     ]
   },
   {
@@ -317,6 +990,14 @@
     "cn": "出租车，计程车",
     "sources": [
       "2025-10-24"
+    ],
+    "img": "sentences/sent_032.png",
+    "wb": [
+      {
+        "jp": "タクシー",
+        "romaji": "takushī",
+        "cn": "出租车"
+      }
     ]
   },
   {
@@ -327,6 +1008,24 @@
     "cn": "我/他/她坐了出租车。／（已经）乘坐了出租车",
     "sources": [
       "2025-10-24"
+    ],
+    "img": "sentences/sent_033.png",
+    "wb": [
+      {
+        "jp": "タクシー",
+        "romaji": "takushī",
+        "cn": "出租车"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "乘坐"
+      },
+      {
+        "jp": "乗りました",
+        "romaji": "norimashita",
+        "cn": "坐了"
+      }
     ]
   },
   {
@@ -337,6 +1036,24 @@
     "cn": "我要坐出租车／我将乘出租车",
     "sources": [
       "2025-10-24"
+    ],
+    "img": "sentences/sent_034.png",
+    "wb": [
+      {
+        "jp": "タクシー",
+        "romaji": "takushī",
+        "cn": "出租车"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "乘坐"
+      },
+      {
+        "jp": "乗ります",
+        "romaji": "norimasu",
+        "cn": "要坐"
+      }
     ]
   },
   {
@@ -347,6 +1064,14 @@
     "cn": "乘、上（交通工具）/登上",
     "sources": [
       "2025-10-24"
+    ],
+    "img": "sentences/sent_035.png",
+    "wb": [
+      {
+        "jp": "乗ります",
+        "romaji": "norimasu",
+        "cn": "乘/坐"
+      }
     ]
   },
   {
@@ -357,6 +1082,34 @@
     "cn": "那位/那个男人坐了出租车。／男人已经坐了出租车",
     "sources": [
       "2025-10-24"
+    ],
+    "img": "sentences/sent_036.png",
+    "wb": [
+      {
+        "jp": "男性",
+        "romaji": "dansei",
+        "cn": "男人"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "タクシー",
+        "romaji": "takushī",
+        "cn": "出租车"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "乘坐"
+      },
+      {
+        "jp": "乗りました",
+        "romaji": "norimashita",
+        "cn": "坐了"
+      }
     ]
   },
   {
@@ -367,6 +1120,34 @@
     "cn": "那位/那个男人要坐出租车/男人要坐出租车",
     "sources": [
       "2025-10-24"
+    ],
+    "img": "sentences/sent_037.png",
+    "wb": [
+      {
+        "jp": "男性",
+        "romaji": "dansei",
+        "cn": "男人"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "タクシー",
+        "romaji": "takushī",
+        "cn": "出租车"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "乘坐"
+      },
+      {
+        "jp": "乗ります",
+        "romaji": "norimasu",
+        "cn": "要坐"
+      }
     ]
   },
   {
@@ -377,6 +1158,34 @@
     "cn": "大象先生（ぞうさん）骑了自行车",
     "sources": [
       "2025-10-26"
+    ],
+    "img": "sentences/sent_038.png",
+    "wb": [
+      {
+        "jp": "ゾウさん",
+        "romaji": "zō-san",
+        "cn": "大象先生"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "自転車",
+        "romaji": "jitensha",
+        "cn": "自行车"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "乘骑"
+      },
+      {
+        "jp": "乗りました",
+        "romaji": "norimashita",
+        "cn": "骑了"
+      }
     ]
   },
   {
@@ -387,6 +1196,34 @@
     "cn": "的称呼）要骑自行车",
     "sources": [
       "2025-10-26"
+    ],
+    "img": "sentences/sent_039.png",
+    "wb": [
+      {
+        "jp": "ゾウさん",
+        "romaji": "zō-san",
+        "cn": "大象先生"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "自転車",
+        "romaji": "jitensha",
+        "cn": "自行车"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "乘骑"
+      },
+      {
+        "jp": "乗ります",
+        "romaji": "norimasu",
+        "cn": "要骑"
+      }
     ]
   },
   {
@@ -397,6 +1234,34 @@
     "cn": "乘坐公交车去图书馆",
     "sources": [
       "2025-10-26"
+    ],
+    "img": "sentences/sent_040.png",
+    "wb": [
+      {
+        "jp": "バス",
+        "romaji": "basu",
+        "cn": "公交车"
+      },
+      {
+        "jp": "で",
+        "romaji": "de",
+        "cn": "乘坐"
+      },
+      {
+        "jp": "図書館",
+        "romaji": "toshokan",
+        "cn": "图书馆"
+      },
+      {
+        "jp": "へ",
+        "romaji": "e",
+        "cn": "往"
+      },
+      {
+        "jp": "行きます",
+        "romaji": "ikimasu",
+        "cn": "去"
+      }
     ]
   },
   {
@@ -407,6 +1272,34 @@
     "cn": "男孩坐了船",
     "sources": [
       "2025-10-26"
+    ],
+    "img": "sentences/sent_041.png",
+    "wb": [
+      {
+        "jp": "男の子",
+        "romaji": "otokonoko",
+        "cn": "男孩"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "船",
+        "romaji": "fune",
+        "cn": "船"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "乘坐"
+      },
+      {
+        "jp": "乗りました",
+        "romaji": "norimashita",
+        "cn": "坐了"
+      }
     ]
   },
   {
@@ -417,6 +1310,34 @@
     "cn": "男孩子要坐船",
     "sources": [
       "2025-10-26"
+    ],
+    "img": "sentences/sent_042.png",
+    "wb": [
+      {
+        "jp": "男の子",
+        "romaji": "otokonoko",
+        "cn": "男孩"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "船",
+        "romaji": "fune",
+        "cn": "船"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "乘坐"
+      },
+      {
+        "jp": "乗ります",
+        "romaji": "norimasu",
+        "cn": "要坐"
+      }
     ]
   },
   {
@@ -427,6 +1348,24 @@
     "cn": "已经坐船了",
     "sources": [
       "2025-10-26"
+    ],
+    "img": "sentences/sent_043.png",
+    "wb": [
+      {
+        "jp": "船",
+        "romaji": "fune",
+        "cn": "船"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "乘坐"
+      },
+      {
+        "jp": "乗りました",
+        "romaji": "norimashita",
+        "cn": "坐了"
+      }
     ]
   },
   {
@@ -437,6 +1376,34 @@
     "cn": "1）我描了\"お\"这个字形/我描摹了\"お\"",
     "sources": [
       "2025-11-01"
+    ],
+    "img": "sentences/sent_044.png",
+    "wb": [
+      {
+        "jp": "お",
+        "romaji": "o",
+        "cn": "お(假名)"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "字",
+        "romaji": "ji",
+        "cn": "字"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "なぞりました",
+        "romaji": "nazorimashita",
+        "cn": "描摹了"
+      }
     ]
   },
   {
@@ -447,6 +1414,34 @@
     "cn": "我写了\"お\"",
     "sources": [
       "2025-11-01"
+    ],
+    "img": "sentences/sent_045.png",
+    "wb": [
+      {
+        "jp": "お",
+        "romaji": "o",
+        "cn": "お(假名)"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "字",
+        "romaji": "ji",
+        "cn": "字"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "書きました",
+        "romaji": "kakimashita",
+        "cn": "写了"
+      }
     ]
   },
   {
@@ -457,6 +1452,14 @@
     "cn": "我描了 / 我描摹了（过去式，敬体",
     "sources": [
       "2025-11-01"
+    ],
+    "img": "sentences/sent_046.png",
+    "wb": [
+      {
+        "jp": "なぞりました",
+        "romaji": "nazorimashita",
+        "cn": "描摹了"
+      }
     ]
   },
   {
@@ -467,6 +1470,29 @@
     "cn": "来试着写这个字吧（邀请或建议，敬体",
     "sources": [
       "2025-11-01"
+    ],
+    "img": "sentences/sent_047.png",
+    "wb": [
+      {
+        "jp": "字",
+        "romaji": "ji",
+        "cn": "字"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "書いて",
+        "romaji": "kaite",
+        "cn": "写"
+      },
+      {
+        "jp": "みましょう",
+        "romaji": "mimashō",
+        "cn": "试试吧"
+      }
     ]
   },
   {
@@ -477,6 +1503,34 @@
     "cn": "1）男孩子感冒了",
     "sources": [
       "2025-11-04"
+    ],
+    "img": "sentences/sent_048.png",
+    "wb": [
+      {
+        "jp": "男の子",
+        "romaji": "otokonoko",
+        "cn": "男孩"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "風邪",
+        "romaji": "kaze",
+        "cn": "感冒"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "ひきました",
+        "romaji": "hikimashita",
+        "cn": "得了"
+      }
     ]
   },
   {
@@ -487,6 +1541,29 @@
     "cn": "2）试着描（这幅）画吧/试着描摹这幅画吧",
     "sources": [
       "2025-11-04"
+    ],
+    "img": "sentences/sent_049.png",
+    "wb": [
+      {
+        "jp": "絵",
+        "romaji": "e",
+        "cn": "画"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "なぞって",
+        "romaji": "nazotte",
+        "cn": "描摹"
+      },
+      {
+        "jp": "みましょう",
+        "romaji": "mimashō",
+        "cn": "试试吧"
+      }
     ]
   },
   {
@@ -497,6 +1574,29 @@
     "cn": "试着描一下线吧/试着沿着线描一下",
     "sources": [
       "2025-11-04"
+    ],
+    "img": "sentences/sent_050.png",
+    "wb": [
+      {
+        "jp": "線",
+        "romaji": "sen",
+        "cn": "线"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "なぞって",
+        "romaji": "nazotte",
+        "cn": "描摹"
+      },
+      {
+        "jp": "みましょう",
+        "romaji": "mimashō",
+        "cn": "试试吧"
+      }
     ]
   },
   {
@@ -507,6 +1607,39 @@
     "cn": "1）女孩子在教室里正在学习",
     "sources": [
       "2025-11-06"
+    ],
+    "img": "sentences/sent_051.png",
+    "wb": [
+      {
+        "jp": "女の子",
+        "romaji": "onnanoko",
+        "cn": "女孩"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "教室",
+        "romaji": "kyōshitsu",
+        "cn": "教室"
+      },
+      {
+        "jp": "で",
+        "romaji": "de",
+        "cn": "在"
+      },
+      {
+        "jp": "勉強",
+        "romaji": "benkyō",
+        "cn": "学习"
+      },
+      {
+        "jp": "しています",
+        "romaji": "shiteimasu",
+        "cn": "正在做"
+      }
     ]
   },
   {
@@ -517,6 +1650,19 @@
     "cn": "shiteimasu",
     "sources": [
       "2025-11-06"
+    ],
+    "img": "sentences/sent_052.png",
+    "wb": [
+      {
+        "jp": "勉強",
+        "romaji": "benkyō",
+        "cn": "学习"
+      },
+      {
+        "jp": "しています",
+        "romaji": "shiteimasu",
+        "cn": "正在做"
+      }
     ]
   },
   {
@@ -527,6 +1673,34 @@
     "cn": "2）风把小猫吹飞了",
     "sources": [
       "2025-11-06"
+    ],
+    "img": "sentences/sent_053.png",
+    "wb": [
+      {
+        "jp": "猫ちゃん",
+        "romaji": "neko-chan",
+        "cn": "小猫"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "風",
+        "romaji": "kaze",
+        "cn": "风"
+      },
+      {
+        "jp": "で",
+        "romaji": "de",
+        "cn": "因为"
+      },
+      {
+        "jp": "飛ばされました",
+        "romaji": "tobasaremashita",
+        "cn": "被吹飞了"
+      }
     ]
   },
   {
@@ -537,6 +1711,24 @@
     "cn": "行きました（いきました / ikimashita",
     "sources": [
       "2025-11-08"
+    ],
+    "img": "sentences/sent_054.png",
+    "wb": [
+      {
+        "jp": "行く",
+        "romaji": "iku",
+        "cn": "去"
+      },
+      {
+        "jp": "→",
+        "romaji": "→",
+        "cn": "→"
+      },
+      {
+        "jp": "行きました",
+        "romaji": "ikimashita",
+        "cn": "去了"
+      }
     ]
   },
   {
@@ -547,6 +1739,34 @@
     "cn": "1）男孩子去了医院",
     "sources": [
       "2025-11-08"
+    ],
+    "img": "sentences/sent_055.png",
+    "wb": [
+      {
+        "jp": "男の子",
+        "romaji": "otokonoko",
+        "cn": "男孩"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "病院",
+        "romaji": "byōin",
+        "cn": "医院"
+      },
+      {
+        "jp": "へ",
+        "romaji": "e",
+        "cn": "往"
+      },
+      {
+        "jp": "行きました",
+        "romaji": "ikimashita",
+        "cn": "去了"
+      }
     ]
   },
   {
@@ -557,6 +1777,24 @@
     "cn": "1）冬天来了",
     "sources": [
       "2025-11-11"
+    ],
+    "img": "sentences/sent_056.png",
+    "wb": [
+      {
+        "jp": "冬",
+        "romaji": "fuyu",
+        "cn": "冬天"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "来ました",
+        "romaji": "kimashita",
+        "cn": "来了"
+      }
     ]
   },
   {
@@ -568,6 +1806,19 @@
     "sources": [
       "2025-11-11",
       "2025-11-13"
+    ],
+    "img": "sentences/sent_057.png",
+    "wb": [
+      {
+        "jp": "寒く",
+        "romaji": "samuku",
+        "cn": "变冷"
+      },
+      {
+        "jp": "なりました",
+        "romaji": "narimashita",
+        "cn": "变成了"
+      }
     ]
   },
   {
@@ -578,6 +1829,24 @@
     "cn": "寒く（さむく / samuku",
     "sources": [
       "2025-11-11"
+    ],
+    "img": "sentences/sent_058.png",
+    "wb": [
+      {
+        "jp": "寒い",
+        "romaji": "samui",
+        "cn": "冷"
+      },
+      {
+        "jp": "→",
+        "romaji": "→",
+        "cn": "→"
+      },
+      {
+        "jp": "寒く",
+        "romaji": "samuku",
+        "cn": "变冷(连用形)"
+      }
     ]
   },
   {
@@ -588,6 +1857,24 @@
     "cn": "来ました（きました / kimashita",
     "sources": [
       "2025-11-11"
+    ],
+    "img": "sentences/sent_059.png",
+    "wb": [
+      {
+        "jp": "来る",
+        "romaji": "kuru",
+        "cn": "来"
+      },
+      {
+        "jp": "→",
+        "romaji": "→",
+        "cn": "→"
+      },
+      {
+        "jp": "来ました",
+        "romaji": "kimashita",
+        "cn": "来了"
+      }
     ]
   },
   {
@@ -598,6 +1885,34 @@
     "cn": "4）女孩子正在玩雪",
     "sources": [
       "2025-11-13"
+    ],
+    "img": "sentences/sent_060.png",
+    "wb": [
+      {
+        "jp": "女の子",
+        "romaji": "onnanoko",
+        "cn": "女孩"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "雪遊び",
+        "romaji": "yuki asobi",
+        "cn": "玩雪"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "しています",
+        "romaji": "shiteimasu",
+        "cn": "正在做"
+      }
     ]
   },
   {
@@ -608,6 +1923,49 @@
     "cn": "1）在医院里，许多孩子感冒了",
     "sources": [
       "2025-11-13"
+    ],
+    "img": "sentences/sent_061.png",
+    "wb": [
+      {
+        "jp": "病院",
+        "romaji": "byōin",
+        "cn": "医院"
+      },
+      {
+        "jp": "で",
+        "romaji": "de",
+        "cn": "在"
+      },
+      {
+        "jp": "たくさんの",
+        "romaji": "takusan no",
+        "cn": "许多的"
+      },
+      {
+        "jp": "子ども",
+        "romaji": "kodomo",
+        "cn": "孩子"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "風邪",
+        "romaji": "kaze",
+        "cn": "感冒"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "ひきました",
+        "romaji": "hikimashita",
+        "cn": "得了"
+      }
     ]
   },
   {
@@ -618,6 +1976,24 @@
     "cn": "2）正在下雪",
     "sources": [
       "2025-11-13"
+    ],
+    "img": "sentences/sent_062.png",
+    "wb": [
+      {
+        "jp": "雪",
+        "romaji": "yuki",
+        "cn": "雪"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "降っています",
+        "romaji": "futteimasu",
+        "cn": "正在下"
+      }
     ]
   },
   {
@@ -628,6 +2004,34 @@
     "cn": "2）哥哥变成了超人",
     "sources": [
       "2025-11-16"
+    ],
+    "img": "sentences/sent_063.png",
+    "wb": [
+      {
+        "jp": "お兄さん",
+        "romaji": "oniisan",
+        "cn": "哥哥"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "スーパーマン",
+        "romaji": "sūpāman",
+        "cn": "超人"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "变成"
+      },
+      {
+        "jp": "なりました",
+        "romaji": "narimashita",
+        "cn": "变成了"
+      }
     ]
   },
   {
@@ -638,6 +2042,34 @@
     "cn": "1）哥哥吃了香蕉",
     "sources": [
       "2025-11-16"
+    ],
+    "img": "sentences/sent_064.png",
+    "wb": [
+      {
+        "jp": "お兄さん",
+        "romaji": "oniisan",
+        "cn": "哥哥"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "バナナ",
+        "romaji": "banana",
+        "cn": "香蕉"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べました",
+        "romaji": "tabemashita",
+        "cn": "吃了"
+      }
     ]
   },
   {
@@ -648,6 +2080,34 @@
     "cn": "3）哥哥抓住了小偷",
     "sources": [
       "2025-11-16"
+    ],
+    "img": "sentences/sent_065.png",
+    "wb": [
+      {
+        "jp": "お兄さん",
+        "romaji": "oniisan",
+        "cn": "哥哥"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "泥棒",
+        "romaji": "dorobō",
+        "cn": "小偷"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "捕まえました",
+        "romaji": "tsukamaemashita",
+        "cn": "抓住了"
+      }
     ]
   },
   {
@@ -658,6 +2118,34 @@
     "cn": "2）男孩子正在滑雪",
     "sources": [
       "2025-11-18"
+    ],
+    "img": "sentences/sent_066.png",
+    "wb": [
+      {
+        "jp": "男の子",
+        "romaji": "otokonoko",
+        "cn": "男孩"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "スキー",
+        "romaji": "sukī",
+        "cn": "滑雪"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "しています",
+        "romaji": "shiteimasu",
+        "cn": "正在做"
+      }
     ]
   },
   {
@@ -668,6 +2156,34 @@
     "cn": "1）男孩子也正在玩雪",
     "sources": [
       "2025-11-18"
+    ],
+    "img": "sentences/sent_067.png",
+    "wb": [
+      {
+        "jp": "男の子",
+        "romaji": "otokonoko",
+        "cn": "男孩"
+      },
+      {
+        "jp": "も",
+        "romaji": "mo",
+        "cn": "也"
+      },
+      {
+        "jp": "雪遊び",
+        "romaji": "yuki asobi",
+        "cn": "玩雪"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "しています",
+        "romaji": "shiteimasu",
+        "cn": "正在做"
+      }
     ]
   },
   {
@@ -678,6 +2194,34 @@
     "cn": "2）男孩子有发烧（有烧",
     "sources": [
       "2025-11-19"
+    ],
+    "img": "sentences/sent_068.png",
+    "wb": [
+      {
+        "jp": "おとこのこ",
+        "romaji": "otokonoko",
+        "cn": "男孩"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "ねつ",
+        "romaji": "netsu",
+        "cn": "发烧"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "あります",
+        "romaji": "arimasu",
+        "cn": "有"
+      }
     ]
   },
   {
@@ -688,6 +2232,34 @@
     "cn": "4）男孩子发烧了",
     "sources": [
       "2025-11-19"
+    ],
+    "img": "sentences/sent_069.png",
+    "wb": [
+      {
+        "jp": "おとこのこ",
+        "romaji": "otokonoko",
+        "cn": "男孩"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "ねつ",
+        "romaji": "netsu",
+        "cn": "发烧"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "でています",
+        "romaji": "deteimasu",
+        "cn": "出现了"
+      }
     ]
   },
   {
@@ -698,6 +2270,34 @@
     "cn": "2）小兔子看到了肉",
     "sources": [
       "2025-11-23"
+    ],
+    "img": "sentences/sent_070.png",
+    "wb": [
+      {
+        "jp": "うさぎちゃん",
+        "romaji": "usagi-chan",
+        "cn": "小兔子"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "にく",
+        "romaji": "niku",
+        "cn": "肉"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "みえました",
+        "romaji": "miemashita",
+        "cn": "看到了"
+      }
     ]
   },
   {
@@ -708,6 +2308,29 @@
     "cn": "1）兔子很可爱",
     "sources": [
       "2025-11-25"
+    ],
+    "img": "sentences/sent_071.png",
+    "wb": [
+      {
+        "jp": "うさぎちゃん",
+        "romaji": "usagi-chan",
+        "cn": "小兔子"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "かわいい",
+        "romaji": "kawaii",
+        "cn": "可爱"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -718,6 +2341,29 @@
     "cn": "5）兔子不可怕",
     "sources": [
       "2025-11-25"
+    ],
+    "img": "sentences/sent_072.png",
+    "wb": [
+      {
+        "jp": "うさぎちゃん",
+        "romaji": "usagi-chan",
+        "cn": "小兔子"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "こわくない",
+        "romaji": "kowakunai",
+        "cn": "不可怕"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -728,6 +2374,29 @@
     "cn": "4）狼很可怕",
     "sources": [
       "2025-11-25"
+    ],
+    "img": "sentences/sent_073.png",
+    "wb": [
+      {
+        "jp": "おおかみ",
+        "romaji": "ōkami",
+        "cn": "狼"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "こわい",
+        "romaji": "kowai",
+        "cn": "可怕"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -738,6 +2407,24 @@
     "cn": "2）猫不可爱",
     "sources": [
       "2025-11-25"
+    ],
+    "img": "sentences/sent_074.png",
+    "wb": [
+      {
+        "jp": "ねこちゃん",
+        "romaji": "neko-chan",
+        "cn": "小猫"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "かわいくない",
+        "romaji": "kawaikunai",
+        "cn": "不可爱"
+      }
     ]
   },
   {
@@ -748,6 +2435,19 @@
     "cn": "口语里也常说得更短一些",
     "sources": [
       "2025-11-25"
+    ],
+    "img": "sentences/sent_075.png",
+    "wb": [
+      {
+        "jp": "肉",
+        "romaji": "niku",
+        "cn": "肉"
+      },
+      {
+        "jp": "おいしくない",
+        "romaji": "oishikunai",
+        "cn": "不好吃"
+      }
     ]
   },
   {
@@ -758,6 +2458,29 @@
     "cn": "3）肉不好吃",
     "sources": [
       "2025-11-25"
+    ],
+    "img": "sentences/sent_076.png",
+    "wb": [
+      {
+        "jp": "肉",
+        "romaji": "niku",
+        "cn": "肉"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "おいしくない",
+        "romaji": "oishikunai",
+        "cn": "不好吃"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -768,6 +2491,29 @@
     "cn": "3）松鼠很困",
     "sources": [
       "2025-11-27"
+    ],
+    "img": "sentences/sent_077.png",
+    "wb": [
+      {
+        "jp": "りすちゃん",
+        "romaji": "risu-chan",
+        "cn": "松鼠"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "ねむい",
+        "romaji": "nemui",
+        "cn": "困"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -778,6 +2524,29 @@
     "cn": "4）松鼠不困",
     "sources": [
       "2025-11-27"
+    ],
+    "img": "sentences/sent_078.png",
+    "wb": [
+      {
+        "jp": "りすちゃん",
+        "romaji": "risu-chan",
+        "cn": "松鼠"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "眠くない",
+        "romaji": "nemukunai",
+        "cn": "不困"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -788,6 +2557,24 @@
     "cn": "对长辈、正式场合（更礼貌",
     "sources": [
       "2025-11-27"
+    ],
+    "img": "sentences/sent_079.png",
+    "wb": [
+      {
+        "jp": "あけまして",
+        "romaji": "akemashite",
+        "cn": "新年"
+      },
+      {
+        "jp": "おめでとう",
+        "romaji": "omedetō",
+        "cn": "恭喜"
+      },
+      {
+        "jp": "ございます",
+        "romaji": "gozaimasu",
+        "cn": "(敬语)"
+      }
     ]
   },
   {
@@ -798,6 +2585,24 @@
     "cn": "あけまして（akemashite",
     "sources": [
       "2025-11-27"
+    ],
+    "img": "sentences/sent_080.png",
+    "wb": [
+      {
+        "jp": "明ける",
+        "romaji": "akeru",
+        "cn": "天亮/翻开"
+      },
+      {
+        "jp": "→",
+        "romaji": "→",
+        "cn": "→"
+      },
+      {
+        "jp": "あけまして",
+        "romaji": "akemashite",
+        "cn": "迎来新年"
+      }
     ]
   },
   {
@@ -808,6 +2613,29 @@
     "cn": "1）房间很脏",
     "sources": [
       "2025-11-27"
+    ],
+    "img": "sentences/sent_081.png",
+    "wb": [
+      {
+        "jp": "部屋",
+        "romaji": "heya",
+        "cn": "房间"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "汚い",
+        "romaji": "kitanai",
+        "cn": "脏"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -818,6 +2646,29 @@
     "cn": "2）房间不脏",
     "sources": [
       "2025-11-27"
+    ],
+    "img": "sentences/sent_082.png",
+    "wb": [
+      {
+        "jp": "部屋",
+        "romaji": "heya",
+        "cn": "房间"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "汚くない",
+        "romaji": "kitanakunai",
+        "cn": "不脏"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -828,6 +2679,39 @@
     "cn": "4）今天是兔兔的生日",
     "sources": [
       "2025-11-30"
+    ],
+    "img": "sentences/sent_083.png",
+    "wb": [
+      {
+        "jp": "今日",
+        "romaji": "kyō",
+        "cn": "今天"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "うさぎちゃん",
+        "romaji": "usagi-chan",
+        "cn": "小兔子"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "誕生日",
+        "romaji": "tanjōbi",
+        "cn": "生日"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -838,6 +2722,34 @@
     "cn": "1）兔兔买了冰激凌",
     "sources": [
       "2025-12-02"
+    ],
+    "img": "sentences/sent_084.png",
+    "wb": [
+      {
+        "jp": "うさぎちゃん",
+        "romaji": "usagi-chan",
+        "cn": "小兔子"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "アイスクリーム",
+        "romaji": "aisukurīmu",
+        "cn": "冰激凌"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "買いました",
+        "romaji": "kaimashita",
+        "cn": "买了"
+      }
     ]
   },
   {
@@ -848,6 +2760,34 @@
     "cn": "3）兔兔摘了柿子",
     "sources": [
       "2025-12-02"
+    ],
+    "img": "sentences/sent_085.png",
+    "wb": [
+      {
+        "jp": "うさぎちゃん",
+        "romaji": "usagi-chan",
+        "cn": "小兔子"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "柿",
+        "romaji": "kaki",
+        "cn": "柿子"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "とりました",
+        "romaji": "torimashita",
+        "cn": "摘了"
+      }
     ]
   },
   {
@@ -858,6 +2798,24 @@
     "cn": "いきます（ikimasu",
     "sources": [
       "2025-12-02"
+    ],
+    "img": "sentences/sent_086.png",
+    "wb": [
+      {
+        "jp": "行く",
+        "romaji": "iku",
+        "cn": "去"
+      },
+      {
+        "jp": "→",
+        "romaji": "→",
+        "cn": "→"
+      },
+      {
+        "jp": "行きます",
+        "romaji": "ikimasu",
+        "cn": "去(敬体)"
+      }
     ]
   },
   {
@@ -868,6 +2826,24 @@
     "cn": "買いました（かいました / kaimashita",
     "sources": [
       "2025-12-02"
+    ],
+    "img": "sentences/sent_087.png",
+    "wb": [
+      {
+        "jp": "買う",
+        "romaji": "kau",
+        "cn": "买"
+      },
+      {
+        "jp": "→",
+        "romaji": "→",
+        "cn": "→"
+      },
+      {
+        "jp": "買いました",
+        "romaji": "kaimashita",
+        "cn": "买了"
+      }
     ]
   },
   {
@@ -878,6 +2854,34 @@
     "cn": "3）小马买了礼物",
     "sources": [
       "2025-12-04"
+    ],
+    "img": "sentences/sent_088.png",
+    "wb": [
+      {
+        "jp": "うまちゃん",
+        "romaji": "uma-chan",
+        "cn": "小马"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "プレゼント",
+        "romaji": "purezento",
+        "cn": "礼物"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "買いました",
+        "romaji": "kaimashita",
+        "cn": "买了"
+      }
     ]
   },
   {
@@ -888,6 +2892,34 @@
     "cn": "2）小猫摘了葡萄",
     "sources": [
       "2025-12-04"
+    ],
+    "img": "sentences/sent_089.png",
+    "wb": [
+      {
+        "jp": "ねこちゃん",
+        "romaji": "neko-chan",
+        "cn": "小猫"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "ぶどう",
+        "romaji": "budō",
+        "cn": "葡萄"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "とりました",
+        "romaji": "torimashita",
+        "cn": "摘了"
+      }
     ]
   },
   {
@@ -898,6 +2930,29 @@
     "cn": "5）想吃饭团",
     "sources": [
       "2025-12-07"
+    ],
+    "img": "sentences/sent_090.png",
+    "wb": [
+      {
+        "jp": "おにぎり",
+        "romaji": "onigiri",
+        "cn": "饭团"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "食べたい",
+        "romaji": "tabetai",
+        "cn": "想吃"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -908,6 +2963,34 @@
     "cn": "3）爸爸摘了西瓜",
     "sources": [
       "2025-12-07"
+    ],
+    "img": "sentences/sent_091.png",
+    "wb": [
+      {
+        "jp": "お父さん",
+        "romaji": "otōsan",
+        "cn": "爸爸"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "スイカ",
+        "romaji": "suika",
+        "cn": "西瓜"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "取りました",
+        "romaji": "torimashita",
+        "cn": "摘了"
+      }
     ]
   },
   {
@@ -918,6 +3001,29 @@
     "cn": "今天好热啊",
     "sources": [
       "2025-12-07"
+    ],
+    "img": "sentences/sent_092.png",
+    "wb": [
+      {
+        "jp": "今日",
+        "romaji": "kyō",
+        "cn": "今天"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "暑い",
+        "romaji": "atsui",
+        "cn": "热"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "啊"
+      }
     ]
   },
   {
@@ -928,6 +3034,19 @@
     "cn": "1）好热啊",
     "sources": [
       "2025-12-07"
+    ],
+    "img": "sentences/sent_093.png",
+    "wb": [
+      {
+        "jp": "暑い",
+        "romaji": "atsui",
+        "cn": "热"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "啊"
+      }
     ]
   },
   {
@@ -938,6 +3057,24 @@
     "cn": "たべたい（tabetai",
     "sources": [
       "2025-12-07"
+    ],
+    "img": "sentences/sent_094.png",
+    "wb": [
+      {
+        "jp": "食べる",
+        "romaji": "taberu",
+        "cn": "吃"
+      },
+      {
+        "jp": "→",
+        "romaji": "→",
+        "cn": "→"
+      },
+      {
+        "jp": "食べたい",
+        "romaji": "tabetai",
+        "cn": "想吃"
+      }
     ]
   },
   {
@@ -948,6 +3085,39 @@
     "cn": "2）我想吃西瓜",
     "sources": [
       "2025-12-07"
+    ],
+    "img": "sentences/sent_095.png",
+    "wb": [
+      {
+        "jp": "私",
+        "romaji": "watashi",
+        "cn": "我"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "スイカ",
+        "romaji": "suika",
+        "cn": "西瓜"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "食べたい",
+        "romaji": "tabetai",
+        "cn": "想吃"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -958,6 +3128,44 @@
     "cn": "小狗的妈妈买了海苔",
     "sources": [
       "2025-12-09"
+    ],
+    "img": "sentences/sent_096.png",
+    "wb": [
+      {
+        "jp": "いぬちゃん",
+        "romaji": "inu-chan",
+        "cn": "小狗"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "お母さん",
+        "romaji": "okāsan",
+        "cn": "妈妈"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "海苔",
+        "romaji": "nori",
+        "cn": "海苔"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "買いました",
+        "romaji": "kaimashita",
+        "cn": "买了"
+      }
     ]
   },
   {
@@ -968,6 +3176,39 @@
     "cn": "4）小狗正在家里学习",
     "sources": [
       "2025-12-09"
+    ],
+    "img": "sentences/sent_097.png",
+    "wb": [
+      {
+        "jp": "いぬちゃん",
+        "romaji": "inu-chan",
+        "cn": "小狗"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "家",
+        "romaji": "ie",
+        "cn": "家"
+      },
+      {
+        "jp": "で",
+        "romaji": "de",
+        "cn": "在"
+      },
+      {
+        "jp": "勉強",
+        "romaji": "benkyō",
+        "cn": "学习"
+      },
+      {
+        "jp": "しています",
+        "romaji": "shiteimasu",
+        "cn": "正在做"
+      }
     ]
   },
   {
@@ -978,6 +3219,34 @@
     "cn": "2）小浣熊已经回家了",
     "sources": [
       "2025-12-09"
+    ],
+    "img": "sentences/sent_098.png",
+    "wb": [
+      {
+        "jp": "たぬきちゃん",
+        "romaji": "tanuki-chan",
+        "cn": "小浣熊"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "家",
+        "romaji": "ie",
+        "cn": "家"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "往"
+      },
+      {
+        "jp": "帰りました",
+        "romaji": "kaerimashita",
+        "cn": "回了"
+      }
     ]
   },
   {
@@ -988,6 +3257,24 @@
     "cn": "とりました（torimashita",
     "sources": [
       "2025-12-09"
+    ],
+    "img": "sentences/sent_099.png",
+    "wb": [
+      {
+        "jp": "取る",
+        "romaji": "toru",
+        "cn": "取/摘"
+      },
+      {
+        "jp": "→",
+        "romaji": "→",
+        "cn": "→"
+      },
+      {
+        "jp": "とりました",
+        "romaji": "torimashita",
+        "cn": "摘了"
+      }
     ]
   },
   {
@@ -998,6 +3285,24 @@
     "cn": "かえります（kaerimasu",
     "sources": [
       "2025-12-09"
+    ],
+    "img": "sentences/sent_100.png",
+    "wb": [
+      {
+        "jp": "帰る",
+        "romaji": "kaeru",
+        "cn": "回"
+      },
+      {
+        "jp": "→",
+        "romaji": "→",
+        "cn": "→"
+      },
+      {
+        "jp": "帰ります",
+        "romaji": "kaerimasu",
+        "cn": "回(敬体)"
+      }
     ]
   },
   {
@@ -1008,6 +3313,34 @@
     "cn": "1）狐狸要回家",
     "sources": [
       "2025-12-09"
+    ],
+    "img": "sentences/sent_101.png",
+    "wb": [
+      {
+        "jp": "狐ちゃん",
+        "romaji": "kitsune-chan",
+        "cn": "小狐狸"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "家",
+        "romaji": "ie",
+        "cn": "家"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "往"
+      },
+      {
+        "jp": "帰ります",
+        "romaji": "kaerimasu",
+        "cn": "要回"
+      }
     ]
   },
   {
@@ -1018,6 +3351,14 @@
     "cn": "叔叔 / 大叔 / 中年男人",
     "sources": [
       "2025-12-11"
+    ],
+    "img": "sentences/sent_102.png",
+    "wb": [
+      {
+        "jp": "おじさん",
+        "romaji": "ojisan",
+        "cn": "叔叔/大叔"
+      }
     ]
   },
   {
@@ -1028,6 +3369,24 @@
     "cn": "みている（miteiru",
     "sources": [
       "2025-12-11"
+    ],
+    "img": "sentences/sent_103.png",
+    "wb": [
+      {
+        "jp": "見る",
+        "romaji": "miru",
+        "cn": "看"
+      },
+      {
+        "jp": "→",
+        "romaji": "→",
+        "cn": "→"
+      },
+      {
+        "jp": "見ている",
+        "romaji": "miteiru",
+        "cn": "正在看"
+      }
     ]
   },
   {
@@ -1038,6 +3397,34 @@
     "cn": "完整说法",
     "sources": [
       "2025-12-11"
+    ],
+    "img": "sentences/sent_104.png",
+    "wb": [
+      {
+        "jp": "見ている",
+        "romaji": "miteiru",
+        "cn": "正在看"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的(名词化)"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "誰",
+        "romaji": "dare",
+        "cn": "谁"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…吗"
+      }
     ]
   },
   {
@@ -1049,6 +3436,29 @@
     "sources": [
       "2025-12-11",
       "2026-01-09"
+    ],
+    "img": "sentences/sent_105.png",
+    "wb": [
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "ねこ",
+        "romaji": "neko",
+        "cn": "猫"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      }
     ]
   },
   {
@@ -1060,6 +3470,29 @@
     "sources": [
       "2025-12-11",
       "2026-01-09"
+    ],
+    "img": "sentences/sent_106.png",
+    "wb": [
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "ねずみ",
+        "romaji": "nezumi",
+        "cn": "老鼠"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      }
     ]
   },
   {
@@ -1071,6 +3504,29 @@
     "sources": [
       "2025-12-11",
       "2026-01-09"
+    ],
+    "img": "sentences/sent_107.png",
+    "wb": [
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "狼",
+        "romaji": "ōkami",
+        "cn": "狼"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      }
     ]
   },
   {
@@ -1081,6 +3537,19 @@
     "cn": "可爱的鱼",
     "sources": [
       "2025-12-14"
+    ],
+    "img": "sentences/sent_108.png",
+    "wb": [
+      {
+        "jp": "かわいい",
+        "romaji": "kawaii",
+        "cn": "可爱的"
+      },
+      {
+        "jp": "魚",
+        "romaji": "sakana",
+        "cn": "鱼"
+      }
     ]
   },
   {
@@ -1091,6 +3560,19 @@
     "cn": "呱呱，青蛙",
     "sources": [
       "2025-12-14"
+    ],
+    "img": "sentences/sent_109.png",
+    "wb": [
+      {
+        "jp": "けろけろ",
+        "romaji": "kero kero",
+        "cn": "呱呱(叫声)"
+      },
+      {
+        "jp": "かえる",
+        "romaji": "kaeru",
+        "cn": "青蛙"
+      }
     ]
   },
   {
@@ -1101,6 +3583,19 @@
     "cn": "叽叽，小鸡",
     "sources": [
       "2025-12-14"
+    ],
+    "img": "sentences/sent_110.png",
+    "wb": [
+      {
+        "jp": "ぴよぴよ",
+        "romaji": "piyo piyo",
+        "cn": "叽叽(叫声)"
+      },
+      {
+        "jp": "ひよこ",
+        "romaji": "hiyoko",
+        "cn": "小鸡"
+      }
     ]
   },
   {
@@ -1111,6 +3606,24 @@
     "cn": "哇，是猫",
     "sources": [
       "2025-12-14"
+    ],
+    "img": "sentences/sent_111.png",
+    "wb": [
+      {
+        "jp": "わ",
+        "romaji": "wa",
+        "cn": "哇"
+      },
+      {
+        "jp": "ねこ",
+        "romaji": "neko",
+        "cn": "猫"
+      },
+      {
+        "jp": "だ",
+        "romaji": "da",
+        "cn": "是(口语)"
+      }
     ]
   },
   {
@@ -1121,6 +3634,24 @@
     "cn": "嘎嘎，是鸭子",
     "sources": [
       "2025-12-14"
+    ],
+    "img": "sentences/sent_112.png",
+    "wb": [
+      {
+        "jp": "ガーガー",
+        "romaji": "gā gā",
+        "cn": "嘎嘎(叫声)"
+      },
+      {
+        "jp": "アヒル",
+        "romaji": "ahiru",
+        "cn": "鸭子"
+      },
+      {
+        "jp": "よ",
+        "romaji": "yo",
+        "cn": "哦(语气)"
+      }
     ]
   },
   {
@@ -1131,6 +3662,24 @@
     "cn": "汪汪，是小狗",
     "sources": [
       "2025-12-14"
+    ],
+    "img": "sentences/sent_113.png",
+    "wb": [
+      {
+        "jp": "ワンワン",
+        "romaji": "wan wan",
+        "cn": "汪汪(叫声)"
+      },
+      {
+        "jp": "犬",
+        "romaji": "inu",
+        "cn": "狗"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1144,6 +3693,39 @@
       "2025-12-18",
       "2025-12-21",
       "2026-01-11"
+    ],
+    "img": "sentences/sent_114.png",
+    "wb": [
+      {
+        "jp": "ありちゃん",
+        "romaji": "ari-chan",
+        "cn": "蚂蚁"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "バス",
+        "romaji": "basu",
+        "cn": "公交车"
+      },
+      {
+        "jp": "で",
+        "romaji": "de",
+        "cn": "乘坐"
+      },
+      {
+        "jp": "おでかけ",
+        "romaji": "odekake",
+        "cn": "出门"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1157,6 +3739,24 @@
       "2025-12-18",
       "2025-12-21",
       "2026-01-11"
+    ],
+    "img": "sentences/sent_115.png",
+    "wb": [
+      {
+        "jp": "あり",
+        "romaji": "ari",
+        "cn": "蚂蚁"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "おでかけ",
+        "romaji": "odekake",
+        "cn": "出门"
+      }
     ]
   },
   {
@@ -1168,6 +3768,19 @@
     "sources": [
       "2025-12-18",
       "2025-12-23"
+    ],
+    "img": "sentences/sent_116.png",
+    "wb": [
+      {
+        "jp": "ころころ",
+        "romaji": "koro koro",
+        "cn": "咕噜咕噜"
+      },
+      {
+        "jp": "りんご",
+        "romaji": "ringo",
+        "cn": "苹果"
+      }
     ]
   },
   {
@@ -1180,6 +3793,19 @@
       "2025-12-18",
       "2025-12-21",
       "2026-01-11"
+    ],
+    "img": "sentences/sent_117.png",
+    "wb": [
+      {
+        "jp": "ガタガタ",
+        "romaji": "gata gata",
+        "cn": "咯噔咯噔"
+      },
+      {
+        "jp": "ゴトゴト",
+        "romaji": "goto goto",
+        "cn": "咕咚咕咚"
+      }
     ]
   },
   {
@@ -1190,6 +3816,34 @@
     "cn": "骆驼吃了辣椒",
     "sources": [
       "2025-12-18"
+    ],
+    "img": "sentences/sent_118.png",
+    "wb": [
+      {
+        "jp": "ラクダ",
+        "romaji": "rakuda",
+        "cn": "骆驼"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "唐辛子",
+        "romaji": "tōgarashi",
+        "cn": "辣椒"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べました",
+        "romaji": "tabemashita",
+        "cn": "吃了"
+      }
     ]
   },
   {
@@ -1202,6 +3856,29 @@
       "2025-12-18",
       "2025-12-21",
       "2026-01-11"
+    ],
+    "img": "sentences/sent_119.png",
+    "wb": [
+      {
+        "jp": "山",
+        "romaji": "yama",
+        "cn": "山"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "見えて",
+        "romaji": "miete",
+        "cn": "看见"
+      },
+      {
+        "jp": "きました",
+        "romaji": "kimashita",
+        "cn": "渐渐…了"
+      }
     ]
   },
   {
@@ -1213,6 +3890,29 @@
     "sources": [
       "2025-12-21",
       "2026-01-11"
+    ],
+    "img": "sentences/sent_120.png",
+    "wb": [
+      {
+        "jp": "ここ",
+        "romaji": "koko",
+        "cn": "这里"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "動物園",
+        "romaji": "dōbutsuen",
+        "cn": "动物园"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1224,6 +3924,29 @@
     "sources": [
       "2025-12-21",
       "2026-01-11"
+    ],
+    "img": "sentences/sent_121.png",
+    "wb": [
+      {
+        "jp": "森",
+        "romaji": "mori",
+        "cn": "森林"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "見えて",
+        "romaji": "miete",
+        "cn": "看见"
+      },
+      {
+        "jp": "きました",
+        "romaji": "kimashita",
+        "cn": "渐渐…了"
+      }
     ]
   },
   {
@@ -1234,6 +3957,19 @@
     "cn": "滑滑的香蕉",
     "sources": [
       "2025-12-23"
+    ],
+    "img": "sentences/sent_122.png",
+    "wb": [
+      {
+        "jp": "しるしる",
+        "romaji": "shiru shiru",
+        "cn": "滑滑的"
+      },
+      {
+        "jp": "バナナ",
+        "romaji": "banana",
+        "cn": "香蕉"
+      }
     ]
   },
   {
@@ -1244,6 +3980,19 @@
     "cn": "特别的蛋糕",
     "sources": [
       "2025-12-23"
+    ],
+    "img": "sentences/sent_123.png",
+    "wb": [
+      {
+        "jp": "スペシャルな",
+        "romaji": "supesharu na",
+        "cn": "特别的"
+      },
+      {
+        "jp": "ケーキ",
+        "romaji": "kēki",
+        "cn": "蛋糕"
+      }
     ]
   },
   {
@@ -1254,6 +4003,34 @@
     "cn": "妈妈，水果真好吃",
     "sources": [
       "2025-12-23"
+    ],
+    "img": "sentences/sent_124.png",
+    "wb": [
+      {
+        "jp": "ママ",
+        "romaji": "mama",
+        "cn": "妈妈"
+      },
+      {
+        "jp": "くだもの",
+        "romaji": "kudamono",
+        "cn": "水果"
+      },
+      {
+        "jp": "って",
+        "romaji": "tte",
+        "cn": "(话题)"
+      },
+      {
+        "jp": "おいしい",
+        "romaji": "oishii",
+        "cn": "好吃"
+      },
+      {
+        "jp": "ね",
+        "romaji": "ne",
+        "cn": "啊"
+      }
     ]
   },
   {
@@ -1264,6 +4041,24 @@
     "cn": "妈妈做的",
     "sources": [
       "2025-12-23"
+    ],
+    "img": "sentences/sent_125.png",
+    "wb": [
+      {
+        "jp": "ママ",
+        "romaji": "mama",
+        "cn": "妈妈"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "作った",
+        "romaji": "tsukutta",
+        "cn": "做的"
+      }
     ]
   },
   {
@@ -1274,6 +4069,29 @@
     "cn": "马噗噗地放屁",
     "sources": [
       "2025-12-28"
+    ],
+    "img": "sentences/sent_126.png",
+    "wb": [
+      {
+        "jp": "うまさん",
+        "romaji": "uma-san",
+        "cn": "马先生"
+      },
+      {
+        "jp": "ぶぶっと",
+        "romaji": "bubutto",
+        "cn": "噗噗地"
+      },
+      {
+        "jp": "おなら",
+        "romaji": "onara",
+        "cn": "放屁"
+      },
+      {
+        "jp": "して",
+        "romaji": "shite",
+        "cn": "做"
+      }
     ]
   },
   {
@@ -1284,6 +4102,29 @@
     "cn": "便便，一个，两个，三个",
     "sources": [
       "2025-12-28"
+    ],
+    "img": "sentences/sent_127.png",
+    "wb": [
+      {
+        "jp": "うんち",
+        "romaji": "unchi",
+        "cn": "便便"
+      },
+      {
+        "jp": "いち",
+        "romaji": "ichi",
+        "cn": "一"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "二"
+      },
+      {
+        "jp": "さん",
+        "romaji": "san",
+        "cn": "三"
+      }
     ]
   },
   {
@@ -1294,6 +4135,34 @@
     "cn": "小猪拉了五个便便",
     "sources": [
       "2025-12-28"
+    ],
+    "img": "sentences/sent_128.png",
+    "wb": [
+      {
+        "jp": "こぶた",
+        "romaji": "kobuta",
+        "cn": "小猪"
+      },
+      {
+        "jp": "ごこ",
+        "romaji": "goko",
+        "cn": "五个"
+      },
+      {
+        "jp": "うんち",
+        "romaji": "unchi",
+        "cn": "便便"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "した",
+        "romaji": "shita",
+        "cn": "做了"
+      }
     ]
   },
   {
@@ -1304,6 +4173,34 @@
     "cn": "鸡拉了四个便便",
     "sources": [
       "2025-12-28"
+    ],
+    "img": "sentences/sent_129.png",
+    "wb": [
+      {
+        "jp": "にわとり",
+        "romaji": "niwatori",
+        "cn": "鸡"
+      },
+      {
+        "jp": "よんこ",
+        "romaji": "yonko",
+        "cn": "四个"
+      },
+      {
+        "jp": "うんち",
+        "romaji": "unchi",
+        "cn": "便便"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "した",
+        "romaji": "shita",
+        "cn": "做了"
+      }
     ]
   },
   {
@@ -1314,6 +4211,34 @@
     "cn": "羊拉了六个便便",
     "sources": [
       "2025-12-28"
+    ],
+    "img": "sentences/sent_130.png",
+    "wb": [
+      {
+        "jp": "ひつじ",
+        "romaji": "hitsuji",
+        "cn": "羊"
+      },
+      {
+        "jp": "ろっこ",
+        "romaji": "rokko",
+        "cn": "六个"
+      },
+      {
+        "jp": "うんち",
+        "romaji": "unchi",
+        "cn": "便便"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "した",
+        "romaji": "shita",
+        "cn": "做了"
+      }
     ]
   },
   {
@@ -1324,6 +4249,34 @@
     "cn": "松鼠拉了两个便便",
     "sources": [
       "2025-12-28"
+    ],
+    "img": "sentences/sent_131.png",
+    "wb": [
+      {
+        "jp": "リスちゃん",
+        "romaji": "risu-chan",
+        "cn": "松鼠"
+      },
+      {
+        "jp": "にこ",
+        "romaji": "niko",
+        "cn": "两个"
+      },
+      {
+        "jp": "うんち",
+        "romaji": "unchi",
+        "cn": "便便"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "した",
+        "romaji": "shita",
+        "cn": "做了"
+      }
     ]
   },
   {
@@ -1334,6 +4287,24 @@
     "cn": "我的爸爸",
     "sources": [
       "2026-01-04"
+    ],
+    "img": "sentences/sent_132.png",
+    "wb": [
+      {
+        "jp": "ぼく",
+        "romaji": "boku",
+        "cn": "我"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "おとうさん",
+        "romaji": "otōsan",
+        "cn": "爸爸"
+      }
     ]
   },
   {
@@ -1344,6 +4315,49 @@
     "cn": "我的爸爸脸是红色的",
     "sources": [
       "2026-01-04"
+    ],
+    "img": "sentences/sent_133.png",
+    "wb": [
+      {
+        "jp": "ぼく",
+        "romaji": "boku",
+        "cn": "我"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "おとうさん",
+        "romaji": "otōsan",
+        "cn": "爸爸"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "かお",
+        "romaji": "kao",
+        "cn": "脸"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "あかい",
+        "romaji": "akai",
+        "cn": "红色的"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1354,6 +4368,39 @@
     "cn": "这是我的爸爸",
     "sources": [
       "2026-01-04"
+    ],
+    "img": "sentences/sent_134.png",
+    "wb": [
+      {
+        "jp": "ぼく",
+        "romaji": "boku",
+        "cn": "我"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "おとうさん",
+        "romaji": "otōsan",
+        "cn": "爸爸"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "これ",
+        "romaji": "kore",
+        "cn": "这个"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1364,6 +4411,19 @@
     "cn": "是这个（指着某样东西时",
     "sources": [
       "2026-01-06"
+    ],
+    "img": "sentences/sent_135.png",
+    "wb": [
+      {
+        "jp": "これ",
+        "romaji": "kore",
+        "cn": "这个"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1374,6 +4434,49 @@
     "cn": "我的爸爸的翅膀是白色的",
     "sources": [
       "2026-01-06"
+    ],
+    "img": "sentences/sent_136.png",
+    "wb": [
+      {
+        "jp": "僕",
+        "romaji": "boku",
+        "cn": "我"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "お父さん",
+        "romaji": "otōsan",
+        "cn": "爸爸"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "羽根",
+        "romaji": "hane",
+        "cn": "翅膀"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "白い",
+        "romaji": "shiroi",
+        "cn": "白色的"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1384,6 +4487,49 @@
     "cn": "我的爸爸脖子很长",
     "sources": [
       "2026-01-06"
+    ],
+    "img": "sentences/sent_137.png",
+    "wb": [
+      {
+        "jp": "僕",
+        "romaji": "boku",
+        "cn": "我"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "お父さん",
+        "romaji": "otōsan",
+        "cn": "爸爸"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "首",
+        "romaji": "kubi",
+        "cn": "脖子"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "長い",
+        "romaji": "nagai",
+        "cn": "长"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1394,6 +4540,29 @@
     "cn": "正在看，正在看，乌鸦正在看",
     "sources": [
       "2026-01-09"
+    ],
+    "img": "sentences/sent_138.png",
+    "wb": [
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "烏",
+        "romaji": "karasu",
+        "cn": "乌鸦"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      }
     ]
   },
   {
@@ -1404,6 +4573,29 @@
     "cn": "正在看，正在看，猴子正在看",
     "sources": [
       "2026-01-09"
+    ],
+    "img": "sentences/sent_139.png",
+    "wb": [
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "猿",
+        "romaji": "saru",
+        "cn": "猴子"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      }
     ]
   },
   {
@@ -1414,6 +4606,29 @@
     "cn": "正在看，正在看，老虎正在看",
     "sources": [
       "2026-01-09"
+    ],
+    "img": "sentences/sent_140.png",
+    "wb": [
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      },
+      {
+        "jp": "虎",
+        "romaji": "tora",
+        "cn": "老虎"
+      },
+      {
+        "jp": "見てる",
+        "romaji": "miteru",
+        "cn": "在看"
+      }
     ]
   },
   {
@@ -1424,6 +4639,24 @@
     "cn": "小鸟正在飞",
     "sources": [
       "2026-01-13"
+    ],
+    "img": "sentences/sent_141.png",
+    "wb": [
+      {
+        "jp": "鳥",
+        "romaji": "tori",
+        "cn": "鸟"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "飛んでいます",
+        "romaji": "tondeimasu",
+        "cn": "正在飞"
+      }
     ]
   },
   {
@@ -1434,6 +4667,49 @@
     "cn": "小鸟吃了白色的果子（白色的果实），变白了",
     "sources": [
       "2026-01-13"
+    ],
+    "img": "sentences/sent_142.png",
+    "wb": [
+      {
+        "jp": "鳥",
+        "romaji": "tori",
+        "cn": "鸟"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "白い",
+        "romaji": "shiroi",
+        "cn": "白色的"
+      },
+      {
+        "jp": "実",
+        "romaji": "mi",
+        "cn": "果实"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べました",
+        "romaji": "tabemashita",
+        "cn": "吃了"
+      },
+      {
+        "jp": "白く",
+        "romaji": "shiroku",
+        "cn": "变白"
+      },
+      {
+        "jp": "なりました",
+        "romaji": "narimashita",
+        "cn": "变了"
+      }
     ]
   },
   {
@@ -1444,6 +4720,49 @@
     "cn": "小鸟吃了红色的果子（红色的果实），变红了",
     "sources": [
       "2026-01-13"
+    ],
+    "img": "sentences/sent_143.png",
+    "wb": [
+      {
+        "jp": "鳥",
+        "romaji": "tori",
+        "cn": "鸟"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "赤い",
+        "romaji": "akai",
+        "cn": "红色的"
+      },
+      {
+        "jp": "実",
+        "romaji": "mi",
+        "cn": "果实"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べました",
+        "romaji": "tabemashita",
+        "cn": "吃了"
+      },
+      {
+        "jp": "赤く",
+        "romaji": "akaku",
+        "cn": "变红"
+      },
+      {
+        "jp": "なりました",
+        "romaji": "narimashita",
+        "cn": "变了"
+      }
     ]
   },
   {
@@ -1454,6 +4773,49 @@
     "cn": "小鸟吃了蓝色的果子（蓝色的果实），变蓝了",
     "sources": [
       "2026-01-13"
+    ],
+    "img": "sentences/sent_144.png",
+    "wb": [
+      {
+        "jp": "鳥",
+        "romaji": "tori",
+        "cn": "鸟"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "青い",
+        "romaji": "aoi",
+        "cn": "蓝色的"
+      },
+      {
+        "jp": "実",
+        "romaji": "mi",
+        "cn": "果实"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べました",
+        "romaji": "tabemashita",
+        "cn": "吃了"
+      },
+      {
+        "jp": "青く",
+        "romaji": "aoku",
+        "cn": "变蓝"
+      },
+      {
+        "jp": "なりました",
+        "romaji": "narimashita",
+        "cn": "变了"
+      }
     ]
   },
   {
@@ -1464,6 +4826,29 @@
     "cn": "黑色的小鸟已经飞了",
     "sources": [
       "2026-01-13"
+    ],
+    "img": "sentences/sent_145.png",
+    "wb": [
+      {
+        "jp": "黒い",
+        "romaji": "kuroi",
+        "cn": "黑色的"
+      },
+      {
+        "jp": "鳥",
+        "romaji": "tori",
+        "cn": "鸟"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "飛びました",
+        "romaji": "tobimashita",
+        "cn": "飞了"
+      }
     ]
   },
   {
@@ -1474,6 +4859,29 @@
     "cn": "黑色的小鸟要飞",
     "sources": [
       "2026-01-13"
+    ],
+    "img": "sentences/sent_146.png",
+    "wb": [
+      {
+        "jp": "黒い",
+        "romaji": "kuroi",
+        "cn": "黑色的"
+      },
+      {
+        "jp": "鳥",
+        "romaji": "tori",
+        "cn": "鸟"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "飛びます",
+        "romaji": "tobimasu",
+        "cn": "要飞"
+      }
     ]
   },
   {
@@ -1485,6 +4893,49 @@
     "sources": [
       "2026-01-15",
       "2026-01-18"
+    ],
+    "img": "sentences/sent_147.png",
+    "wb": [
+      {
+        "jp": "あれ",
+        "romaji": "are",
+        "cn": "那个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "何",
+        "romaji": "nan",
+        "cn": "什么"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…吗"
+      },
+      {
+        "jp": "あれ",
+        "romaji": "are",
+        "cn": "那个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "猫",
+        "romaji": "neko",
+        "cn": "猫"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1496,6 +4947,49 @@
     "sources": [
       "2026-01-15",
       "2026-01-18"
+    ],
+    "img": "sentences/sent_148.png",
+    "wb": [
+      {
+        "jp": "これ",
+        "romaji": "kore",
+        "cn": "这个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "何",
+        "romaji": "nan",
+        "cn": "什么"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…吗"
+      },
+      {
+        "jp": "それ",
+        "romaji": "sore",
+        "cn": "那个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "猫",
+        "romaji": "neko",
+        "cn": "猫"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1506,6 +5000,34 @@
     "cn": "1）樱花好漂亮",
     "sources": [
       "2026-01-15"
+    ],
+    "img": "sentences/sent_149.png",
+    "wb": [
+      {
+        "jp": "さくら",
+        "romaji": "sakura",
+        "cn": "樱花"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "きれい",
+        "romaji": "kirei",
+        "cn": "漂亮"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      },
+      {
+        "jp": "ねい",
+        "romaji": "nei",
+        "cn": "啊"
+      }
     ]
   },
   {
@@ -1516,6 +5038,29 @@
     "cn": "5）那是香蕉",
     "sources": [
       "2026-01-15"
+    ],
+    "img": "sentences/sent_150.png",
+    "wb": [
+      {
+        "jp": "それ",
+        "romaji": "sore",
+        "cn": "那个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "バナナ",
+        "romaji": "banana",
+        "cn": "香蕉"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1526,6 +5071,24 @@
     "cn": "3）到达了长城",
     "sources": [
       "2026-01-15"
+    ],
+    "img": "sentences/sent_151.png",
+    "wb": [
+      {
+        "jp": "万里の長城",
+        "romaji": "banri no chōjō",
+        "cn": "长城"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "到"
+      },
+      {
+        "jp": "着きました",
+        "romaji": "tsukimashita",
+        "cn": "到达了"
+      }
     ]
   },
   {
@@ -1536,6 +5099,24 @@
     "cn": "2）到寿司店了",
     "sources": [
       "2026-01-15"
+    ],
+    "img": "sentences/sent_152.png",
+    "wb": [
+      {
+        "jp": "寿司屋",
+        "romaji": "sushiya",
+        "cn": "寿司店"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "到"
+      },
+      {
+        "jp": "着きました",
+        "romaji": "tsukimashita",
+        "cn": "到达了"
+      }
     ]
   },
   {
@@ -1546,6 +5127,24 @@
     "cn": "3）要吃寿司",
     "sources": [
       "2026-01-18"
+    ],
+    "img": "sentences/sent_153.png",
+    "wb": [
+      {
+        "jp": "お寿司",
+        "romaji": "o-sushi",
+        "cn": "寿司"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べます",
+        "romaji": "tabemasu",
+        "cn": "要吃"
+      }
     ]
   },
   {
@@ -1556,6 +5155,29 @@
     "cn": "1）这里是警察局",
     "sources": [
       "2026-01-18"
+    ],
+    "img": "sentences/sent_154.png",
+    "wb": [
+      {
+        "jp": "ここ",
+        "romaji": "koko",
+        "cn": "这里"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "警察署",
+        "romaji": "keisatsusho",
+        "cn": "警察局"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1566,6 +5188,49 @@
     "cn": "那个是什么？这是猫",
     "sources": [
       "2026-01-18"
+    ],
+    "img": "sentences/sent_155.png",
+    "wb": [
+      {
+        "jp": "それ",
+        "romaji": "sore",
+        "cn": "那个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "何",
+        "romaji": "nan",
+        "cn": "什么"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…吗"
+      },
+      {
+        "jp": "これ",
+        "romaji": "kore",
+        "cn": "这个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "猫",
+        "romaji": "neko",
+        "cn": "猫"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1576,6 +5241,24 @@
     "cn": "2）去警察局",
     "sources": [
       "2026-01-18"
+    ],
+    "img": "sentences/sent_156.png",
+    "wb": [
+      {
+        "jp": "警察署",
+        "romaji": "keisatsusho",
+        "cn": "警察局"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "往"
+      },
+      {
+        "jp": "行きます",
+        "romaji": "ikimasu",
+        "cn": "去"
+      }
     ]
   },
   {
@@ -1586,6 +5269,49 @@
     "cn": "2）这是什么？那个是菊花",
     "sources": [
       "2026-01-20"
+    ],
+    "img": "sentences/sent_157.png",
+    "wb": [
+      {
+        "jp": "これ",
+        "romaji": "kore",
+        "cn": "这个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "何",
+        "romaji": "nan",
+        "cn": "什么"
+      },
+      {
+        "jp": "ですか",
+        "romaji": "desu ka",
+        "cn": "是…吗"
+      },
+      {
+        "jp": "それ",
+        "romaji": "sore",
+        "cn": "那个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "菊",
+        "romaji": "kiku",
+        "cn": "菊花"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1596,6 +5322,29 @@
     "cn": "不是的，是鸟",
     "sources": [
       "2026-01-22"
+    ],
+    "img": "sentences/sent_158.png",
+    "wb": [
+      {
+        "jp": "いいえ",
+        "romaji": "iie",
+        "cn": "不是"
+      },
+      {
+        "jp": "そうじゃありません",
+        "romaji": "sō ja arimasen",
+        "cn": "不是那样"
+      },
+      {
+        "jp": "鳥",
+        "romaji": "tori",
+        "cn": "鸟"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1606,6 +5355,19 @@
     "cn": "是的。/ 对的",
     "sources": [
       "2026-01-22"
+    ],
+    "img": "sentences/sent_159.png",
+    "wb": [
+      {
+        "jp": "はい",
+        "romaji": "hai",
+        "cn": "是的"
+      },
+      {
+        "jp": "そうです",
+        "romaji": "sō desu",
+        "cn": "是那样"
+      }
     ]
   },
   {
@@ -1616,6 +5378,24 @@
     "cn": "是的，是蚂蚁",
     "sources": [
       "2026-01-22"
+    ],
+    "img": "sentences/sent_160.png",
+    "wb": [
+      {
+        "jp": "はい",
+        "romaji": "hai",
+        "cn": "是的"
+      },
+      {
+        "jp": "アリ",
+        "romaji": "ari",
+        "cn": "蚂蚁"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1626,6 +5406,24 @@
     "cn": "是的，是鸟",
     "sources": [
       "2026-01-22"
+    ],
+    "img": "sentences/sent_161.png",
+    "wb": [
+      {
+        "jp": "はい",
+        "romaji": "hai",
+        "cn": "是的"
+      },
+      {
+        "jp": "鳥",
+        "romaji": "tori",
+        "cn": "鸟"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1636,6 +5434,24 @@
     "cn": "3）是啊，真可爱呢",
     "sources": [
       "2026-01-25"
+    ],
+    "img": "sentences/sent_162.png",
+    "wb": [
+      {
+        "jp": "そうですね",
+        "romaji": "sō desu ne",
+        "cn": "是啊"
+      },
+      {
+        "jp": "かわいい",
+        "romaji": "kawaii",
+        "cn": "可爱"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "呢"
+      }
     ]
   },
   {
@@ -1646,6 +5462,29 @@
     "cn": "那是企鹅",
     "sources": [
       "2026-01-25"
+    ],
+    "img": "sentences/sent_163.png",
+    "wb": [
+      {
+        "jp": "それ",
+        "romaji": "sore",
+        "cn": "那个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "ペンギン",
+        "romaji": "pengin",
+        "cn": "企鹅"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1656,6 +5495,29 @@
     "cn": "2）企鹅好可爱啊",
     "sources": [
       "2026-01-25"
+    ],
+    "img": "sentences/sent_164.png",
+    "wb": [
+      {
+        "jp": "ペンギンさん",
+        "romaji": "pengin-san",
+        "cn": "企鹅先生"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "かわいい",
+        "romaji": "kawaii",
+        "cn": "可爱"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "呢"
+      }
     ]
   },
   {
@@ -1666,6 +5528,29 @@
     "cn": "1）这是青蛙",
     "sources": [
       "2026-01-26"
+    ],
+    "img": "sentences/sent_165.png",
+    "wb": [
+      {
+        "jp": "これ",
+        "romaji": "kore",
+        "cn": "这个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "カエル",
+        "romaji": "kaeru",
+        "cn": "青蛙"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1676,6 +5561,29 @@
     "cn": "2）这是河马",
     "sources": [
       "2026-01-26"
+    ],
+    "img": "sentences/sent_166.png",
+    "wb": [
+      {
+        "jp": "これ",
+        "romaji": "kore",
+        "cn": "这个"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "カバ",
+        "romaji": "kaba",
+        "cn": "河马"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
     ]
   },
   {
@@ -1686,6 +5594,34 @@
     "cn": "是啊，青蛙好大啊",
     "sources": [
       "2026-01-26"
+    ],
+    "img": "sentences/sent_167.png",
+    "wb": [
+      {
+        "jp": "そうですね",
+        "romaji": "sō desu ne",
+        "cn": "是啊"
+      },
+      {
+        "jp": "カエルちゃん",
+        "romaji": "kaeru-chan",
+        "cn": "小青蛙"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "大きい",
+        "romaji": "ōkii",
+        "cn": "大"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "呢"
+      }
     ]
   },
   {
@@ -1696,6 +5632,24 @@
     "cn": "是啊，真大呢",
     "sources": [
       "2026-01-26"
+    ],
+    "img": "sentences/sent_168.png",
+    "wb": [
+      {
+        "jp": "そうですね",
+        "romaji": "sō desu ne",
+        "cn": "是啊"
+      },
+      {
+        "jp": "大きい",
+        "romaji": "ōkii",
+        "cn": "大"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "呢"
+      }
     ]
   },
   {
@@ -1706,6 +5660,29 @@
     "cn": "青蛙好大啊",
     "sources": [
       "2026-01-26"
+    ],
+    "img": "sentences/sent_169.png",
+    "wb": [
+      {
+        "jp": "カエルちゃん",
+        "romaji": "kaeru-chan",
+        "cn": "小青蛙"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "大きい",
+        "romaji": "ōkii",
+        "cn": "大"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "呢"
+      }
     ]
   },
   {
@@ -1716,6 +5693,39 @@
     "cn": "河马（宝宝/小河马）的嘴巴好大呢",
     "sources": [
       "2026-01-26"
+    ],
+    "img": "sentences/sent_170.png",
+    "wb": [
+      {
+        "jp": "カバちゃん",
+        "romaji": "kaba-chan",
+        "cn": "小河马"
+      },
+      {
+        "jp": "の",
+        "romaji": "no",
+        "cn": "的"
+      },
+      {
+        "jp": "口",
+        "romaji": "kuchi",
+        "cn": "嘴巴"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "大きい",
+        "romaji": "ōkii",
+        "cn": "大"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "呢"
+      }
     ]
   },
   {
@@ -1726,6 +5736,34 @@
     "cn": "日本料理真的好好吃啊。",
     "sources": [
       "2026-02-06"
+    ],
+    "img": "sentences/sent_171.png",
+    "wb": [
+      {
+        "jp": "日本料理",
+        "romaji": "nihon ryōri",
+        "cn": "日本料理"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "本当に",
+        "romaji": "hontō ni",
+        "cn": "真的"
+      },
+      {
+        "jp": "おいしい",
+        "romaji": "oishii",
+        "cn": "好吃"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "啊"
+      }
     ]
   },
   {
@@ -1736,6 +5774,19 @@
     "cn": "好好吃啊！",
     "sources": [
       "2026-02-06"
+    ],
+    "img": "sentences/sent_172.png",
+    "wb": [
+      {
+        "jp": "美味しい",
+        "romaji": "oishii",
+        "cn": "好吃"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "啊"
+      }
     ]
   },
   {
@@ -1746,7 +5797,30 @@
     "sources": [
       "2026-02-02"
     ],
-    "id": "sent_173"
+    "id": "sent_173",
+    "img": "sentences/sent_173.png",
+    "wb": [
+      {
+        "jp": "日本料理",
+        "romaji": "nihon ryōri",
+        "cn": "日本料理"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "おいしい",
+        "romaji": "oishii",
+        "cn": "好吃"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "月がきれいですね。",
@@ -1756,7 +5830,35 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_174"
+    "id": "sent_174",
+    "img": "sentences/sent_174.png",
+    "wb": [
+      {
+        "jp": "月",
+        "romaji": "tsuki",
+        "cn": "月亮"
+      },
+      {
+        "jp": "が",
+        "romaji": "ga",
+        "cn": "(主语)"
+      },
+      {
+        "jp": "きれい",
+        "romaji": "kirei",
+        "cn": "漂亮"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      },
+      {
+        "jp": "ね",
+        "romaji": "ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "本当にきれいですね。",
@@ -1766,7 +5868,30 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_175"
+    "id": "sent_175",
+    "img": "sentences/sent_175.png",
+    "wb": [
+      {
+        "jp": "本当に",
+        "romaji": "hontō ni",
+        "cn": "真的"
+      },
+      {
+        "jp": "きれい",
+        "romaji": "kirei",
+        "cn": "漂亮"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      },
+      {
+        "jp": "ね",
+        "romaji": "ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "ねこちゃん、かわいいですね。",
@@ -1776,7 +5901,25 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_176"
+    "id": "sent_176",
+    "img": "sentences/sent_176.png",
+    "wb": [
+      {
+        "jp": "ねこちゃん",
+        "romaji": "neko-chan",
+        "cn": "小猫"
+      },
+      {
+        "jp": "かわいい",
+        "romaji": "kawaii",
+        "cn": "可爱"
+      },
+      {
+        "jp": "ですね",
+        "romaji": "desu ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "本当にかわいいですね。",
@@ -1786,7 +5929,30 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_177"
+    "id": "sent_177",
+    "img": "sentences/sent_177.png",
+    "wb": [
+      {
+        "jp": "本当に",
+        "romaji": "hontō ni",
+        "cn": "真的"
+      },
+      {
+        "jp": "かわいい",
+        "romaji": "kawaii",
+        "cn": "可爱"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      },
+      {
+        "jp": "ね",
+        "romaji": "ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "今日は楽しかったですね。",
@@ -1796,7 +5962,35 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_178"
+    "id": "sent_178",
+    "img": "sentences/sent_178.png",
+    "wb": [
+      {
+        "jp": "今日",
+        "romaji": "kyō",
+        "cn": "今天"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "楽しかった",
+        "romaji": "tanoshikatta",
+        "cn": "开心(过去)"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      },
+      {
+        "jp": "ね",
+        "romaji": "ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "本当に楽しかったですね。",
@@ -1806,7 +6000,30 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_179"
+    "id": "sent_179",
+    "img": "sentences/sent_179.png",
+    "wb": [
+      {
+        "jp": "本当に",
+        "romaji": "hontō ni",
+        "cn": "真的"
+      },
+      {
+        "jp": "楽しかった",
+        "romaji": "tanoshikatta",
+        "cn": "开心(过去)"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      },
+      {
+        "jp": "ね",
+        "romaji": "ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "昨日いっぱいごはんを食べました。",
@@ -1816,7 +6033,35 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_180"
+    "id": "sent_180",
+    "img": "sentences/sent_180.png",
+    "wb": [
+      {
+        "jp": "昨日",
+        "romaji": "kinō",
+        "cn": "昨天"
+      },
+      {
+        "jp": "いっぱい",
+        "romaji": "ippai",
+        "cn": "很多"
+      },
+      {
+        "jp": "ごはん",
+        "romaji": "gohan",
+        "cn": "饭"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "食べました",
+        "romaji": "tabemashita",
+        "cn": "吃了"
+      }
+    ]
   },
   {
     "jp": "昨日は楽しかったですね。",
@@ -1826,7 +6071,35 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_181"
+    "id": "sent_181",
+    "img": "sentences/sent_181.png",
+    "wb": [
+      {
+        "jp": "昨日",
+        "romaji": "kinō",
+        "cn": "昨天"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "楽しかった",
+        "romaji": "tanoshikatta",
+        "cn": "开心(过去)"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      },
+      {
+        "jp": "ね",
+        "romaji": "ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "リスちゃんは眠いですね。",
@@ -1836,7 +6109,35 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_182"
+    "id": "sent_182",
+    "img": "sentences/sent_182.png",
+    "wb": [
+      {
+        "jp": "リスちゃん",
+        "romaji": "risu-chan",
+        "cn": "松鼠"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "眠い",
+        "romaji": "nemui",
+        "cn": "困"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      },
+      {
+        "jp": "ね",
+        "romaji": "ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "本当に眠いですね。",
@@ -1846,7 +6147,30 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_183"
+    "id": "sent_183",
+    "img": "sentences/sent_183.png",
+    "wb": [
+      {
+        "jp": "本当に",
+        "romaji": "hontō ni",
+        "cn": "真的"
+      },
+      {
+        "jp": "眠い",
+        "romaji": "nemui",
+        "cn": "困"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      },
+      {
+        "jp": "ね",
+        "romaji": "ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "ここは私のふるさとです。",
@@ -1856,7 +6180,35 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_184"
+    "id": "sent_184",
+    "img": "sentences/sent_184.png",
+    "wb": [
+      {
+        "jp": "ここ",
+        "romaji": "koko",
+        "cn": "这里"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "私の",
+        "romaji": "watashi no",
+        "cn": "我的"
+      },
+      {
+        "jp": "ふるさと",
+        "romaji": "furusato",
+        "cn": "家乡"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
+    ]
   },
   {
     "jp": "これから郵便局へ行きます。",
@@ -1866,7 +6218,30 @@
     "sources": [
       "2026-02-06"
     ],
-    "id": "sent_185"
+    "id": "sent_185",
+    "img": "sentences/sent_185.png",
+    "wb": [
+      {
+        "jp": "これから",
+        "romaji": "korekara",
+        "cn": "接下来"
+      },
+      {
+        "jp": "郵便局",
+        "romaji": "yūbinkyoku",
+        "cn": "邮局"
+      },
+      {
+        "jp": "へ",
+        "romaji": "e",
+        "cn": "往"
+      },
+      {
+        "jp": "行きます",
+        "romaji": "ikimasu",
+        "cn": "去"
+      }
+    ]
   },
   {
     "jp": "しばらくして、郵便局に来ました。",
@@ -1876,7 +6251,30 @@
     "sources": [
       "2026-02-09"
     ],
-    "id": "sent_186"
+    "id": "sent_186",
+    "img": "sentences/sent_186.png",
+    "wb": [
+      {
+        "jp": "しばらくして",
+        "romaji": "shibaraku shite",
+        "cn": "过了一会儿"
+      },
+      {
+        "jp": "郵便局",
+        "romaji": "yūbinkyoku",
+        "cn": "邮局"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "到"
+      },
+      {
+        "jp": "来ました",
+        "romaji": "kimashita",
+        "cn": "来了"
+      }
+    ]
   },
   {
     "jp": "ここは郵便局です。",
@@ -1886,7 +6284,30 @@
     "sources": [
       "2026-02-09"
     ],
-    "id": "sent_187"
+    "id": "sent_187",
+    "img": "sentences/sent_187.png",
+    "wb": [
+      {
+        "jp": "ここ",
+        "romaji": "koko",
+        "cn": "这里"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "郵便局",
+        "romaji": "yūbinkyoku",
+        "cn": "邮局"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
+    ]
   },
   {
     "jp": "今から手紙を送ります。",
@@ -1896,7 +6317,30 @@
     "sources": [
       "2026-02-09"
     ],
-    "id": "sent_188"
+    "id": "sent_188",
+    "img": "sentences/sent_188.png",
+    "wb": [
+      {
+        "jp": "今から",
+        "romaji": "ima kara",
+        "cn": "从现在起"
+      },
+      {
+        "jp": "手紙",
+        "romaji": "tegami",
+        "cn": "信"
+      },
+      {
+        "jp": "を",
+        "romaji": "o",
+        "cn": "(宾语)"
+      },
+      {
+        "jp": "送ります",
+        "romaji": "okurimasu",
+        "cn": "寄"
+      }
+    ]
   },
   {
     "jp": "これから幼稚園へ行きます。",
@@ -1906,7 +6350,30 @@
     "sources": [
       "2026-02-09"
     ],
-    "id": "sent_189"
+    "id": "sent_189",
+    "img": "sentences/sent_189.png",
+    "wb": [
+      {
+        "jp": "これから",
+        "romaji": "korekara",
+        "cn": "接下来"
+      },
+      {
+        "jp": "幼稚園",
+        "romaji": "yōchien",
+        "cn": "幼儿园"
+      },
+      {
+        "jp": "へ",
+        "romaji": "e",
+        "cn": "往"
+      },
+      {
+        "jp": "行きます",
+        "romaji": "ikimasu",
+        "cn": "去"
+      }
+    ]
   },
   {
     "jp": "今から幼稚園へ行きます。",
@@ -1916,7 +6383,30 @@
     "sources": [
       "2026-02-09"
     ],
-    "id": "sent_190"
+    "id": "sent_190",
+    "img": "sentences/sent_190.png",
+    "wb": [
+      {
+        "jp": "今から",
+        "romaji": "ima kara",
+        "cn": "从现在起"
+      },
+      {
+        "jp": "幼稚園",
+        "romaji": "yōchien",
+        "cn": "幼儿园"
+      },
+      {
+        "jp": "へ",
+        "romaji": "e",
+        "cn": "往"
+      },
+      {
+        "jp": "行きます",
+        "romaji": "ikimasu",
+        "cn": "去"
+      }
+    ]
   },
   {
     "jp": "しばらくして、幼稚園に来ました。",
@@ -1926,7 +6416,30 @@
     "sources": [
       "2026-02-09"
     ],
-    "id": "sent_191"
+    "id": "sent_191",
+    "img": "sentences/sent_191.png",
+    "wb": [
+      {
+        "jp": "しばらくして",
+        "romaji": "shibaraku shite",
+        "cn": "过了一会儿"
+      },
+      {
+        "jp": "幼稚園",
+        "romaji": "yōchien",
+        "cn": "幼儿园"
+      },
+      {
+        "jp": "に",
+        "romaji": "ni",
+        "cn": "到"
+      },
+      {
+        "jp": "来ました",
+        "romaji": "kimashita",
+        "cn": "来了"
+      }
+    ]
   },
   {
     "jp": "ここは幼稚園です。",
@@ -1936,7 +6449,30 @@
     "sources": [
       "2026-02-09"
     ],
-    "id": "sent_192"
+    "id": "sent_192",
+    "img": "sentences/sent_192.png",
+    "wb": [
+      {
+        "jp": "ここ",
+        "romaji": "koko",
+        "cn": "这里"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "幼稚園",
+        "romaji": "yōchien",
+        "cn": "幼儿园"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
+    ]
   },
   {
     "jp": "幼稚園へ行きました。",
@@ -1946,7 +6482,25 @@
     "sources": [
       "2026-02-09"
     ],
-    "id": "sent_193"
+    "id": "sent_193",
+    "img": "sentences/sent_193.png",
+    "wb": [
+      {
+        "jp": "幼稚園",
+        "romaji": "yōchien",
+        "cn": "幼儿园"
+      },
+      {
+        "jp": "へ",
+        "romaji": "e",
+        "cn": "往"
+      },
+      {
+        "jp": "行きました",
+        "romaji": "ikimashita",
+        "cn": "去了"
+      }
+    ]
   },
   {
     "jp": "本当においしいですね。",
@@ -1956,7 +6510,30 @@
     "sources": [
       "2026-02-02"
     ],
-    "id": "sent_194"
+    "id": "sent_194",
+    "img": "sentences/sent_194.png",
+    "wb": [
+      {
+        "jp": "本当に",
+        "romaji": "hontō ni",
+        "cn": "真的"
+      },
+      {
+        "jp": "おいしい",
+        "romaji": "oishii",
+        "cn": "好吃"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      },
+      {
+        "jp": "ね",
+        "romaji": "ne",
+        "cn": "啊"
+      }
+    ]
   },
   {
     "jp": "こんにちは、こんにちは。",
@@ -1966,7 +6543,20 @@
     "sources": [
       "2026-02-09"
     ],
-    "id": "sent_195"
+    "id": "sent_195",
+    "img": "sentences/sent_195.png",
+    "wb": [
+      {
+        "jp": "こんにちは",
+        "romaji": "konnichiwa",
+        "cn": "你好"
+      },
+      {
+        "jp": "こんにちは",
+        "romaji": "konnichiwa",
+        "cn": "你好"
+      }
+    ]
   },
   {
     "jp": "ここは私の故郷です！",
@@ -1976,6 +6566,34 @@
     "sources": [
       "2026-02-09"
     ],
-    "id": "sent_196"
+    "id": "sent_196",
+    "img": "sentences/sent_196.png",
+    "wb": [
+      {
+        "jp": "ここ",
+        "romaji": "koko",
+        "cn": "这里"
+      },
+      {
+        "jp": "は",
+        "romaji": "wa",
+        "cn": "(主题)"
+      },
+      {
+        "jp": "私の",
+        "romaji": "watashi no",
+        "cn": "我的"
+      },
+      {
+        "jp": "故郷",
+        "romaji": "furusato",
+        "cn": "故乡"
+      },
+      {
+        "jp": "です",
+        "romaji": "desu",
+        "cn": "是"
+      }
+    ]
   }
 ]

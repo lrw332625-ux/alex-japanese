@@ -53,16 +53,29 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .flip-back .hint-text{font-size:11px;color:var(--text-sub);margin-top:6px;text-align:center}
 .reviewed .flip-front{border-color:#B8E6C8}
 .reviewed .flip-front::after{content:'✓';position:absolute;bottom:6px;right:8px;font-size:14px;color:#3A8F5C;font-weight:900}
-.sent-card .sent-img{width:64px;height:64px;float:right;margin:-4px -4px 4px 8px;border-radius:8px;object-fit:contain}
-.sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden}
+
+.sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden;display:flex;gap:12px;align-items:stretch}
 .sent-card:active{transform:scale(.98)}
 .sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow-lg)}
+.sent-card .sent-img-area{flex:0 0 140px;display:flex;align-items:center;justify-content:center;border-radius:12px;overflow:hidden;background:#F5F0E8}
+.sent-card .sent-img-area img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.sent-card .sent-text-area{flex:1;min-width:0}
 .sent-card .jp-text{font-family:'M PLUS Rounded 1c',sans-serif;font-size:20px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
-.sent-card .kana-text{font-size:14px;color:var(--primary);padding-left:28px}
+.sent-card .kana-text{font-size:14px;color:var(--primary,var(--food,var(--ocean,#2B7A98)));padding-left:28px}
 .sent-card .romaji-text{font-size:12px;color:#bbb;font-style:italic;padding-left:28px}
 .sent-card .cn-text{font-size:15px;color:#C04030;font-weight:600;padding-left:28px;margin-top:4px}
-.sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--secondary));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent,#E8573A),var(--food,var(--secondary,#2B7A98)));transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .sent-card.playing .wave{transform:scaleX(1);transition:transform 2s linear}
+@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:120px;width:100%}}
+.word-breakdown{display:flex;flex-wrap:wrap;gap:2px 6px;padding:6px 0 2px 0;margin-top:4px;border-top:1px dashed #e8e4dc}
+.wb-word{display:flex;flex-direction:column;align-items:center;padding:3px 5px;border-radius:6px;background:#FAF7F0;min-width:36px;cursor:pointer;transition:all .2s;user-select:none;-webkit-user-select:none}
+.wb-word:active{transform:scale(.92)}
+.wb-word:hover{background:#EDE8DD;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.wb-word.wb-playing{background:#FFF0EC;box-shadow:0 0 0 2px var(--accent,#E8573A);transform:scale(1.05)}
+.wb-word .wb-speaker{font-size:10px;opacity:.4;margin-top:1px}
+.wb-word .wb-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;font-weight:700;color:var(--text,#2D2A24)}
+.wb-word .wb-rd{font-size:10px;color:#bbb;font-style:italic}
+.wb-word .wb-cn{font-size:11px;color:var(--food,var(--primary,#2B7A98));font-weight:600}
 .tip-box{background:#FAF7F0;border-left:4px solid var(--text-sub);border-radius:0 var(--rs) var(--rs) 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--text-sub);line-height:1.6}
 .tip-box b{color:var(--text)}
 .quiz-area{padding:8px 0}
@@ -155,55 +168,13 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
 </div>
 <div class="section" id="sec1">
 <div class="sec-title" style="color:var(--secondary)"><span class="icon">🗣️</span>句子练习</div>
-<div class="sent-card" data-k="sent0" onclick="playSentTTS(this, '船に乗りました。')">
-  <img class="sent-img" src="../img/sentences/sent_043.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 船に乗りました。</div>
-  <div class="kana-text">ふねにのりました。</div>
-  <div class="romaji-text">fune ni norimashita.</div>
-  <div class="cn-text">已经坐船了</div>
-  <div class="wave"></div>
-</div>
-<div class="sent-card" data-k="sent1" onclick="playSentTTS(this, '男の子は船に乗ります。')">
-  <img class="sent-img" src="../img/sentences/sent_042.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 男の子は船に乗ります。</div>
-  <div class="kana-text">おとこのこはふねにのります。</div>
-  <div class="romaji-text">otokonoko wa fune ni norimasu.</div>
-  <div class="cn-text">男孩子要坐船</div>
-  <div class="wave"></div>
-</div>
-<div class="sent-card" data-k="sent2" onclick="playSentTTS(this, '男の子は船に乗りました。')">
-  <img class="sent-img" src="../img/sentences/sent_041.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 男の子は船に乗りました。</div>
-  <div class="kana-text">おとこのこはふねにのりました。</div>
-  <div class="romaji-text">otokonoko wa fune ni norimashita.</div>
-  <div class="cn-text">男孩坐了船</div>
-  <div class="wave"></div>
-</div>
-<div class="sent-card" data-k="sent3" onclick="playSentTTS(this, 'ゾウさんは自転車に乗ります。')">
-  <img class="sent-img" src="../img/sentences/sent_039.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 ゾウさんは自転車に乗ります。</div>
-  <div class="kana-text">ぞうさんはじてんしゃにのります。</div>
-  <div class="romaji-text">zou-san wa jitensha ni norimasu.</div>
-  <div class="cn-text">的称呼）要骑自行车</div>
-  <div class="wave"></div>
-</div>
-<div class="sent-card" data-k="sent4" onclick="playSentTTS(this, 'ゾウさんは自転車に乗りました。')">
-  <img class="sent-img" src="../img/sentences/sent_038.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 ゾウさんは自転車に乗りました。</div>
-  <div class="kana-text">ぞうさんはじてんしゃにのりました。</div>
-  <div class="romaji-text">zou-san wa jitensha ni norimashita.</div>
-  <div class="cn-text">大象先生（ぞうさん）骑了自行车</div>
-  <div class="wave"></div>
-</div>
-<div class="sent-card" data-k="sent5" onclick="playSentTTS(this, 'バスで図書館へ行きます。')">
-  <img class="sent-img" src="../img/sentences/sent_040.png" alt="" loading="lazy">
-  <div class="jp-text">🔈 バスで図書館へ行きます。</div>
-  <div class="kana-text">ばすで としょかん へ
-いきます。</div>
-  <div class="romaji-text">basu de toshokan e ikimasu.</div>
-  <div class="cn-text">乘坐公交车去图书馆</div>
-  <div class="wave"></div>
-</div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_043.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>船に乗りました。</div><div class="kana-text">ふねにのりました。</div><div class="romaji-text">fune ni norimashita.</div><div class="cn-text">已经坐船了</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">船</div><div class="wb-rd">fune</div><div class="wb-cn">船</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">に</div><div class="wb-rd">ni</div><div class="wb-cn">乘坐</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">乗りました</div><div class="wb-rd">norimashita</div><div class="wb-cn">坐了</div><div class="wb-speaker">🔈</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_042.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>男の子は船に乗ります。</div><div class="kana-text">おとこのこはふねにのります。</div><div class="romaji-text">otokonoko wa fune ni norimasu.</div><div class="cn-text">男孩子要坐船</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">男の子</div><div class="wb-rd">otokonoko</div><div class="wb-cn">男孩</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">(主题)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">船</div><div class="wb-rd">fune</div><div class="wb-cn">船</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">に</div><div class="wb-rd">ni</div><div class="wb-cn">乘坐</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">乗ります</div><div class="wb-rd">norimasu</div><div class="wb-cn">要坐</div><div class="wb-speaker">🔈</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_041.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>男の子は船に乗りました。</div><div class="kana-text">おとこのこはふねにのりました。</div><div class="romaji-text">otokonoko wa fune ni norimashita.</div><div class="cn-text">男孩坐了船</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">男の子</div><div class="wb-rd">otokonoko</div><div class="wb-cn">男孩</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">(主题)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">船</div><div class="wb-rd">fune</div><div class="wb-cn">船</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">に</div><div class="wb-rd">ni</div><div class="wb-cn">乘坐</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">乗りました</div><div class="wb-rd">norimashita</div><div class="wb-cn">坐了</div><div class="wb-speaker">🔈</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_039.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>ゾウさんは自転車に乗ります。</div><div class="kana-text">ぞうさんはじてんしゃにのります。</div><div class="romaji-text">zou-san wa jitensha ni norimasu.</div><div class="cn-text">的称呼）要骑自行车</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">ゾウさん</div><div class="wb-rd">zō-san</div><div class="wb-cn">大象先生</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">(主题)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">自転車</div><div class="wb-rd">jitensha</div><div class="wb-cn">自行车</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">に</div><div class="wb-rd">ni</div><div class="wb-cn">乘骑</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">乗ります</div><div class="wb-rd">norimasu</div><div class="wb-cn">要骑</div><div class="wb-speaker">🔈</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_038.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>ゾウさんは自転車に乗りました。</div><div class="kana-text">ぞうさんはじてんしゃにのりました。</div><div class="romaji-text">zou-san wa jitensha ni norimashita.</div><div class="cn-text">大象先生（ぞうさん）骑了自行车</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">ゾウさん</div><div class="wb-rd">zō-san</div><div class="wb-cn">大象先生</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">(主题)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">自転車</div><div class="wb-rd">jitensha</div><div class="wb-cn">自行车</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">に</div><div class="wb-rd">ni</div><div class="wb-cn">乘骑</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">乗りました</div><div class="wb-rd">norimashita</div><div class="wb-cn">骑了</div><div class="wb-speaker">🔈</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_040.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>バスで図書館へ行きます。</div><div class="kana-text">ばすで としょかん へ
+いきます。</div><div class="romaji-text">basu de toshokan e ikimasu.</div><div class="cn-text">乘坐公交车去图书馆</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">バス</div><div class="wb-rd">basu</div><div class="wb-cn">公交车</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">で</div><div class="wb-rd">de</div><div class="wb-cn">乘坐</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">図書館</div><div class="wb-rd">toshokan</div><div class="wb-cn">图书馆</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">へ</div><div class="wb-rd">e</div><div class="wb-cn">往</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">行きます</div><div class="wb-rd">ikimasu</div><div class="wb-cn">去</div><div class="wb-speaker">🔈</div></div></div></div></div>
 </div>
 <div class="footer">📱 点击卡片翻转学习 · 点击发音按钮听日语 · <a href="../index.html" style="color:var(--primary)">返回课程列表</a></div>
 <script src="../scripts/cache-control.js"></script>
@@ -438,6 +409,30 @@ if(_origShowQ){
   initLD();
   if(_fl==='jp')setTimeout(function(){applyFrontLang('jp')},100);
 })();
+
+  function playSent(el){
+    document.querySelectorAll('.sent-card').forEach(function(s){s.classList.remove('playing')});
+    el.classList.add('playing');
+    var jpEl = el.querySelector('.jp-text');
+    if(jpEl){
+      var text = jpEl.textContent.replace('🔊','').trim();
+      speakJP(text);
+    }
+    setTimeout(function(){el.classList.remove('playing')},3000);
+  }
+
+  // Word breakdown click handler
+  document.querySelectorAll('.wb-word').forEach(function(w){
+    w.addEventListener('click', function(ev){
+      ev.stopPropagation();
+      var jpText = this.querySelector('.wb-jp').textContent.trim();
+      if(!jpText) return;
+      document.querySelectorAll('.wb-word').forEach(function(x){x.classList.remove('wb-playing')});
+      this.classList.add('wb-playing');
+      speakJP(jpText);
+      setTimeout(function(){w.classList.remove('wb-playing')},1200);
+    });
+  });
 </script>
 </body>
 </html>
