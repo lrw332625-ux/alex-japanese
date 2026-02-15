@@ -75,7 +75,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .sent-card .cn-text{font-size:15px;color:#C04030;font-weight:600;padding-left:28px;margin-top:4px}
 .sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--food));transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .sent-card.playing .wave{transform:scaleX(1);transition:transform 2s linear}
-@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:120px;width:100%}}
+@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:200px;width:100%;background:#F5F0E8}.sent-card .sent-img-area img{object-fit:contain;width:100%;height:100%}}
 .tip-box{background:#FAF7F0;border-left:4px solid var(--text-sub);border-radius:0 var(--rs) var(--rs) 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--text-sub);line-height:1.6}
 .tip-box b{color:var(--text)}
 .quiz-area{padding:8px 0}
@@ -319,12 +319,8 @@ function setSlow(v){
     b.classList.toggle('on',v?(b.textContent==='慢速'):(b.textContent==='常速'));
   });
 }
-var currentAudio=null;
 var audioMap={"ふるさと":"../audio/8db5b72fc5ef.mp3","わたし":"../audio/df551410e7c3.mp3","こんびに":"../audio/d18b4ad55aeb.mp3","あいすくりーむ":"../audio/fcf81d37c8b7.mp3","かいます":"../audio/4c195b9b0479.mp3","かいました":"../audio/36850e654ebb.mp3","かう":"../audio/714c2e99d6f3.mp3","は":"../audio/b7a83b3be2f3.mp3","の":"../audio/359ebee169e2.mp3","ここは私のふるさとです。":"../audio/43024e95dc92.mp3","これからコンビニへ行きます。":"../audio/96aa2fd1ca52.mp3","しばらくして、コンビニに来ました。":"../audio/98adc0a63d4b.mp3","ここはコンビニです。":"../audio/0b9fed7a29e3.mp3","今からアイスクリームを買います。":"../audio/c68d31d2f5ee.mp3","アイスクリームを買いました。":"../audio/f35c43c651fc.mp3","私":"../audio/b511e6815bc8.mp3","コンビニ":"../audio/82bfc76940fb.mp3","アイスクリーム":"../audio/72571f56c0e7.mp3","買います":"../audio/7f2b1f2bd31f.mp3","買いました":"../audio/4458237bda92.mp3","買う":"../audio/3d70b012cddf.mp3","ここ":"../audio/koko_wb.mp3","私の":"../audio/watashino_wb.mp3","です":"../audio/desu_wb.mp3","これから":"../audio/korekara_wb.mp3","へ":"../audio/e_wb.mp3","行きます":"../audio/ikimasu_wb.mp3","しばらくして":"../audio/shibarakushite_wb.mp3","に":"../audio/ni_wb.mp3","来ました":"../audio/kimashita_wb.mp3","今から":"../audio/imakara_wb.mp3","を":"../audio/o_wb.mp3"};
-var bestJPVoice=null;
-function findBestJPVoice(){
-  var voices=window.speechSynthesis.getVoices();
-  var jp=voices.filter(function(v){return v.lang&&v.lang.indexOf('ja')===0});
+);
   if(!jp.length)return null;
   var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
   if(enhanced.length)return enhanced[0];
@@ -332,45 +328,15 @@ function findBestJPVoice(){
   for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
   return jp[0];
 }
-function speakJPLocal(text,cb){
-  if('speechSynthesis' in window){
-    window.speechSynthesis.cancel();
-    var u=new SpeechSynthesisUtterance(text);
-    u.lang='ja-JP';u.rate=speechRate;u.pitch=1.1;
-    if(!bestJPVoice)bestJPVoice=findBestJPVoice();
-    if(bestJPVoice)u.voice=bestJPVoice;
-    u.onend=function(){if(cb)cb()};
+;
     u.onerror=function(){if(cb)cb()};
     window.speechSynthesis.speak(u);
   } else if(cb) cb();
 }
-function speakJPOnline(text,cb){
-  try{
-    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
-    currentAudio=a;
-    if(speechRate!==1)a.playbackRate=speechRate;
-    a.onended=function(){currentAudio=null;if(cb)cb()};
+;
     a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
     a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
   }catch(e){speakJPLocal(text,cb)}
-}
-function speakJP(text,cb){
-  if(currentAudio){currentAudio.pause();currentAudio=null}
-  window.speechSynthesis&&window.speechSynthesis.cancel();
-  text=text.replace(/[\u{1F4E3}\u{1F508}\u{1F509}\u{1F50A}\u{1F3B6}\u{1F3B5}]/gu,'').trim();
-  var path=audioMap[text];
-  if(path){
-    try{
-      var a=new Audio(path);
-      currentAudio=a;
-      if(speechRate!==1)a.playbackRate=speechRate;
-      a.onended=function(){currentAudio=null;if(cb)cb()};
-      a.onerror=function(){currentAudio=null;speakJPOnline(text,cb)};
-      a.play().catch(function(){currentAudio=null;speakJPOnline(text,cb)});
-      return;
-    }catch(e){}
-  }
-  speakJPOnline(text,cb);
 }
 function tapCard(el){
   var k=el.getAttribute('data-k');

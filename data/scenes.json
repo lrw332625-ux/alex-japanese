@@ -203,7 +203,29 @@
           "kana": "これはいぬです。",
           "romaji": "kore wa inu desu.",
           "cn": "这是狗。",
-          "img": "zoo_s01.png"
+          "img": "zoo_s01.png",
+          "wb": [
+            {
+              "jp": "これ",
+              "romaji": "kore",
+              "cn": "这个"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "犬",
+              "romaji": "inu",
+              "cn": "狗"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "zoo_s02",
@@ -211,7 +233,29 @@
           "kana": "ねこはかわいいです。",
           "romaji": "neko wa kawaii desu.",
           "cn": "猫很可爱。",
-          "img": "zoo_s02.png"
+          "img": "zoo_s02.png",
+          "wb": [
+            {
+              "jp": "猫",
+              "romaji": "neko",
+              "cn": "猫"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "かわいい",
+              "romaji": "kawaii",
+              "cn": "可爱"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "zoo_s03",
@@ -219,7 +263,29 @@
           "kana": "ぞうはおおきいです。",
           "romaji": "zou wa ookii desu.",
           "cn": "大象很大。",
-          "img": "zoo_s03.png"
+          "img": "zoo_s03.png",
+          "wb": [
+            {
+              "jp": "象",
+              "romaji": "zō",
+              "cn": "大象"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "大きい",
+              "romaji": "ōkii",
+              "cn": "大"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "zoo_s04",
@@ -227,7 +293,24 @@
           "kana": "うさぎがはしっています。",
           "romaji": "usagi ga hashitte imasu.",
           "cn": "兔子在跑。",
-          "img": "zoo_s04.png"
+          "img": "zoo_s04.png",
+          "wb": [
+            {
+              "jp": "うさぎ",
+              "romaji": "usagi",
+              "cn": "兔子"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "走っています",
+              "romaji": "hashitteimasu",
+              "cn": "正在跑"
+            }
+          ]
         },
         {
           "id": "zoo_s05",
@@ -235,7 +318,34 @@
           "kana": "ぱんだがささをたべています。",
           "romaji": "panda ga sasa o tabete imasu.",
           "cn": "熊猫在吃竹叶。",
-          "img": "zoo_s05.png"
+          "img": "zoo_s05.png",
+          "wb": [
+            {
+              "jp": "パンダ",
+              "romaji": "panda",
+              "cn": "熊猫"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "笹",
+              "romaji": "sasa",
+              "cn": "竹叶"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "食べています",
+              "romaji": "tabeteimasu",
+              "cn": "正在吃"
+            }
+          ]
         },
         {
           "id": "zoo_s06",
@@ -243,7 +353,29 @@
           "kana": "らいおんはつよいです。",
           "romaji": "raion wa tsuyoi desu.",
           "cn": "狮子很强壮。",
-          "img": "zoo_s06.png"
+          "img": "zoo_s06.png",
+          "wb": [
+            {
+              "jp": "ライオン",
+              "romaji": "raion",
+              "cn": "狮子"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "強い",
+              "romaji": "tsuyoi",
+              "cn": "强壮"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "zoo_s07",
@@ -251,7 +383,34 @@
           "kana": "とりがそらをとんでいます。",
           "romaji": "tori ga sora o tonde imasu.",
           "cn": "鸟在天上飞。",
-          "img": "zoo_s07.png"
+          "img": "zoo_s07.png",
+          "wb": [
+            {
+              "jp": "鳥",
+              "romaji": "tori",
+              "cn": "鸟"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "空",
+              "romaji": "sora",
+              "cn": "天空"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "在…中"
+            },
+            {
+              "jp": "飛んでいます",
+              "romaji": "tondeimasu",
+              "cn": "正在飞"
+            }
+          ]
         },
         {
           "id": "zoo_s08",
@@ -259,7 +418,24 @@
           "kana": "さかながおよいでいます。",
           "romaji": "sakana ga oyoide imasu.",
           "cn": "鱼在游泳。",
-          "img": "zoo_s08.png"
+          "img": "zoo_s08.png",
+          "wb": [
+            {
+              "jp": "魚",
+              "romaji": "sakana",
+              "cn": "鱼"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "泳いでいます",
+              "romaji": "oyoideimasu",
+              "cn": "正在游泳"
+            }
+          ]
         },
         {
           "id": "zoo_s09",
@@ -267,7 +443,29 @@
           "kana": "どうぶつえんはたのしいです。",
           "romaji": "doubutsuen wa tanoshii desu.",
           "cn": "动物园很开心。",
-          "img": "zoo_s09.png"
+          "img": "zoo_s09.png",
+          "wb": [
+            {
+              "jp": "動物園",
+              "romaji": "dōbutsuen",
+              "cn": "动物园"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "楽しい",
+              "romaji": "tanoshii",
+              "cn": "开心"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "zoo_s10",
@@ -275,7 +473,29 @@
           "kana": "ぺんぎんはかわいいですね。",
           "romaji": "pengin wa kawaii desu ne.",
           "cn": "企鹅好可爱啊。",
-          "img": "zoo_s10.png"
+          "img": "zoo_s10.png",
+          "wb": [
+            {
+              "jp": "ペンギン",
+              "romaji": "pengin",
+              "cn": "企鹅"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "かわいい",
+              "romaji": "kawaii",
+              "cn": "可爱"
+            },
+            {
+              "jp": "ですね",
+              "romaji": "desu ne",
+              "cn": "啊"
+            }
+          ]
         }
       ]
     },
@@ -417,7 +637,14 @@
           "kana": "いただきます。",
           "romaji": "itadakimasu.",
           "cn": "我开动了。",
-          "img": "food_s01.png"
+          "img": "food_s01.png",
+          "wb": [
+            {
+              "jp": "いただきます",
+              "romaji": "itadakimasu",
+              "cn": "我开动了"
+            }
+          ]
         },
         {
           "id": "food_s02",
@@ -425,7 +652,14 @@
           "kana": "ごちそうさまでした。",
           "romaji": "gochisousama deshita.",
           "cn": "谢谢款待。",
-          "img": "food_s02.png"
+          "img": "food_s02.png",
+          "wb": [
+            {
+              "jp": "ごちそうさまでした",
+              "romaji": "gochisōsama deshita",
+              "cn": "谢谢款待"
+            }
+          ]
         },
         {
           "id": "food_s03",
@@ -433,7 +667,19 @@
           "kana": "おいしいです！",
           "romaji": "oishii desu!",
           "cn": "好吃！",
-          "img": "food_s03.png"
+          "img": "food_s03.png",
+          "wb": [
+            {
+              "jp": "美味しい",
+              "romaji": "oishii",
+              "cn": "好吃"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "food_s04",
@@ -441,7 +687,24 @@
           "kana": "りんごをください。",
           "romaji": "ringo o kudasai.",
           "cn": "请给我苹果。",
-          "img": "food_s04.png"
+          "img": "food_s04.png",
+          "wb": [
+            {
+              "jp": "りんご",
+              "romaji": "ringo",
+              "cn": "苹果"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "ください",
+              "romaji": "kudasai",
+              "cn": "请给我"
+            }
+          ]
         },
         {
           "id": "food_s05",
@@ -449,7 +712,24 @@
           "kana": "おみずをください。",
           "romaji": "omizu o kudasai.",
           "cn": "请给我水。",
-          "img": "food_s05.png"
+          "img": "food_s05.png",
+          "wb": [
+            {
+              "jp": "お水",
+              "romaji": "o-mizu",
+              "cn": "水"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "ください",
+              "romaji": "kudasai",
+              "cn": "请给我"
+            }
+          ]
         },
         {
           "id": "food_s06",
@@ -457,7 +737,24 @@
           "kana": "おなかがすいた！",
           "romaji": "onaka ga suita!",
           "cn": "肚子饿了！",
-          "img": "food_s06.png"
+          "img": "food_s06.png",
+          "wb": [
+            {
+              "jp": "お腹",
+              "romaji": "onaka",
+              "cn": "肚子"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "すいた",
+              "romaji": "suita",
+              "cn": "饿了"
+            }
+          ]
         },
         {
           "id": "food_s07",
@@ -465,7 +762,29 @@
           "kana": "けーきがたべたいです。",
           "romaji": "keeki ga tabetai desu.",
           "cn": "我想吃蛋糕。",
-          "img": "food_s07.png"
+          "img": "food_s07.png",
+          "wb": [
+            {
+              "jp": "ケーキ",
+              "romaji": "kēki",
+              "cn": "蛋糕"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "食べたい",
+              "romaji": "tabetai",
+              "cn": "想吃"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "food_s08",
@@ -473,7 +792,39 @@
           "kana": "すしはにほんのりょうりです。",
           "romaji": "sushi wa nihon no ryouri desu.",
           "cn": "寿司是日本料理。",
-          "img": "food_s08.png"
+          "img": "food_s08.png",
+          "wb": [
+            {
+              "jp": "寿司",
+              "romaji": "sushi",
+              "cn": "寿司"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "日本",
+              "romaji": "nihon",
+              "cn": "日本"
+            },
+            {
+              "jp": "の",
+              "romaji": "no",
+              "cn": "的"
+            },
+            {
+              "jp": "料理",
+              "romaji": "ryōri",
+              "cn": "料理"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "food_s09",
@@ -481,7 +832,29 @@
           "kana": "じゅーすをのみたいです。",
           "romaji": "juusu o nomitai desu.",
           "cn": "我想喝果汁。",
-          "img": "food_s09.png"
+          "img": "food_s09.png",
+          "wb": [
+            {
+              "jp": "ジュース",
+              "romaji": "jūsu",
+              "cn": "果汁"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "飲みたい",
+              "romaji": "nomitai",
+              "cn": "想喝"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "food_s10",
@@ -489,7 +862,19 @@
           "kana": "いっしょにたべましょう。",
           "romaji": "issho ni tabemashou.",
           "cn": "一起吃吧。",
-          "img": "food_s10.png"
+          "img": "food_s10.png",
+          "wb": [
+            {
+              "jp": "一緒に",
+              "romaji": "issho ni",
+              "cn": "一起"
+            },
+            {
+              "jp": "食べましょう",
+              "romaji": "tabemashō",
+              "cn": "吃吧"
+            }
+          ]
         }
       ]
     },
@@ -623,7 +1008,24 @@
           "kana": "でんしゃにのります。",
           "romaji": "densha ni norimasu.",
           "cn": "坐电车。",
-          "img": "trn_s01.png"
+          "img": "trn_s01.png",
+          "wb": [
+            {
+              "jp": "電車",
+              "romaji": "densha",
+              "cn": "电车"
+            },
+            {
+              "jp": "に",
+              "romaji": "ni",
+              "cn": "乘坐"
+            },
+            {
+              "jp": "乗ります",
+              "romaji": "norimasu",
+              "cn": "坐"
+            }
+          ]
         },
         {
           "id": "trn_s02",
@@ -631,7 +1033,29 @@
           "kana": "しんかんせんははやいです。",
           "romaji": "shinkansen wa hayai desu.",
           "cn": "新干线很快。",
-          "img": "trn_s02.png"
+          "img": "trn_s02.png",
+          "wb": [
+            {
+              "jp": "新幹線",
+              "romaji": "shinkansen",
+              "cn": "新干线"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "速い",
+              "romaji": "hayai",
+              "cn": "快"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "trn_s03",
@@ -639,7 +1063,24 @@
           "kana": "ばすがきました。",
           "romaji": "basu ga kimashita.",
           "cn": "公交车来了。",
-          "img": "trn_s03.png"
+          "img": "trn_s03.png",
+          "wb": [
+            {
+              "jp": "バス",
+              "romaji": "basu",
+              "cn": "公交车"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "来ました",
+              "romaji": "kimashita",
+              "cn": "来了"
+            }
+          ]
         },
         {
           "id": "trn_s04",
@@ -647,7 +1088,29 @@
           "kana": "ひこうきでりょこうします。",
           "romaji": "hikouki de ryokou shimasu.",
           "cn": "坐飞机旅行。",
-          "img": "trn_s04.png"
+          "img": "trn_s04.png",
+          "wb": [
+            {
+              "jp": "飛行機",
+              "romaji": "hikōki",
+              "cn": "飞机"
+            },
+            {
+              "jp": "で",
+              "romaji": "de",
+              "cn": "乘坐"
+            },
+            {
+              "jp": "旅行",
+              "romaji": "ryokō",
+              "cn": "旅行"
+            },
+            {
+              "jp": "します",
+              "romaji": "shimasu",
+              "cn": "做"
+            }
+          ]
         },
         {
           "id": "trn_s05",
@@ -655,7 +1118,29 @@
           "kana": "えきはどこですか？",
           "romaji": "eki wa doko desu ka?",
           "cn": "车站在哪里？",
-          "img": "trn_s05.png"
+          "img": "trn_s05.png",
+          "wb": [
+            {
+              "jp": "駅",
+              "romaji": "eki",
+              "cn": "车站"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "どこ",
+              "romaji": "doko",
+              "cn": "哪里"
+            },
+            {
+              "jp": "ですか",
+              "romaji": "desu ka",
+              "cn": "是…吗"
+            }
+          ]
         },
         {
           "id": "trn_s06",
@@ -663,7 +1148,29 @@
           "kana": "みぎにまがってください。",
           "romaji": "migi ni magatte kudasai.",
           "cn": "请向右转。",
-          "img": "trn_s06.png"
+          "img": "trn_s06.png",
+          "wb": [
+            {
+              "jp": "右",
+              "romaji": "migi",
+              "cn": "右"
+            },
+            {
+              "jp": "に",
+              "romaji": "ni",
+              "cn": "往"
+            },
+            {
+              "jp": "曲がって",
+              "romaji": "magatte",
+              "cn": "转弯"
+            },
+            {
+              "jp": "ください",
+              "romaji": "kudasai",
+              "cn": "请"
+            }
+          ]
         },
         {
           "id": "trn_s07",
@@ -671,7 +1178,29 @@
           "kana": "たくしーをよんでください。",
           "romaji": "takushii o yonde kudasai.",
           "cn": "请叫出租车。",
-          "img": "trn_s07.png"
+          "img": "trn_s07.png",
+          "wb": [
+            {
+              "jp": "タクシー",
+              "romaji": "takushī",
+              "cn": "出租车"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "呼んで",
+              "romaji": "yonde",
+              "cn": "叫"
+            },
+            {
+              "jp": "ください",
+              "romaji": "kudasai",
+              "cn": "请"
+            }
+          ]
         },
         {
           "id": "trn_s08",
@@ -679,7 +1208,29 @@
           "kana": "じてんしゃにのれますか？",
           "romaji": "jitensha ni noremasu ka?",
           "cn": "你会骑自行车吗？",
-          "img": "trn_s08.png"
+          "img": "trn_s08.png",
+          "wb": [
+            {
+              "jp": "自転車",
+              "romaji": "jitensha",
+              "cn": "自行车"
+            },
+            {
+              "jp": "に",
+              "romaji": "ni",
+              "cn": "乘骑"
+            },
+            {
+              "jp": "乗れます",
+              "romaji": "noremasu",
+              "cn": "会骑"
+            },
+            {
+              "jp": "か",
+              "romaji": "ka",
+              "cn": "吗"
+            }
+          ]
         },
         {
           "id": "trn_s09",
@@ -687,7 +1238,24 @@
           "kana": "しょうぼうしゃがはしっています。",
           "romaji": "shoubousha ga hashitte imasu.",
           "cn": "消防车在行驶。",
-          "img": "trn_s09.png"
+          "img": "trn_s09.png",
+          "wb": [
+            {
+              "jp": "消防車",
+              "romaji": "shōbōsha",
+              "cn": "消防车"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "走っています",
+              "romaji": "hashitteimasu",
+              "cn": "正在行驶"
+            }
+          ]
         },
         {
           "id": "trn_s10",
@@ -695,7 +1263,34 @@
           "kana": "ふねでうみをわたります。",
           "romaji": "fune de umi o watarimasu.",
           "cn": "坐船过海。",
-          "img": "trn_s10.png"
+          "img": "trn_s10.png",
+          "wb": [
+            {
+              "jp": "船",
+              "romaji": "fune",
+              "cn": "船"
+            },
+            {
+              "jp": "で",
+              "romaji": "de",
+              "cn": "乘坐"
+            },
+            {
+              "jp": "海",
+              "romaji": "umi",
+              "cn": "海"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "渡ります",
+              "romaji": "watarimasu",
+              "cn": "渡过"
+            }
+          ]
         }
       ]
     },
@@ -829,7 +1424,19 @@
           "kana": "おとうさん、だいすき！",
           "romaji": "otousan, daisuki!",
           "cn": "爸爸，最喜欢你了！",
-          "img": "fam_s01.png"
+          "img": "fam_s01.png",
+          "wb": [
+            {
+              "jp": "お父さん",
+              "romaji": "otōsan",
+              "cn": "爸爸"
+            },
+            {
+              "jp": "大好き",
+              "romaji": "daisuki",
+              "cn": "最喜欢"
+            }
+          ]
         },
         {
           "id": "fam_s02",
@@ -837,7 +1444,19 @@
           "kana": "おかあさん、ありがとう。",
           "romaji": "okaasan, arigatou.",
           "cn": "妈妈，谢谢。",
-          "img": "fam_s02.png"
+          "img": "fam_s02.png",
+          "wb": [
+            {
+              "jp": "お母さん",
+              "romaji": "okāsan",
+              "cn": "妈妈"
+            },
+            {
+              "jp": "ありがとう",
+              "romaji": "arigatō",
+              "cn": "谢谢"
+            }
+          ]
         },
         {
           "id": "fam_s03",
@@ -845,7 +1464,29 @@
           "kana": "かぞくはごにんです。",
           "romaji": "kazoku wa gonin desu.",
           "cn": "家里有五口人。",
-          "img": "fam_s03.png"
+          "img": "fam_s03.png",
+          "wb": [
+            {
+              "jp": "家族",
+              "romaji": "kazoku",
+              "cn": "家人"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "五人",
+              "romaji": "gonin",
+              "cn": "五个人"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "fam_s04",
@@ -853,7 +1494,29 @@
           "kana": "あたまがいたいです。",
           "romaji": "atama ga itai desu.",
           "cn": "头疼。",
-          "img": "fam_s04.png"
+          "img": "fam_s04.png",
+          "wb": [
+            {
+              "jp": "頭",
+              "romaji": "atama",
+              "cn": "头"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "痛い",
+              "romaji": "itai",
+              "cn": "疼"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "fam_s05",
@@ -861,7 +1524,24 @@
           "kana": "てをあらいましょう。",
           "romaji": "te o araimashou.",
           "cn": "洗手吧。",
-          "img": "fam_s05.png"
+          "img": "fam_s05.png",
+          "wb": [
+            {
+              "jp": "手",
+              "romaji": "te",
+              "cn": "手"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "洗いましょう",
+              "romaji": "araimashō",
+              "cn": "洗吧"
+            }
+          ]
         },
         {
           "id": "fam_s06",
@@ -869,7 +1549,29 @@
           "kana": "めをとじてください。",
           "romaji": "me o tojite kudasai.",
           "cn": "请闭上眼睛。",
-          "img": "fam_s06.png"
+          "img": "fam_s06.png",
+          "wb": [
+            {
+              "jp": "目",
+              "romaji": "me",
+              "cn": "眼睛"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "閉じて",
+              "romaji": "tojite",
+              "cn": "闭上"
+            },
+            {
+              "jp": "ください",
+              "romaji": "kudasai",
+              "cn": "请"
+            }
+          ]
         },
         {
           "id": "fam_s07",
@@ -877,7 +1579,39 @@
           "kana": "おにいさんはせがたかいです。",
           "romaji": "oniisan wa se ga takai desu.",
           "cn": "哥哥个子很高。",
-          "img": "fam_s07.png"
+          "img": "fam_s07.png",
+          "wb": [
+            {
+              "jp": "お兄さん",
+              "romaji": "oniisan",
+              "cn": "哥哥"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "背",
+              "romaji": "se",
+              "cn": "个子"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "高い",
+              "romaji": "takai",
+              "cn": "高"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "fam_s08",
@@ -885,7 +1619,24 @@
           "kana": "おなかがすきました。",
           "romaji": "onaka ga sukimashita.",
           "cn": "肚子饿了。",
-          "img": "fam_s08.png"
+          "img": "fam_s08.png",
+          "wb": [
+            {
+              "jp": "お腹",
+              "romaji": "onaka",
+              "cn": "肚子"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "すきました",
+              "romaji": "sukimashita",
+              "cn": "饿了"
+            }
+          ]
         },
         {
           "id": "fam_s09",
@@ -893,7 +1644,29 @@
           "kana": "みみがおおきいですね。",
           "romaji": "mimi ga ookii desu ne.",
           "cn": "耳朵好大啊。",
-          "img": "fam_s09.png"
+          "img": "fam_s09.png",
+          "wb": [
+            {
+              "jp": "耳",
+              "romaji": "mimi",
+              "cn": "耳朵"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "大きい",
+              "romaji": "ōkii",
+              "cn": "大"
+            },
+            {
+              "jp": "ですね",
+              "romaji": "desu ne",
+              "cn": "啊"
+            }
+          ]
         },
         {
           "id": "fam_s10",
@@ -901,7 +1674,29 @@
           "kana": "あしがはやいです。",
           "romaji": "ashi ga hayai desu.",
           "cn": "跑得很快。",
-          "img": "fam_s10.png"
+          "img": "fam_s10.png",
+          "wb": [
+            {
+              "jp": "足",
+              "romaji": "ashi",
+              "cn": "脚"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "速い",
+              "romaji": "hayai",
+              "cn": "快"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         }
       ]
     },
@@ -1067,7 +1862,24 @@
           "kana": "がっこうへいきます。",
           "romaji": "gakkou e ikimasu.",
           "cn": "去上学。",
-          "img": "sch_s01.png"
+          "img": "sch_s01.png",
+          "wb": [
+            {
+              "jp": "学校",
+              "romaji": "gakkō",
+              "cn": "学校"
+            },
+            {
+              "jp": "へ",
+              "romaji": "e",
+              "cn": "往"
+            },
+            {
+              "jp": "行きます",
+              "romaji": "ikimasu",
+              "cn": "去"
+            }
+          ]
         },
         {
           "id": "sch_s02",
@@ -1075,7 +1887,19 @@
           "kana": "せんせい、おはようございます。",
           "romaji": "sensei, ohayou gozaimasu.",
           "cn": "老师，早上好。",
-          "img": "sch_s02.png"
+          "img": "sch_s02.png",
+          "wb": [
+            {
+              "jp": "先生",
+              "romaji": "sensei",
+              "cn": "老师"
+            },
+            {
+              "jp": "おはようございます",
+              "romaji": "ohayō gozaimasu",
+              "cn": "早上好"
+            }
+          ]
         },
         {
           "id": "sch_s03",
@@ -1083,7 +1907,24 @@
           "kana": "ほんをよみましょう。",
           "romaji": "hon o yomimashou.",
           "cn": "读书吧。",
-          "img": "sch_s03.png"
+          "img": "sch_s03.png",
+          "wb": [
+            {
+              "jp": "本",
+              "romaji": "hon",
+              "cn": "书"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "読みましょう",
+              "romaji": "yomimashō",
+              "cn": "读吧"
+            }
+          ]
         },
         {
           "id": "sch_s04",
@@ -1091,7 +1932,29 @@
           "kana": "えんぴつをかしてください。",
           "romaji": "enpitsu o kashite kudasai.",
           "cn": "请借我铅笔。",
-          "img": "sch_s04.png"
+          "img": "sch_s04.png",
+          "wb": [
+            {
+              "jp": "鉛筆",
+              "romaji": "enpitsu",
+              "cn": "铅笔"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "貸して",
+              "romaji": "kashite",
+              "cn": "借"
+            },
+            {
+              "jp": "ください",
+              "romaji": "kudasai",
+              "cn": "请"
+            }
+          ]
         },
         {
           "id": "sch_s05",
@@ -1099,7 +1962,34 @@
           "kana": "いちからじゅうまでかぞえましょう。",
           "romaji": "ichi kara juu made kazoemashou.",
           "cn": "从一数到十吧。",
-          "img": "sch_s05.png"
+          "img": "sch_s05.png",
+          "wb": [
+            {
+              "jp": "一",
+              "romaji": "ichi",
+              "cn": "一"
+            },
+            {
+              "jp": "から",
+              "romaji": "kara",
+              "cn": "从"
+            },
+            {
+              "jp": "十",
+              "romaji": "jū",
+              "cn": "十"
+            },
+            {
+              "jp": "まで",
+              "romaji": "made",
+              "cn": "到"
+            },
+            {
+              "jp": "数えましょう",
+              "romaji": "kazoemashō",
+              "cn": "数吧"
+            }
+          ]
         },
         {
           "id": "sch_s06",
@@ -1107,7 +1997,29 @@
           "kana": "これはなんですか？",
           "romaji": "kore wa nan desu ka?",
           "cn": "这是什么？",
-          "img": "sch_s06.png"
+          "img": "sch_s06.png",
+          "wb": [
+            {
+              "jp": "これ",
+              "romaji": "kore",
+              "cn": "这个"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "何",
+              "romaji": "nan",
+              "cn": "什么"
+            },
+            {
+              "jp": "ですか",
+              "romaji": "desu ka",
+              "cn": "是…吗"
+            }
+          ]
         },
         {
           "id": "sch_s07",
@@ -1115,7 +2027,14 @@
           "kana": "わかりました！",
           "romaji": "wakarimashita!",
           "cn": "明白了！",
-          "img": "sch_s07.png"
+          "img": "sch_s07.png",
+          "wb": [
+            {
+              "jp": "分かりました",
+              "romaji": "wakarimashita",
+              "cn": "明白了"
+            }
+          ]
         },
         {
           "id": "sch_s08",
@@ -1123,7 +2042,24 @@
           "kana": "もういちどおねがいします。",
           "romaji": "mou ichido onegai shimasu.",
           "cn": "请再说一遍。",
-          "img": "sch_s08.png"
+          "img": "sch_s08.png",
+          "wb": [
+            {
+              "jp": "もう",
+              "romaji": "mō",
+              "cn": "再"
+            },
+            {
+              "jp": "一度",
+              "romaji": "ichido",
+              "cn": "一次"
+            },
+            {
+              "jp": "お願いします",
+              "romaji": "onegaishimasu",
+              "cn": "拜托了"
+            }
+          ]
         },
         {
           "id": "sch_s09",
@@ -1131,7 +2067,29 @@
           "kana": "のーとにかいてください。",
           "romaji": "nooto ni kaite kudasai.",
           "cn": "请写在笔记本上。",
-          "img": "sch_s09.png"
+          "img": "sch_s09.png",
+          "wb": [
+            {
+              "jp": "ノート",
+              "romaji": "nōto",
+              "cn": "笔记本"
+            },
+            {
+              "jp": "に",
+              "romaji": "ni",
+              "cn": "上"
+            },
+            {
+              "jp": "書いて",
+              "romaji": "kaite",
+              "cn": "写"
+            },
+            {
+              "jp": "ください",
+              "romaji": "kudasai",
+              "cn": "请"
+            }
+          ]
         },
         {
           "id": "sch_s10",
@@ -1139,7 +2097,19 @@
           "kana": "じょうずですね！",
           "romaji": "jouzu desu ne!",
           "cn": "做得真好！",
-          "img": "sch_s10.png"
+          "img": "sch_s10.png",
+          "wb": [
+            {
+              "jp": "上手",
+              "romaji": "jōzu",
+              "cn": "好/棒"
+            },
+            {
+              "jp": "ですね",
+              "romaji": "desu ne",
+              "cn": "啊"
+            }
+          ]
         }
       ]
     },
@@ -1289,7 +2259,34 @@
           "kana": "きょうはいいてんきですね。",
           "romaji": "kyou wa ii tenki desu ne.",
           "cn": "今天天气真好啊。",
-          "img": "nat_s01.png"
+          "img": "nat_s01.png",
+          "wb": [
+            {
+              "jp": "今日",
+              "romaji": "kyō",
+              "cn": "今天"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "いい",
+              "romaji": "ii",
+              "cn": "好"
+            },
+            {
+              "jp": "天気",
+              "romaji": "tenki",
+              "cn": "天气"
+            },
+            {
+              "jp": "ですね",
+              "romaji": "desu ne",
+              "cn": "啊"
+            }
+          ]
         },
         {
           "id": "nat_s02",
@@ -1297,7 +2294,24 @@
           "kana": "あめがふっています。",
           "romaji": "ame ga futte imasu.",
           "cn": "在下雨。",
-          "img": "nat_s02.png"
+          "img": "nat_s02.png",
+          "wb": [
+            {
+              "jp": "雨",
+              "romaji": "ame",
+              "cn": "雨"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "降っています",
+              "romaji": "futteimasu",
+              "cn": "正在下"
+            }
+          ]
         },
         {
           "id": "nat_s03",
@@ -1305,7 +2319,24 @@
           "kana": "ゆきがふりました。",
           "romaji": "yuki ga furimashita.",
           "cn": "下雪了。",
-          "img": "nat_s03.png"
+          "img": "nat_s03.png",
+          "wb": [
+            {
+              "jp": "雪",
+              "romaji": "yuki",
+              "cn": "雪"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "降りました",
+              "romaji": "furimashita",
+              "cn": "下了"
+            }
+          ]
         },
         {
           "id": "nat_s04",
@@ -1313,7 +2344,29 @@
           "kana": "さくらがきれいです。",
           "romaji": "sakura ga kirei desu.",
           "cn": "樱花好美。",
-          "img": "nat_s04.png"
+          "img": "nat_s04.png",
+          "wb": [
+            {
+              "jp": "桜",
+              "romaji": "sakura",
+              "cn": "樱花"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "きれい",
+              "romaji": "kirei",
+              "cn": "漂亮"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "nat_s05",
@@ -1321,7 +2374,29 @@
           "kana": "そらがあおいです。",
           "romaji": "sora ga aoi desu.",
           "cn": "天空是蓝色的。",
-          "img": "nat_s05.png"
+          "img": "nat_s05.png",
+          "wb": [
+            {
+              "jp": "空",
+              "romaji": "sora",
+              "cn": "天空"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "青い",
+              "romaji": "aoi",
+              "cn": "蓝色的"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "nat_s06",
@@ -1329,7 +2404,24 @@
           "kana": "はながさきました。",
           "romaji": "hana ga sakimashita.",
           "cn": "花开了。",
-          "img": "nat_s06.png"
+          "img": "nat_s06.png",
+          "wb": [
+            {
+              "jp": "花",
+              "romaji": "hana",
+              "cn": "花"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "咲きました",
+              "romaji": "sakimashita",
+              "cn": "开了"
+            }
+          ]
         },
         {
           "id": "nat_s07",
@@ -1337,7 +2429,29 @@
           "kana": "かぜがつよいです。",
           "romaji": "kaze ga tsuyoi desu.",
           "cn": "风很大。",
-          "img": "nat_s07.png"
+          "img": "nat_s07.png",
+          "wb": [
+            {
+              "jp": "風",
+              "romaji": "kaze",
+              "cn": "风"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "強い",
+              "romaji": "tsuyoi",
+              "cn": "大"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "nat_s08",
@@ -1345,7 +2459,29 @@
           "kana": "にじがきれいですね。",
           "romaji": "niji ga kirei desu ne.",
           "cn": "彩虹好漂亮啊。",
-          "img": "nat_s08.png"
+          "img": "nat_s08.png",
+          "wb": [
+            {
+              "jp": "虹",
+              "romaji": "niji",
+              "cn": "彩虹"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "きれい",
+              "romaji": "kirei",
+              "cn": "漂亮"
+            },
+            {
+              "jp": "ですね",
+              "romaji": "desu ne",
+              "cn": "啊"
+            }
+          ]
         },
         {
           "id": "nat_s09",
@@ -1353,7 +2489,34 @@
           "kana": "あかいりんごがすきです。",
           "romaji": "akai ringo ga suki desu.",
           "cn": "我喜欢红苹果。",
-          "img": "nat_s09.png"
+          "img": "nat_s09.png",
+          "wb": [
+            {
+              "jp": "赤い",
+              "romaji": "akai",
+              "cn": "红色的"
+            },
+            {
+              "jp": "りんご",
+              "romaji": "ringo",
+              "cn": "苹果"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "好き",
+              "romaji": "suki",
+              "cn": "喜欢"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "nat_s10",
@@ -1361,7 +2524,29 @@
           "kana": "なつはあついです。",
           "romaji": "natsu wa atsui desu.",
           "cn": "夏天很热。",
-          "img": "nat_s10.png"
+          "img": "nat_s10.png",
+          "wb": [
+            {
+              "jp": "夏",
+              "romaji": "natsu",
+              "cn": "夏天"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "暑い",
+              "romaji": "atsui",
+              "cn": "热"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         }
       ]
     },
@@ -1503,7 +2688,14 @@
           "kana": "おはようございます！",
           "romaji": "ohayou gozaimasu!",
           "cn": "早上好！",
-          "img": "gre_s01.png"
+          "img": "gre_s01.png",
+          "wb": [
+            {
+              "jp": "おはようございます",
+              "romaji": "ohayō gozaimasu",
+              "cn": "早上好"
+            }
+          ]
         },
         {
           "id": "gre_s02",
@@ -1511,7 +2703,24 @@
           "kana": "こんにちは、げんきですか？",
           "romaji": "konnichiwa, genki desu ka?",
           "cn": "你好，你好吗？",
-          "img": "gre_s02.png"
+          "img": "gre_s02.png",
+          "wb": [
+            {
+              "jp": "こんにちは",
+              "romaji": "konnichiwa",
+              "cn": "你好"
+            },
+            {
+              "jp": "元気",
+              "romaji": "genki",
+              "cn": "好/精神"
+            },
+            {
+              "jp": "ですか",
+              "romaji": "desu ka",
+              "cn": "是…吗"
+            }
+          ]
         },
         {
           "id": "gre_s03",
@@ -1519,7 +2728,24 @@
           "kana": "はい、げんきです。",
           "romaji": "hai, genki desu.",
           "cn": "是的，我很好。",
-          "img": "gre_s03.png"
+          "img": "gre_s03.png",
+          "wb": [
+            {
+              "jp": "はい",
+              "romaji": "hai",
+              "cn": "是的"
+            },
+            {
+              "jp": "元気",
+              "romaji": "genki",
+              "cn": "好/精神"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "gre_s04",
@@ -1527,7 +2753,14 @@
           "kana": "ありがとうございます。",
           "romaji": "arigatou gozaimasu.",
           "cn": "非常感谢。",
-          "img": "gre_s04.png"
+          "img": "gre_s04.png",
+          "wb": [
+            {
+              "jp": "ありがとうございます",
+              "romaji": "arigatō gozaimasu",
+              "cn": "非常感谢"
+            }
+          ]
         },
         {
           "id": "gre_s05",
@@ -1535,7 +2768,34 @@
           "kana": "すみません、といれはどこですか？",
           "romaji": "sumimasen, toire wa doko desu ka?",
           "cn": "请问洗手间在哪里？",
-          "img": "gre_s05.png"
+          "img": "gre_s05.png",
+          "wb": [
+            {
+              "jp": "すみません",
+              "romaji": "sumimasen",
+              "cn": "请问"
+            },
+            {
+              "jp": "トイレ",
+              "romaji": "toire",
+              "cn": "洗手间"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "どこ",
+              "romaji": "doko",
+              "cn": "哪里"
+            },
+            {
+              "jp": "ですか",
+              "romaji": "desu ka",
+              "cn": "是…吗"
+            }
+          ]
         },
         {
           "id": "gre_s06",
@@ -1543,7 +2803,14 @@
           "kana": "おやすみなさい。",
           "romaji": "oyasumi nasai.",
           "cn": "晚安。",
-          "img": "gre_s06.png"
+          "img": "gre_s06.png",
+          "wb": [
+            {
+              "jp": "おやすみなさい",
+              "romaji": "oyasuminasai",
+              "cn": "晚安"
+            }
+          ]
         },
         {
           "id": "gre_s07",
@@ -1551,7 +2818,29 @@
           "kana": "おなまえはなんですか？",
           "romaji": "onamae wa nan desu ka?",
           "cn": "你叫什么名字？",
-          "img": "gre_s07.png"
+          "img": "gre_s07.png",
+          "wb": [
+            {
+              "jp": "お名前",
+              "romaji": "o-namae",
+              "cn": "名字"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "何",
+              "romaji": "nan",
+              "cn": "什么"
+            },
+            {
+              "jp": "ですか",
+              "romaji": "desu ka",
+              "cn": "是…吗"
+            }
+          ]
         },
         {
           "id": "gre_s08",
@@ -1559,7 +2848,29 @@
           "kana": "わたしはあれっくすです。",
           "romaji": "watashi wa arekkusu desu.",
           "cn": "我是Alex。",
-          "img": "gre_s08.png"
+          "img": "gre_s08.png",
+          "wb": [
+            {
+              "jp": "私",
+              "romaji": "watashi",
+              "cn": "我"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "アレックス",
+              "romaji": "arekkusu",
+              "cn": "Alex"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "gre_s09",
@@ -1567,7 +2878,29 @@
           "kana": "きょうはなんようびですか？",
           "romaji": "kyou wa nan youbi desu ka?",
           "cn": "今天星期几？",
-          "img": "gre_s09.png"
+          "img": "gre_s09.png",
+          "wb": [
+            {
+              "jp": "今日",
+              "romaji": "kyō",
+              "cn": "今天"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "何曜日",
+              "romaji": "nan yōbi",
+              "cn": "星期几"
+            },
+            {
+              "jp": "ですか",
+              "romaji": "desu ka",
+              "cn": "是…吗"
+            }
+          ]
         },
         {
           "id": "gre_s10",
@@ -1575,7 +2908,24 @@
           "kana": "さようなら、またあした。",
           "romaji": "sayounara, mata ashita.",
           "cn": "再见，明天见。",
-          "img": "gre_s10.png"
+          "img": "gre_s10.png",
+          "wb": [
+            {
+              "jp": "さようなら",
+              "romaji": "sayōnara",
+              "cn": "再见"
+            },
+            {
+              "jp": "また",
+              "romaji": "mata",
+              "cn": "又/再"
+            },
+            {
+              "jp": "明日",
+              "romaji": "ashita",
+              "cn": "明天"
+            }
+          ]
         }
       ]
     },
@@ -1789,7 +3139,34 @@
           "kana": "ここはわたしのふるさとです。",
           "romaji": "koko wa watashi no furusato desu.",
           "cn": "这里是我的家乡。",
-          "img": "plc_s01.png"
+          "img": "plc_s01.png",
+          "wb": [
+            {
+              "jp": "ここ",
+              "romaji": "koko",
+              "cn": "这里"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "私の",
+              "romaji": "watashi no",
+              "cn": "我的"
+            },
+            {
+              "jp": "ふるさと",
+              "romaji": "furusato",
+              "cn": "家乡"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "plc_s02",
@@ -1797,7 +3174,29 @@
           "kana": "これからようちえんへいきます。",
           "romaji": "korekara yōchien e ikimasu.",
           "cn": "接下来要去幼儿园。",
-          "img": "plc_s02.png"
+          "img": "plc_s02.png",
+          "wb": [
+            {
+              "jp": "これから",
+              "romaji": "korekara",
+              "cn": "接下来"
+            },
+            {
+              "jp": "幼稚園",
+              "romaji": "yōchien",
+              "cn": "幼儿园"
+            },
+            {
+              "jp": "へ",
+              "romaji": "e",
+              "cn": "往"
+            },
+            {
+              "jp": "行きます",
+              "romaji": "ikimasu",
+              "cn": "去"
+            }
+          ]
         },
         {
           "id": "plc_s11",
@@ -1805,7 +3204,29 @@
           "kana": "いまからようちえんへいきます。",
           "romaji": "ima kara yōchien e ikimasu.",
           "cn": "现在要去幼儿园。",
-          "img": "plc_s11.png"
+          "img": "plc_s11.png",
+          "wb": [
+            {
+              "jp": "今から",
+              "romaji": "ima kara",
+              "cn": "从现在起"
+            },
+            {
+              "jp": "幼稚園",
+              "romaji": "yōchien",
+              "cn": "幼儿园"
+            },
+            {
+              "jp": "へ",
+              "romaji": "e",
+              "cn": "往"
+            },
+            {
+              "jp": "行きます",
+              "romaji": "ikimasu",
+              "cn": "去"
+            }
+          ]
         },
         {
           "id": "plc_s03",
@@ -1813,7 +3234,29 @@
           "kana": "しばらくして、ようちえんにきました。",
           "romaji": "shibaraku shite, yōchien ni kimashita.",
           "cn": "过了一会儿，来到了幼儿园。",
-          "img": "plc_s03.png"
+          "img": "plc_s03.png",
+          "wb": [
+            {
+              "jp": "しばらくして",
+              "romaji": "shibaraku shite",
+              "cn": "过了一会儿"
+            },
+            {
+              "jp": "幼稚園",
+              "romaji": "yōchien",
+              "cn": "幼儿园"
+            },
+            {
+              "jp": "に",
+              "romaji": "ni",
+              "cn": "到"
+            },
+            {
+              "jp": "来ました",
+              "romaji": "kimashita",
+              "cn": "来了"
+            }
+          ]
         },
         {
           "id": "plc_s04",
@@ -1821,7 +3264,29 @@
           "kana": "ここはようちえんです。",
           "romaji": "koko wa yōchien desu.",
           "cn": "这里是幼儿园。",
-          "img": "plc_s04.png"
+          "img": "plc_s04.png",
+          "wb": [
+            {
+              "jp": "ここ",
+              "romaji": "koko",
+              "cn": "这里"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "幼稚園",
+              "romaji": "yōchien",
+              "cn": "幼儿园"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "plc_s05",
@@ -1829,7 +3294,24 @@
           "kana": "ようちえんへいきました。",
           "romaji": "yōchien e ikimashita.",
           "cn": "已经去了幼儿园。",
-          "img": "plc_s05.png"
+          "img": "plc_s05.png",
+          "wb": [
+            {
+              "jp": "幼稚園",
+              "romaji": "yōchien",
+              "cn": "幼儿园"
+            },
+            {
+              "jp": "へ",
+              "romaji": "e",
+              "cn": "往"
+            },
+            {
+              "jp": "行きました",
+              "romaji": "ikimashita",
+              "cn": "去了"
+            }
+          ]
         },
         {
           "id": "plc_s06",
@@ -1837,7 +3319,29 @@
           "kana": "これからゆうびんきょくへいきます。",
           "romaji": "korekara yūbinkyoku e ikimasu.",
           "cn": "接下来要去邮局。",
-          "img": "plc_s06.png"
+          "img": "plc_s06.png",
+          "wb": [
+            {
+              "jp": "これから",
+              "romaji": "korekara",
+              "cn": "接下来"
+            },
+            {
+              "jp": "郵便局",
+              "romaji": "yūbinkyoku",
+              "cn": "邮局"
+            },
+            {
+              "jp": "へ",
+              "romaji": "e",
+              "cn": "往"
+            },
+            {
+              "jp": "行きます",
+              "romaji": "ikimasu",
+              "cn": "去"
+            }
+          ]
         },
         {
           "id": "plc_s07",
@@ -1845,7 +3349,29 @@
           "kana": "しばらくして、ゆうびんきょくにきました。",
           "romaji": "shibaraku shite, yūbinkyoku ni kimashita.",
           "cn": "过了一会儿，来到了邮局。",
-          "img": "plc_s07.png"
+          "img": "plc_s07.png",
+          "wb": [
+            {
+              "jp": "しばらくして",
+              "romaji": "shibaraku shite",
+              "cn": "过了一会儿"
+            },
+            {
+              "jp": "郵便局",
+              "romaji": "yūbinkyoku",
+              "cn": "邮局"
+            },
+            {
+              "jp": "に",
+              "romaji": "ni",
+              "cn": "到"
+            },
+            {
+              "jp": "来ました",
+              "romaji": "kimashita",
+              "cn": "来了"
+            }
+          ]
         },
         {
           "id": "plc_s08",
@@ -1853,7 +3379,29 @@
           "kana": "ここはゆうびんきょくです。",
           "romaji": "koko wa yūbinkyoku desu.",
           "cn": "这里是邮局。",
-          "img": "plc_s08.png"
+          "img": "plc_s08.png",
+          "wb": [
+            {
+              "jp": "ここ",
+              "romaji": "koko",
+              "cn": "这里"
+            },
+            {
+              "jp": "は",
+              "romaji": "wa",
+              "cn": "(主题)"
+            },
+            {
+              "jp": "郵便局",
+              "romaji": "yūbinkyoku",
+              "cn": "邮局"
+            },
+            {
+              "jp": "です",
+              "romaji": "desu",
+              "cn": "是"
+            }
+          ]
         },
         {
           "id": "plc_s09",
@@ -1861,7 +3409,29 @@
           "kana": "いまからてがみをおくります。",
           "romaji": "ima kara tegami o okurimasu.",
           "cn": "现在要寄信。",
-          "img": "plc_s09.png"
+          "img": "plc_s09.png",
+          "wb": [
+            {
+              "jp": "今から",
+              "romaji": "ima kara",
+              "cn": "从现在起"
+            },
+            {
+              "jp": "手紙",
+              "romaji": "tegami",
+              "cn": "信"
+            },
+            {
+              "jp": "を",
+              "romaji": "o",
+              "cn": "(宾语)"
+            },
+            {
+              "jp": "送ります",
+              "romaji": "okurimasu",
+              "cn": "寄"
+            }
+          ]
         },
         {
           "id": "plc_s10",
@@ -1869,7 +3439,29 @@
           "kana": "つきがきれいですね。",
           "romaji": "tsuki ga kirei desu ne.",
           "cn": "月亮好漂亮啊。",
-          "img": "plc_s10.png"
+          "img": "plc_s10.png",
+          "wb": [
+            {
+              "jp": "月",
+              "romaji": "tsuki",
+              "cn": "月亮"
+            },
+            {
+              "jp": "が",
+              "romaji": "ga",
+              "cn": "(主语)"
+            },
+            {
+              "jp": "きれい",
+              "romaji": "kirei",
+              "cn": "漂亮"
+            },
+            {
+              "jp": "ですね",
+              "romaji": "desu ne",
+              "cn": "啊"
+            }
+          ]
         },
         {
           "id": "plc_s12",
@@ -1877,7 +3469,19 @@
           "kana": "こんにちは、こんにちは。",
           "romaji": "konnichiwa, konnichiwa.",
           "cn": "你好，你好。（到达幼儿园和同学打招呼）",
-          "img": "plc_s12.png"
+          "img": "plc_s12.png",
+          "wb": [
+            {
+              "jp": "こんにちは",
+              "romaji": "konnichiwa",
+              "cn": "你好"
+            },
+            {
+              "jp": "こんにちは",
+              "romaji": "konnichiwa",
+              "cn": "你好"
+            }
+          ]
         }
       ]
     }

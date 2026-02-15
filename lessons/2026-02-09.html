@@ -75,7 +75,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .sent-card .cn-text{font-size:15px;color:#C04030;font-weight:600;padding-left:28px;margin-top:4px}
 .sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent,#E8573A),var(--food,var(--secondary,#2B7A98)));transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .sent-card.playing .wave{transform:scaleX(1);transition:transform 2s linear}
-@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:120px;width:100%}}
+@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:200px;width:100%;background:#F5F0E8}.sent-card .sent-img-area img{object-fit:contain;width:100%;height:100%}}
 .word-breakdown{display:flex;flex-wrap:wrap;gap:2px 6px;padding:6px 0 2px 0;margin-top:4px;border-top:1px dashed #e8e4dc}
 .wb-word{display:flex;flex-direction:column;align-items:center;padding:3px 5px;border-radius:6px;background:#FAF7F0;min-width:36px;cursor:pointer;transition:all .2s;user-select:none;-webkit-user-select:none}
 .wb-word:active{transform:scale(.92)}
@@ -352,12 +352,8 @@ function setSlow(v){
     b.classList.toggle('on',v?(b.textContent==='慢速'):(b.textContent==='常速'));
   });
 }
-var currentAudio=null;
 var audioMap={"いきました":"../audio/ef9674acb882.mp3","いきます":"../audio/bfdfc1e1b947.mp3","いく":"../audio/8e5f230d767f.mp3","いまから":"../audio/602db2b96998.mp3","おくります":"../audio/0b233aa127bf.mp3","おくる":"../audio/db6ec419d841.mp3","きました":"../audio/5c1c565aadee.mp3","くる":"../audio/70145327f513.mp3","ここ":"../audio/844d12f0e6ca.mp3","ここは幼稚園です。":"../audio/23373ea97235.mp3","ここは郵便局です。":"../audio/663592f0ed0b.mp3","これから":"../audio/5f7d5436c2ec.mp3","これから幼稚園へ行きます。":"../audio/1013d4a25975.mp3","しばらく":"../audio/bbdb088e210a.mp3","しばらくして":"../audio/46f7190ad285.mp3","しばらくして、幼稚園に来ました。":"../audio/586dccd195d6.mp3","しばらくして、郵便局に来ました。":"../audio/2c1e68b4e515.mp3","てがみ":"../audio/cc8e1c491e70.mp3","に":"../audio/8b63626ad336.mp3","へ":"../audio/40346ed000e4.mp3","ゆうびんきょく":"../audio/0ff59eb8301e.mp3","ようちえん":"../audio/a2129d2d0857.mp3","を":"../audio/96ac23a7525c.mp3","今から":"../audio/c4c18a4aa358.mp3","今から幼稚園へ行きます。":"../audio/7150ad3cb3ce.mp3","今から手紙を送ります。":"../audio/811c62a4be2b.mp3","幼稚園":"../audio/bdf7429dec53.mp3","幼稚園へ行きました。":"../audio/171dd9f824b2.mp3","手紙":"../audio/415004b62cd7.mp3","来ました":"../audio/5e491715c81d.mp3","来る":"../audio/540887393040.mp3","行きました":"../audio/cb524c367737.mp3","行きます":"../audio/1c50a01efe6d.mp3","行く":"../audio/1f84251300c5.mp3","送ります":"../audio/1e0bcd096508.mp3","送る":"../audio/a8ea5c72089d.mp3","郵便局":"../audio/93577ce85934.mp3"};
-var bestJPVoice=null;
-function findBestJPVoice(){
-  var voices=window.speechSynthesis.getVoices();
-  var jp=voices.filter(function(v){return v.lang&&v.lang.indexOf('ja')===0});
+);
   if(!jp.length)return null;
   var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
   if(enhanced.length)return enhanced[0];
@@ -365,45 +361,15 @@ function findBestJPVoice(){
   for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
   return jp[0];
 }
-function speakJPLocal(text,cb){
-  if('speechSynthesis' in window){
-    window.speechSynthesis.cancel();
-    var u=new SpeechSynthesisUtterance(text);
-    u.lang='ja-JP';u.rate=speechRate;u.pitch=1.1;
-    if(!bestJPVoice)bestJPVoice=findBestJPVoice();
-    if(bestJPVoice)u.voice=bestJPVoice;
-    u.onend=function(){if(cb)cb()};
+;
     u.onerror=function(){if(cb)cb()};
     window.speechSynthesis.speak(u);
   } else if(cb) cb();
 }
-function speakJPOnline(text,cb){
-  try{
-    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
-    currentAudio=a;
-    if(speechRate!==1)a.playbackRate=speechRate;
-    a.onended=function(){currentAudio=null;if(cb)cb()};
+;
     a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
     a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
   }catch(e){speakJPLocal(text,cb)}
-}
-function speakJP(text,cb){
-  if(currentAudio){currentAudio.pause();currentAudio=null}
-  window.speechSynthesis&&window.speechSynthesis.cancel();
-  text=text.replace(/[\u{1F4E3}\u{1F508}\u{1F509}\u{1F50A}\u{1F3B6}\u{1F3B5}]/gu,'').trim();
-  var path=audioMap[text];
-  if(path){
-    try{
-      var a=new Audio(path);
-      currentAudio=a;
-      if(speechRate!==1)a.playbackRate=speechRate;
-      a.onended=function(){currentAudio=null;if(cb)cb()};
-      a.onerror=function(){currentAudio=null;speakJPOnline(text,cb)};
-      a.play().catch(function(){currentAudio=null;speakJPOnline(text,cb)});
-      return;
-    }catch(e){}
-  }
-  speakJPOnline(text,cb);
 }
 function tapCard(el){
   var k=el.getAttribute('data-k');

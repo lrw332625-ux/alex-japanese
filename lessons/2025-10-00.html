@@ -28,8 +28,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .tab-btn{flex-shrink:0;padding:8px 16px;border-radius:24px;border:2px solid transparent;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 1px 4px rgba(0,0,0,.04);white-space:nowrap}
 .tab-btn.active{color:#fff;border-color:transparent;transform:scale(1.05);box-shadow:var(--shadow)}
 .tab-btn[data-sec="0"].active{background:var(--primary)}
-.tab-btn[data-sec="1"].active{background:var(--secondary)}
-.tab-btn[data-sec="2"].active{background:var(--game)}
+.tab-btn[data-sec="1"].active{background:var(--game)}
 .section{display:none;padding:12px 16px 80px;animation:fadeIn .3s ease}
 .section.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -66,7 +65,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .sent-card .cn-text{font-size:15px;color:#C04030;font-weight:600;padding-left:28px;margin-top:4px}
 .sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent,#E8573A),var(--food,var(--secondary,#2B7A98)));transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .sent-card.playing .wave{transform:scaleX(1);transition:transform 2s linear}
-@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:120px;width:100%}}
+@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:200px;width:100%;background:#F5F0E8}.sent-card .sent-img-area img{object-fit:contain;width:100%;height:100%}}
 .word-breakdown{display:flex;flex-wrap:wrap;gap:2px 6px;padding:6px 0 2px 0;margin-top:4px;border-top:1px dashed #e8e4dc}
 .wb-word{display:flex;flex-direction:column;align-items:center;padding:3px 5px;border-radius:6px;background:#FAF7F0;min-width:36px;cursor:pointer;transition:all .2s;user-select:none;-webkit-user-select:none}
 .wb-word:active{transform:scale(.92)}
@@ -147,7 +146,8 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
   <div class="sub">2025年10月 · 给了什么东西？（给别人） · 小鸟要飞 · 红蜻蜓 等7课 · 点击翻转+发音</div>
 </div>
 <nav class="tab-nav" id="tabNav">
-  <button class="tab-btn active" data-sec="0" onclick="switchTab(0)">📚 词汇</button><button class="tab-btn" data-sec="1" onclick="switchTab(1)">🗣️ 句子</button><button class="tab-btn" data-sec="2" onclick="switchTab(2)">🎮 测验</button>
+    <button class="tab-btn active" data-sec="0" onclick="switchTab(0)">🐦 小鸟与蜻蜓</button>
+  <button class="tab-btn" data-sec="1" onclick="switchTab(1)">🎮 测验</button>
 </nav>
 <div class="lang-toggle" id="langToggle">
   <button class="lang-btn on" data-lang="cn" onclick="applyFrontLang('cn')">🇨🇳 看中文学日文</button>
@@ -160,7 +160,7 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
   <div class="progress-bar"><div class="progress-fill" id="prog0" style="background:var(--primary)"></div></div>
   <button class="play-all-btn" style="background:var(--primary)" onclick="playAllTTS(this)">▶ 全部</button>
 </div>
-<div class="sec-title" style="color:var(--primary)"><span class="icon">📚</span>词汇学习</div>
+<div class="sec-title" style="color:var(--primary)"><span class="icon">🐦 </span>小鸟与蜻蜓</div>
 <div class="card-grid" id="grid0">
 <div class="flip-card" data-k="oyasumi" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🌙</div><div class="chinese">晚安</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">おやすみ</div><div class="kana">おやすみ</div><div class="romaji">oyasumi</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
 <div class="flip-card" data-k="oyasuminasai" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_oyasuminasai.png" alt="oyasuminasai" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">晚安</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">おやすみなさい</div><div class="kana">おやすみなさい</div><div class="romaji">oyasuminasai</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
@@ -183,9 +183,7 @@ imasu</div><div class="chinese">正在飞</div></div></div></div>
 <div class="flip-card" data-k="akaikurumagataifuudetobasaremashita" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚗</div><div class="kanji">赤い車が台風で飛ばされました。</div><div class="kana">あかい くるま が
 たいふう で とばされました</div></div><div class="flip-back"><div class="romaji">akai kuruma ga taifuu de tobasaremashita</div><div class="chinese">红色的汽车被台风吹走了</div></div></div></div>
 </div>
-</div>
-<div class="section" id="sec1">
-<div class="sec-title" style="color:var(--secondary)"><span class="icon">🗣️</span>句子练习</div>
+<div style="font-weight:700;color:var(--text);margin:20px 0 12px;font-size:16px">📝 句子练习（点击听整句）：</div>
 <div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_025.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>おじいちゃんが来ました</div><div class="kana-text">おじいちゃんがきました</div><div class="romaji-text">ojiichan ga kimashita</div><div class="cn-text">爷爷来了（已经来了</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">おじいちゃん</div><div class="wb-rd">ojiichan</div><div class="wb-cn">爷爷</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">が</div><div class="wb-rd">ga</div><div class="wb-cn">(主语)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">来ました</div><div class="wb-rd">kimashita</div><div class="wb-cn">来了</div><div class="wb-speaker">🔈</div></div></div></div></div>
 <div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_028.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>小鳥ちゃんは飛びます。</div><div class="kana-text">とりちゃんはとびます</div><div class="romaji-text">tori-chan wa tobimasu.</div><div class="cn-text">小鸟要飞了</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">小鳥ちゃん</div><div class="wb-rd">tori-chan</div><div class="wb-cn">小鸟</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">(主题)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">飛びます</div><div class="wb-rd">tobimasu</div><div class="wb-cn">飞</div><div class="wb-speaker">🔈</div></div></div></div></div>
 <div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_030.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>鳥ちゃんは飛びました。</div><div class="kana-text">とりちゃんはとびました</div><div class="romaji-text">tori-chan wa tobimashita</div><div class="cn-text">小鸟飞走了</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">鳥ちゃん</div><div class="wb-rd">tori-chan</div><div class="wb-cn">小鸟</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">(主题)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">飛びました</div><div class="wb-rd">tobimashita</div><div class="wb-cn">飞了</div><div class="wb-speaker">🔈</div></div></div></div></div>
@@ -193,7 +191,7 @@ imasu</div><div class="chinese">正在飞</div></div></div></div>
 <div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_026.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>ウルトラマンを見たいです。</div><div class="kana-text">うるとらまんをみたいです。</div><div class="romaji-text">Urutoraman o mitai desu.</div><div class="cn-text">我想看奥特曼</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">ウルトラマン</div><div class="wb-rd">urutoraman</div><div class="wb-cn">奥特曼</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">を</div><div class="wb-rd">o</div><div class="wb-cn">(宾语)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">見たいです</div><div class="wb-rd">mitai desu</div><div class="wb-cn">想看</div><div class="wb-speaker">🔈</div></div></div></div></div>
 <div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_029.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>赤とんぼ</div><div class="kana-text">あかとんぼ</div><div class="romaji-text">aka tonbo</div><div class="cn-text">红蜻蜓（红色的蜻蜓</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">赤</div><div class="wb-rd">aka</div><div class="wb-cn">红</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">とんぼ</div><div class="wb-rd">tonbo</div><div class="wb-cn">蜻蜓</div><div class="wb-speaker">🔈</div></div></div></div></div>
 </div>
-<div class="section" id="sec2">
+<div class="section" id="sec1">
 <div class="sec-title" style="color:var(--game)"><span class="icon">🎮</span>小测验</div>
 <div class="quiz-area" id="quizArea"></div>
 <button class="quiz-btn" onclick="startQuiz()">开始测验！</button>
@@ -267,12 +265,8 @@ function setRate(r){
     b.classList.toggle('on',r===1?(b.textContent==='常速'):(b.textContent==='慢速'));
   });
 }
-var currentAudio=null;
 var audioMap={"おじいちゃんが来ました":"../audio/7bd5959e51fa.mp3","とんでいます":"../audio/5d90417b04f3.mp3","かに と かえる":"../audio/2f80f3c484c6.mp3","鳥ちゃんは飛びました。":"../audio/a33b1b50c165.mp3","みたい":"../audio/4122b5b37648.mp3","かにとかえるがとびました":"../audio/aac8109bfb71.mp3","赤とんぼ":"../audio/e6a372e9e769.mp3","とりちゃんはとびました":"../audio/fbef9603874c.mp3","とびます":"../audio/1e1e4d4bd79b.mp3","ヘリコプター":"../audio/c195a880d927.mp3","とりちゃんはとびます":"../audio/74146779c016.mp3","へりこぷたー":"../audio/0bda3b1a031f.mp3","おやすみなさい":"../audio/a3c64ce83055.mp3","おやすみ":"../audio/45573f066730.mp3","小鳥ちゃんは飛びます。":"../audio/6c78250f9743.mp3","ウルトラマンを見たいです。":"../audio/c825e153060d.mp3"};
-var bestJPVoice=null;
-function findBestJPVoice(){
-  var voices=window.speechSynthesis.getVoices();
-  var jp=voices.filter(function(v){return v.lang&&v.lang.indexOf('ja')===0});
+);
   if(!jp.length)return null;
   var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
   if(enhanced.length)return enhanced[0];
@@ -280,45 +274,15 @@ function findBestJPVoice(){
   for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
   return jp[0];
 }
-function speakJPLocal(text,cb){
-  if('speechSynthesis' in window){
-    window.speechSynthesis.cancel();
-    var u=new SpeechSynthesisUtterance(text);
-    u.lang='ja-JP';u.rate=speechRate;u.pitch=1.1;
-    if(!bestJPVoice)bestJPVoice=findBestJPVoice();
-    if(bestJPVoice)u.voice=bestJPVoice;
-    u.onend=function(){if(cb)cb()};
+;
     u.onerror=function(){if(cb)cb()};
     window.speechSynthesis.speak(u);
   } else if(cb) cb();
 }
-function speakJPOnline(text,cb){
-  try{
-    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
-    currentAudio=a;
-    if(speechRate!==1)a.playbackRate=speechRate;
-    a.onended=function(){currentAudio=null;if(cb)cb()};
+;
     a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
     a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
   }catch(e){speakJPLocal(text,cb)}
-}
-function speakJP(text,cb){
-  if(currentAudio){currentAudio.pause();currentAudio=null}
-  window.speechSynthesis&&window.speechSynthesis.cancel();
-  text=text.replace(/[\u{1F4E3}\u{1F508}\u{1F509}\u{1F50A}\u{1F3B6}\u{1F3B5}]/gu,'').trim();
-  var path=audioMap[text];
-  if(path){
-    try{
-      var a=new Audio(path);
-      currentAudio=a;
-      if(speechRate!==1)a.playbackRate=speechRate;
-      a.onended=function(){currentAudio=null;if(cb)cb()};
-      a.onerror=function(){currentAudio=null;speakJPOnline(text,cb)};
-      a.play().catch(function(){currentAudio=null;speakJPOnline(text,cb)});
-      return;
-    }catch(e){}
-  }
-  speakJPOnline(text,cb);
 }
 function tapCard(el){
   var k=el.getAttribute('data-k');

@@ -28,7 +28,6 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .tab-btn{flex-shrink:0;padding:8px 16px;border-radius:24px;border:2px solid transparent;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 1px 4px rgba(0,0,0,.04);white-space:nowrap}
 .tab-btn.active{color:#fff;border-color:transparent;transform:scale(1.05);box-shadow:var(--shadow)}
 .tab-btn[data-sec="0"].active{background:var(--primary)}
-.tab-btn[data-sec="1"].active{background:var(--secondary)}
 .tab-btn[data-sec="2"].active{background:var(--game)}
 .section{display:none;padding:12px 16px 80px;animation:fadeIn .3s ease}
 .section.active{display:block}
@@ -66,7 +65,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .sent-card .cn-text{font-size:15px;color:#C04030;font-weight:600;padding-left:28px;margin-top:4px}
 .sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent,#E8573A),var(--food,var(--secondary,#2B7A98)));transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .sent-card.playing .wave{transform:scaleX(1);transition:transform 2s linear}
-@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:120px;width:100%}}
+@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:200px;width:100%;background:#F5F0E8}.sent-card .sent-img-area img{object-fit:contain;width:100%;height:100%}}
 .word-breakdown{display:flex;flex-wrap:wrap;gap:2px 6px;padding:6px 0 2px 0;margin-top:4px;border-top:1px dashed #e8e4dc}
 .wb-word{display:flex;flex-direction:column;align-items:center;padding:3px 5px;border-radius:6px;background:#FAF7F0;min-width:36px;cursor:pointer;transition:all .2s;user-select:none;-webkit-user-select:none}
 .wb-word:active{transform:scale(.92)}
@@ -147,7 +146,7 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
   <div class="sub">2026年1月13日 · 继续复习 · 点击翻转+发音</div>
 </div>
 <nav class="tab-nav" id="tabNav">
-  <button class="tab-btn active" data-sec="0" onclick="switchTab(0)">📚 词汇</button><button class="tab-btn" data-sec="1" onclick="switchTab(1)">🗣️ 句子</button>
+    <button class="tab-btn active" data-sec="0" onclick="switchTab(0)">📝 继续复习</button>
 </nav>
 <div class="lang-toggle" id="langToggle">
   <button class="lang-btn on" data-lang="cn" onclick="applyFrontLang('cn')">🇨🇳 看中文学日文</button>
@@ -160,14 +159,12 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
   <div class="progress-bar"><div class="progress-fill" id="prog0" style="background:var(--primary)"></div></div>
   <button class="play-all-btn" style="background:var(--primary)" onclick="playAllTTS(this)">▶ 全部</button>
 </div>
-<div class="sec-title" style="color:var(--primary)"><span class="icon">📚</span>词汇学习</div>
+<div class="sec-title" style="color:var(--primary)"><span class="icon">📝 </span>继续复习</div>
 <div class="card-grid" id="grid0">
 <div class="flip-card" data-k="gomennasai" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_gomennasai.png" alt="gomennasai" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">对不起</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">ごめんなさい。</div><div class="kana">ごめんなさい</div><div class="romaji">gomennasai</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
 <div class="flip-card" data-k="akaidesu" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji"><img src="../img/vocab_akaidesu.png" alt="akaidesu" style="width:1.5em;height:1.5em;display:inline-block;vertical-align:middle"></div><div class="chinese">是红色（的</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">赤いです。</div><div class="kana">あかいです</div><div class="romaji">akai desu</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
 </div>
-</div>
-<div class="section" id="sec1">
-<div class="sec-title" style="color:var(--secondary)"><span class="icon">🗣️</span>句子练习</div>
+<div style="font-weight:700;color:var(--text);margin:20px 0 12px;font-size:16px">📝 句子练习（点击听整句）：</div>
 <div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_146.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>黒い鳥が飛びます。</div><div class="kana-text">くろい とりが とびます。</div><div class="romaji-text">kuroi tori ga tobimasu</div><div class="cn-text">黑色的小鸟要飞</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">黒い</div><div class="wb-rd">kuroi</div><div class="wb-cn">黑色的</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">鳥</div><div class="wb-rd">tori</div><div class="wb-cn">鸟</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">が</div><div class="wb-rd">ga</div><div class="wb-cn">(主语)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">飛びます</div><div class="wb-rd">tobimasu</div><div class="wb-cn">要飞</div><div class="wb-speaker">🔈</div></div></div></div></div>
 <div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_145.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>黒い鳥が飛びました。</div><div class="kana-text">くろい とりが とびました。</div><div class="romaji-text">kuroi tori ga tobimashita</div><div class="cn-text">黑色的小鸟已经飞了</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">黒い</div><div class="wb-rd">kuroi</div><div class="wb-cn">黑色的</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">鳥</div><div class="wb-rd">tori</div><div class="wb-cn">鸟</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">が</div><div class="wb-rd">ga</div><div class="wb-cn">(主语)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">飛びました</div><div class="wb-rd">tobimashita</div><div class="wb-cn">飞了</div><div class="wb-speaker">🔈</div></div></div></div></div>
 <div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sentences/sent_141.png?v3" alt="" loading="lazy"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>鳥が飛んでいます。</div><div class="kana-text">とりが とんでいます。</div><div class="romaji-text">tori ga tonde imasu</div><div class="cn-text">小鸟正在飞</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">鳥</div><div class="wb-rd">tori</div><div class="wb-cn">鸟</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">が</div><div class="wb-rd">ga</div><div class="wb-cn">(主语)</div><div class="wb-speaker">🔈</div></div><div class="wb-word"><div class="wb-jp">飛んでいます</div><div class="wb-rd">tondeimasu</div><div class="wb-cn">正在飞</div><div class="wb-speaker">🔈</div></div></div></div></div>
@@ -247,12 +244,8 @@ function setRate(r){
     b.classList.toggle('on',r===1?(b.textContent==='常速'):(b.textContent==='慢速'));
   });
 }
-var currentAudio=null;
 var audioMap={"あかいです":"../audio/05281d3d540e.mp3","鳥は白い実を食べました。白くなりました。":"../audio/7058ccd9180c.mp3","鳥は青い実を食べました。青くなりました。":"../audio/6cb09f99cb4d.mp3","鳥が飛んでいます。":"../audio/6f1dde39adbb.mp3","黒い鳥が飛びました。":"../audio/98510fc49d71.mp3","ごめんなさい":"../audio/03942332d118.mp3","鳥は赤い実を食べました。赤くなりました。":"../audio/f3b6cbe86db9.mp3","黒い鳥が飛びます。":"../audio/de587d537396.mp3"};
-var bestJPVoice=null;
-function findBestJPVoice(){
-  var voices=window.speechSynthesis.getVoices();
-  var jp=voices.filter(function(v){return v.lang&&v.lang.indexOf('ja')===0});
+);
   if(!jp.length)return null;
   var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
   if(enhanced.length)return enhanced[0];
@@ -260,45 +253,15 @@ function findBestJPVoice(){
   for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
   return jp[0];
 }
-function speakJPLocal(text,cb){
-  if('speechSynthesis' in window){
-    window.speechSynthesis.cancel();
-    var u=new SpeechSynthesisUtterance(text);
-    u.lang='ja-JP';u.rate=speechRate;u.pitch=1.1;
-    if(!bestJPVoice)bestJPVoice=findBestJPVoice();
-    if(bestJPVoice)u.voice=bestJPVoice;
-    u.onend=function(){if(cb)cb()};
+;
     u.onerror=function(){if(cb)cb()};
     window.speechSynthesis.speak(u);
   } else if(cb) cb();
 }
-function speakJPOnline(text,cb){
-  try{
-    var a=new Audio('https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q='+encodeURIComponent(text));
-    currentAudio=a;
-    if(speechRate!==1)a.playbackRate=speechRate;
-    a.onended=function(){currentAudio=null;if(cb)cb()};
+;
     a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
     a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
   }catch(e){speakJPLocal(text,cb)}
-}
-function speakJP(text,cb){
-  if(currentAudio){currentAudio.pause();currentAudio=null}
-  window.speechSynthesis&&window.speechSynthesis.cancel();
-  text=text.replace(/[\u{1F4E3}\u{1F508}\u{1F509}\u{1F50A}\u{1F3B6}\u{1F3B5}]/gu,'').trim();
-  var path=audioMap[text];
-  if(path){
-    try{
-      var a=new Audio(path);
-      currentAudio=a;
-      if(speechRate!==1)a.playbackRate=speechRate;
-      a.onended=function(){currentAudio=null;if(cb)cb()};
-      a.onerror=function(){currentAudio=null;speakJPOnline(text,cb)};
-      a.play().catch(function(){currentAudio=null;speakJPOnline(text,cb)});
-      return;
-    }catch(e){}
-  }
-  speakJPOnline(text,cb);
 }
 function tapCard(el){
   var k=el.getAttribute('data-k');
