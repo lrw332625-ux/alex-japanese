@@ -320,24 +320,7 @@ function setSlow(v){
   });
 }
 var audioMap={"ふるさと":"../audio/8db5b72fc5ef.mp3","わたし":"../audio/df551410e7c3.mp3","こんびに":"../audio/d18b4ad55aeb.mp3","あいすくりーむ":"../audio/fcf81d37c8b7.mp3","かいます":"../audio/4c195b9b0479.mp3","かいました":"../audio/36850e654ebb.mp3","かう":"../audio/714c2e99d6f3.mp3","は":"../audio/b7a83b3be2f3.mp3","の":"../audio/359ebee169e2.mp3","ここは私のふるさとです。":"../audio/43024e95dc92.mp3","これからコンビニへ行きます。":"../audio/96aa2fd1ca52.mp3","しばらくして、コンビニに来ました。":"../audio/98adc0a63d4b.mp3","ここはコンビニです。":"../audio/0b9fed7a29e3.mp3","今からアイスクリームを買います。":"../audio/c68d31d2f5ee.mp3","アイスクリームを買いました。":"../audio/f35c43c651fc.mp3","私":"../audio/b511e6815bc8.mp3","コンビニ":"../audio/82bfc76940fb.mp3","アイスクリーム":"../audio/72571f56c0e7.mp3","買います":"../audio/7f2b1f2bd31f.mp3","買いました":"../audio/4458237bda92.mp3","買う":"../audio/3d70b012cddf.mp3","ここ":"../audio/koko_wb.mp3","私の":"../audio/watashino_wb.mp3","です":"../audio/desu_wb.mp3","これから":"../audio/korekara_wb.mp3","へ":"../audio/e_wb.mp3","行きます":"../audio/ikimasu_wb.mp3","しばらくして":"../audio/shibarakushite_wb.mp3","に":"../audio/ni_wb.mp3","来ました":"../audio/kimashita_wb.mp3","今から":"../audio/imakara_wb.mp3","を":"../audio/o_wb.mp3"};
-);
-  if(!jp.length)return null;
-  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
-  if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
-  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
-  return jp[0];
-}
-;
-    u.onerror=function(){if(cb)cb()};
-    window.speechSynthesis.speak(u);
-  } else if(cb) cb();
-}
-;
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 function tapCard(el){
   var k=el.getAttribute('data-k');
   el.classList.toggle('flipped');

@@ -242,24 +242,7 @@ function setRate(r){
   });
 }
 var audioMap={"部屋は汚いです。":"../audio/a4ad5adcd7e4.mp3","りすちゃんは眠くないです。":"../audio/4fc528812027.mp3","りすちゃんはねむいです。":"../audio/5522f9dead26.mp3","おおきくない":"../audio/2b95342fe416.mp3","新年快乐：あけましておめでとうございます。":"../audio/39bb91ac6eff.mp3","部屋は汚くないです。":"../audio/b8643a359323.mp3","来自动词 \\*\\*明ける / 開ける":"../audio/b731c26dbffc.mp3","きたない":"../audio/1637c36d4477.mp3"};
-);
-  if(!jp.length)return null;
-  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
-  if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
-  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
-  return jp[0];
-}
-;
-    u.onerror=function(){if(cb)cb()};
-    window.speechSynthesis.speak(u);
-  } else if(cb) cb();
-}
-;
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 function tapCard(el){
   var k=el.getAttribute('data-k');
   el.classList.toggle('flipped');

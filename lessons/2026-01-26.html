@@ -256,24 +256,7 @@ function setRate(r){
   });
 }
 var audioMap={"ばす":"../audio/5b664882987b.mp3","しょべるかー":"../audio/3492b4b5b42f.mp3","カエルちゃんは大きいですね。":"../audio/9736d3e48cd9.mp3","えび":"../audio/8c434dc27819.mp3","これはカバです。":"../audio/57eb84877609.mp3","ひこうき":"../audio/abb8b2e2b98c.mp3","カバちゃんの口は大きいですね。":"../audio/a8c4cd974b96.mp3","へりこぷたー":"../audio/0bda3b1a031f.mp3","これはカエルです":"../audio/09be35b409f3.mp3","そうですね、大きいですね。":"../audio/00180db5449a.mp3","とらっく":"../audio/ceac6ca5b641.mp3","そうですね、カエルちゃんは大きいですね。":"../audio/83f475360df0.mp3","たくしー":"../audio/65f95de43ddd.mp3"};
-);
-  if(!jp.length)return null;
-  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
-  if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
-  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
-  return jp[0];
-}
-;
-    u.onerror=function(){if(cb)cb()};
-    window.speechSynthesis.speak(u);
-  } else if(cb) cb();
-}
-;
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 function tapCard(el){
   var k=el.getAttribute('data-k');
   el.classList.toggle('flipped');

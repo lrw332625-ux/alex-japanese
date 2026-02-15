@@ -353,24 +353,7 @@ function setSlow(v){
   });
 }
 var audioMap={"いきました":"../audio/ef9674acb882.mp3","いきます":"../audio/bfdfc1e1b947.mp3","いく":"../audio/8e5f230d767f.mp3","いまから":"../audio/602db2b96998.mp3","おくります":"../audio/0b233aa127bf.mp3","おくる":"../audio/db6ec419d841.mp3","きました":"../audio/5c1c565aadee.mp3","くる":"../audio/70145327f513.mp3","ここ":"../audio/844d12f0e6ca.mp3","ここは幼稚園です。":"../audio/23373ea97235.mp3","ここは郵便局です。":"../audio/663592f0ed0b.mp3","これから":"../audio/5f7d5436c2ec.mp3","これから幼稚園へ行きます。":"../audio/1013d4a25975.mp3","しばらく":"../audio/bbdb088e210a.mp3","しばらくして":"../audio/46f7190ad285.mp3","しばらくして、幼稚園に来ました。":"../audio/586dccd195d6.mp3","しばらくして、郵便局に来ました。":"../audio/2c1e68b4e515.mp3","てがみ":"../audio/cc8e1c491e70.mp3","に":"../audio/8b63626ad336.mp3","へ":"../audio/40346ed000e4.mp3","ゆうびんきょく":"../audio/0ff59eb8301e.mp3","ようちえん":"../audio/a2129d2d0857.mp3","を":"../audio/96ac23a7525c.mp3","今から":"../audio/c4c18a4aa358.mp3","今から幼稚園へ行きます。":"../audio/7150ad3cb3ce.mp3","今から手紙を送ります。":"../audio/811c62a4be2b.mp3","幼稚園":"../audio/bdf7429dec53.mp3","幼稚園へ行きました。":"../audio/171dd9f824b2.mp3","手紙":"../audio/415004b62cd7.mp3","来ました":"../audio/5e491715c81d.mp3","来る":"../audio/540887393040.mp3","行きました":"../audio/cb524c367737.mp3","行きます":"../audio/1c50a01efe6d.mp3","行く":"../audio/1f84251300c5.mp3","送ります":"../audio/1e0bcd096508.mp3","送る":"../audio/a8ea5c72089d.mp3","郵便局":"../audio/93577ce85934.mp3"};
-);
-  if(!jp.length)return null;
-  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
-  if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
-  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
-  return jp[0];
-}
-;
-    u.onerror=function(){if(cb)cb()};
-    window.speechSynthesis.speak(u);
-  } else if(cb) cb();
-}
-;
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 function tapCard(el){
   var k=el.getAttribute('data-k');
   el.classList.toggle('flipped');

@@ -238,24 +238,7 @@ function setRate(r){
   });
 }
 var audioMap={"見てる、見てる、ねずみ見てる。":"../audio/6e02a804d3b9.mp3","見てる、見てる、猿見てる。":"../audio/54db69b3e75f.mp3","見てる、見てる、烏見てる。":"../audio/da68a267dfe5.mp3","見てる、見てる、狼見てる。":"../audio/0d0b9ca75f72.mp3","見てる、見てる、ねこ見てる。":"../audio/c0fd2222ae4b.mp3","見てる、見てる、虎見てる。":"../audio/b14fe05a9fae.mp3"};
-);
-  if(!jp.length)return null;
-  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
-  if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
-  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
-  return jp[0];
-}
-;
-    u.onerror=function(){if(cb)cb()};
-    window.speechSynthesis.speak(u);
-  } else if(cb) cb();
-}
-;
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 function tapCard(el){
   var k=el.getAttribute('data-k');
   el.classList.toggle('flipped');

@@ -237,24 +237,7 @@ function setRate(r){
   });
 }
 var audioMap={"动词「取る":"../audio/307dd2e47e13.mp3","いぬちゃんのお母さんは海苔を買いました。":"../audio/d7afa73f9b16.mp3","いぬちゃんは家で勉強しています。":"../audio/29896f9b0a16.mp3","狐ちゃんは家に帰ります。":"../audio/1fabcf899fc9.mp3","动词：\\*\\*帰る":"../audio/b7114ac38089.mp3","たぬきちゃんは家に帰りました。":"../audio/a9f28efcf8ee.mp3"};
-);
-  if(!jp.length)return null;
-  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
-  if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
-  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
-  return jp[0];
-}
-;
-    u.onerror=function(){if(cb)cb()};
-    window.speechSynthesis.speak(u);
-  } else if(cb) cb();
-}
-;
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 function tapCard(el){
   var k=el.getAttribute('data-k');
   el.classList.toggle('flipped');

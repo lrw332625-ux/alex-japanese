@@ -246,24 +246,7 @@ function setRate(r){
   });
 }
 var audioMap={"うんち、いち、に、さん":"../audio/6bd9ee26bea9.mp3","リスちゃん、にこ うんちを した。":"../audio/997f392bac60.mp3","うまさん、ぶぶっと おならして。":"../audio/6eb6b148e355.mp3","くさい":"../audio/b4b77dd2cebb.mp3","こぶた、ごこ うんちを した。":"../audio/52d17d004cbc.mp3","ひつじ、ろっこ うんちを した。":"../audio/6db08f04e68d.mp3","にわとり、よんこ うんちを した。":"../audio/3e334c176588.mp3"};
-);
-  if(!jp.length)return null;
-  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
-  if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
-  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
-  return jp[0];
-}
-;
-    u.onerror=function(){if(cb)cb()};
-    window.speechSynthesis.speak(u);
-  } else if(cb) cb();
-}
-;
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 function tapCard(el){
   var k=el.getAttribute('data-k');
   el.classList.toggle('flipped');

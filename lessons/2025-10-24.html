@@ -243,24 +243,7 @@ function setRate(r){
   });
 }
 var audioMap={"ばす":"../audio/5b664882987b.mp3","タクシー":"../audio/245cb61e6703.mp3","男性はタクシーに乗りました。":"../audio/a5abd7826e54.mp3","乗ります":"../audio/662b651e92d9.mp3","タクシーに乗りました。":"../audio/11b297f0311f.mp3","男性はタクシーに乗ります。":"../audio/8f6744f22df7.mp3","だんせいはたくしーにのります":"../audio/661e4a9cdce2.mp3","たくしー":"../audio/65f95de43ddd.mp3","タクシーに乗ります。":"../audio/7807cfb276e9.mp3"};
-);
-  if(!jp.length)return null;
-  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
-  if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
-  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
-  return jp[0];
-}
-;
-    u.onerror=function(){if(cb)cb()};
-    window.speechSynthesis.speak(u);
-  } else if(cb) cb();
-}
-;
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 function tapCard(el){
   var k=el.getAttribute('data-k');
   el.classList.toggle('flipped');

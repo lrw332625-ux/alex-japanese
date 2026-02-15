@@ -245,24 +245,7 @@ function setRate(r){
   });
 }
 var audioMap={"あかいです":"../audio/05281d3d540e.mp3","鳥は白い実を食べました。白くなりました。":"../audio/7058ccd9180c.mp3","鳥は青い実を食べました。青くなりました。":"../audio/6cb09f99cb4d.mp3","鳥が飛んでいます。":"../audio/6f1dde39adbb.mp3","黒い鳥が飛びました。":"../audio/98510fc49d71.mp3","ごめんなさい":"../audio/03942332d118.mp3","鳥は赤い実を食べました。赤くなりました。":"../audio/f3b6cbe86db9.mp3","黒い鳥が飛びます。":"../audio/de587d537396.mp3"};
-);
-  if(!jp.length)return null;
-  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
-  if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
-  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
-  return jp[0];
-}
-;
-    u.onerror=function(){if(cb)cb()};
-    window.speechSynthesis.speak(u);
-  } else if(cb) cb();
-}
-;
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 function tapCard(el){
   var k=el.getAttribute('data-k');
   el.classList.toggle('flipped');

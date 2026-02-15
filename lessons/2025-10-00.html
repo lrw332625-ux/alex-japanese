@@ -266,24 +266,7 @@ function setRate(r){
   });
 }
 var audioMap={"おじいちゃんが来ました":"../audio/7bd5959e51fa.mp3","とんでいます":"../audio/5d90417b04f3.mp3","かに と かえる":"../audio/2f80f3c484c6.mp3","鳥ちゃんは飛びました。":"../audio/a33b1b50c165.mp3","みたい":"../audio/4122b5b37648.mp3","かにとかえるがとびました":"../audio/aac8109bfb71.mp3","赤とんぼ":"../audio/e6a372e9e769.mp3","とりちゃんはとびました":"../audio/fbef9603874c.mp3","とびます":"../audio/1e1e4d4bd79b.mp3","ヘリコプター":"../audio/c195a880d927.mp3","とりちゃんはとびます":"../audio/74146779c016.mp3","へりこぷたー":"../audio/0bda3b1a031f.mp3","おやすみなさい":"../audio/a3c64ce83055.mp3","おやすみ":"../audio/45573f066730.mp3","小鳥ちゃんは飛びます。":"../audio/6c78250f9743.mp3","ウルトラマンを見たいです。":"../audio/c825e153060d.mp3"};
-);
-  if(!jp.length)return null;
-  var enhanced=jp.filter(function(v){return /Enhanced|Premium/i.test(v.name)});
-  if(enhanced.length)return enhanced[0];
-  var preferred=['Kyoko','O-Ren','Hattori','Otoya'];
-  for(var p=0;p<preferred.length;p++){for(var i=0;i<jp.length;i++){if(jp[i].name.indexOf(preferred[p])>=0)return jp[i]}}
-  return jp[0];
-}
-;
-    u.onerror=function(){if(cb)cb()};
-    window.speechSynthesis.speak(u);
-  } else if(cb) cb();
-}
-;
-    a.onerror=function(){currentAudio=null;speakJPLocal(text,cb)};
-    a.play().catch(function(){currentAudio=null;speakJPLocal(text,cb)});
-  }catch(e){speakJPLocal(text,cb)}
-}
+
 function tapCard(el){
   var k=el.getAttribute('data-k');
   el.classList.toggle('flipped');
