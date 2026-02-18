@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>林之恒 亲子日语学习卡片 2026.02.15</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0E8;--card-bg:#FFFEF9;--text:#2D2A24;--text-sub:#7A7468;
+  --accent:#E8573A;--ocean:#5B8C5A;--food:#2B5EA7;--transport:#D4903A;
+  --vocab:#2B8F8F;--song:#D4903A;--game:#2B8F8F;
+  --shadow:0 2px 20px rgba(45,42,36,.08);
+  --shadow-lg:0 8px 40px rgba(45,42,36,.12);
+  --r:20px;--rs:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh}
+.header{position:relative;overflow:hidden;padding:32px 20px 24px;text-align:center;background:linear-gradient(135deg,#2B5EA7 0%,#1E4A8A 50%,#2B5EA7 100%);color:#fff}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.08) 0%,transparent 50%)}
+.header h1{font-family:'M PLUS Rounded 1c','Noto Sans SC',sans-serif;font-size:26px;font-weight:900;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,.2);position:relative}
+.back-link{position:absolute;left:16px;top:16px;color:#fff;text-decoration:none;font-size:24px;opacity:.7;z-index:10}
+.back-link:hover{opacity:1}
+.header .sub{font-size:13px;opacity:.8;margin-top:4px;position:relative}
+.tab-nav{display:flex;gap:6px;padding:12px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:0;z-index:100;background:var(--bg)}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:8px 16px;border-radius:24px;border:2px solid transparent;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 1px 4px rgba(0,0,0,.04);white-space:nowrap}
+.tab-btn.active{color:#fff;border-color:transparent;transform:scale(1.05);box-shadow:var(--shadow)}
+.tab-btn[data-sec="0"].active{background:var(--food)}
+.tab-btn[data-sec="1"].active{background:var(--transport)}
+.tab-btn[data-sec="2"].active{background:var(--vocab)}
+.controls{display:flex;align-items:center;gap:8px;padding:8px 16px;margin:0 0 12px;background:#fff;border-radius:var(--rs);box-shadow:var(--shadow)}
+.speed-toggle{display:flex;border-radius:20px;overflow:hidden;border:2px solid #e8e4dc}
+.speed-btn{padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-sub);transition:all .2s}
+.speed-btn.on{background:var(--text);color:#fff}
+.play-all-btn{margin-left:auto;padding:6px 16px;border-radius:20px;border:none;font-size:12px;font-weight:700;cursor:pointer;color:#fff;transition:all .2s}
+.play-all-btn:active{transform:scale(.95)}
+.play-all-btn.stop{background:#C0392B!important}
+.progress-bar{flex:1;height:4px;background:#e8e4dc;border-radius:2px;margin:0 8px;min-width:40px;overflow:hidden}
+.progress-fill{height:100%;border-radius:2px;transition:width .4s ease;width:0}
+.section{display:none;padding:12px 16px 80px;animation:fadeIn .3s ease}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.sec-title{font-size:22px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.sec-title .icon{font-size:28px}
+.sec-title .jp{font-size:14px;font-weight:400;color:var(--text-sub)}
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+.flip-card{perspective:800px;height:180px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-card.playing .flip-inner{box-shadow:0 0 0 3px var(--accent),var(--shadow-lg);border-radius:var(--r)}
+.flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);padding:12px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--card-bg);box-shadow:var(--shadow);border:2px solid #f0ece4;transition:border-color .2s,box-shadow .2s}
+.flip-back{transform:rotateY(180deg);background:#FFF8F0}
+.flip-front .emoji{font-size:42px;line-height:1.1;margin-bottom:4px}
+.flip-front .chinese{font-size:24px;font-weight:900;color:#C04030;margin-top:4px}
+.flip-front .speaker{position:absolute;top:8px;right:10px;font-size:16px;opacity:.3;transition:opacity .2s}
+.flip-card.playing .speaker{opacity:1}
+.flip-back .kanji{font-family:'M PLUS Rounded 1c',sans-serif;font-size:24px;font-weight:900;margin-bottom:2px}
+.flip-back .kana{font-size:13px;color:var(--text-sub);margin-bottom:4px}
+.flip-back .romaji{font-size:16px;font-weight:700;color:var(--accent);background:#FFF0EC;padding:4px 12px;border-radius:8px;margin-bottom:6px}
+.flip-back .hint-text{font-size:11px;color:var(--text-sub);margin-top:6px;text-align:center}
+.reviewed .flip-front{border-color:#B8E6C8}
+.reviewed .flip-front::after{content:'';display:none}
+.sent-card{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s;position:relative;overflow:hidden;display:flex;gap:12px;align-items:stretch}
+.sent-card:active{transform:scale(.98)}
+.sent-card.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow-lg)}
+.sent-card .sent-text-area{flex:1;min-width:0}
+.sent-card .sent-img-area{flex:0 0 140px;display:flex;align-items:center;justify-content:center;border-radius:12px;overflow:hidden;background:#F5F0E8}
+.sent-card .sent-img-area img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.sent-card .jp-text{font-family:'M PLUS Rounded 1c',sans-serif;font-size:20px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.sent-card .kana-text{font-size:14px;color:var(--food);padding-left:28px}
+.sent-card .romaji-text{font-size:12px;color:#bbb;font-style:italic;padding-left:28px}
+.sent-card .cn-text{font-size:15px;color:#C04030;font-weight:600;padding-left:28px;margin-top:4px}
+.sent-card .wave{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--food));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.sent-card.playing .wave{transform:scaleX(1);transition:transform 2s linear}
+@media(max-width:500px){.sent-card{flex-direction:column}.sent-card .sent-img-area{flex:0 0 auto;height:200px;width:100%;background:#F5F0E8}.sent-card .sent-img-area img{object-fit:contain;width:100%;height:100%}}
+.tip-box{background:#FAF7F0;border-left:4px solid var(--text-sub);border-radius:0 var(--rs) var(--rs) 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--text-sub);line-height:1.6}
+.tip-box b{color:var(--text)}
+.quiz-area{padding:8px 0}
+.quiz-card{background:var(--card-bg);border-radius:var(--r);padding:24px;text-align:center;box-shadow:var(--shadow);margin-bottom:16px;border:2px solid #f0ece4}
+.quiz-emoji{font-size:64px;margin-bottom:12px}
+.quiz-prompt{font-size:16px;color:var(--text-sub);margin-bottom:16px}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quiz-opt{padding:14px;border-radius:var(--rs);border:2px solid #e8e4dc;font-size:16px;font-weight:700;cursor:pointer;background:#fff;transition:all .2s;font-family:'M PLUS Rounded 1c',sans-serif}
+.quiz-opt:active{transform:scale(.96)}
+.quiz-opt.correct{background:#D4EDDA;border-color:#3A8F5C;color:#2D6A3F}
+.quiz-opt.wrong{background:#F8D7DA;border-color:#C0392B;color:#8B1A1A}
+.quiz-score{text-align:center;padding:20px;font-size:18px;font-weight:700}
+.quiz-btn{display:block;margin:16px auto;padding:12px 32px;border-radius:24px;border:none;font-size:15px;font-weight:700;cursor:pointer;color:#fff;background:var(--vocab);box-shadow:var(--shadow);transition:all .2s}
+.quiz-btn:active{transform:scale(.96)}
+.practice{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.practice b{color:var(--vocab)}
+.practice-title{font-size:16px;font-weight:700;margin-bottom:6px}
+.footer{text-align:center;padding:24px 16px;font-size:12px;color:var(--text-sub)}
+@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.bounce{animation:bounce .3s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.shake{animation:shake .3s ease}
+@media(min-width:600px){.card-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.card-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:400px){
+.flip-card{height:160px}
+  .flip-front .emoji{font-size:34px}
+  .flip-front .chinese{font-size:20px}
+}
+.flip-front .emoji img{width:42px;height:42px;object-fit:contain}
+.quiz-emoji img{width:64px;height:64px;object-fit:contain}
+.sent-img{width:100%;max-height:160px;object-fit:cover;border-radius:12px;margin-bottom:8px}
+.word-breakdown{display:flex;flex-wrap:wrap;gap:2px 6px;padding:6px 0 2px 0;margin-top:4px;border-top:1px dashed #e8e4dc}
+.wb-word{display:flex;flex-direction:column;align-items:center;padding:3px 5px;border-radius:6px;background:#FAF7F0;min-width:36px;cursor:pointer;transition:all .2s;user-select:none;-webkit-user-select:none}
+.wb-word:active{transform:scale(.92)}
+.wb-word:hover{background:#EDE8DD;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.wb-word.wb-playing{background:#FFF0EC;box-shadow:0 0 0 2px var(--accent);transform:scale(1.05)}
+.wb-word .wb-speaker{font-size:10px;opacity:.4;margin-top:1px}
+.wb-word .wb-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;font-weight:700;color:var(--text)}
+.wb-word .wb-rd{font-size:10px;color:#bbb;font-style:italic}
+.wb-word .wb-cn{font-size:11px;color:var(--food);font-weight:600}
+.tab-btn img{width:18px;height:18px;object-fit:contain;vertical-align:middle;margin-right:2px}
+h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
+.tip-box img{width:20px;height:20px;object-fit:contain;vertical-align:middle}
+@media(max-width:400px){.flip-front .emoji img{width:34px;height:34px}}
+.mark-badge{position:absolute;top:6px;right:6px;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700;color:#fff;z-index:6;white-space:nowrap;display:none;text-shadow:0 1px 1px rgba(0,0,0,.15);letter-spacing:.3px}
+.mark-badge.has-data{display:block}
+.mark-btns{position:absolute;bottom:4px;right:6px;display:flex;gap:4px;z-index:5}
+.mark-ok,.mark-ng{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;cursor:pointer;border:2px solid;transition:all .15s;line-height:1}
+.mark-ok{background:#E8F5E9;color:#43A047;border-color:#C8E6C9}
+.mark-ng{background:#FFEBEE;color:#E53935;border-color:#FFCDD2}
+.mark-ok:active,.mark-ng:active{transform:scale(.85)}
+.mark-ok.active{background:#43A047;color:#fff;border-color:#2E7D32;transform:scale(1.08)}
+.mark-ng.active{background:#E53935;color:#fff;border-color:#C62828;transform:scale(1.08)}
+.stats-float{position:fixed;bottom:20px;right:20px;background:rgba(45,42,36,.92);color:#fff;padding:8px 16px 8px 10px;border-radius:24px;font-size:13px;font-weight:700;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:none;align-items:center;gap:8px;transition:all .3s}
+.stats-ring{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:900;flex-shrink:0;text-shadow:0 1px 1px rgba(0,0,0,.2)}
+.grammar-box{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:16px;box-shadow:var(--shadow);border:2px solid #f0ece4}
+.grammar-box .grammar-title{font-size:16px;font-weight:900;color:var(--transport);margin-bottom:8px}
+.grammar-box .arrow-chain{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0;font-size:15px;font-weight:700}
+.grammar-box .arrow-chain .form{padding:6px 12px;border-radius:10px;background:#FFF5E6}
+.grammar-box .arrow-chain .arr{color:var(--transport);font-size:18px}
+.grammar-box .note{font-size:13px;color:var(--text-sub);margin-top:6px}
+.compare-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:14px}
+.compare-table th{background:#FFF5E6;padding:8px;text-align:left;font-weight:700;border-radius:6px 6px 0 0}
+.compare-table td{padding:8px;border-bottom:1px solid #f0ece4}
+.compare-table .jp{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:700}
+.lang-toggle{display:flex;gap:0;margin:8px 16px;border-radius:20px;overflow:hidden;border:2px solid #e8e4dc;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.lang-btn{flex:1;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-sub);transition:all .2s;text-align:center;white-space:nowrap}
+.lang-btn.on{background:var(--accent,#E8573A);color:#fff}
+.shiritori-group{background:var(--card-bg);border-radius:var(--r);padding:16px;margin-bottom:16px;box-shadow:var(--shadow);border:2px solid #f0ece4}
+.shiritori-group .group-title{font-size:18px;font-weight:900;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.shiritori-group .group-title .kana{font-size:32px;color:var(--transport);font-family:'M PLUS Rounded 1c',sans-serif}
+</style>
+</head>
+<body>
+<div class="header">
+  <a class="back-link" href="../index.html">&#8592;</a>
+  <h1>🎌 林之恒 日语学习卡片</h1>
+  <div class="sub">2026年2月15日 · 绘本：警察局 · レストラン · 词语接龙 · 点击翻转+发音</div>
+</div>
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" data-sec="0" onclick="switchTab(0)">🚔 警察局·レストラン</button>
+  <button class="tab-btn" data-sec="1" onclick="switchTab(1)">🎯 词语接龙</button>
+  <button class="tab-btn" data-sec="2" onclick="switchTab(2)">🎮 互动</button>
+</nav>
+<div class="lang-toggle" id="langToggle">
+  <button class="lang-btn on" data-lang="cn" onclick="applyFrontLang('cn')">🇨🇳 看中文学日文</button>
+  <button class="lang-btn" data-lang="jp" onclick="applyFrontLang('jp')">🇯🇵 看日文学中文</button>
+</div>
+
+<!-- Section 0: 警察局 · レストラン -->
+<div class="section active" id="sec0">
+<div class="controls">
+  <div class="speed-toggle"><button class="speed-btn on" onclick="setSlow(false)">常速</button><button class="speed-btn" onclick="setSlow(true)">慢速</button></div>
+  <div class="progress-bar"><div class="progress-fill" id="prog0" style="background:var(--food)"></div></div>
+  <button class="play-all-btn" style="background:var(--food)" onclick="playAllCards(0,this)">▶ 全部</button>
+</div>
+<div class="sec-title" style="color:var(--food)"><span class="icon">🚔</span>一、警察局·レストラン<span class="jp">けいさつしょ</span></div>
+<div class="card-grid" id="grid0">
+<div class="flip-card" data-k="keisatsusho" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🚔</div><div class="chinese">警察局</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">警察署</div><div class="kana">けいさつしょ</div><div class="romaji">keisatsusho</div><div class="hint-text">けい(警) さつ(察) しょ(署)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="keisatsu" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">👮</div><div class="chinese">警察</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">警察</div><div class="kana">けいさつ</div><div class="romaji">keisatsu</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="dorobou" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🦹</div><div class="chinese">小偷</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">泥棒</div><div class="kana">どろぼう</div><div class="romaji">dorobou</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="tsukamaemasu" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🖐️</div><div class="chinese">抓住/逮捕</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">捕まえます</div><div class="kana">つかまえます</div><div class="romaji">tsukamaemasu</div><div class="hint-text">原形：捕まえる(tsukamaeru)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="resutoran" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🍽️</div><div class="chinese">餐厅</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">レストラン</div><div class="kana">れすとらん</div><div class="romaji">resutoran</div><div class="hint-text">外来语 restaurant</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="ramen" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🍜</div><div class="chinese">拉面</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">ラーメン</div><div class="kana">らーめん</div><div class="romaji">rāmen</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+</div>
+<div class="tip-box" style="border-color:var(--food)">💡 <b>へ(e)</b> 表示"去的方向"，如：警察署<b>へ</b>行きます（去警察局的方向走）</div>
+<div class="tip-box" style="border-color:var(--food)">💡 <b>捕まえます → 捕まえました</b>：把 masu 变成 mashita 就是过去式！</div>
+<div style="font-weight:700;color:var(--text);margin:20px 0 12px;font-size:16px">📝 绘本句子（点击听整句）：</div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sent_20260215_01.png" alt="去警察局"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>これから警察署へ行きます。</div><div class="kana-text">これから けいさつしょ へ いきます。</div><div class="romaji-text">kore kara keisatsusho e ikimasu.</div><div class="cn-text">从现在开始要去警察局。</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">これから</div><div class="wb-rd">kore kara</div><div class="wb-cn">接下来</div></div><div class="wb-word"><div class="wb-jp">警察署</div><div class="wb-rd">keisatsusho</div><div class="wb-cn">警察局</div></div><div class="wb-word"><div class="wb-jp">へ</div><div class="wb-rd">e</div><div class="wb-cn">往(方向)</div></div><div class="wb-word"><div class="wb-jp">行きます</div><div class="wb-rd">ikimasu</div><div class="wb-cn">去</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sent_20260215_02.png" alt="到达警察局"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>しばらくして、警察署に来ました。</div><div class="kana-text">しばらくして、けいさつしょ に きました。</div><div class="romaji-text">shibaraku shite, keisatsusho ni kimashita.</div><div class="cn-text">过了一会儿，来到了警察局。</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">しばらくして</div><div class="wb-rd">shibaraku shite</div><div class="wb-cn">过了一会儿</div></div><div class="wb-word"><div class="wb-jp">警察署</div><div class="wb-rd">keisatsusho</div><div class="wb-cn">警察局</div></div><div class="wb-word"><div class="wb-jp">に</div><div class="wb-rd">ni</div><div class="wb-cn">到(地点)</div></div><div class="wb-word"><div class="wb-jp">来ました</div><div class="wb-rd">kimashita</div><div class="wb-cn">来了</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sent_20260215_03.png" alt="这里是警察局"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>ここは警察署です。</div><div class="kana-text">ここ は けいさつしょ です。</div><div class="romaji-text">koko wa keisatsusho desu.</div><div class="cn-text">这里是警察局。</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">ここ</div><div class="wb-rd">koko</div><div class="wb-cn">这里</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">主题助词</div></div><div class="wb-word"><div class="wb-jp">警察署</div><div class="wb-rd">keisatsusho</div><div class="wb-cn">警察局</div></div><div class="wb-word"><div class="wb-jp">です</div><div class="wb-rd">desu</div><div class="wb-cn">是</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sent_20260215_04.png" alt="抓小偷"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>泥棒を捕まえます。</div><div class="kana-text">どろぼう を つかまえます。</div><div class="romaji-text">dorobou o tsukamaemasu.</div><div class="cn-text">要抓小偷。</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">泥棒</div><div class="wb-rd">dorobou</div><div class="wb-cn">小偷</div></div><div class="wb-word"><div class="wb-jp">を</div><div class="wb-rd">o</div><div class="wb-cn">宾语助词</div></div><div class="wb-word"><div class="wb-jp">捕まえます</div><div class="wb-rd">tsukamaemasu</div><div class="wb-cn">抓住</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sent_20260215_05.png" alt="警察抓住了小偷"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>警察は泥棒を捕まえました。</div><div class="kana-text">けいさつ は どろぼう を つかまえました。</div><div class="romaji-text">keisatsu wa dorobou o tsukamaemashita.</div><div class="cn-text">警察抓住了小偷。</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">警察</div><div class="wb-rd">keisatsu</div><div class="wb-cn">警察</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">主题助词</div></div><div class="wb-word"><div class="wb-jp">泥棒</div><div class="wb-rd">dorobou</div><div class="wb-cn">小偷</div></div><div class="wb-word"><div class="wb-jp">を</div><div class="wb-rd">o</div><div class="wb-cn">宾语助词</div></div><div class="wb-word"><div class="wb-jp">捕まえました</div><div class="wb-rd">tsukamaemashita</div><div class="wb-cn">抓住了</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sent_20260215_06.png" alt="去餐厅"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>これからレストランへ行きます。</div><div class="kana-text">これから れすとらん へ いきます。</div><div class="romaji-text">kore kara resutoran e ikimasu.</div><div class="cn-text">从现在开始要去餐厅。</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">これから</div><div class="wb-rd">kore kara</div><div class="wb-cn">接下来</div></div><div class="wb-word"><div class="wb-jp">レストラン</div><div class="wb-rd">resutoran</div><div class="wb-cn">餐厅</div></div><div class="wb-word"><div class="wb-jp">へ</div><div class="wb-rd">e</div><div class="wb-cn">往(方向)</div></div><div class="wb-word"><div class="wb-jp">行きます</div><div class="wb-rd">ikimasu</div><div class="wb-cn">去</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sent_20260215_07.png" alt="到达餐厅"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>しばらくして、レストランに来ました。</div><div class="kana-text">しばらくして、れすとらん に きました。</div><div class="romaji-text">shibaraku shite, resutoran ni kimashita.</div><div class="cn-text">过了一会儿，来到了餐厅。</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">しばらくして</div><div class="wb-rd">shibaraku shite</div><div class="wb-cn">过了一会儿</div></div><div class="wb-word"><div class="wb-jp">レストラン</div><div class="wb-rd">resutoran</div><div class="wb-cn">餐厅</div></div><div class="wb-word"><div class="wb-jp">に</div><div class="wb-rd">ni</div><div class="wb-cn">到(地点)</div></div><div class="wb-word"><div class="wb-jp">来ました</div><div class="wb-rd">kimashita</div><div class="wb-cn">来了</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sent_20260215_08.png" alt="这里是餐厅"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>ここはレストランです。</div><div class="kana-text">ここ は れすとらん です。</div><div class="romaji-text">koko wa resutoran desu.</div><div class="cn-text">这里是餐厅。</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">ここ</div><div class="wb-rd">koko</div><div class="wb-cn">这里</div></div><div class="wb-word"><div class="wb-jp">は</div><div class="wb-rd">wa</div><div class="wb-cn">主题助词</div></div><div class="wb-word"><div class="wb-jp">レストラン</div><div class="wb-rd">resutoran</div><div class="wb-cn">餐厅</div></div><div class="wb-word"><div class="wb-jp">です</div><div class="wb-rd">desu</div><div class="wb-cn">是</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sent_20260215_09.png" alt="吃拉面"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>今からラーメンを食べます。</div><div class="kana-text">いまから らーめん を たべます。</div><div class="romaji-text">ima kara rāmen o tabemasu.</div><div class="cn-text">从现在开始要吃拉面。</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">今から</div><div class="wb-rd">ima kara</div><div class="wb-cn">从现在起</div></div><div class="wb-word"><div class="wb-jp">ラーメン</div><div class="wb-rd">rāmen</div><div class="wb-cn">拉面</div></div><div class="wb-word"><div class="wb-jp">を</div><div class="wb-rd">o</div><div class="wb-cn">宾语助词</div></div><div class="wb-word"><div class="wb-jp">食べます</div><div class="wb-rd">tabemasu</div><div class="wb-cn">吃</div></div></div></div></div>
+<div class="sent-card" onclick="playSent(this)"><div class="wave"></div><div class="sent-img-area"><img src="../img/sent_20260215_10.png" alt="吃了拉面"></div><div class="sent-text-area"><div class="jp-text"><span>🔊</span>ラーメンを食べました。</div><div class="kana-text">らーめん を たべました。</div><div class="romaji-text">rāmen o tabemashita.</div><div class="cn-text">吃了拉面。</div><div class="word-breakdown"><div class="wb-word"><div class="wb-jp">ラーメン</div><div class="wb-rd">rāmen</div><div class="wb-cn">拉面</div></div><div class="wb-word"><div class="wb-jp">を</div><div class="wb-rd">o</div><div class="wb-cn">宾语助词</div></div><div class="wb-word"><div class="wb-jp">食べました</div><div class="wb-rd">tabemashita</div><div class="wb-cn">吃了</div></div></div></div></div>
+</div>
+
+<!-- Section 1: 词语接龙 -->
+<div class="section" id="sec1">
+<div class="controls">
+  <div class="speed-toggle"><button class="speed-btn on" onclick="setSlow(false)">常速</button><button class="speed-btn" onclick="setSlow(true)">慢速</button></div>
+  <div class="progress-bar"><div class="progress-fill" id="prog1" style="background:var(--transport)"></div></div>
+  <button class="play-all-btn" style="background:var(--transport)" onclick="playAllCards(1,this)">▶ 全部</button>
+</div>
+<div class="sec-title" style="color:var(--transport)"><span class="icon">🎯</span>二、词语接龙<span class="jp">しりとり</span></div>
+<div class="tip-box" style="border-color:var(--transport)">💡 <b>词语接龙(しりとり)</b>：用上一个词的最后一个假名，作为下一个词的第一个假名！</div>
+<div class="shiritori-group">
+<div class="group-title"><span class="kana">く</span> 以「く」开头的词</div>
+<div class="card-grid" id="grid1">
+<div class="flip-card" data-k="kuma" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🐻</div><div class="chinese">熊</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">熊</div><div class="kana">くま</div><div class="romaji">kuma</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="kuri" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🌰</div><div class="chinese">栗子</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">栗</div><div class="kana">くり</div><div class="romaji">kuri</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="kujira" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🐋</div><div class="chinese">鲸鱼</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">鯨</div><div class="kana">くじら</div><div class="romaji">kujira</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+</div>
+</div>
+<div class="shiritori-group">
+<div class="group-title"><span class="kana">け</span> 以「け」开头的词</div>
+<div class="card-grid" id="grid1b">
+<div class="flip-card" data-k="ken" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">⚔️</div><div class="chinese">剑</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">剣</div><div class="kana">けん</div><div class="romaji">ken</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="keshigomu" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">✏️</div><div class="chinese">橡皮擦</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">消しゴム</div><div class="kana">けしごむ</div><div class="romaji">keshigomu</div><div class="hint-text">消し(擦) + ゴム(gum橡胶)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+<div class="flip-card" data-k="keito" onclick="tapCard(this)"><div class="flip-inner"><div class="flip-front"><div class="speaker">🔈</div><div class="emoji">🧶</div><div class="chinese">毛线</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div><div class="flip-back"><div class="kanji">毛糸</div><div class="kana">けいと</div><div class="romaji">keito</div><div class="hint-text">毛(け) + 糸(いと)</div><div class="mark-badge"></div><div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest('.flip-card'),event)">✓</span><span class="mark-ng" onclick="markNg(this.closest('.flip-card'),event)">✗</span></div></div></div></div>
+</div>
+</div>
+<div class="grammar-box">
+  <div class="grammar-title">📖 动词变化：捕まえる(tsukamaeru)</div>
+  <div class="arrow-chain"><span class="form">捕まえる(tsukamaeru)</span><span class="arr">→</span><span class="form">捕まえます(tsukamaemasu)</span><span class="arr">→</span><span class="form">捕まえました(tsukamaemashita)</span></div>
+  <div class="note">规律：把 <b>masu</b> 变成 <b>mashita</b> 就变成过去式！</div>
+</div>
+<div class="grammar-box">
+  <div class="grammar-title">📖 へ(e) 助词 - 方向</div>
+  <div class="note">表示"往…方向去"。注意读作"え"不读"へ"：警察署<b>へ</b>行きます（往警察局方向去）</div>
+</div>
+<div class="grammar-box">
+  <div class="grammar-title">📖 这节课的句型复习</div>
+  <table class="compare-table">
+    <tr><th>句型</th><th>含义</th><th>例句</th></tr>
+    <tr><td class="jp"><b>これから〜へ行きます</b></td><td>接下来去…</td><td>これから警察署へ行きます</td></tr>
+    <tr><td class="jp"><b>しばらくして、〜に来ました</b></td><td>过一会儿，来到了…</td><td>しばらくして、警察署に来ました</td></tr>
+    <tr><td class="jp"><b>ここは〜です</b></td><td>这里是…</td><td>ここは警察署です</td></tr>
+    <tr><td class="jp"><b>〜を捕まえます</b></td><td>抓住…</td><td>泥棒を捕まえます</td></tr>
+  </table>
+</div>
+</div>
+
+<!-- Section 2: 互动 -->
+<div class="section" id="sec2">
+<div class="sec-title" style="color:var(--vocab)"><span class="icon">🎮</span>三、亲子互动练习</div>
+<div class="practice"><div class="practice-title">🎯 练习1：绘本场景复述</div>和Alex一起复述警察局的故事！"去警察局"→"到了警察局"→"抓小偷"→"去餐厅"→"吃拉面"</div>
+<div class="practice"><div class="practice-title">👂 练习2：听音选物品</div>爸爸/妈妈说"けいさつしょ"、"どろぼう"、"レストラン"等词汇，Alex指出对应的卡片！</div>
+<div class="practice"><div class="practice-title">🗂️ 练习3：词语接龙</div>和Alex玩しりとり！说一个以"く"或"け"开头的日语词，看谁知道得多！</div>
+<div style="margin-top:20px;font-weight:700;font-size:16px;color:var(--vocab)">🧠 小测验</div>
+<div id="quizArea" class="quiz-area"><button class="quiz-btn" onclick="startQuiz()">开始小测验！</button></div>
+</div>
+<div style="text-align:center;padding:20px 16px"><a href="../index.html" style="display:inline-block;padding:12px 32px;border-radius:24px;background:#2B5EA7;color:#fff;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 2px 12px rgba(0,0,0,.1)">&#8592; 返回课程列表</a></div>
+<div class="footer">💡 绘本教学：警察局 · レストラン · 词语接龙 · 点击卡片翻转+发音</div>
+<script src="../scripts/cache-control.js"></script>
+<script src="../scripts/audio.js"></script>
+<script src="../scripts/emoji-data.js"></script>
+<script>
+var activeTab=0,speechRate=1,curEl=null,running=false;
+var reviewed={};
+var sessionMark={};
+var _lid=location.pathname.split('/').pop().replace('.html','');
+var _mh=JSON.parse(localStorage.getItem('marks_'+_lid)||'{}');
+function _eh(k){if(!_mh[k])_mh[k]={total:0,ok:0}}
+function _sv(){localStorage.setItem('marks_'+_lid,JSON.stringify(_mh))}
+function _gc(ratio){
+  var r=Math.round(67+(229-67)*(1-ratio)),g=Math.round(160+(57-160)*(1-ratio)),b=Math.round(71+(53-71)*(1-ratio));
+  return'rgb('+r+','+g+','+b+')';
+}
+function updateBadge(el){
+  var k=el.getAttribute('data-k');_eh(k);var h=_mh[k];
+  el.querySelectorAll('.mark-badge').forEach(function(b){
+    if(h.total>0){b.textContent='\u5b66'+h.total+' \u5bf9'+h.ok;b.style.background=_gc(h.ok/h.total);b.classList.add('has-data')}
+    else{b.classList.remove('has-data')}
+  });
+  el.querySelectorAll('.mark-ok').forEach(function(b){b.classList.toggle('active',sessionMark[k]==='ok')});
+  el.querySelectorAll('.mark-ng').forEach(function(b){b.classList.toggle('active',sessionMark[k]==='ng')});
+}
+function markOk(el,ev){
+  if(ev){ev.stopPropagation();ev.preventDefault()}
+  var k=el.getAttribute('data-k');_eh(k);var h=_mh[k];
+  if(sessionMark[k]==='ok'){h.total--;h.ok--;delete sessionMark[k]}
+  else{if(sessionMark[k]==='ng'){h.ok++}else{h.total++;h.ok++}sessionMark[k]='ok'}
+  _sv();updateBadge(el);updateStats();
+  if(!reviewed[k]){reviewed[k]=true;el.classList.add('reviewed');updateProgress()}
+}
+function markNg(el,ev){
+  if(ev){ev.stopPropagation();ev.preventDefault()}
+  var k=el.getAttribute('data-k');_eh(k);var h=_mh[k];
+  if(sessionMark[k]==='ng'){h.total--;delete sessionMark[k]}
+  else{if(sessionMark[k]==='ok'){h.ok--}else{h.total++}sessionMark[k]='ng'}
+  _sv();updateBadge(el);updateStats();
+  if(!reviewed[k]){reviewed[k]=true;el.classList.add('reviewed');updateProgress()}
+}
+function updateStats(){
+  var cards=document.querySelectorAll('.flip-card[data-k]');
+  var tOk=0,tT=0,sOk=0,sNg=0;
+  cards.forEach(function(c){var k=c.getAttribute('data-k');_eh(k);tOk+=_mh[k].ok;tT+=_mh[k].total;if(sessionMark[k]==='ok')sOk++;if(sessionMark[k]==='ng')sNg++});
+  var p=document.getElementById('statsFloat');if(!p)return;
+  var sT=sOk+sNg;
+  if(sT===0&&tT===0){p.style.display='none';return}
+  p.style.display='flex';
+  var ratio=tT>0?tOk/tT:1;
+  p.innerHTML='<span class="stats-ring" style="background:'+_gc(ratio)+'">'+Math.round(ratio*100)+'</span><span>\u672c\u6b21 \u2713'+sOk+' \u2717'+sNg+'</span>';
+}
+(function(){document.querySelectorAll('.flip-card[data-k]').forEach(function(c){updateBadge(c)});updateStats()})();
+var secKeys=[
+  ['keisatsusho','keisatsu','dorobou','tsukamaemasu','resutoran','ramen'],
+  ['kuma','kuri','kujira','ken','keshigomu','keito'],
+  []
+];
+var quizVocab=[
+  {k:'keisatsusho',e:'🚔',jp:'警察署',cn:'警察局'},
+  {k:'keisatsu',e:'👮',jp:'警察',cn:'警察'},
+  {k:'dorobou',e:'🦹',jp:'泥棒',cn:'小偷'},
+  {k:'tsukamaemasu',e:'🖐️',jp:'捕まえます',cn:'抓住'},
+  {k:'resutoran',e:'🍽️',jp:'レストラン',cn:'餐厅'},
+  {k:'ramen',e:'🍜',jp:'ラーメン',cn:'拉面'},
+  {k:'kuma',e:'🐻',jp:'熊',cn:'熊'},
+  {k:'kuri',e:'🌰',jp:'栗',cn:'栗子'},
+  {k:'kujira',e:'🐋',jp:'鯨',cn:'鲸鱼'},
+  {k:'ken',e:'⚔️',jp:'剣',cn:'剑'},
+  {k:'keshigomu',e:'✏️',jp:'消しゴム',cn:'橡皮擦'},
+  {k:'keito',e:'🧶',jp:'毛糸',cn:'毛线'}
+];
+function switchTab(i){
+  if(running)stopAll();activeTab=i;
+  document.querySelectorAll('.section').forEach(function(s,idx){s.classList.toggle('active',idx===i)});
+  document.querySelectorAll('.tab-btn').forEach(function(b,idx){b.classList.toggle('active',idx===i)});
+  document.querySelectorAll('.tab-btn')[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+}
+function setSlow(v){
+  speechRate=v?0.6:1;
+  document.querySelectorAll('.speed-btn').forEach(function(b){
+    b.classList.toggle('on',v?(b.textContent==='慢速'):(b.textContent==='常速'));
+  });
+}
+var audioMap={"けいさつしょ":"../audio/7457e4338a94.mp3","けいさつ":"../audio/38dfeba65cf8.mp3","どろぼう":"../audio/181c71eef31d.mp3","つかまえます":"../audio/00a659faeb15.mp3","れすとらん":"../audio/272a58701859.mp3","らーめん":"../audio/3c74af1df9d0.mp3","くま":"../audio/c84383fbf54b.mp3","くり":"../audio/9ffa7abf438e.mp3","くじら":"../audio/974f1b7dac7a.mp3","けん":"../audio/642b48da7b40.mp3","けしごむ":"../audio/9ecf668b0f29.mp3","けいと":"../audio/9c462f286014.mp3","警察署":"../audio/fb61fc04b63a.mp3","警察":"../audio/e160a832cf68.mp3","泥棒":"../audio/28b7137deac4.mp3","捕まえます":"../audio/4f6cc78f7cf4.mp3","捕まえました":"../audio/c0748a96e73a.mp3","レストラン":"../audio/a5cb9a9482be.mp3","ラーメン":"../audio/34067f74cf38.mp3","熊":"../audio/8df702f4accf.mp3","栗":"../audio/2eda50022efc.mp3","鯨":"../audio/3c3691d7f4b5.mp3","剣":"../audio/5f8b0f80a516.mp3","消しゴム":"../audio/15b5cca5bfe7.mp3","毛糸":"../audio/39fc1fb082e9.mp3","食べます":"../audio/119e10e0a899.mp3","食べました":"../audio/8fb14024a008.mp3","は":"../audio/b7a83b3be2f3.mp3","を":"../audio/o_wb.mp3","に":"../audio/ni_wb.mp3","へ":"../audio/e_wb.mp3","これから警察署へ行きます。":"../audio/9ae142f6c208.mp3","しばらくして、警察署に来ました。":"../audio/73926e413885.mp3","ここは警察署です。":"../audio/a9d893816928.mp3","泥棒を捕まえます。":"../audio/94a31809b4dd.mp3","警察は泥棒を捕まえました。":"../audio/d13e531b7457.mp3","これからレストランへ行きます。":"../audio/2558dd6aa271.mp3","しばらくして、レストランに来ました。":"../audio/3debfa99abca.mp3","ここはレストランです。":"../audio/f832583632a5.mp3","今からラーメンを食べます。":"../audio/ee4563551e86.mp3","ラーメンを食べました。":"../audio/1d6f836d1040.mp3","ここ":"../audio/koko_wb.mp3","です":"../audio/desu_wb.mp3","これから":"../audio/korekara_wb.mp3","行きます":"../audio/ikimasu_wb.mp3","しばらくして":"../audio/shibarakushite_wb.mp3","来ました":"../audio/kimashita_wb.mp3","今から":"../audio/imakara_wb.mp3"};
+
+function tapCard(el){
+  var k=el.getAttribute('data-k');
+  el.classList.toggle('flipped');
+  if(curEl)curEl.classList.remove('playing');
+  el.classList.add('playing');curEl=el;
+  var kana=el.querySelector('.kana');
+  if(kana) speakJP(kana.textContent,function(){
+    el.classList.remove('playing');
+    if(!reviewed[k]){reviewed[k]=true;el.classList.add('reviewed');updateProgress()}
+  });
+}
+function playSent(el){
+  document.querySelectorAll('.sent-card').forEach(function(s){s.classList.remove('playing')});
+  el.classList.add('playing');
+  var jpEl=el.querySelector('.jp-text');
+  var text=jpEl?jpEl.textContent.replace(/[\u{1F4E3}\u{1F508}\u{1F509}\u{1F50A}]/gu,'').trim():'';
+  speakJP(text,function(){el.classList.remove('playing')});
+}
+function playAllCards(si,btn){
+  if(running){stopAll();btn.textContent='\u25b6 全部';btn.classList.remove('stop');return}
+  running=true;btn.textContent='\u23f9 停止';btn.classList.add('stop');
+  var grids=si===1?[document.getElementById('grid1'),document.getElementById('grid1b')]:[document.getElementById('grid'+si)];
+  var cards=[];
+  grids.forEach(function(g){if(g)g.querySelectorAll('.flip-card').forEach(function(c){cards.push(c)})});
+  var i=0;
+  function next(){
+    if(i>=cards.length||!running){running=false;btn.textContent='\u25b6 全部';btn.classList.remove('stop');return}
+    var el=cards[i];
+    el.classList.add('playing');if(curEl&&curEl!==el)curEl.classList.remove('playing');curEl=el;
+    var kana=el.querySelector('.kana');
+    if(kana)speakJP(kana.textContent,function(){
+      el.classList.remove('playing');el.classList.add('reviewed');
+      reviewed[el.getAttribute('data-k')]=true;updateProgress();
+      i++;setTimeout(next,350);
+    });
+    else{i++;next()}
+  }
+  next();
+}
+function stopAll(){running=false;if(currentAudio){currentAudio.pause();currentAudio=null}window.speechSynthesis&&window.speechSynthesis.cancel();if(curEl){curEl.classList.remove('playing');curEl=null}}
+function updateProgress(){
+  for(var s=0;s<2;s++){
+    var keys=secKeys[s];var done=keys.filter(function(k){return reviewed[k]}).length;
+    var pct=keys.length?Math.round(done/keys.length*100):0;
+    var bar=document.getElementById('prog'+s);if(bar)bar.style.width=pct+'%';
+  }
+}
+var quizQ=0,quizScore=0,quizTotal=5,quizList=[];
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function startQuiz(){quizQ=0;quizScore=0;quizList=shuffle(quizVocab.slice()).slice(0,quizTotal);showQuestion()}
+function showQuestion(){
+  var area=document.getElementById('quizArea');
+  if(quizQ>=quizList.length){
+    area.innerHTML='<div class="quiz-card"><div class="quiz-emoji">\u{1F389}</div><div class="quiz-score">得分：'+quizScore+' / '+quizTotal+'</div><div style="font-size:14px;color:var(--text-sub)">'+(quizScore>=4?'太棒了Alex！\u{1F31F}':'继续加油！\u{1F4AA}')+'</div></div><button class="quiz-btn" onclick="startQuiz()">再来一次！</button>';
+    return;
+  }
+  var q=quizList[quizQ],opts=[q],pool=quizVocab.filter(function(v){return v.k!==q.k});
+  shuffle(pool);for(var i=0;i<3&&i<pool.length;i++)opts.push(pool[i]);shuffle(opts);
+  var h='<div class="quiz-card"><div style="font-size:12px;color:var(--text-sub);margin-bottom:8px">第 '+(quizQ+1)+' / '+quizTotal+' 题</div>';
+  h+='<div class="quiz-emoji">'+q.e+'</div><div class="quiz-prompt">这个用日语怎么说？</div><div class="quiz-options">';
+  opts.forEach(function(o){h+='<button class="quiz-opt" data-correct="'+(o.k===q.k?'1':'0')+'" data-k="'+o.k+'" onclick="answer(this,\''+q.k+'\')">'+o.jp+'</button>'});
+  h+='</div></div>';area.innerHTML=h;
+  speakJP(q.jp);
+}
+function answer(btn,ck){
+  var ok=btn.getAttribute('data-correct')==='1';
+  btn.parentElement.querySelectorAll('.quiz-opt').forEach(function(b){b.onclick=null;if(b.getAttribute('data-k')===ck)b.classList.add('correct');else if(b===btn&&!ok)b.classList.add('wrong')});
+  if(ok){quizScore++;btn.classList.add('bounce')}else{btn.classList.add('shake')}
+  var correct=quizVocab.find(function(v){return v.k===ck});
+  if(correct)speakJP(correct.jp);
+  quizQ++;setTimeout(showQuestion,1200);
+}
+if('speechSynthesis' in window){
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged=function(){bestJPVoice=findBestJPVoice()};
+}
+// Word breakdown click-to-speak
+(function(){
+  document.querySelectorAll('.wb-word').forEach(function(w){
+    var sp=document.createElement('div');sp.className='wb-speaker';sp.textContent='🔈';
+    w.appendChild(sp);
+    w.addEventListener('click',function(e){
+      e.stopPropagation();
+      var jp=w.querySelector('.wb-jp');
+      if(!jp)return;
+      var text=jp.textContent.trim();
+      document.querySelectorAll('.wb-word').forEach(function(x){x.classList.remove('wb-playing')});
+      w.classList.add('wb-playing');
+      speakJP(text,function(){w.classList.remove('wb-playing')});
+    });
+  });
+})();
+</script>
+<script>
+replaceEmojiWithImg();
+var _origShowQ=typeof showQuestion==='function'?showQuestion:null;
+if(_origShowQ){
+  showQuestion=function(){_origShowQ.apply(this,arguments);setTimeout(replaceEmojiWithImg,50)};
+}
+</script>
+<div class="stats-float" id="statsFloat"></div>
+<script>
+(function(){
+  var _fl=localStorage.getItem('frontLang')||'cn';
+  function initLD(){
+    document.querySelectorAll('.flip-card').forEach(function(c){
+      var f=c.querySelector('.flip-front'),b=c.querySelector('.flip-back');
+      if(!f||!b)return;
+      var cn=f.querySelector('.chinese'),kj=b.querySelector('.kanji'),kn=b.querySelector('.kana');
+      if(cn)c.dataset.origCn=cn.textContent;
+      if(kj)c.dataset.origKanji=kj.innerHTML;
+      if(kn)c.dataset.origKana=kn.textContent;
+    });
+  }
+  window.applyFrontLang=function(lang){
+    _fl=lang;localStorage.setItem('frontLang',lang);
+    document.querySelectorAll('.flip-card').forEach(function(c){
+      var f=c.querySelector('.flip-front'),b=c.querySelector('.flip-back');
+      if(!f||!b)return;
+      var cnDiv=f.querySelector('.chinese'),kjDiv=b.querySelector('.kanji');
+      if(!cnDiv||!kjDiv)return;
+      if(lang==='jp'){
+        cnDiv.textContent=c.dataset.origKanji?c.dataset.origKanji.replace(/<[^>]*>/g,''):'';
+        cnDiv.style.fontFamily="'M PLUS Rounded 1c',sans-serif";
+        kjDiv.innerHTML='<span style="color:#C04030;font-family:\'Noto Sans SC\',sans-serif">'+(c.dataset.origCn||'')+'</span>';
+      }else{
+        cnDiv.textContent=c.dataset.origCn||'';
+        cnDiv.style.fontFamily='';
+        kjDiv.innerHTML=c.dataset.origKanji||'';
+      }
+      c.classList.remove('flipped');
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('on',b.dataset.lang===lang);
+    });
+  };
+  initLD();
+  if(_fl==='jp')setTimeout(function(){applyFrontLang('jp')},100);
+})();
+</script>
+</body>
+</html>

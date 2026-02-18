@@ -78,6 +78,7 @@ git add <files> && git commit -m "message" && git push
 ## User Preferences
 - Auto-approve all operations (CLAUDE_AUTO_ACCEPT=true)
 - YouTube videos: Japanese only or English+Japanese (NO Chinese+Japanese)
+- **IMPORTANT**: 完成新增课程内容后，必须直接部署到网页（git add + commit + push），不要等用户要求再部署
 - Always verify deployment to live site after pushing
 - Images should be cartoon/kawaii style, clearly distinct from each other
 - Each lesson uses tab navigation for different categories
