@@ -1,48 +1,232 @@
 [
-  {"style": "icon", "prompt": "cute cartoon yellow duckling, baby duck", "output": "gp_ahiru.png"},
-  {"style": "icon", "prompt": "cute cartoon chubby dog wearing a collar", "output": "gp_inu.png"},
-  {"style": "icon", "prompt": "cute cartoon black and white dairy cow", "output": "gp_ushi.png"},
-  {"style": "icon", "prompt": "cute cartoon red shrimp, prawn", "output": "gp_ebi.png"},
-  {"style": "icon", "prompt": "cute cartoon colorful parrot, red and blue macaw", "output": "gp_oumu.png"},
-  {"style": "icon", "prompt": "cute cartoon green turtle, tortoise", "output": "gp_kame.png"},
-  {"style": "icon", "prompt": "cute cartoon tall giraffe", "output": "gp_kirin.png"},
-  {"style": "icon", "prompt": "cute cartoon black stag beetle, kuwagata insect", "output": "gp_kuwagata.png"},
-  {"style": "icon", "prompt": "cute cartoon purple yarn ball with knitting needles", "output": "gp_keito.png"},
-  {"style": "icon", "prompt": "cute cartoon red and white koi fish, Japanese carp", "output": "gp_koi.png"},
-  {"style": "icon", "prompt": "cute cartoon gray rhinoceros", "output": "gp_sai.png"},
-  {"style": "icon", "prompt": "cute cartoon zebra with black and white stripes", "output": "gp_shimauma.png"},
-  {"style": "icon", "prompt": "cute cartoon small brown sparrow bird", "output": "gp_suzume.png"},
-  {"style": "icon", "prompt": "cute cartoon brown cicada insect", "output": "gp_semi.png"},
-  {"style": "icon", "prompt": "cute cartoon Japanese soba noodles on bamboo plate", "output": "gp_soba.png"},
-  {"style": "icon", "prompt": "cute cartoon red octopus with tentacles", "output": "gp_tako.png"},
-  {"style": "icon", "prompt": "cute cartoon chikuwa Japanese fish cake tube, sliced", "output": "gp_chikuwa.png"},
-  {"style": "icon", "prompt": "cute cartoon colorful wooden building blocks, toy house", "output": "gp_tsumiki.png"},
-  {"style": "icon", "prompt": "cute cartoon pair of green mittens, winter gloves", "output": "gp_tebukuro.png"},
-  {"style": "icon", "prompt": "cute cartoon flying dragonfly with transparent wings", "output": "gp_tonbo.png"},
-  {"style": "icon", "prompt": "cute cartoon purple eggplant, round Japanese nasu", "output": "gp_nasu.png"},
-  {"style": "icon", "prompt": "cute cartoon orange carrot with green leaves", "output": "gp_ninjin.png"},
-  {"style": "icon", "prompt": "cute cartoon roll of pink fabric cloth", "output": "gp_nuno.png"},
-  {"style": "icon", "prompt": "cute cartoon curled up sleeping cat", "output": "gp_neko.png"},
-  {"style": "icon", "prompt": "cute cartoon handsaw with wooden handle", "output": "gp_nokogiri.png"},
-  {"style": "icon", "prompt": "cute cartoon wooden chopsticks on chopstick rest", "output": "gp_hashi.png"},
-  {"style": "icon", "prompt": "cute cartoon orange starfish, sea star", "output": "gp_hitode.png"},
-  {"style": "icon", "prompt": "cute cartoon two colorful balloons with strings", "output": "gp_fuusen.png"},
-  {"style": "icon", "prompt": "cute cartoon brown coiled snake", "output": "gp_hebi.png"},
-  {"style": "icon", "prompt": "cute cartoon green hardcover book", "output": "gp_hon.png"},
-  {"style": "icon", "prompt": "cute cartoon green edamame beans in open pod", "output": "gp_mame.png"},
-  {"style": "icon", "prompt": "cute cartoon two orange mandarin oranges, mikan", "output": "gp_mikan.png"},
-  {"style": "icon", "prompt": "cute cartoon green caterpillar, cute bug", "output": "gp_mushi.png"},
-  {"style": "icon", "prompt": "cute cartoon whole cantaloupe melon with net pattern", "output": "gp_meron.png"},
-  {"style": "icon", "prompt": "cute cartoon pink peach fruit", "output": "gp_momo.png"},
-  {"style": "icon", "prompt": "cute cartoon arrow with feather and arrowhead", "output": "gp_ya.png"},
-  {"style": "icon", "prompt": "cute cartoon white lily flower blooming", "output": "gp_yuri.png"},
-  {"style": "icon", "prompt": "cute cartoon sailboat yacht on blue sea", "output": "gp_yotto.png"},
-  {"style": "icon", "prompt": "cute cartoon golden trumpet, brass horn instrument", "output": "gp_rappa.png"},
-  {"style": "icon", "prompt": "cute cartoon pink ribbon bow", "output": "gp_ribon.png"},
-  {"style": "icon", "prompt": "cute cartoon fishing lure shaped like small fish", "output": "gp_ruaa.png"},
-  {"style": "icon", "prompt": "cute cartoon whole lemon and a lemon slice", "output": "gp_remon.png"},
-  {"style": "icon", "prompt": "cute cartoon lit white candle with flame", "output": "gp_rousoku.png"},
-  {"style": "icon", "prompt": "cute cartoon green crocodile with open mouth", "output": "gp_wani.png"},
-  {"style": "icon", "prompt": "cute cartoon child painting on easel with brush", "output": "gp_ewokaku.png"},
-  {"style": "icon", "prompt": "cute cartoon brown leather handbag, school bag", "output": "gp_kaban.png"}
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon yellow duckling, baby duck",
+    "id": "gp_ahiru"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon chubby dog wearing a collar",
+    "id": "gp_inu"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon black and white dairy cow",
+    "id": "gp_ushi"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon red shrimp, prawn",
+    "id": "gp_ebi"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon colorful parrot, red and blue macaw",
+    "id": "gp_oumu"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon green turtle, tortoise",
+    "id": "gp_kame"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon tall giraffe",
+    "id": "gp_kirin"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon black stag beetle, kuwagata insect",
+    "id": "gp_kuwagata"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon purple yarn ball with knitting needles",
+    "id": "gp_keito"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon red and white koi fish, Japanese carp",
+    "id": "gp_koi"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon gray rhinoceros",
+    "id": "gp_sai"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon zebra with black and white stripes",
+    "id": "gp_shimauma"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon small brown sparrow bird",
+    "id": "gp_suzume"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon brown cicada insect",
+    "id": "gp_semi"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon Japanese soba noodles on bamboo plate",
+    "id": "gp_soba"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon red octopus with tentacles",
+    "id": "gp_tako"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon chikuwa Japanese fish cake tube, sliced",
+    "id": "gp_chikuwa"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon colorful wooden building blocks, toy house",
+    "id": "gp_tsumiki"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon pair of green mittens, winter gloves",
+    "id": "gp_tebukuro"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon flying dragonfly with transparent wings",
+    "id": "gp_tonbo"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon purple eggplant, round Japanese nasu",
+    "id": "gp_nasu"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon orange carrot with green leaves",
+    "id": "gp_ninjin"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon roll of pink fabric cloth",
+    "id": "gp_nuno"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon curled up sleeping cat",
+    "id": "gp_neko"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon handsaw with wooden handle",
+    "id": "gp_nokogiri"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon wooden chopsticks on chopstick rest",
+    "id": "gp_hashi"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon orange starfish, sea star",
+    "id": "gp_hitode"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon two colorful balloons with strings",
+    "id": "gp_fuusen"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon brown coiled snake",
+    "id": "gp_hebi"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon green hardcover book",
+    "id": "gp_hon"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon green edamame beans in open pod",
+    "id": "gp_mame"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon two orange mandarin oranges, mikan",
+    "id": "gp_mikan"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon green caterpillar, cute bug",
+    "id": "gp_mushi"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon whole cantaloupe melon with net pattern",
+    "id": "gp_meron"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon pink peach fruit",
+    "id": "gp_momo"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon arrow with feather and arrowhead",
+    "id": "gp_ya"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon white lily flower blooming",
+    "id": "gp_yuri"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon sailboat yacht on blue sea",
+    "id": "gp_yotto"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon golden trumpet, brass horn instrument",
+    "id": "gp_rappa"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon pink ribbon bow",
+    "id": "gp_ribon"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon fishing lure shaped like small fish",
+    "id": "gp_ruaa"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon whole lemon and a lemon slice",
+    "id": "gp_remon"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon lit white candle with flame",
+    "id": "gp_rousoku"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon green crocodile with open mouth",
+    "id": "gp_wani"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon child painting on easel with brush",
+    "id": "gp_ewokaku"
+  },
+  {
+    "style": "kawaii",
+    "prompt": "cute cartoon brown leather handbag, school bag",
+    "id": "gp_kaban"
+  }
 ]
