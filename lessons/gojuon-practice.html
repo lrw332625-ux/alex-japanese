@@ -25,7 +25,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .back-link{position:absolute;left:16px;top:16px;color:#fff;text-decoration:none;font-size:24px;opacity:.7;z-index:10}
 .back-link:hover{opacity:1}
 
-/* Controls */
+/* Control bar */
 .control-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--bg);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,.05)}
 .toggle-label{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;font-weight:700;color:var(--text-sub)}
 .toggle-label input{display:none}
@@ -37,11 +37,51 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .prog-bar{width:80px;height:6px;background:#e8e4dc;border-radius:3px;overflow:hidden}
 .prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--row-a));border-radius:3px;transition:width .4s;width:0}
 
-/* Tabs */
-.tab-nav{display:flex;gap:6px;padding:8px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:43px;z-index:99;background:var(--bg)}
-.tab-nav::-webkit-scrollbar{display:none}
-.tab-btn{flex-shrink:0;padding:6px 14px;border-radius:20px;border:2px solid transparent;font-size:12px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .2s;white-space:nowrap}
-.tab-btn.active{color:#fff;background:var(--accent);border-color:var(--accent)}
+/* Main tabs */
+.main-tabs{display:flex;gap:0;background:var(--bg);position:sticky;top:43px;z-index:99;border-bottom:1px solid rgba(0,0,0,.05)}
+.main-tab{flex:1;padding:10px;text-align:center;font-size:14px;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-sub);border-bottom:3px solid transparent;transition:all .2s}
+.main-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.main-tab:active{background:rgba(0,0,0,.03)}
+
+/* Section */
+.section{display:none;padding-bottom:12px}
+.section.active{display:block}
+
+/* ============ CHART TABLE ============ */
+.chart-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:12px 8px}
+.chart-title{text-align:center;font-size:17px;font-weight:900;color:var(--accent);margin:8px 0 12px}
+.chart-table{width:100%;border-collapse:separate;border-spacing:3px;margin:0 auto}
+.chart-table th{font-size:11px;font-weight:700;color:var(--accent);padding:4px 2px;text-align:center}
+.chart-table .row-label{font-size:11px;font-weight:900;color:#fff;border-radius:8px;padding:4px 6px;text-align:center;min-width:30px}
+.chart-cell{background:var(--card-bg);border-radius:10px;padding:6px 3px;text-align:center;border:2px solid #f0ece4;transition:all .2s;min-height:80px;vertical-align:top;position:relative}
+.chart-cell.playing{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.chart-cell.learned{background:#fef5f7}
+.chart-cell.empty{background:transparent;border-color:transparent}
+.chart-cell .kana-area{cursor:pointer;border-radius:6px;padding:2px;transition:background .15s}
+.chart-cell .kana-area:active{background:rgba(212,85,122,.15);transform:scale(.95)}
+.chart-cell .kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:24px;font-weight:900;line-height:1.1}
+.chart-cell .roma{font-size:9px;color:var(--accent);font-weight:700;margin-top:1px;transition:opacity .3s}
+.chart-cell .roma.hidden{opacity:0}
+.chart-cell .word-area{cursor:pointer;border-radius:6px;padding:2px;margin-top:2px;transition:background .15s}
+.chart-cell .word-area:active{background:rgba(232,107,138,.15);transform:scale(.95)}
+.chart-cell .cell-img{width:28px;height:28px;object-fit:contain;margin:2px auto;display:block}
+.chart-cell .word-text{font-size:9px;color:var(--text-sub);line-height:1.2}
+.chart-cell .word-r{font-size:8px;color:var(--row-ra);font-weight:600}
+.chart-btns{text-align:center;margin:12px 0 8px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:0 16px}
+.chart-action-btn{padding:8px 16px;border-radius:20px;border:none;font-size:13px;font-weight:700;cursor:pointer;color:#fff;transition:opacity .2s}
+.chart-action-btn:active{opacity:.7}
+@media(max-width:480px){
+  .chart-cell .kana{font-size:18px}
+  .chart-cell .cell-img{width:22px;height:22px}
+  .chart-cell{min-height:64px;padding:4px 2px}
+}
+
+/* ============ CARD VIEW ============ */
+/* Row filter tabs */
+.row-tabs{display:flex;gap:6px;padding:8px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--bg)}
+.row-tabs::-webkit-scrollbar{display:none}
+.row-tab{flex-shrink:0;padding:6px 14px;border-radius:20px;border:2px solid transparent;font-size:12px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .2s;white-space:nowrap}
+.row-tab.active{color:#fff;background:var(--accent);border-color:var(--accent)}
 
 /* Row header */
 .row-header{font-size:15px;font-weight:900;padding:8px 16px;border-radius:var(--rs);color:#fff;margin:16px 16px 8px;display:flex;align-items:center;gap:8px}
@@ -53,42 +93,35 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 @media(min-width:600px){.card-grid{grid-template-columns:repeat(4,1fr)}}
 @media(min-width:900px){.card-grid{grid-template-columns:repeat(5,1fr)}}
 
-/* Flip Card */
-.flip-card{perspective:800px;height:240px;position:relative}
-.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
-.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
-.flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--card-bg);box-shadow:var(--shadow);border:2px solid #f0ece4;overflow:hidden;padding:12px 8px}
-.flip-back{transform:rotateY(180deg);background:#FFF8F0}
+/* Single-face card */
+.pcard{border-radius:var(--r);background:var(--card-bg);box-shadow:var(--shadow);border:2px solid #f0ece4;overflow:hidden;position:relative;transition:border-color .2s}
+.pcard.playing{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent),0 4px 20px rgba(212,85,122,.2)}
+.pcard.learned::after{content:'\2713';position:absolute;top:8px;left:10px;font-size:14px;color:#3A8F5C;font-weight:900;z-index:2}
 
-/* Front face */
-.flip-front .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:52px;font-weight:900;line-height:1}
-.flip-front .romaji{font-size:14px;font-weight:700;color:var(--accent);margin-top:2px;transition:opacity .3s}
-.flip-front .romaji.hidden{opacity:0}
-.flip-front .card-img{width:72px;height:72px;object-fit:contain;margin-top:8px}
+/* Top: kana area */
+.kana-top{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 8px 10px;cursor:pointer;transition:background .15s;position:relative;border-bottom:1px dashed #f0ece4}
+.kana-top:active{background:rgba(212,85,122,.08)}
+.kana-top .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:48px;font-weight:900;line-height:1}
+.kana-top .romaji{font-size:14px;font-weight:700;color:var(--accent);margin-top:2px;transition:opacity .3s}
+.kana-top .romaji.hidden{opacity:0}
+.kana-top .kana-speaker{position:absolute;top:8px;right:8px;font-size:14px;opacity:.5}
 
-/* Back face */
-.flip-back .word-img{width:72px;height:72px;object-fit:contain;margin-bottom:6px}
-.flip-back .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:24px;font-weight:900;line-height:1.2}
-.flip-back .word-jp .hl{color:#E8573A;font-weight:900}
-.flip-back .word-romaji{font-size:13px;color:var(--text-sub);margin-top:2px}
-.flip-back .word-cn{font-size:16px;font-weight:700;margin-top:4px}
+/* Bottom: word area */
+.word-bottom{display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer;transition:background .15s}
+.word-bottom:active{background:rgba(232,107,138,.08)}
+.word-bottom .word-img{width:56px;height:56px;object-fit:contain;flex-shrink:0;border-radius:8px}
+.word-bottom .word-info{flex:1;min-width:0}
+.word-bottom .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:18px;font-weight:900;line-height:1.2}
+.word-bottom .word-jp .hl{color:#E8573A}
+.word-bottom .word-romaji{font-size:11px;color:var(--text-sub);transition:opacity .3s}
+.word-bottom .word-romaji.hidden{opacity:0}
+.word-bottom .word-cn{font-size:13px;color:var(--text-sub);font-weight:600}
+.word-bottom .word-speaker{font-size:14px;opacity:.5;flex-shrink:0}
 
-/* Speaker buttons */
-.speaker-btn{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:none;background:rgba(0,0,0,.06);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:background .2s}
-.speaker-btn:active{background:rgba(0,0,0,.15)}
-
-/* States */
-.flip-card.playing .flip-front,.flip-card.playing .flip-back{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent),0 4px 20px rgba(212,85,122,.2)}
-.flip-card.learned .flip-front::after{content:'\2713';position:absolute;top:8px;left:10px;font-size:14px;color:#3A8F5C;font-weight:900}
-
-@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-
-/* Mobile */
 @media(max-width:400px){
-  .flip-card{height:210px}
-  .flip-front .big-kana{font-size:42px}
-  .flip-front .card-img,.flip-back .word-img{width:56px;height:56px}
-  .flip-back .word-jp{font-size:20px}
+  .kana-top .big-kana{font-size:38px}
+  .word-bottom .word-img{width:44px;height:44px}
+  .word-bottom .word-jp{font-size:16px}
 }
 
 /* Home button */
@@ -101,7 +134,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 <div class="header">
   <a class="back-link" href="../index.html">&#8592;</a>
   <h1>🎴 五十音実践版</h1>
-  <div class="sub">翻卡片学假名 · 点击卡片查看单词</div>
+  <div class="sub">点击假名听发音 · 点击单词学词汇</div>
 </div>
 
 <div class="control-bar">
@@ -116,21 +149,40 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
   </div>
 </div>
 
-<nav class="tab-nav" id="tabNav">
-  <button class="tab-btn active" data-key="all" onclick="switchTab('all')">全部</button>
-  <button class="tab-btn" data-key="a" onclick="switchTab('a')">あ行</button>
-  <button class="tab-btn" data-key="ka" onclick="switchTab('ka')">か行</button>
-  <button class="tab-btn" data-key="sa" onclick="switchTab('sa')">さ行</button>
-  <button class="tab-btn" data-key="ta" onclick="switchTab('ta')">た行</button>
-  <button class="tab-btn" data-key="na" onclick="switchTab('na')">な行</button>
-  <button class="tab-btn" data-key="ha" onclick="switchTab('ha')">は行</button>
-  <button class="tab-btn" data-key="ma" onclick="switchTab('ma')">ま行</button>
-  <button class="tab-btn" data-key="ya" onclick="switchTab('ya')">や行</button>
-  <button class="tab-btn" data-key="ra" onclick="switchTab('ra')">ら行</button>
-  <button class="tab-btn" data-key="wa" onclick="switchTab('wa')">わ行</button>
-</nav>
+<div class="main-tabs">
+  <button class="main-tab active" onclick="switchMain(0)">📊 五十音表</button>
+  <button class="main-tab" onclick="switchMain(1)">🎴 单词卡片</button>
+</div>
 
-<div id="cardContainer"></div>
+<!-- Section 0: Chart -->
+<div class="section active" id="sec0">
+  <div class="chart-title">ひらがな 五十音</div>
+  <div class="chart-wrap">
+    <table class="chart-table" id="chartTable"></table>
+  </div>
+  <div class="chart-btns">
+    <button class="chart-action-btn" style="background:var(--accent)" onclick="playAllChart(this)">🔊 全部连播</button>
+    <button class="chart-action-btn" style="background:var(--text-sub)" onclick="resetProgress()">🔄 重置进度</button>
+  </div>
+</div>
+
+<!-- Section 1: Cards -->
+<div class="section" id="sec1">
+  <nav class="row-tabs" id="rowTabs">
+    <button class="row-tab active" data-key="all" onclick="switchRow('all')">全部</button>
+    <button class="row-tab" data-key="a" onclick="switchRow('a')">あ行</button>
+    <button class="row-tab" data-key="ka" onclick="switchRow('ka')">か行</button>
+    <button class="row-tab" data-key="sa" onclick="switchRow('sa')">さ行</button>
+    <button class="row-tab" data-key="ta" onclick="switchRow('ta')">た行</button>
+    <button class="row-tab" data-key="na" onclick="switchRow('na')">な行</button>
+    <button class="row-tab" data-key="ha" onclick="switchRow('ha')">は行</button>
+    <button class="row-tab" data-key="ma" onclick="switchRow('ma')">ま行</button>
+    <button class="row-tab" data-key="ya" onclick="switchRow('ya')">や行</button>
+    <button class="row-tab" data-key="ra" onclick="switchRow('ra')">ら行</button>
+    <button class="row-tab" data-key="wa" onclick="switchRow('wa')">わ行</button>
+  </nav>
+  <div id="cardContainer"></div>
+</div>
 
 <div class="home-btn">
   <a href="../index.html">&#8592; 返回课程列表</a>
@@ -212,12 +264,196 @@ var ROWS=[
   ]}
 ];
 
+// Build lookup: kana → {rowIdx, charIdx}
+var KANA_MAP={};
+ROWS.forEach(function(r,ri){ r.chars.forEach(function(c,ci){ KANA_MAP[c.h]={ri:ri,ci:ci}; }); });
+
 var showRomaji=true;
-var currentFilter='all';
+var currentRow='all';
 var progress=JSON.parse(localStorage.getItem('gojuon_practice_progress')||'{}');
 
 // ============================================================
-// RENDER
+// MAIN TAB SWITCH
+// ============================================================
+var mainIdx=0;
+function switchMain(idx){
+  mainIdx=idx;
+  document.querySelectorAll('.main-tab').forEach(function(b,i){b.classList.toggle('active',i===idx)});
+  document.querySelectorAll('.section').forEach(function(s,i){s.classList.toggle('active',i===idx)});
+}
+
+// ============================================================
+// CHART TABLE (五十音表)
+// ============================================================
+function renderChart(){
+  // Table layout: columns = rows (あ行〜わ行), rows = vowels (あ段〜お段) + ん
+  var vowels=['a','i','u','e','o'];
+  var vowelLabels=['あ段','い段','う段','え段','お段'];
+  var rowKeys=['a','ka','sa','ta','na','ha','ma','ya','ra','wa'];
+
+  // Build grid[vowelIdx][rowIdx] = char or null
+  var grid=[];
+  for(var v=0;v<5;v++){
+    grid[v]=[];
+    for(var rk=0;rk<rowKeys.length;rk++){
+      var row=ROWS[rk];
+      var found=null;
+      for(var ci=0;ci<row.chars.length;ci++){
+        var c=row.chars[ci];
+        // Match vowel position
+        var vowelMap={a:0,i:1,u:2,e:3,o:4,ka:0,ki:1,ku:2,ke:3,ko:4,sa:0,shi:1,su:2,se:3,so:4,ta:0,chi:1,tsu:2,te:3,to:4,na:0,ni:1,nu:2,ne:3,no:4,ha:0,hi:1,fu:2,he:3,ho:4,ma:0,mi:1,mu:2,me:3,mo:4,ya:0,yu:2,yo:4,ra:0,ri:1,ru:2,re:3,ro:4,wa:0,wo:4,n:0};
+        if(vowelMap[c.r]===v && c.r!=='n') found=c;
+      }
+      grid[v][rk]=found;
+    }
+  }
+
+  var html='<tr><th></th>';
+  // Reverse order: わ〜あ (right to left = Japanese traditional)
+  for(var rk=rowKeys.length-1;rk>=0;rk--){
+    html+='<th style="color:'+ROWS[rk].hex+'">'+ROWS[rk].name.charAt(0)+'</th>';
+  }
+  html+='</tr>';
+
+  // Vowel rows
+  for(var v=0;v<5;v++){
+    var labelColors=['var(--row-a)','var(--row-ka)','var(--row-sa)','var(--row-ta)','var(--row-na)'];
+    html+='<tr><td class="row-label" style="background:'+labelColors[v]+'">'+vowelLabels[v]+'</td>';
+    for(var rk=rowKeys.length-1;rk>=0;rk--){
+      var c=grid[v][rk];
+      if(!c){
+        html+='<td class="chart-cell empty"></td>';
+      }else{
+        var learnedCls=progress[c.h]?' learned':'';
+        html+='<td class="chart-cell'+learnedCls+'" data-kana="'+c.h+'">';
+        html+='<div class="kana-area" onclick="event.stopPropagation();chartPlayKana(\''+c.h+'\')">';
+        html+='<div class="kana" style="color:'+ROWS[rk].hex+'">'+c.h+'</div>';
+        html+='<div class="roma'+(showRomaji?'':' hidden')+'">'+c.r+'</div>';
+        html+='</div>';
+        html+='<div class="word-area" onclick="event.stopPropagation();chartPlayWord(\''+c.h+'\')">';
+        html+='<img class="cell-img" src="../img/'+c.img+'?v3" alt="'+c.cn+'">';
+        html+='<div class="word-text">'+c.word+'</div>';
+        html+='<div class="word-r">'+c.wr+'</div>';
+        html+='</div>';
+        html+='</td>';
+      }
+    }
+    html+='</tr>';
+  }
+
+  // ん row
+  var nChar=ROWS[9].chars[2]; // ん
+  html+='<tr><td class="row-label" style="background:var(--text-sub)">ん</td>';
+  for(var rk=rowKeys.length-1;rk>=0;rk--){
+    if(rk===9){
+      var learnedN=progress['ん']?' learned':'';
+      html+='<td class="chart-cell'+learnedN+'" data-kana="ん">';
+      html+='<div class="kana-area" onclick="event.stopPropagation();chartPlayKana(\'ん\')">';
+      html+='<div class="kana" style="color:'+ROWS[9].hex+'">ん</div>';
+      html+='<div class="roma'+(showRomaji?'':' hidden')+'">n</div>';
+      html+='</div>';
+      html+='<div class="word-area" onclick="event.stopPropagation();chartPlayWord(\'ん\')">';
+      html+='<img class="cell-img" src="../img/'+nChar.img+'?v3" alt="'+nChar.cn+'">';
+      html+='<div class="word-text">'+nChar.word+'</div>';
+      html+='<div class="word-r">'+nChar.wr+'</div>';
+      html+='</div>';
+      html+='</td>';
+    }else{
+      html+='<td class="chart-cell empty"></td>';
+    }
+  }
+  html+='</tr>';
+
+  // を row
+  var woChar=ROWS[9].chars[1]; // を
+  html+='<tr><td class="row-label" style="background:var(--text-sub)">を</td>';
+  for(var rk=rowKeys.length-1;rk>=0;rk--){
+    if(rk===9){
+      var learnedWo=progress['を']?' learned':'';
+      html+='<td class="chart-cell'+learnedWo+'" data-kana="を">';
+      html+='<div class="kana-area" onclick="event.stopPropagation();chartPlayKana(\'を\')">';
+      html+='<div class="kana" style="color:'+ROWS[9].hex+'">を</div>';
+      html+='<div class="roma'+(showRomaji?'':' hidden')+'">wo</div>';
+      html+='</div>';
+      html+='<div class="word-area" onclick="event.stopPropagation();chartPlayWord(\'を\')">';
+      html+='<img class="cell-img" src="../img/'+woChar.img+'?v3" alt="'+woChar.cn+'">';
+      html+='<div class="word-text">'+woChar.word+'</div>';
+      html+='<div class="word-r">'+woChar.wr+'</div>';
+      html+='</div>';
+      html+='</td>';
+    }else{
+      html+='<td class="chart-cell empty"></td>';
+    }
+  }
+  html+='</tr>';
+
+  document.getElementById('chartTable').innerHTML=html;
+}
+
+function chartPlayKana(kana){
+  speakJP(kana);
+  markLearned(kana);
+  highlightChartCell(kana);
+}
+function chartPlayWord(kana){
+  var loc=KANA_MAP[kana];
+  if(!loc)return;
+  var c=ROWS[loc.ri].chars[loc.ci];
+  speakJP(c.word);
+  markLearned(kana);
+  highlightChartCell(kana);
+}
+function highlightChartCell(kana){
+  var cell=document.querySelector('#chartTable .chart-cell[data-kana="'+kana+'"]');
+  if(!cell)return;
+  cell.classList.add('playing');
+  setTimeout(function(){cell.classList.remove('playing')},800);
+}
+
+// Play all chart
+var chartPlaying=false;
+function playAllChart(btn){
+  if(chartPlaying){chartPlaying=false;btn.textContent='🔊 全部连播';return}
+  chartPlaying=true;
+  btn.textContent='⏹ 停止';
+  var all=[];
+  ROWS.forEach(function(r){r.chars.forEach(function(c){all.push(c)})});
+  var idx=0;
+  function next(){
+    if(!chartPlaying||idx>=all.length){
+      chartPlaying=false;btn.textContent='🔊 全部连播';
+      document.querySelectorAll('#chartTable .chart-cell.playing').forEach(function(c){c.classList.remove('playing')});
+      return;
+    }
+    var c=all[idx];
+    document.querySelectorAll('#chartTable .chart-cell.playing').forEach(function(el){el.classList.remove('playing')});
+    var cell=document.querySelector('#chartTable .chart-cell[data-kana="'+c.h+'"]');
+    if(cell)cell.classList.add('playing');
+    markLearned(c.h);
+    idx++;
+    speakJP(c.h,function(){
+      setTimeout(function(){
+        speakJP(c.word,function(){
+          if(cell)cell.classList.remove('playing');
+          setTimeout(next,300);
+        });
+      },200);
+    });
+  }
+  next();
+}
+
+function resetProgress(){
+  if(!confirm('确认重置所有学习进度？'))return;
+  progress={};
+  localStorage.removeItem('gojuon_practice_progress');
+  updateProgress();
+  renderChart();
+  renderCards(currentRow);
+}
+
+// ============================================================
+// CARD RENDERING (single-face)
 // ============================================================
 function highlightSpecial(c){
   if(!c.special)return c.word;
@@ -237,73 +473,48 @@ function renderCards(filter){
     html+='<div class="card-grid">';
     row.chars.forEach(function(c){
       var learned=progress[c.h]?' learned':'';
-      html+='<div class="flip-card'+learned+'" data-kana="'+c.h+'" onclick="tapCard(event,this)">';
-      html+='<div class="flip-inner">';
-      // Front
-      html+='<div class="flip-front">';
-      html+='<button class="speaker-btn" onclick="playKana(event,\''+c.h+'\')">🔊</button>';
+      html+='<div class="pcard'+learned+'" data-kana="'+c.h+'">';
+      // Top: kana
+      html+='<div class="kana-top" onclick="cardPlayKana(\''+c.h+'\')">';
+      html+='<span class="kana-speaker">🔊</span>';
       html+='<div class="big-kana" style="color:'+row.color+'">'+c.h+'</div>';
       html+='<div class="romaji'+(showRomaji?'':' hidden')+'">'+c.r+'</div>';
-      html+='<img class="card-img" src="../img/'+c.img+'?v3" alt="'+c.cn+'">';
       html+='</div>';
-      // Back
-      html+='<div class="flip-back">';
-      html+='<button class="speaker-btn" onclick="playWord(event,\''+c.word+'\')">🔊</button>';
+      // Bottom: word
+      html+='<div class="word-bottom" onclick="cardPlayWord(\''+c.h+'\')">';
       html+='<img class="word-img" src="../img/'+c.img+'?v3" alt="'+c.cn+'">';
+      html+='<div class="word-info">';
       html+='<div class="word-jp">'+highlightSpecial(c)+'</div>';
-      html+='<div class="word-romaji">'+c.wr+'</div>';
+      html+='<div class="word-romaji'+(showRomaji?'':' hidden')+'">'+c.wr+'</div>';
       html+='<div class="word-cn">'+c.cn+'</div>';
       html+='</div>';
-      html+='</div></div>';
+      html+='<span class="word-speaker">🔊</span>';
+      html+='</div>';
+      html+='</div>';
     });
     html+='</div>';
   });
   container.innerHTML=html;
 }
 
-// ============================================================
-// INTERACTIONS
-// ============================================================
-function tapCard(event,el){
-  if(event.target.classList.contains('speaker-btn'))return;
-  el.classList.toggle('flipped');
-  var kana=el.getAttribute('data-kana');
-  var isFlipped=el.classList.contains('flipped');
-  if(isFlipped){
-    var c=findChar(kana);
-    if(c)speakJP(c.word);
-  }else{
-    speakJP(kana);
-  }
-  markLearned(el,kana);
-}
-
-function playKana(event,kana){
-  event.stopPropagation();
+function cardPlayKana(kana){
   speakJP(kana);
+  markLearned(kana);
+  highlightCard(kana);
 }
-
-function playWord(event,word){
-  event.stopPropagation();
-  speakJP(word);
+function cardPlayWord(kana){
+  var loc=KANA_MAP[kana];
+  if(!loc)return;
+  var c=ROWS[loc.ri].chars[loc.ci];
+  speakJP(c.word);
+  markLearned(kana);
+  highlightCard(kana);
 }
-
-function findChar(kana){
-  for(var i=0;i<ROWS.length;i++){
-    for(var j=0;j<ROWS[i].chars.length;j++){
-      if(ROWS[i].chars[j].h===kana)return ROWS[i].chars[j];
-    }
-  }
-  return null;
-}
-
-function markLearned(el,kana){
-  if(!progress[kana]){
-    progress[kana]={date:Date.now()};
-    localStorage.setItem('gojuon_practice_progress',JSON.stringify(progress));
-    el.classList.add('learned');
-    updateProgress();
-  }
+function highlightCard(kana){
+  var card=document.querySelector('#cardContainer .pcard[data-kana="'+kana+'"]');
+  if(!card)return;
+  card.classList.add('playing');
+  setTimeout(function(){card.classList.remove('playing')},800);
 }
 
 // ============================================================
@@ -311,17 +522,17 @@ function markLearned(el,kana){
 // ============================================================
 function toggleRomaji(){
   showRomaji=document.getElementById('romajiToggle').checked;
-  document.querySelectorAll('.romaji').forEach(function(el){
+  document.querySelectorAll('.romaji,.roma,.word-romaji').forEach(function(el){
     el.classList.toggle('hidden',!showRomaji);
   });
 }
 
 // ============================================================
-// TAB FILTERING
+// ROW TAB SWITCH
 // ============================================================
-function switchTab(key){
-  currentFilter=key;
-  document.querySelectorAll('.tab-btn').forEach(function(b){
+function switchRow(key){
+  currentRow=key;
+  document.querySelectorAll('.row-tab').forEach(function(b){
     b.classList.toggle('active',b.getAttribute('data-key')===key);
   });
   renderCards(key);
@@ -330,6 +541,17 @@ function switchTab(key){
 // ============================================================
 // PROGRESS
 // ============================================================
+function markLearned(kana){
+  if(!progress[kana]){
+    progress[kana]={date:Date.now()};
+    localStorage.setItem('gojuon_practice_progress',JSON.stringify(progress));
+    // Update card visual
+    document.querySelectorAll('[data-kana="'+kana+'"]').forEach(function(el){
+      el.classList.add('learned');
+    });
+    updateProgress();
+  }
+}
 function updateProgress(){
   var total=0;
   ROWS.forEach(function(r){total+=r.chars.length});
@@ -341,25 +563,26 @@ function updateProgress(){
 // ============================================================
 // ROW PLAYBACK
 // ============================================================
-var playingRow=false;
+var playingRowFlag=false;
 function playRow(event,rowKey){
   event.stopPropagation();
-  if(playingRow){playingRow=false;return}
+  if(playingRowFlag){playingRowFlag=false;return}
   var row=null;
   for(var i=0;i<ROWS.length;i++){if(ROWS[i].key===rowKey){row=ROWS[i];break}}
   if(!row)return;
-  playingRow=true;
+  playingRowFlag=true;
   var idx=0;
   function next(){
-    if(!playingRow||idx>=row.chars.length){
-      playingRow=false;
-      document.querySelectorAll('.flip-card.playing').forEach(function(c){c.classList.remove('playing')});
+    if(!playingRowFlag||idx>=row.chars.length){
+      playingRowFlag=false;
+      document.querySelectorAll('.pcard.playing').forEach(function(c){c.classList.remove('playing')});
       return;
     }
     var c=row.chars[idx];
-    document.querySelectorAll('.flip-card.playing').forEach(function(el){el.classList.remove('playing')});
-    var card=document.querySelector('.flip-card[data-kana="'+c.h+'"]');
+    document.querySelectorAll('.pcard.playing').forEach(function(el){el.classList.remove('playing')});
+    var card=document.querySelector('#cardContainer .pcard[data-kana="'+c.h+'"]');
     if(card){card.classList.add('playing');card.scrollIntoView({behavior:'smooth',block:'nearest'})}
+    markLearned(c.h);
     idx++;
     speakJP(c.h,function(){
       setTimeout(function(){
@@ -376,6 +599,7 @@ function playRow(event,rowKey){
 // ============================================================
 // INIT
 // ============================================================
+renderChart();
 renderCards('all');
 updateProgress();
 </script>
