@@ -61,12 +61,15 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .row-header{font-size:18px;font-weight:900;padding:10px 16px;border-radius:var(--rs);color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .row-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:16px}
 
-.kana-card{background:var(--card-bg);border-radius:var(--r);padding:16px 12px;text-align:center;cursor:pointer;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s}
-.kana-card:active{transform:scale(.97)}
+.kana-card{background:var(--card-bg);border-radius:var(--r);padding:16px 12px;text-align:center;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s}
 .kana-card.playing{border-color:var(--row-a);box-shadow:0 0 0 3px var(--row-a),0 4px 24px rgba(232,87,58,.25);transition:all .3s ease}
+.kana-card .kana-area{cursor:pointer;border-radius:8px;padding:4px;transition:background .15s}
+.kana-card .kana-area:active{background:rgba(232,87,58,.1)}
 .kana-card .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:48px;font-weight:900;line-height:1.1}
 .kana-card .sub-kana{font-size:16px;color:var(--text-sub);margin-top:2px}
 .kana-card .romaji{font-size:14px;font-weight:700;color:var(--row-a);margin-top:4px}
+.kana-card .word-area{cursor:pointer;border-radius:8px;padding:4px;transition:background .15s}
+.kana-card .word-area:active{background:rgba(232,87,58,.1)}
 .kana-card .word-row{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:8px;padding-top:8px;border-top:1px solid #f0ece4}
 .kana-card .word-row img{width:32px;height:32px;object-fit:contain}
 .kana-card .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;font-weight:700}
@@ -432,13 +435,17 @@ function renderRowDetail(rowIdx){
   html+='<div class="row-cards">';
   row.chars.forEach(function(c){
     var learned=progress[c.h]?'learned':'';
-    html+='<div class="kana-card '+learned+'" onclick="playCard(this,\''+c.h+'\',\''+c.word+'\')" data-kana="'+c.h+'">';
+    html+='<div class="kana-card '+learned+'" data-kana="'+c.h+'">';
+    html+='<div class="kana-area" onclick="playCardKana(this.parentNode,\''+c.h+'\')">';
     html+='<div class="big-kana">'+getDisplay(c)+'</div>';
     if(mode!=='both')html+='<div class="sub-kana">'+(mode==='hira'?c.k:c.h)+'</div>';
     html+='<div class="romaji" style="color:'+row.color+'">'+c.r+'</div>';
+    html+='</div>';
+    html+='<div class="word-area" onclick="playCardWord(this.parentNode,\''+c.word+'\')">';
     html+='<div class="word-row">';
     html+='<img src="../img/'+c.img+'" alt="'+c.cn+'">';
     html+='<div><div class="word-jp">'+c.word+'</div><div class="word-cn">'+c.cn+'</div></div>';
+    html+='</div>';
     html+='</div>';
     html+='<div class="mnemonic">💡 '+c.memo+'</div>';
     html+='</div>';
@@ -452,20 +459,22 @@ function renderRowDetail(rowIdx){
   sec.innerHTML=html;
 }
 
-function playCard(el,kana,word){
+function playCardKana(el,kana){
   document.querySelectorAll('.kana-card.playing').forEach(function(c){c.classList.remove('playing')});
   el.classList.add('playing');
-  speakKana(kana,function(){
-    setTimeout(function(){
-      speakJP(word,function(){el.classList.remove('playing')});
-    },300);
-  });
+  speakKana(kana,function(){el.classList.remove('playing')});
   if(!progress[kana]){
     progress[kana]={date:Date.now()};
     localStorage.setItem('gojuon_progress',JSON.stringify(progress));
     el.classList.add('learned');
     updateProgress();
   }
+}
+
+function playCardWord(el,word){
+  document.querySelectorAll('.kana-card.playing').forEach(function(c){c.classList.remove('playing')});
+  el.classList.add('playing');
+  speakJP(word,function(){el.classList.remove('playing')});
 }
 
 // Play all kana in a row sequentially
