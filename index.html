@@ -30,7 +30,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .search-count{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--sub);white-space:nowrap;pointer-events:none;display:none}
 
 /* Quick navigation */
-.quick-nav{display:flex;gap:10px;max-width:640px;margin:0 auto;padding:16px 16px 0}
+.quick-nav{display:flex;flex-wrap:wrap;gap:10px;max-width:640px;margin:0 auto;padding:16px 16px 0}
 .quick-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 12px;border-radius:14px;text-decoration:none;font-size:15px;font-weight:700;font-family:inherit;color:#fff;border:none;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.1)}
 .quick-btn:active{transform:scale(.96)}
 .quick-btn.gojuon{background:linear-gradient(135deg,#E8573A,#D4553A)}
@@ -95,6 +95,9 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
   </a>
   <a class="quick-btn" href="lessons/gojuon-teacher.html" style="background:linear-gradient(135deg,#4A9AD9,#2B6FA0)">
     <span class="quick-btn-icon">📖</span> 教师版五十音
+  </a>
+  <a class="quick-btn" href="lessons/gojuon-practice.html" style="background:linear-gradient(135deg,#D4557A,#B83A5A)">
+    <span class="quick-btn-icon">🎴</span> 実践版五十音
   </a>
   <a class="quick-btn scene" href="scenes/index.html">
     <span class="quick-btn-icon">🎬</span> 场景学习
