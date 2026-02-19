@@ -87,6 +87,10 @@ git add img/ && git commit -m "style: regenerate all images with consistent styl
 - Sentence scenes: seed=300
 - Use `--global-seed N` to force same seed across all items
 
+## Banned Styles
+- **NEVER use the `ink` style** — 水墨/齐白石风格会导致图片模糊、躯体不完整、显示不清楚
+- Only use: `kawaii`, `ghibli`, `flat`, `watercolor`
+
 ## Notes
 - Total ~434 images, ~3.5s each = ~25 minutes total generation time
 - `--force` flag overwrites existing images; default skips existing
