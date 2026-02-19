@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>五十音教师版本 - Alex日语学习</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF6FF;--card-bg:#FFFFFF;--text:#2D2A24;--text-sub:#7A7468;
+  --shadow:0 2px 16px rgba(45,42,36,.08);--r:16px;--rs:10px;
+  --blue:#4A9AD9;--blue-light:#B8D8F8;--blue-dark:#2B6FA0;
+  --pink:#E86B8A;--green:#4CAF7D;--orange:#E8973A;--purple:#7B5EA7;
+  --row-a:#E8573A;--row-ka:#2B7A98;--row-sa:#3A8F5C;--row-ta:#7B5EA7;
+  --row-na:#D4903A;--row-ha:#2B8F8F;--row-ma:#D4557A;--row-ya:#B8860B;
+  --row-ra:#4A90D9;--row-wa:#7A7468;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh}
+
+.header{position:relative;overflow:hidden;padding:32px 20px 24px;text-align:center;background:linear-gradient(135deg,#4A9AD9 0%,#2B6FA0 50%,#1E5580 100%);color:#fff}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.1) 0%,transparent 50%)}
+.header h1{font-family:'M PLUS Rounded 1c','Noto Sans SC',sans-serif;font-size:24px;font-weight:900;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,.2);position:relative}
+.header .sub{font-size:13px;opacity:.85;margin-top:4px;position:relative}
+.back-link{position:absolute;left:16px;top:16px;color:#fff;text-decoration:none;font-size:24px;opacity:.7;z-index:10}
+.back-link:hover{opacity:1}
+
+/* Tab Navigation */
+.tab-nav{display:flex;gap:6px;padding:10px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:0;z-index:100;background:var(--bg)}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:8px 16px;border-radius:20px;border:2px solid transparent;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .2s;white-space:nowrap}
+.tab-btn.active{color:#fff;border-color:transparent;background:var(--blue)}
+
+.section{display:none;padding:12px 16px 24px}
+.section.active{display:block}
+
+/* ============ CHART VIEW ============ */
+.chart-title{text-align:center;font-size:18px;font-weight:900;color:var(--blue-dark);margin:12px 0 4px;padding:8px 16px;background:#fff;border-radius:var(--r);display:inline-block}
+.chart-title-wrap{text-align:center;margin-bottom:12px}
+
+.chart-table{width:100%;border-collapse:separate;border-spacing:3px;margin:0 auto}
+.chart-table th{font-size:11px;font-weight:700;color:var(--blue-dark);padding:4px 2px;text-align:center}
+.chart-table .row-label{font-size:11px;font-weight:900;color:#fff;background:var(--blue);border-radius:8px;padding:4px 6px;text-align:center;min-width:30px}
+
+.chart-cell{
+  background:var(--card-bg);border-radius:10px;padding:6px 3px;text-align:center;
+  cursor:pointer;border:2px solid var(--blue-light);transition:all .2s;
+  min-height:80px;vertical-align:top;position:relative;
+}
+.chart-cell:active{transform:scale(.96)}
+.chart-cell.playing{border-color:var(--pink);box-shadow:0 0 0 2px var(--pink)}
+.chart-cell .kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:26px;font-weight:900;line-height:1.1;color:var(--text)}
+.chart-cell .roma{font-size:10px;color:var(--blue-dark);font-weight:700;margin-top:1px}
+.chart-cell .cell-img{font-size:22px;margin:3px 0 1px;line-height:1}
+.chart-cell .word{font-size:9px;color:var(--text-sub);line-height:1.2}
+.chart-cell .word-r{font-size:8px;color:var(--blue);font-weight:600}
+.chart-cell.empty{background:transparent;border-color:transparent;cursor:default}
+
+/* Mobile: smaller chart cells */
+@media(max-width:480px){
+  .chart-cell .kana{font-size:20px}
+  .chart-cell .cell-img{font-size:18px}
+  .chart-cell .word{font-size:8px}
+  .chart-cell{min-height:68px;padding:4px 2px}
+}
+
+/* ============ WORD CARDS VIEW ============ */
+.word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:12px 0}
+
+.word-card{
+  background:var(--card-bg);border-radius:var(--r);padding:14px 10px;text-align:center;
+  cursor:pointer;box-shadow:var(--shadow);border:2px solid #e8f0f8;transition:all .25s;
+}
+.word-card:active{transform:scale(.97)}
+.word-card.playing{border-color:var(--pink);box-shadow:0 0 0 3px var(--pink),0 4px 20px rgba(232,107,138,.2)}
+.word-card .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:42px;font-weight:900;line-height:1.1}
+.word-card .romaji{font-size:14px;font-weight:700;color:var(--blue);margin:2px 0}
+.word-card .card-emoji{font-size:36px;margin:6px 0}
+.word-card .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:15px;font-weight:700}
+.word-card .word-cn{font-size:12px;color:var(--text-sub)}
+.word-card .word-romaji{font-size:11px;color:var(--blue);font-weight:600}
+
+.row-divider{
+  font-size:16px;font-weight:900;padding:10px 16px;border-radius:var(--rs);
+  color:#fff;margin:20px 0 10px;display:flex;align-items:center;gap:8px;
+}
+
+/* Play row button */
+.play-row-btn{
+  display:inline-flex;align-items:center;gap:6px;padding:8px 18px;
+  border-radius:20px;border:none;font-size:13px;font-weight:700;
+  cursor:pointer;color:#fff;background:var(--blue);transition:all .2s;margin:4px;
+}
+.play-row-btn:active{transform:scale(.95)}
+
+/* ============ QUIZ ============ */
+.quiz-box{background:var(--card-bg);border-radius:var(--r);padding:24px 16px;margin:16px 0;box-shadow:var(--shadow);text-align:center}
+.quiz-prompt{font-family:'M PLUS Rounded 1c',sans-serif;font-size:56px;font-weight:900;margin:16px 0}
+.quiz-prompt.small{font-size:18px;font-weight:700;color:var(--text-sub)}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.quiz-opt{padding:14px;border-radius:var(--rs);border:2px solid #e0e8f0;background:#fff;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s}
+.quiz-opt:active{transform:scale(.95)}
+.quiz-opt.correct{background:#d4edda;border-color:#3A8F5C;color:#3A8F5C;animation:celebrate .4s ease}
+.quiz-opt.wrong{background:#f8d7da;border-color:#E8573A;color:#E8573A}
+.quiz-score{font-size:16px;font-weight:700;margin:12px 0}
+.quiz-btn{padding:10px 24px;border-radius:24px;border:none;font-size:14px;font-weight:700;cursor:pointer;color:#fff;background:var(--blue);transition:all .2s;margin:4px}
+.quiz-btn:active{transform:scale(.95)}
+.quiz-btn.secondary{background:var(--green)}
+.quiz-btn.pink{background:var(--pink)}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes celebrate{0%{transform:scale(1)}50%{transform:scale(1.1) rotate(2deg)}100%{transform:scale(1)}}
+
+.home-btn{text-align:center;padding:20px 16px}
+.home-btn a{display:inline-block;padding:12px 32px;border-radius:24px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 2px 12px rgba(0,0,0,.1)}
+
+/* Speed control */
+.speed-bar{display:flex;gap:6px;justify-content:center;padding:8px;margin:8px 0}
+.speed-btn{padding:4px 12px;border-radius:12px;border:2px solid #e0e8f0;background:#fff;font-size:12px;font-weight:700;cursor:pointer;color:var(--text-sub);transition:all .2s}
+.speed-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a class="back-link" href="../index.html">&#8592;</a>
+  <h1>📖 五十音教师版本</h1>
+  <div class="sub">2026年2月19日 · 点击假名听发音 · Alex复习专用</div>
+</div>
+
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" onclick="switchTab(0)">📊 五十音表</button>
+  <button class="tab-btn" onclick="switchTab(1)">📚 单词学习</button>
+  <button class="tab-btn" onclick="switchTab(2)">🎮 听音测验</button>
+  <button class="tab-btn" onclick="switchTab(3)">✍️ 看字测验</button>
+  <button class="tab-btn" onclick="switchTab(4)">🖼️ 图片测验</button>
+</nav>
+
+<div class="speed-bar">
+  <span style="font-size:12px;color:var(--text-sub);margin-right:4px">语速:</span>
+  <button class="speed-btn" onclick="setSpeed(0.7,this)">慢速</button>
+  <button class="speed-btn active" onclick="setSpeed(1,this)">正常</button>
+  <button class="speed-btn" onclick="setSpeed(1.3,this)">快速</button>
+</div>
+
+<!-- SEC 0: Chart View -->
+<div class="section active" id="sec0">
+  <div class="chart-title-wrap">
+    <div class="chart-title">Hiragana ひらがな 五十音</div>
+  </div>
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+    <table class="chart-table" id="chartTable"></table>
+  </div>
+  <div style="text-align:center;margin:16px 0">
+    <button class="play-row-btn" onclick="playAllRows(this)" style="background:var(--pink)">🔊 全部连续播放</button>
+    <button class="play-row-btn" onclick="resetProgress()" style="background:var(--text-sub)">🔄 重置进度</button>
+  </div>
+</div>
+
+<!-- SEC 1: Word Cards -->
+<div class="section" id="sec1"></div>
+
+<!-- SEC 2: Listen Quiz -->
+<div class="section" id="sec2">
+  <div class="quiz-box" id="quizBox2">
+    <div style="font-size:18px;font-weight:700;margin-bottom:16px">🔊 听音选字测验</div>
+    <p style="color:var(--text-sub);margin-bottom:16px">听日语发音，选出正确的假名</p>
+    <button class="quiz-btn" onclick="startQuiz('listen',10)">10题挑战</button>
+    <button class="quiz-btn secondary" onclick="startQuiz('listen',20)">20题挑战</button>
+    <button class="quiz-btn pink" onclick="startQuiz('listen',46)">全部46字</button>
+  </div>
+</div>
+
+<!-- SEC 3: Read Quiz -->
+<div class="section" id="sec3">
+  <div class="quiz-box" id="quizBox3">
+    <div style="font-size:18px;font-weight:700;margin-bottom:16px">✍️ 看字选音测验</div>
+    <p style="color:var(--text-sub);margin-bottom:16px">看假名，选出正确的读音</p>
+    <button class="quiz-btn" onclick="startQuiz('read',10)">10题挑战</button>
+    <button class="quiz-btn secondary" onclick="startQuiz('read',20)">20题挑战</button>
+    <button class="quiz-btn pink" onclick="startQuiz('read',46)">全部46字</button>
+  </div>
+</div>
+
+<!-- SEC 4: Word/Image Quiz -->
+<div class="section" id="sec4">
+  <div class="quiz-box" id="quizBox4">
+    <div style="font-size:18px;font-weight:700;margin-bottom:16px">🖼️ 图片单词测验</div>
+    <p style="color:var(--text-sub);margin-bottom:16px">看图片和单词，选出含有的假名</p>
+    <button class="quiz-btn" onclick="startQuiz('word',10)">10题挑战</button>
+    <button class="quiz-btn secondary" onclick="startQuiz('word',20)">20题挑战</button>
+    <button class="quiz-btn pink" onclick="startQuiz('word',46)">全部46字</button>
+  </div>
+</div>
+
+<div class="home-btn">
+  <a href="../index.html">&#8592; 返回课程列表</a>
+</div>
+
+<script src="../scripts/audio.js"></script>
+<script src="../scripts/cache-control.js"></script>
+<script>
+// ============================================================
+// TEACHER'S HIRAGANA DATA - Based on 2026-02-19 class material
+// Chart layout: columns わ→あ (left→right), rows a/i/u/e/o
+// ============================================================
+
+var GROUPS = [
+  { name:'わ行', color:'var(--row-wa)', chars:{
+    a:{h:'わ',r:'wa',word:'わに',wr:'wani',cn:'鳄鱼',emoji:'🐊'},
+    u:{h:'を',r:'wo',word:'ごはんをたべる',wr:'gohan wo taberu',cn:'吃饭',emoji:'🍚'},
+    n:{h:'ん',r:'n',word:'しんかんせん',wr:'shinkansen',cn:'新干线',emoji:'🚄'}
+  }},
+  { name:'ら行', color:'var(--row-ra)', chars:{
+    a:{h:'ら',r:'ra',word:'さくら',wr:'sakura',cn:'樱花',emoji:'🌸'},
+    i:{h:'り',r:'ri',word:'りか',wr:'rika',cn:'理科',emoji:'🧪'},
+    u:{h:'る',r:'ru',word:'くるま',wr:'kuruma',cn:'车',emoji:'🚗'},
+    e:{h:'れ',r:'re',word:'れきし',wr:'rekishi',cn:'历史',emoji:'📚'},
+    o:{h:'ろ',r:'ro',word:'しろくま',wr:'shirokuma',cn:'白熊',emoji:'🐻‍❄️'}
+  }},
+  { name:'や行', color:'var(--row-ya)', chars:{
+    a:{h:'や',r:'ya',word:'やま',wr:'yama',cn:'山',emoji:'⛰️'},
+    u:{h:'ゆ',r:'yu',word:'ゆき',wr:'yuki',cn:'雪',emoji:'❄️'},
+    o:{h:'よ',r:'yo',word:'よてい',wr:'yotei',cn:'预定',emoji:'📅'}
+  }},
+  { name:'ま行', color:'var(--row-ma)', chars:{
+    a:{h:'ま',r:'ma',word:'うま',wr:'uma',cn:'马',emoji:'🐴'},
+    i:{h:'み',r:'mi',word:'みみ',wr:'mimi',cn:'耳朵',emoji:'👂'},
+    u:{h:'む',r:'mu',word:'むし',wr:'mushi',cn:'虫',emoji:'🐛'},
+    e:{h:'め',r:'me',word:'め',wr:'me',cn:'眼睛',emoji:'👁️'},
+    o:{h:'も',r:'mo',word:'もも',wr:'momo',cn:'桃子',emoji:'🍑'}
+  }},
+  { name:'は行', color:'var(--row-ha)', chars:{
+    a:{h:'は',r:'ha',word:'はな',wr:'hana',cn:'花',emoji:'🌷'},
+    i:{h:'ひ',r:'hi',word:'ひと',wr:'hito',cn:'人',emoji:'🧑'},
+    u:{h:'ふ',r:'fu',word:'ふね',wr:'fune',cn:'船',emoji:'⛵'},
+    e:{h:'へ',r:'he',word:'おへそ',wr:'oheso',cn:'肚脐',emoji:'⭕'},
+    o:{h:'ほ',r:'ho',word:'ほし',wr:'hoshi',cn:'星星',emoji:'⭐'}
+  }},
+  { name:'な行', color:'var(--row-na)', chars:{
+    a:{h:'な',r:'na',word:'なか',wr:'naka',cn:'里面',emoji:'📦'},
+    i:{h:'に',r:'ni',word:'にく',wr:'niku',cn:'肉',emoji:'🍖'},
+    u:{h:'ぬ',r:'nu',word:'いぬ',wr:'inu',cn:'狗',emoji:'🐶'},
+    e:{h:'ね',r:'ne',word:'ねこ',wr:'neko',cn:'猫',emoji:'🐱'},
+    o:{h:'の',r:'no',word:'おの',wr:'ono',cn:'斧头',emoji:'🪓'}
+  }},
+  { name:'た行', color:'var(--row-ta)', chars:{
+    a:{h:'た',r:'ta',word:'たこ',wr:'tako',cn:'章鱼',emoji:'🐙'},
+    i:{h:'ち',r:'chi',word:'くち',wr:'kuchi',cn:'嘴巴',emoji:'👄'},
+    u:{h:'つ',r:'tsu',word:'くつ',wr:'kutsu',cn:'鞋子',emoji:'👟'},
+    e:{h:'て',r:'te',word:'て',wr:'te',cn:'手',emoji:'✋'},
+    o:{h:'と',r:'to',word:'とけい',wr:'tokei',cn:'钟表',emoji:'⏰'}
+  }},
+  { name:'さ行', color:'var(--row-sa)', chars:{
+    a:{h:'さ',r:'sa',word:'かさ',wr:'kasa',cn:'伞',emoji:'☂️'},
+    i:{h:'し',r:'shi',word:'あし',wr:'ashi',cn:'脚',emoji:'🦶'},
+    u:{h:'す',r:'su',word:'いす',wr:'isu',cn:'椅子',emoji:'🪑'},
+    e:{h:'せ',r:'se',word:'あせ',wr:'ase',cn:'汗',emoji:'💧'},
+    o:{h:'そ',r:'so',word:'うそ',wr:'uso',cn:'谎言',emoji:'🦊'}
+  }},
+  { name:'か行', color:'var(--row-ka)', chars:{
+    a:{h:'か',r:'ka',word:'かお',wr:'kao',cn:'脸',emoji:'😊'},
+    i:{h:'き',r:'ki',word:'き',wr:'ki',cn:'树',emoji:'🌳'},
+    u:{h:'く',r:'ku',word:'くうき',wr:'kuuki',cn:'空气',emoji:'💨'},
+    e:{h:'け',r:'ke',word:'いけ',wr:'ike',cn:'池塘',emoji:'🐸'},
+    o:{h:'こ',r:'ko',word:'こい',wr:'koi',cn:'鲤鱼',emoji:'🐟'}
+  }},
+  { name:'あ行', color:'var(--row-a)', chars:{
+    a:{h:'あ',r:'a',word:'あい',wr:'ai',cn:'爱',emoji:'❤️'},
+    i:{h:'い',r:'i',word:'いえ',wr:'ie',cn:'家',emoji:'🏠'},
+    u:{h:'う',r:'u',word:'うえ',wr:'ue',cn:'上面',emoji:'⬆️'},
+    e:{h:'え',r:'e',word:'え',wr:'e',cn:'画',emoji:'🖼️'},
+    o:{h:'お',r:'o',word:'あお',wr:'ao',cn:'蓝色',emoji:'🔵'}
+  }}
+];
+
+var VOWELS = ['a','i','u','e','o'];
+var activeTab = 0;
+var progress = JSON.parse(localStorage.getItem('gojuon_teacher_progress')||'{}');
+
+// ============================================================
+// HELPERS
+// ============================================================
+function getAllChars(){
+  var all = [];
+  GROUPS.forEach(function(g){
+    VOWELS.forEach(function(v){
+      if(g.chars[v]) all.push(g.chars[v]);
+    });
+    if(g.chars.n) all.push(g.chars.n);
+  });
+  return all;
+}
+
+function shuffle(arr){
+  var a = arr.slice();
+  for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}
+  return a;
+}
+
+function setSpeed(r,btn){
+  if(typeof setSpeechRate==='function') setSpeechRate(r);
+  document.querySelectorAll('.speed-btn').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+}
+
+// ============================================================
+// TAB SWITCHING
+// ============================================================
+function switchTab(i){
+  activeTab = i;
+  document.querySelectorAll('.tab-btn').forEach(function(b,idx){
+    b.classList.toggle('active',idx===i);
+  });
+  document.querySelectorAll('.section').forEach(function(s,idx){
+    s.classList.toggle('active',idx===i);
+  });
+}
+
+// ============================================================
+// CHART VIEW - Matching teacher's image layout
+// ============================================================
+function renderChart(){
+  var table = document.getElementById('chartTable');
+  var html = '';
+
+  // Header row: column names
+  html += '<tr><th></th>';
+  GROUPS.forEach(function(g){
+    html += '<th style="color:'+g.color+';font-size:12px">'+g.name.charAt(0)+'</th>';
+  });
+  html += '</tr>';
+
+  // Vowel rows
+  VOWELS.forEach(function(v,vi){
+    html += '<tr>';
+    html += '<td class="row-label" style="background:var(--blue)">'+['あ段','い段','う段','え段','お段'][vi]+'</td>';
+    GROUPS.forEach(function(g){
+      var c = g.chars[v];
+      if(c){
+        var learned = progress[c.h] ? ' style="background:#e8f8ed;border-color:#B8E6C8"' : '';
+        html += '<td class="chart-cell" onclick="playChartCell(this,\''+c.h+'\',\''+c.word+'\')" data-kana="'+c.h+'"'+learned+'>';
+        html += '<div class="kana">'+c.h+'</div>';
+        html += '<div class="roma">'+c.r+'</div>';
+        html += '<div class="cell-img">'+c.emoji+'</div>';
+        html += '<div class="word">'+c.word+'</div>';
+        html += '<div class="word-r">'+c.wr+'</div>';
+        html += '</td>';
+      } else {
+        html += '<td class="chart-cell empty"></td>';
+      }
+    });
+    html += '</tr>';
+  });
+
+  // Special row for ん
+  html += '<tr>';
+  html += '<td class="row-label" style="background:var(--text-sub)">ん</td>';
+  GROUPS.forEach(function(g){
+    var c = g.chars.n;
+    if(c){
+      html += '<td class="chart-cell" onclick="playChartCell(this,\''+c.h+'\',\''+c.word+'\')" data-kana="'+c.h+'">';
+      html += '<div class="kana">'+c.h+'</div>';
+      html += '<div class="roma">'+c.r+'</div>';
+      html += '<div class="cell-img">'+c.emoji+'</div>';
+      html += '<div class="word">'+c.word+'</div>';
+      html += '<div class="word-r">'+c.wr+'</div>';
+      html += '</td>';
+    } else {
+      html += '<td class="chart-cell empty"></td>';
+    }
+  });
+  html += '</tr>';
+
+  table.innerHTML = html;
+}
+
+function playChartCell(el,kana,word){
+  document.querySelectorAll('.chart-cell.playing').forEach(function(c){c.classList.remove('playing')});
+  el.classList.add('playing');
+  el.style.animation = 'bounce .3s ease';
+  setTimeout(function(){el.style.animation=''},300);
+
+  speakJP(kana, function(){
+    setTimeout(function(){
+      speakJP(word, function(){
+        el.classList.remove('playing');
+      });
+    }, 400);
+  });
+
+  // Mark learned
+  if(!progress[kana]){
+    progress[kana] = {date:Date.now()};
+    localStorage.setItem('gojuon_teacher_progress',JSON.stringify(progress));
+    el.style.background = '#e8f8ed';
+    el.style.borderColor = '#B8E6C8';
+  }
+}
+
+// Play all rows sequentially
+var playingAll = false;
+function playAllRows(btn){
+  if(playingAll){playingAll=false;btn.textContent='🔊 全部连续播放';return}
+  playingAll = true;
+  btn.textContent = '⏹ 停止播放';
+  var allChars = getAllChars();
+  var idx = 0;
+
+  function next(){
+    if(!playingAll || idx >= allChars.length){
+      playingAll = false;
+      btn.textContent = '🔊 全部连续播放';
+      document.querySelectorAll('.chart-cell.playing').forEach(function(c){c.classList.remove('playing')});
+      return;
+    }
+    var c = allChars[idx];
+    // Highlight current cell
+    document.querySelectorAll('.chart-cell.playing').forEach(function(el){el.classList.remove('playing')});
+    var cell = document.querySelector('.chart-cell[data-kana="'+c.h+'"]');
+    if(cell){cell.classList.add('playing');cell.scrollIntoView({behavior:'smooth',block:'nearest'})}
+    idx++;
+    speakJP(c.h, function(){
+      setTimeout(next, 400);
+    });
+  }
+  next();
+}
+
+function resetProgress(){
+  progress = {};
+  localStorage.removeItem('gojuon_teacher_progress');
+  renderChart();
+}
+
+// ============================================================
+// WORD CARDS VIEW
+// ============================================================
+function renderWordCards(){
+  var sec = document.getElementById('sec1');
+  var html = '';
+
+  // Group colors for visual distinction
+  var groupOrder = [
+    {name:'あ行',color:'var(--row-a)'},
+    {name:'か行',color:'var(--row-ka)'},
+    {name:'さ行',color:'var(--row-sa)'},
+    {name:'た行',color:'var(--row-ta)'},
+    {name:'な行',color:'var(--row-na)'},
+    {name:'は行',color:'var(--row-ha)'},
+    {name:'ま行',color:'var(--row-ma)'},
+    {name:'や行',color:'var(--row-ya)'},
+    {name:'ら行',color:'var(--row-ra)'},
+    {name:'わ行',color:'var(--row-wa)'}
+  ];
+
+  // Reorder GROUPS for word cards: あ→わ order
+  var ordered = GROUPS.slice().reverse();
+
+  ordered.forEach(function(g,gi){
+    var chars = [];
+    VOWELS.forEach(function(v){ if(g.chars[v]) chars.push(g.chars[v]) });
+    if(g.chars.n) chars.push(g.chars.n);
+    if(!chars.length) return;
+
+    html += '<div class="row-divider" style="background:'+g.color+'">'+g.name;
+    html += ' <span style="font-size:12px;opacity:.8">('+chars.map(function(c){return c.r}).join(', ')+')</span>';
+    html += '<button class="play-row-btn" onclick="playWordRow('+gi+',this)" style="margin-left:auto;background:rgba(255,255,255,.3);font-size:11px;padding:4px 12px">🔊 连播</button>';
+    html += '</div>';
+
+    html += '<div class="word-grid">';
+    chars.forEach(function(c){
+      html += '<div class="word-card" onclick="playWordCard(this,\''+c.h+'\',\''+c.word+'\')" data-kana="'+c.h+'">';
+      html += '<div class="big-kana">'+c.h+'</div>';
+      html += '<div class="romaji">'+c.r+'</div>';
+      html += '<div class="card-emoji">'+c.emoji+'</div>';
+      html += '<div class="word-jp">'+c.word+'</div>';
+      html += '<div class="word-cn">'+c.cn+'</div>';
+      html += '<div class="word-romaji">'+c.wr+'</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  });
+
+  sec.innerHTML = html;
+}
+
+function playWordCard(el,kana,word){
+  document.querySelectorAll('.word-card.playing').forEach(function(c){c.classList.remove('playing')});
+  el.classList.add('playing');
+  speakJP(kana, function(){
+    setTimeout(function(){
+      speakJP(word, function(){
+        el.classList.remove('playing');
+      });
+    }, 400);
+  });
+}
+
+var playingWordRow = false;
+function playWordRow(gi,btn){
+  if(playingWordRow){playingWordRow=false;return}
+  var ordered = GROUPS.slice().reverse();
+  var g = ordered[gi];
+  var chars = [];
+  VOWELS.forEach(function(v){ if(g.chars[v]) chars.push(g.chars[v]) });
+  if(g.chars.n) chars.push(g.chars.n);
+
+  playingWordRow = true;
+  btn.textContent = '⏹ 停止';
+  var idx = 0;
+
+  function next(){
+    if(!playingWordRow || idx >= chars.length){
+      playingWordRow = false;
+      btn.textContent = '🔊 连播';
+      document.querySelectorAll('.word-card.playing').forEach(function(c){c.classList.remove('playing')});
+      return;
+    }
+    var c = chars[idx];
+    document.querySelectorAll('.word-card.playing').forEach(function(el){el.classList.remove('playing')});
+    var card = document.querySelector('.word-card[data-kana="'+c.h+'"]');
+    if(card){card.classList.add('playing');card.scrollIntoView({behavior:'smooth',block:'nearest'})}
+    idx++;
+    speakJP(c.h, function(){
+      setTimeout(function(){
+        speakJP(c.word, function(){
+          setTimeout(next, 300);
+        });
+      }, 300);
+    });
+  }
+  next();
+}
+
+// ============================================================
+// QUIZ SYSTEM
+// ============================================================
+var quizMode='', quizData=[], quizIdx=0, quizScore=0, quizTotal=10, currentQuizTab=2;
+
+function startQuiz(mode, count){
+  quizMode = mode;
+  quizIdx = 0;
+  quizScore = 0;
+  quizTotal = count;
+  quizData = shuffle(getAllChars()).slice(0, count);
+  currentQuizTab = mode==='listen'?2:mode==='read'?3:4;
+  showQuizQ();
+}
+
+function getQuizBox(){
+  return document.getElementById('quizBox'+currentQuizTab);
+}
+
+function showQuizQ(){
+  if(quizIdx >= quizData.length){ showQuizResult(); return }
+  var c = quizData[quizIdx];
+  var all = getAllChars();
+  var opts = shuffle(all.filter(function(x){return x.h!==c.h})).slice(0,3);
+  opts.push(c);
+  opts = shuffle(opts);
+
+  var box = getQuizBox();
+  var html = '<div style="font-size:13px;color:var(--text-sub);margin-bottom:8px">第 '+(quizIdx+1)+'/'+quizData.length+' 题 &nbsp; 得分: '+quizScore+'</div>';
+
+  if(quizMode==='listen'){
+    html += '<div class="quiz-prompt" style="cursor:pointer" onclick="speakJP(\''+c.h+'\')">🔊</div>';
+    html += '<div class="quiz-prompt small">听发音，选出正确的假名</div>';
+    html += '<div class="quiz-options">';
+    opts.forEach(function(o,i){
+      html += '<button class="quiz-opt" onclick="quizAnswer(this,\''+o.h+'\',\''+c.h+'\')" style="font-family:\'M PLUS Rounded 1c\',sans-serif;font-size:28px">'+o.h+'<br><span style="font-size:12px;color:var(--text-sub)">'+o.r+'</span></button>';
+    });
+    html += '</div>';
+    box.innerHTML = html;
+    speakJP(c.h);
+
+  } else if(quizMode==='read'){
+    html += '<div class="quiz-prompt" style="font-family:\'M PLUS Rounded 1c\',sans-serif">'+c.h+'</div>';
+    html += '<div class="quiz-prompt small">这个假名的读音是？</div>';
+    html += '<div class="quiz-options">';
+    opts.forEach(function(o,i){
+      html += '<button class="quiz-opt" onclick="quizAnswer(this,\''+o.h+'\',\''+c.h+'\')">'+o.r+'</button>';
+    });
+    html += '</div>';
+    box.innerHTML = html;
+
+  } else if(quizMode==='word'){
+    html += '<div style="font-size:48px;margin:8px 0">'+c.emoji+'</div>';
+    html += '<div class="quiz-prompt small">'+c.cn+' <b>'+c.word+'</b> ('+c.wr+') 包含哪个假名？</div>';
+    html += '<div class="quiz-options">';
+    opts.forEach(function(o,i){
+      html += '<button class="quiz-opt" onclick="quizAnswer(this,\''+o.h+'\',\''+c.h+'\')" style="font-family:\'M PLUS Rounded 1c\',sans-serif;font-size:28px">'+o.h+'<br><span style="font-size:12px;color:var(--text-sub)">'+o.r+'</span></button>';
+    });
+    html += '</div>';
+    box.innerHTML = html;
+  }
+}
+
+function quizAnswer(el,picked,correct){
+  var btns = document.querySelectorAll('.quiz-opt');
+  btns.forEach(function(b){b.onclick=null;b.style.pointerEvents='none'});
+
+  if(picked===correct){
+    el.classList.add('correct');
+    quizScore++;
+    speakJP(correct);
+  } else {
+    el.classList.add('wrong');
+    // Highlight the correct answer
+    btns.forEach(function(b){
+      if(b.textContent.indexOf(correct)===0 || b.innerHTML.indexOf('>'+correct+'<')!==-1){
+        b.classList.add('correct');
+      }
+    });
+    speakJP(correct);
+  }
+
+  // Mark as practiced
+  if(!progress[correct]){
+    progress[correct] = {date:Date.now()};
+    localStorage.setItem('gojuon_teacher_progress',JSON.stringify(progress));
+  }
+
+  setTimeout(function(){quizIdx++;showQuizQ()},1200);
+}
+
+function showQuizResult(){
+  var box = getQuizBox();
+  var pct = Math.round(quizScore/quizData.length*100);
+  var stars = pct>=90?'⭐⭐⭐':pct>=70?'⭐⭐':'⭐';
+  var msg = pct>=90?'太棒了Alex！完美！':pct>=70?'做得很好！继续加油！':'要多多练习哦！';
+
+  var html = '<div style="font-size:48px;margin:12px 0;animation:celebrate .5s ease">'+stars+'</div>';
+  html += '<div class="quiz-score">'+msg+'</div>';
+  html += '<div style="font-size:24px;font-weight:900;color:var(--blue);margin:8px 0">'+quizScore+' / '+quizData.length+' ('+pct+'%)</div>';
+  html += '<div style="margin-top:16px">';
+  html += '<button class="quiz-btn" onclick="startQuiz(\''+quizMode+'\','+quizTotal+')">🔄 再来一次</button>';
+  html += '<button class="quiz-btn secondary" onclick="switchTab(0)">📊 回到五十音表</button>';
+  html += '</div>';
+  box.innerHTML = html;
+}
+
+// ============================================================
+// INIT
+// ============================================================
+renderChart();
+renderWordCards();
+</script>
+</body>
+</html>
