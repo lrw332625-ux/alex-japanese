@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>五十音実践版 - Alex日语学习</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF5F0;--card-bg:#FFFFFF;--text:#2D2A24;--text-sub:#7A7468;
+  --shadow:0 2px 16px rgba(45,42,36,.08);--r:16px;--rs:10px;
+  --accent:#D4557A;--accent-light:#F8D8E4;
+  --row-a:#E8573A;--row-ka:#2B7A98;--row-sa:#3A8F5C;--row-ta:#7B5EA7;
+  --row-na:#D4903A;--row-ha:#2B8F8F;--row-ma:#D4557A;--row-ya:#B8860B;
+  --row-ra:#4A90D9;--row-wa:#7A7468;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh}
+
+.header{position:relative;overflow:hidden;padding:32px 20px 24px;text-align:center;background:linear-gradient(135deg,#D4557A 0%,#B83A5A 50%,#9A2040 100%);color:#fff}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.1) 0%,transparent 50%)}
+.header h1{font-family:'M PLUS Rounded 1c','Noto Sans SC',sans-serif;font-size:24px;font-weight:900;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,.2);position:relative}
+.header .sub{font-size:13px;opacity:.85;margin-top:4px;position:relative}
+.back-link{position:absolute;left:16px;top:16px;color:#fff;text-decoration:none;font-size:24px;opacity:.7;z-index:10}
+.back-link:hover{opacity:1}
+
+/* Controls */
+.control-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--bg);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,.05)}
+.toggle-label{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;font-weight:700;color:var(--text-sub)}
+.toggle-label input{display:none}
+.toggle-slider{width:40px;height:22px;background:#ccc;border-radius:11px;position:relative;transition:background .3s}
+.toggle-slider::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .3s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.toggle-label input:checked+.toggle-slider{background:var(--accent)}
+.toggle-label input:checked+.toggle-slider::after{transform:translateX(18px)}
+.progress-mini{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--text-sub)}
+.prog-bar{width:80px;height:6px;background:#e8e4dc;border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--row-a));border-radius:3px;transition:width .4s;width:0}
+
+/* Tabs */
+.tab-nav{display:flex;gap:6px;padding:8px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:43px;z-index:99;background:var(--bg)}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:6px 14px;border-radius:20px;border:2px solid transparent;font-size:12px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .2s;white-space:nowrap}
+.tab-btn.active{color:#fff;background:var(--accent);border-color:var(--accent)}
+
+/* Row header */
+.row-header{font-size:15px;font-weight:900;padding:8px 16px;border-radius:var(--rs);color:#fff;margin:16px 16px 8px;display:flex;align-items:center;gap:8px}
+.play-row-btn{margin-left:auto;background:rgba(255,255,255,.25);border:none;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:12px;cursor:pointer}
+.play-row-btn:active{opacity:.7}
+
+/* Card Grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;padding:0 16px 8px}
+@media(min-width:600px){.card-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:900px){.card-grid{grid-template-columns:repeat(5,1fr)}}
+
+/* Flip Card */
+.flip-card{perspective:800px;height:240px;position:relative}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--card-bg);box-shadow:var(--shadow);border:2px solid #f0ece4;overflow:hidden;padding:12px 8px}
+.flip-back{transform:rotateY(180deg);background:#FFF8F0}
+
+/* Front face */
+.flip-front .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:52px;font-weight:900;line-height:1}
+.flip-front .romaji{font-size:14px;font-weight:700;color:var(--accent);margin-top:2px;transition:opacity .3s}
+.flip-front .romaji.hidden{opacity:0}
+.flip-front .card-img{width:72px;height:72px;object-fit:contain;margin-top:8px}
+
+/* Back face */
+.flip-back .word-img{width:72px;height:72px;object-fit:contain;margin-bottom:6px}
+.flip-back .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:24px;font-weight:900;line-height:1.2}
+.flip-back .word-jp .hl{color:#E8573A;font-weight:900}
+.flip-back .word-romaji{font-size:13px;color:var(--text-sub);margin-top:2px}
+.flip-back .word-cn{font-size:16px;font-weight:700;margin-top:4px}
+
+/* Speaker buttons */
+.speaker-btn{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:none;background:rgba(0,0,0,.06);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:background .2s}
+.speaker-btn:active{background:rgba(0,0,0,.15)}
+
+/* States */
+.flip-card.playing .flip-front,.flip-card.playing .flip-back{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent),0 4px 20px rgba(212,85,122,.2)}
+.flip-card.learned .flip-front::after{content:'\2713';position:absolute;top:8px;left:10px;font-size:14px;color:#3A8F5C;font-weight:900}
+
+@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+
+/* Mobile */
+@media(max-width:400px){
+  .flip-card{height:210px}
+  .flip-front .big-kana{font-size:42px}
+  .flip-front .card-img,.flip-back .word-img{width:56px;height:56px}
+  .flip-back .word-jp{font-size:20px}
+}
+
+/* Home button */
+.home-btn{text-align:center;padding:24px 16px 32px}
+.home-btn a{display:inline-block;padding:12px 24px;background:var(--card-bg);border-radius:var(--r);text-decoration:none;color:var(--text);font-weight:700;box-shadow:var(--shadow)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a class="back-link" href="../index.html">&#8592;</a>
+  <h1>🎴 五十音実践版</h1>
+  <div class="sub">翻卡片学假名 · 点击卡片查看单词</div>
+</div>
+
+<div class="control-bar">
+  <label class="toggle-label">
+    <input type="checkbox" id="romajiToggle" checked onchange="toggleRomaji()">
+    <span class="toggle-slider"></span>
+    罗马字
+  </label>
+  <div class="progress-mini">
+    <span id="progText">0/46</span>
+    <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+  </div>
+</div>
+
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" data-key="all" onclick="switchTab('all')">全部</button>
+  <button class="tab-btn" data-key="a" onclick="switchTab('a')">あ行</button>
+  <button class="tab-btn" data-key="ka" onclick="switchTab('ka')">か行</button>
+  <button class="tab-btn" data-key="sa" onclick="switchTab('sa')">さ行</button>
+  <button class="tab-btn" data-key="ta" onclick="switchTab('ta')">た行</button>
+  <button class="tab-btn" data-key="na" onclick="switchTab('na')">な行</button>
+  <button class="tab-btn" data-key="ha" onclick="switchTab('ha')">は行</button>
+  <button class="tab-btn" data-key="ma" onclick="switchTab('ma')">ま行</button>
+  <button class="tab-btn" data-key="ya" onclick="switchTab('ya')">や行</button>
+  <button class="tab-btn" data-key="ra" onclick="switchTab('ra')">ら行</button>
+  <button class="tab-btn" data-key="wa" onclick="switchTab('wa')">わ行</button>
+</nav>
+
+<div id="cardContainer"></div>
+
+<div class="home-btn">
+  <a href="../index.html">&#8592; 返回课程列表</a>
+</div>
+
+<script src="../scripts/audio.js"></script>
+<script src="../scripts/cache-control.js"></script>
+<script src="../scripts/emoji-data.js"></script>
+<script>
+// ============================================================
+// DATA
+// ============================================================
+var ROWS=[
+  {name:'あ行',key:'a',color:'var(--row-a)',hex:'#E8573A',chars:[
+    {h:'あ',r:'a',word:'あひる',wr:'ahiru',cn:'鸭子',img:'gp_ahiru.png'},
+    {h:'い',r:'i',word:'いぬ',wr:'inu',cn:'狗',img:'gp_inu.png'},
+    {h:'う',r:'u',word:'うし',wr:'ushi',cn:'牛',img:'gp_ushi.png'},
+    {h:'え',r:'e',word:'えび',wr:'ebi',cn:'虾',img:'gp_ebi.png'},
+    {h:'お',r:'o',word:'おうむ',wr:'oumu',cn:'鹦鹉',img:'gp_oumu.png'}
+  ]},
+  {name:'か行',key:'ka',color:'var(--row-ka)',hex:'#2B7A98',chars:[
+    {h:'か',r:'ka',word:'かめ',wr:'kame',cn:'乌龟',img:'gp_kame.png'},
+    {h:'き',r:'ki',word:'きりん',wr:'kirin',cn:'长颈鹿',img:'gp_kirin.png'},
+    {h:'く',r:'ku',word:'くわがた',wr:'kuwagata',cn:'锹形虫',img:'gp_kuwagata.png'},
+    {h:'け',r:'ke',word:'けいと',wr:'keito',cn:'毛线',img:'gp_keito.png'},
+    {h:'こ',r:'ko',word:'こい',wr:'koi',cn:'鲤鱼',img:'gp_koi.png'}
+  ]},
+  {name:'さ行',key:'sa',color:'var(--row-sa)',hex:'#3A8F5C',chars:[
+    {h:'さ',r:'sa',word:'さい',wr:'sai',cn:'犀牛',img:'gp_sai.png'},
+    {h:'し',r:'shi',word:'しまうま',wr:'shimauma',cn:'斑马',img:'gp_shimauma.png'},
+    {h:'す',r:'su',word:'すずめ',wr:'suzume',cn:'麻雀',img:'gp_suzume.png'},
+    {h:'せ',r:'se',word:'せみ',wr:'semi',cn:'蝉',img:'gp_semi.png'},
+    {h:'そ',r:'so',word:'そば',wr:'soba',cn:'荞麦面',img:'gp_soba.png'}
+  ]},
+  {name:'た行',key:'ta',color:'var(--row-ta)',hex:'#7B5EA7',chars:[
+    {h:'た',r:'ta',word:'たこ',wr:'tako',cn:'章鱼',img:'gp_tako.png'},
+    {h:'ち',r:'chi',word:'ちくわ',wr:'chikuwa',cn:'竹轮',img:'gp_chikuwa.png'},
+    {h:'つ',r:'tsu',word:'つみき',wr:'tsumiki',cn:'积木',img:'gp_tsumiki.png'},
+    {h:'て',r:'te',word:'てぶくろ',wr:'tebukuro',cn:'手套',img:'gp_tebukuro.png'},
+    {h:'と',r:'to',word:'とんぼ',wr:'tonbo',cn:'蜻蜓',img:'gp_tonbo.png'}
+  ]},
+  {name:'な行',key:'na',color:'var(--row-na)',hex:'#D4903A',chars:[
+    {h:'な',r:'na',word:'なす',wr:'nasu',cn:'茄子',img:'gp_nasu.png'},
+    {h:'に',r:'ni',word:'にんじん',wr:'ninjin',cn:'胡萝卜',img:'gp_ninjin.png'},
+    {h:'ぬ',r:'nu',word:'ぬの',wr:'nuno',cn:'布',img:'gp_nuno.png'},
+    {h:'ね',r:'ne',word:'ねこ',wr:'neko',cn:'猫',img:'gp_neko.png'},
+    {h:'の',r:'no',word:'のこぎり',wr:'nokogiri',cn:'锯子',img:'gp_nokogiri.png'}
+  ]},
+  {name:'は行',key:'ha',color:'var(--row-ha)',hex:'#2B8F8F',chars:[
+    {h:'は',r:'ha',word:'はし',wr:'hashi',cn:'筷子',img:'gp_hashi.png'},
+    {h:'ひ',r:'hi',word:'ひとで',wr:'hitode',cn:'海星',img:'gp_hitode.png'},
+    {h:'ふ',r:'fu',word:'ふうせん',wr:'fuusen',cn:'气球',img:'gp_fuusen.png'},
+    {h:'へ',r:'he',word:'へび',wr:'hebi',cn:'蛇',img:'gp_hebi.png'},
+    {h:'ほ',r:'ho',word:'ほん',wr:'hon',cn:'书',img:'gp_hon.png'}
+  ]},
+  {name:'ま行',key:'ma',color:'var(--row-ma)',hex:'#D4557A',chars:[
+    {h:'ま',r:'ma',word:'まめ',wr:'mame',cn:'豆',img:'gp_mame.png'},
+    {h:'み',r:'mi',word:'みかん',wr:'mikan',cn:'橘子',img:'gp_mikan.png'},
+    {h:'む',r:'mu',word:'むし',wr:'mushi',cn:'虫',img:'gp_mushi.png'},
+    {h:'め',r:'me',word:'めろん',wr:'meron',cn:'甜瓜',img:'gp_meron.png'},
+    {h:'も',r:'mo',word:'もも',wr:'momo',cn:'桃子',img:'gp_momo.png'}
+  ]},
+  {name:'や行',key:'ya',color:'var(--row-ya)',hex:'#B8860B',chars:[
+    {h:'や',r:'ya',word:'や',wr:'ya',cn:'箭',img:'gp_ya.png'},
+    {h:'ゆ',r:'yu',word:'ゆり',wr:'yuri',cn:'百合花',img:'gp_yuri.png'},
+    {h:'よ',r:'yo',word:'よっと',wr:'yotto',cn:'帆船',img:'gp_yotto.png'}
+  ]},
+  {name:'ら行',key:'ra',color:'var(--row-ra)',hex:'#4A90D9',chars:[
+    {h:'ら',r:'ra',word:'らっぱ',wr:'rappa',cn:'喇叭',img:'gp_rappa.png'},
+    {h:'り',r:'ri',word:'りぼん',wr:'ribon',cn:'缎带',img:'gp_ribon.png'},
+    {h:'る',r:'ru',word:'るああ',wr:'ruaa',cn:'路亚假饵',img:'gp_ruaa.png'},
+    {h:'れ',r:'re',word:'れもん',wr:'remon',cn:'柠檬',img:'gp_remon.png'},
+    {h:'ろ',r:'ro',word:'ろうそく',wr:'rousoku',cn:'蜡烛',img:'gp_rousoku.png'}
+  ]},
+  {name:'わ行',key:'wa',color:'var(--row-wa)',hex:'#7A7468',chars:[
+    {h:'わ',r:'wa',word:'わに',wr:'wani',cn:'鳄鱼',img:'gp_wani.png'},
+    {h:'を',r:'wo',word:'えをかく',wr:'e wo kaku',cn:'画画',img:'gp_ewokaku.png',special:'を'},
+    {h:'ん',r:'n',word:'かばん',wr:'kaban',cn:'书包',img:'gp_kaban.png',special:'ん'}
+  ]}
+];
+
+var showRomaji=true;
+var currentFilter='all';
+var progress=JSON.parse(localStorage.getItem('gojuon_practice_progress')||'{}');
+
+// ============================================================
+// RENDER
+// ============================================================
+function highlightSpecial(c){
+  if(!c.special)return c.word;
+  var parts=c.word.split(c.special);
+  return parts.join('<span class="hl">'+c.special+'</span>');
+}
+
+function renderCards(filter){
+  var container=document.getElementById('cardContainer');
+  var html='';
+  ROWS.forEach(function(row){
+    if(filter&&filter!=='all'&&row.key!==filter)return;
+    html+='<div class="row-header" style="background:'+row.color+'">'+row.name;
+    html+=' <span style="font-size:11px;opacity:.8">('+row.chars.map(function(c){return c.r}).join(', ')+')</span>';
+    html+='<button class="play-row-btn" onclick="playRow(event,\''+row.key+'\')">🔊 连播</button>';
+    html+='</div>';
+    html+='<div class="card-grid">';
+    row.chars.forEach(function(c){
+      var learned=progress[c.h]?' learned':'';
+      html+='<div class="flip-card'+learned+'" data-kana="'+c.h+'" onclick="tapCard(event,this)">';
+      html+='<div class="flip-inner">';
+      // Front
+      html+='<div class="flip-front">';
+      html+='<button class="speaker-btn" onclick="playKana(event,\''+c.h+'\')">🔊</button>';
+      html+='<div class="big-kana" style="color:'+row.color+'">'+c.h+'</div>';
+      html+='<div class="romaji'+(showRomaji?'':' hidden')+'">'+c.r+'</div>';
+      html+='<img class="card-img" src="../img/'+c.img+'?v3" alt="'+c.cn+'">';
+      html+='</div>';
+      // Back
+      html+='<div class="flip-back">';
+      html+='<button class="speaker-btn" onclick="playWord(event,\''+c.word+'\')">🔊</button>';
+      html+='<img class="word-img" src="../img/'+c.img+'?v3" alt="'+c.cn+'">';
+      html+='<div class="word-jp">'+highlightSpecial(c)+'</div>';
+      html+='<div class="word-romaji">'+c.wr+'</div>';
+      html+='<div class="word-cn">'+c.cn+'</div>';
+      html+='</div>';
+      html+='</div></div>';
+    });
+    html+='</div>';
+  });
+  container.innerHTML=html;
+}
+
+// ============================================================
+// INTERACTIONS
+// ============================================================
+function tapCard(event,el){
+  if(event.target.classList.contains('speaker-btn'))return;
+  el.classList.toggle('flipped');
+  var kana=el.getAttribute('data-kana');
+  var isFlipped=el.classList.contains('flipped');
+  if(isFlipped){
+    var c=findChar(kana);
+    if(c)speakJP(c.word);
+  }else{
+    speakJP(kana);
+  }
+  markLearned(el,kana);
+}
+
+function playKana(event,kana){
+  event.stopPropagation();
+  speakJP(kana);
+}
+
+function playWord(event,word){
+  event.stopPropagation();
+  speakJP(word);
+}
+
+function findChar(kana){
+  for(var i=0;i<ROWS.length;i++){
+    for(var j=0;j<ROWS[i].chars.length;j++){
+      if(ROWS[i].chars[j].h===kana)return ROWS[i].chars[j];
+    }
+  }
+  return null;
+}
+
+function markLearned(el,kana){
+  if(!progress[kana]){
+    progress[kana]={date:Date.now()};
+    localStorage.setItem('gojuon_practice_progress',JSON.stringify(progress));
+    el.classList.add('learned');
+    updateProgress();
+  }
+}
+
+// ============================================================
+// ROMAJI TOGGLE
+// ============================================================
+function toggleRomaji(){
+  showRomaji=document.getElementById('romajiToggle').checked;
+  document.querySelectorAll('.romaji').forEach(function(el){
+    el.classList.toggle('hidden',!showRomaji);
+  });
+}
+
+// ============================================================
+// TAB FILTERING
+// ============================================================
+function switchTab(key){
+  currentFilter=key;
+  document.querySelectorAll('.tab-btn').forEach(function(b){
+    b.classList.toggle('active',b.getAttribute('data-key')===key);
+  });
+  renderCards(key);
+}
+
+// ============================================================
+// PROGRESS
+// ============================================================
+function updateProgress(){
+  var total=0;
+  ROWS.forEach(function(r){total+=r.chars.length});
+  var learned=Object.keys(progress).length;
+  document.getElementById('progFill').style.width=(learned/total*100)+'%';
+  document.getElementById('progText').textContent=learned+'/'+total;
+}
+
+// ============================================================
+// ROW PLAYBACK
+// ============================================================
+var playingRow=false;
+function playRow(event,rowKey){
+  event.stopPropagation();
+  if(playingRow){playingRow=false;return}
+  var row=null;
+  for(var i=0;i<ROWS.length;i++){if(ROWS[i].key===rowKey){row=ROWS[i];break}}
+  if(!row)return;
+  playingRow=true;
+  var idx=0;
+  function next(){
+    if(!playingRow||idx>=row.chars.length){
+      playingRow=false;
+      document.querySelectorAll('.flip-card.playing').forEach(function(c){c.classList.remove('playing')});
+      return;
+    }
+    var c=row.chars[idx];
+    document.querySelectorAll('.flip-card.playing').forEach(function(el){el.classList.remove('playing')});
+    var card=document.querySelector('.flip-card[data-kana="'+c.h+'"]');
+    if(card){card.classList.add('playing');card.scrollIntoView({behavior:'smooth',block:'nearest'})}
+    idx++;
+    speakJP(c.h,function(){
+      setTimeout(function(){
+        speakJP(c.word,function(){
+          if(card)card.classList.remove('playing');
+          setTimeout(next,300);
+        });
+      },200);
+    });
+  }
+  next();
+}
+
+// ============================================================
+// INIT
+// ============================================================
+renderCards('all');
+updateProgress();
+</script>
+</body>
+</html>

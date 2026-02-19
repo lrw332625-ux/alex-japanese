@@ -202,9 +202,8 @@ function renderSceneTabs(){
   var nav = document.getElementById('tabNav');
   if(!nav) return;
   var tabs = [
-    {label: '\uD83D\uDCDA 词汇'},
-    {label: '\uD83D\uDCAC 句子'},
-    {label: '\uD83C\uDFAE 测验'}
+    {label: '\uD83D\uDCDA \u5b66\u4e60'},
+    {label: '\uD83C\uDFAE \u6d4b\u9a8c'}
   ];
   var html = '';
   tabs.forEach(function(t, i){
@@ -225,20 +224,26 @@ window.switchSceneTab = function(idx){
   });
   btns[idx].scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
 
-  // Show lang toggle only for vocab tab
+  // Show lang toggle only for learn tab
   var lt = document.getElementById('langToggle');
   if(lt) lt.style.display = (idx === 0) ? 'flex' : 'none';
 
   var app = document.getElementById('app');
-  if(idx === 0) renderVocabulary(app);
-  else if(idx === 1) renderSentences(app);
-  else if(idx === 2) renderQuiz(app);
+  if(idx === 0) renderLearnPage(app);
+  else if(idx === 1) renderQuiz(app);
 };
 
 // ============================================================
-// VOCABULARY RENDERING
+// LEARN PAGE: VOCABULARY + SENTENCES COMBINED
 // ============================================================
-function renderVocabulary(container){
+function renderLearnPage(container){
+  var html = buildVocabHTML();
+  html += buildSentencesHTML();
+  container.innerHTML = html;
+  initVocabAfterRender();
+}
+
+function buildVocabHTML(){
   var vocab = currentScene.vocabulary;
   var color = currentScene.color;
 
@@ -254,7 +259,6 @@ function renderVocabulary(container){
   vocab.forEach(function(v){
     html += '<div class="flip-card" data-k="' + v.key + '" onclick="tapSceneCard(this)">';
     html += '<div class="flip-inner">';
-    // Front: emoji + chinese
     html += '<div class="flip-front">';
     html += '<div class="speaker">\uD83D\uDD08</div>';
     html += '<div class="emoji">' + v.emoji + '</div>';
@@ -262,7 +266,6 @@ function renderVocabulary(container){
     html += '<div class="mark-badge"></div>';
     html += '<div class="mark-btns"><span class="mark-ok" onclick="markOk(this.closest(\'.flip-card\'),event)">\u2713</span><span class="mark-ng" onclick="markNg(this.closest(\'.flip-card\'),event)">\u2717</span></div>';
     html += '</div>';
-    // Back: kanji + kana + romaji
     html += '<div class="flip-back">';
     html += '<div class="kanji">' + v.kanji + '</div>';
     html += '<div class="kana">' + v.kana + '</div>';
@@ -273,10 +276,42 @@ function renderVocabulary(container){
     html += '</div></div>';
   });
   html += '</div>';
+  return html;
+}
 
-  container.innerHTML = html;
+function buildSentencesHTML(){
+  var sents = currentScene.sentences;
+  var html = '<div style="font-weight:700;color:var(--text);margin:20px 0 12px;font-size:16px">\uD83D\uDCDD \u53e5\u5b50\u7ec3\u4e60\uff08\u70b9\u51fb\u542c\u6574\u53e5\uff09\uff1a</div>';
+  sents.forEach(function(s){
+    html += '<div class="sent-card" onclick="playSentScene(this)" data-jp="' + escapeAttr(s.jp) + '">';
+    html += '<div class="wave"></div>';
+    html += '<div class="sent-text-area">';
+    html += '<div class="jp-text"><span>\uD83D\uDD0A</span>' + s.jp + '</div>';
+    html += '<div class="kana-text">' + s.kana + '</div>';
+    html += '<div class="romaji-text">' + s.romaji + '</div>';
+    html += '<div class="cn-text">' + s.cn + '</div>';
+    if(s.wb && s.wb.length > 0){
+      html += '<div class="word-breakdown">';
+      s.wb.forEach(function(w){
+        html += '<div class="wb-word" onclick="event.stopPropagation();playWbWord(this)">';
+        html += '<div class="wb-jp">' + w.jp + '</div>';
+        html += '<div class="wb-rd">' + w.romaji + '</div>';
+        html += '<div class="wb-cn">' + w.cn + '</div>';
+        html += '<div class="wb-speaker">\uD83D\uDD08</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+    html += '<div class="sent-img-area">';
+    html += '<img src="img/' + s.img + '?v3" alt="" onerror="this.parentElement.style.display=\'none\'">';
+    html += '</div>';
+    html += '</div>';
+  });
+  return html;
+}
 
-  // Store original data for lang toggle and init badges
+function initVocabAfterRender(){
   document.querySelectorAll('.flip-card[data-k]').forEach(function(c){
     var f = c.querySelector('.flip-front'), b = c.querySelector('.flip-back');
     if(!f || !b) return;
@@ -288,10 +323,7 @@ function renderVocabulary(container){
   });
   updateStats();
   updateProgress();
-
-  // Apply saved lang preference
   if(_fl === 'jp') setTimeout(function(){ applyFrontLang('jp'); }, 50);
-
   if(typeof replaceEmojiWithImg === 'function') setTimeout(replaceEmojiWithImg, 50);
 }
 
@@ -354,44 +386,6 @@ function stopAll(){
   if(curEl){ curEl.classList.remove('playing'); curEl = null; }
   var btn = document.getElementById('playAllBtn');
   if(btn){ btn.textContent = '\u25b6 \u5168\u90e8'; btn.classList.remove('stop'); }
-}
-
-// ============================================================
-// SENTENCE RENDERING (with word breakdown)
-// ============================================================
-function renderSentences(container){
-  var sents = currentScene.sentences;
-  var html = '';
-  sents.forEach(function(s){
-    html += '<div class="sent-card" onclick="playSentScene(this)" data-jp="' + escapeAttr(s.jp) + '">';
-    html += '<div class="wave"></div>';
-    // Text area
-    html += '<div class="sent-text-area">';
-    html += '<div class="jp-text"><span>\uD83D\uDD0A</span>' + s.jp + '</div>';
-    html += '<div class="kana-text">' + s.kana + '</div>';
-    html += '<div class="romaji-text">' + s.romaji + '</div>';
-    html += '<div class="cn-text">' + s.cn + '</div>';
-    // Word breakdown
-    if(s.wb && s.wb.length > 0){
-      html += '<div class="word-breakdown">';
-      s.wb.forEach(function(w){
-        html += '<div class="wb-word" onclick="event.stopPropagation();playWbWord(this)">';
-        html += '<div class="wb-jp">' + w.jp + '</div>';
-        html += '<div class="wb-rd">' + w.romaji + '</div>';
-        html += '<div class="wb-cn">' + w.cn + '</div>';
-        html += '<div class="wb-speaker">\uD83D\uDD08</div>';
-        html += '</div>';
-      });
-      html += '</div>';
-    }
-    html += '</div>';
-    // Image area
-    html += '<div class="sent-img-area">';
-    html += '<img src="img/' + s.img + '?v3" alt="" onerror="this.parentElement.style.display=\'none\'">';
-    html += '</div>';
-    html += '</div>';
-  });
-  container.innerHTML = html;
 }
 
 function escapeAttr(s){

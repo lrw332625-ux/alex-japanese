@@ -58,12 +58,19 @@ filename = hashlib.md5(text.strip().encode('utf-8')).hexdigest()[:12] + '.mp3'
 # Download from: https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q=TEXT
 ```
 
-## Image Generation (Stable Diffusion)
+## Image Generation
 ```bash
-source ~/sd-env/bin/activate
-# Model: stabilityai/sdxl-turbo (cached in ~/.cache/huggingface/)
-# ~3.5s per image on M4, 4 inference steps
-# Post-process: rembg for background removal, resize to 256x256
+# Vocabulary icons (kawaii, 256x256, transparent background)
+~/sd-env/bin/python ~/tools/ja-image.py icon "cute cartoon bear" -o img/bear.png
+
+# Sentence scenes (ghibli, 512x512, with background)
+~/sd-env/bin/python ~/tools/ja-image.py scene "bear walking to school" -o img/sent_20260215_01.png --no-rembg
+
+# Batch generate from JSON config
+~/sd-env/bin/python ~/tools/ja-image.py batch config.json --outdir img/
+
+# Preview batch plan (no GPU usage)
+~/sd-env/bin/python ~/tools/ja-image.py info config.json --outdir img/
 ```
 
 ## Deployment
