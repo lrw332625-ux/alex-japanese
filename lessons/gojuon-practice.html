@@ -106,21 +106,20 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .kana-top .romaji.hidden{opacity:0}
 .kana-top .kana-speaker{position:absolute;top:8px;right:8px;font-size:14px;opacity:.5}
 
-/* Bottom: word area */
-.word-bottom{display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer;transition:background .15s}
+/* Bottom: word area (vertical: image on top, text below) */
+.word-bottom{display:flex;flex-direction:column;align-items:center;padding:10px 12px;cursor:pointer;transition:background .15s;position:relative}
 .word-bottom:active{background:rgba(232,107,138,.08)}
-.word-bottom .word-img{width:56px;height:56px;object-fit:contain;flex-shrink:0;border-radius:8px}
-.word-bottom .word-info{flex:1;min-width:0}
+.word-bottom .word-img{width:100%;max-width:120px;aspect-ratio:1;object-fit:contain;border-radius:8px}
+.word-bottom .word-info{text-align:center;margin-top:6px}
 .word-bottom .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:18px;font-weight:900;line-height:1.2}
 .word-bottom .word-jp .hl{color:#E8573A}
 .word-bottom .word-romaji{font-size:11px;color:var(--text-sub);transition:opacity .3s}
 .word-bottom .word-romaji.hidden{opacity:0}
 .word-bottom .word-cn{font-size:13px;color:var(--text-sub);font-weight:600}
-.word-bottom .word-speaker{font-size:14px;opacity:.5;flex-shrink:0}
+.word-bottom .word-speaker{position:absolute;top:8px;right:8px;font-size:14px;opacity:.5}
 
 @media(max-width:400px){
   .kana-top .big-kana{font-size:38px}
-  .word-bottom .word-img{width:44px;height:44px}
   .word-bottom .word-jp{font-size:16px}
 }
 
