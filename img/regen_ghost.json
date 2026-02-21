@@ -1,0 +1,11 @@
+[
+  {"id": "whale", "style": "kawaii", "prompt": "cute cartoon blue whale, happy smiling whale, ocean creature, simple chibi style", "output": "whale.png", "rembg": true},
+  {"id": "bird", "style": "kawaii", "prompt": "cute cartoon small bird, sparrow, round fluffy bird, simple chibi style", "output": "bird.png", "rembg": true},
+  {"id": "rabbit", "style": "kawaii", "prompt": "cute cartoon white rabbit, bunny with pink ears, simple chibi style", "output": "rabbit.png", "rembg": true},
+  {"id": "butterfly", "style": "kawaii", "prompt": "cute cartoon butterfly, colorful wings, purple and pink butterfly, simple chibi style", "output": "butterfly.png", "rembg": true},
+  {"id": "star", "style": "kawaii", "prompt": "cute cartoon yellow star, shining golden star with happy face, simple chibi style", "output": "star.png", "rembg": true},
+  {"id": "rainbow", "style": "kawaii", "prompt": "cute cartoon rainbow, colorful rainbow with clouds, simple chibi style", "output": "rainbow.png", "rembg": true},
+  {"id": "snowflake", "style": "kawaii", "prompt": "cute cartoon snowflake, blue and white snowflake crystal, simple chibi style", "output": "snowflake.png", "rembg": true},
+  {"id": "sakura", "style": "kawaii", "prompt": "cute cartoon cherry blossom, pink sakura flower, simple chibi style", "output": "sakura.png", "rembg": true},
+  {"id": "orange", "style": "kawaii", "prompt": "cute cartoon mandarin orange, round orange fruit with green leaf, simple chibi style", "output": "orange.png", "rembg": true}
+]
