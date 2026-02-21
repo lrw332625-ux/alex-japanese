@@ -60,22 +60,37 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .row-section{margin:16px 0;animation:fadeIn .3s ease}
 .row-header{font-size:18px;font-weight:900;padding:10px 16px;border-radius:var(--rs);color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .row-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+@media(min-width:600px){.row-cards{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:900px){.row-cards{grid-template-columns:repeat(5,1fr)}}
 
-.kana-card{background:var(--card-bg);border-radius:var(--r);padding:16px 12px;text-align:center;box-shadow:var(--shadow);border:2px solid #f0ece4;transition:all .25s}
-.kana-card.playing{border-color:var(--row-a);box-shadow:0 0 0 3px var(--row-a),0 4px 24px rgba(232,87,58,.25);transition:all .3s ease}
-.kana-card .kana-area{cursor:pointer;border-radius:8px;padding:4px;transition:background .15s}
-.kana-card .kana-area:active{background:rgba(232,87,58,.1)}
-.kana-card .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:48px;font-weight:900;line-height:1.1}
-.kana-card .sub-kana{font-size:16px;color:var(--text-sub);margin-top:2px}
-.kana-card .romaji{font-size:14px;font-weight:700;color:var(--row-a);margin-top:4px}
-.kana-card .word-area{cursor:pointer;border-radius:8px;padding:4px;transition:background .15s}
-.kana-card .word-area:active{background:rgba(232,87,58,.1)}
-.kana-card .word-row{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:8px;padding-top:10px;border-top:1px solid #f0ece4}
-.kana-card .word-row img{width:56px;height:56px;object-fit:contain}
-.kana-card .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;font-weight:700}
-.kana-card .word-cn{font-size:11px;color:var(--text-sub)}
-.kana-card .mnemonic{font-size:11px;color:var(--text-sub);margin-top:6px;font-style:italic}
-.kana-card.learned{border-color:#B8E6C8}
+/* Single-face card (pcard vertical layout) */
+.pcard{border-radius:var(--r);background:var(--card-bg);box-shadow:var(--shadow);border:2px solid #f0ece4;overflow:hidden;position:relative;transition:border-color .2s}
+.pcard.playing{border-color:var(--row-a);box-shadow:0 0 0 3px var(--row-a),0 4px 20px rgba(232,87,58,.2)}
+.pcard.learned::after{content:'\2713';position:absolute;top:8px;left:10px;font-size:14px;color:#3A8F5C;font-weight:900;z-index:2}
+
+/* Top: kana area */
+.kana-top{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 8px 10px;cursor:pointer;transition:background .15s;position:relative;border-bottom:1px dashed #f0ece4}
+.kana-top:active{background:rgba(232,87,58,.08)}
+.kana-top .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:48px;font-weight:900;line-height:1}
+.kana-top .sub-kana{font-size:16px;color:var(--text-sub);margin-top:2px}
+.kana-top .romaji{font-size:14px;font-weight:700;color:var(--row-a);margin-top:2px}
+.kana-top .kana-speaker{position:absolute;top:8px;right:8px;font-size:14px;opacity:.5}
+
+/* Bottom: word area (vertical: image on top, text below) */
+.word-bottom{display:flex;flex-direction:column;align-items:center;padding:10px 12px;cursor:pointer;transition:background .15s;position:relative}
+.word-bottom:active{background:rgba(232,87,58,.08)}
+.word-bottom .word-img{width:100%;max-width:120px;aspect-ratio:1;object-fit:contain;border-radius:8px;display:block;margin:0 auto}
+.word-bottom .word-info{text-align:center;margin-top:6px}
+.word-bottom .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:18px;font-weight:900;line-height:1.2}
+.word-bottom .word-cn{font-size:13px;color:var(--text-sub);font-weight:600}
+.word-bottom .word-speaker{position:absolute;top:8px;right:8px;font-size:14px;opacity:.5}
+
+.mnemonic{font-size:11px;color:var(--text-sub);padding:4px 12px 8px;text-align:center;font-style:italic}
+
+@media(max-width:400px){
+  .kana-top .big-kana{font-size:38px}
+  .word-bottom .word-jp{font-size:16px}
+}
 
 /* === QUIZ === */
 .quiz-box{background:var(--card-bg);border-radius:var(--r);padding:24px 16px;margin:16px 0;box-shadow:var(--shadow);text-align:center}
@@ -434,18 +449,20 @@ function renderRowDetail(rowIdx){
   html+='<div class="row-header" style="background:'+row.color+'">'+row.name+' ('+row.chars.map(function(c){return c.r}).join(', ')+')</div>';
   html+='<div class="row-cards">';
   row.chars.forEach(function(c){
-    var learned=progress[c.h]?'learned':'';
-    html+='<div class="kana-card '+learned+'" data-kana="'+c.h+'">';
-    html+='<div class="kana-area" onclick="playCardKana(this.parentNode,\''+c.h+'\')">';
+    var learned=progress[c.h]?' learned':'';
+    html+='<div class="pcard'+learned+'" data-kana="'+c.h+'">';
+    // Top: kana
+    html+='<div class="kana-top" onclick="playCardKana(this.parentNode,\''+c.h+'\')">';
+    html+='<span class="kana-speaker">🔊</span>';
     html+='<div class="big-kana">'+getDisplay(c)+'</div>';
     if(mode!=='both')html+='<div class="sub-kana">'+(mode==='hira'?c.k:c.h)+'</div>';
     html+='<div class="romaji" style="color:'+row.color+'">'+c.r+'</div>';
     html+='</div>';
-    html+='<div class="word-area" onclick="playCardWord(this.parentNode,\''+c.word+'\')">';
-    html+='<div class="word-row">';
-    html+='<img src="../img/'+c.img+'" alt="'+c.cn+'">';
-    html+='<div><div class="word-jp">'+c.word+'</div><div class="word-cn">'+c.cn+'</div></div>';
-    html+='</div>';
+    // Bottom: word (vertical layout)
+    html+='<div class="word-bottom" onclick="playCardWord(this.parentNode,\''+c.word+'\')">';
+    html+='<img class="word-img" src="../img/'+c.img+'" alt="'+c.cn+'">';
+    html+='<div class="word-info"><div class="word-jp">'+c.word+'</div><div class="word-cn">'+c.cn+'</div></div>';
+    html+='<span class="word-speaker">🔊</span>';
     html+='</div>';
     html+='<div class="mnemonic">💡 '+c.memo+'</div>';
     html+='</div>';
@@ -460,7 +477,7 @@ function renderRowDetail(rowIdx){
 }
 
 function playCardKana(el,kana){
-  document.querySelectorAll('.kana-card.playing').forEach(function(c){c.classList.remove('playing')});
+  document.querySelectorAll('.pcard.playing').forEach(function(c){c.classList.remove('playing')});
   el.classList.add('playing');
   speakKana(kana,function(){el.classList.remove('playing')});
   if(!progress[kana]){
@@ -472,7 +489,7 @@ function playCardKana(el,kana){
 }
 
 function playCardWord(el,word){
-  document.querySelectorAll('.kana-card.playing').forEach(function(c){c.classList.remove('playing')});
+  document.querySelectorAll('.pcard.playing').forEach(function(c){c.classList.remove('playing')});
   el.classList.add('playing');
   speakJP(word,function(){el.classList.remove('playing')});
 }
@@ -486,7 +503,7 @@ function playRow(rowIdx,btn){
   playingRow=true;
   if(btn){btn.textContent='⏹ 停止';btn.style.opacity='0.7'}
   var i=0;
-  var cards=document.querySelectorAll('#sec'+(rowIdx+1)+' .kana-card');
+  var cards=document.querySelectorAll('#sec'+(rowIdx+1)+' .pcard');
   function next(){
     if(!playingRow||i>=chars.length){
       playingRow=false;

@@ -69,23 +69,36 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 }
 
 /* ============ WORD CARDS VIEW ============ */
-.word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:12px 0}
+.word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:12px 0}
+@media(min-width:600px){.word-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:900px){.word-grid{grid-template-columns:repeat(5,1fr)}}
 
-.word-card{
-  background:var(--card-bg);border-radius:var(--r);padding:14px 10px;text-align:center;
-  box-shadow:var(--shadow);border:2px solid #e8f0f8;transition:all .25s;
+/* Single-face card (pcard vertical layout) */
+.pcard{border-radius:var(--r);background:var(--card-bg);box-shadow:var(--shadow);border:2px solid #e8f0f8;overflow:hidden;position:relative;transition:border-color .2s}
+.pcard.playing{border-color:var(--pink);box-shadow:0 0 0 3px var(--pink),0 4px 20px rgba(232,107,138,.2)}
+
+/* Top: kana area */
+.kana-top{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 8px 10px;cursor:pointer;transition:background .15s;position:relative;border-bottom:1px dashed #e8f0f8}
+.kana-top:active{background:rgba(74,154,217,.08)}
+.kana-top .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:48px;font-weight:900;line-height:1}
+.kana-top .romaji{font-size:14px;font-weight:700;color:var(--blue);margin-top:2px}
+.kana-top .kana-speaker{position:absolute;top:8px;right:8px;font-size:14px;opacity:.5}
+
+/* Bottom: word area with emoji */
+.word-bottom{display:flex;flex-direction:column;align-items:center;padding:10px 12px;cursor:pointer;transition:background .15s;position:relative}
+.word-bottom:active{background:rgba(232,107,138,.08)}
+.word-bottom .word-emoji{font-size:48px;line-height:1;margin:4px 0}
+.word-bottom .word-info{text-align:center;margin-top:6px}
+.word-bottom .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:18px;font-weight:900;line-height:1.2}
+.word-bottom .word-cn{font-size:13px;color:var(--text-sub);font-weight:600}
+.word-bottom .word-romaji{font-size:11px;color:var(--blue);font-weight:600}
+.word-bottom .word-speaker{position:absolute;top:8px;right:8px;font-size:14px;opacity:.5}
+
+@media(max-width:400px){
+  .kana-top .big-kana{font-size:38px}
+  .word-bottom .word-jp{font-size:16px}
+  .word-bottom .word-emoji{font-size:40px}
 }
-.word-card.playing{border-color:var(--pink);box-shadow:0 0 0 3px var(--pink),0 4px 20px rgba(232,107,138,.2)}
-.word-card .kana-area{cursor:pointer;border-radius:8px;padding:4px;transition:background .15s}
-.word-card .kana-area:active{background:rgba(74,154,217,.15)}
-.word-card .big-kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:42px;font-weight:900;line-height:1.1}
-.word-card .romaji{font-size:14px;font-weight:700;color:var(--blue);margin:2px 0}
-.word-card .word-area{cursor:pointer;border-radius:8px;padding:4px;transition:background .15s}
-.word-card .word-area:active{background:rgba(232,107,138,.15)}
-.word-card .card-emoji{font-size:36px;margin:4px 0}
-.word-card .word-jp{font-family:'M PLUS Rounded 1c',sans-serif;font-size:15px;font-weight:700}
-.word-card .word-cn{font-size:12px;color:var(--text-sub)}
-.word-card .word-romaji{font-size:11px;color:var(--blue);font-weight:600}
 
 .row-divider{
   font-size:16px;font-weight:900;padding:10px 16px;border-radius:var(--rs);
@@ -126,6 +139,11 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .speed-bar{display:flex;gap:6px;justify-content:center;padding:8px;margin:8px 0}
 .speed-btn{padding:4px 12px;border-radius:12px;border:2px solid #e0e8f0;background:#fff;font-size:12px;font-weight:700;cursor:pointer;color:var(--text-sub);transition:all .2s}
 .speed-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* Voice toggle */
+.voice-bar{display:flex;gap:6px;align-items:center;justify-content:center;padding:0 8px 8px}
+.voice-btn{padding:4px 14px;border-radius:12px;border:2px solid #e0e8f0;font-size:12px;font-weight:700;cursor:pointer;background:#fff;color:var(--text-sub);transition:all .2s}
+.voice-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
 </style>
 </head>
 <body>
@@ -149,6 +167,11 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
   <button class="speed-btn" onclick="setSpeed(0.7,this)">慢速</button>
   <button class="speed-btn active" onclick="setSpeed(1,this)">正常</button>
   <button class="speed-btn" onclick="setSpeed(1.3,this)">快速</button>
+</div>
+<div class="voice-bar">
+  <span style="font-size:12px;color:var(--text-sub)">发音:</span>
+  <button class="voice-btn active" onclick="setVoice('tts')">AI语音</button>
+  <button class="voice-btn" onclick="setVoice('human')">真人录音</button>
 </div>
 
 <!-- SEC 0: Chart View -->
@@ -208,6 +231,38 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 <script src="../scripts/audio.js"></script>
 <script src="../scripts/cache-control.js"></script>
 <script>
+// ============================================================
+// VOICE SWITCHING (AI / Human)
+// ============================================================
+var voiceMode=localStorage.getItem('gojuon_voice')||'tts';
+var humanAudioMap={};
+(function(){
+  var hvMap={"あ":"hv_8c0c3027e3cf.mp3","い":"hv_655dcb0e6519.mp3","う":"hv_31e55ff7f86a.mp3","え":"hv_456505723301.mp3","お":"hv_1cfa7b2136e3.mp3","か":"hv_b19ca85e627a.mp3","き":"hv_02485a52b7c7.mp3","く":"hv_d9d3327f0d6b.mp3","け":"hv_fbd0909bdc60.mp3","こ":"hv_9b9b7e95c6d3.mp3","さ":"hv_880beff92bce.mp3","し":"hv_fc0e89edd800.mp3","す":"hv_052cd511c8cd.mp3","せ":"hv_18f507c55c1f.mp3","そ":"hv_2d5f27ce2f0f.mp3","た":"hv_14cc9288ee62.mp3","ち":"hv_033547bb3379.mp3","つ":"hv_38332eba4797.mp3","て":"hv_66b6491143c9.mp3","と":"hv_a5401f0cb256.mp3","な":"hv_2b8cb2efd8ab.mp3","に":"hv_8b63626ad336.mp3","ぬ":"hv_0240ca37aa8a.mp3","ね":"hv_448d36c51ab4.mp3","の":"hv_359ebee169e2.mp3","は":"hv_b7a83b3be2f3.mp3","ひ":"hv_c89b06a70bca.mp3","ふ":"hv_ab8c953c8926.mp3","へ":"hv_40346ed000e4.mp3","ほ":"hv_4b77b80010ac.mp3","ま":"hv_f25fb3210b65.mp3","み":"hv_810c1371789a.mp3","む":"hv_08f736b4e1dd.mp3","め":"hv_9f7031cd04b5.mp3","も":"hv_ac50f83054ad.mp3","や":"hv_3cb21c442c12.mp3","ゆ":"hv_31c8f22ffa33.mp3","よ":"hv_66cb79a0064b.mp3","ら":"hv_fa887b39a3ee.mp3","り":"hv_0e8f23d1bc9e.mp3","る":"hv_c1dbaa16c4d9.mp3","れ":"hv_2573123cacb2.mp3","ろ":"hv_6d338062aaf8.mp3","わ":"hv_95ae7ce6fb03.mp3","を":"hv_96ac23a7525c.mp3","ん":"hv_8a9f198246c5.mp3"};
+  for(var k in hvMap){ humanAudioMap[k]='../audio/'+hvMap[k]; }
+})();
+
+function setVoice(v){
+  voiceMode=v;
+  localStorage.setItem('gojuon_voice',v);
+  document.querySelectorAll('.voice-btn').forEach(function(b,i){
+    b.classList.toggle('active',['tts','human'][i]===v);
+  });
+}
+
+function speakKana(text,cb){
+  if(voiceMode==='human' && humanAudioMap[text]){
+    var a=new Audio(humanAudioMap[text]);
+    if(window.currentAudio){try{window.currentAudio.pause()}catch(e){}}
+    if(window.speechSynthesis)window.speechSynthesis.cancel();
+    window.currentAudio=a;
+    a.onended=function(){window.currentAudio=null;if(cb)cb()};
+    a.onerror=function(){window.currentAudio=null;speakJP(text,cb)};
+    a.play().catch(function(){window.currentAudio=null;speakJP(text,cb)});
+  } else {
+    speakJP(text,cb);
+  }
+}
+
 // ============================================================
 // TEACHER'S HIRAGANA DATA - Based on 2026-02-19 class material
 // Chart layout: columns わ→あ (left→right), rows a/i/u/e/o
@@ -392,11 +447,11 @@ function renderChart(){
 }
 
 function playKana(el,kana){
-  document.querySelectorAll('.chart-cell.playing,.word-card.playing').forEach(function(c){c.classList.remove('playing')});
+  document.querySelectorAll('.chart-cell.playing,.pcard.playing').forEach(function(c){c.classList.remove('playing')});
   el.classList.add('playing');
   el.style.animation = 'bounce .3s ease';
   setTimeout(function(){el.style.animation=''},300);
-  speakJP(kana, function(){el.classList.remove('playing')});
+  speakKana(kana, function(){el.classList.remove('playing')});
 
   // Mark learned
   if(!progress[kana]){
@@ -408,7 +463,7 @@ function playKana(el,kana){
 }
 
 function playWord(el,word){
-  document.querySelectorAll('.chart-cell.playing,.word-card.playing').forEach(function(c){c.classList.remove('playing')});
+  document.querySelectorAll('.chart-cell.playing,.pcard.playing').forEach(function(c){c.classList.remove('playing')});
   el.classList.add('playing');
   speakJP(word, function(){el.classList.remove('playing')});
 }
@@ -435,7 +490,7 @@ function playAllRows(btn){
     var cell = document.querySelector('.chart-cell[data-kana="'+c.h+'"]');
     if(cell){cell.classList.add('playing');cell.scrollIntoView({behavior:'smooth',block:'nearest'})}
     idx++;
-    speakJP(c.h, function(){
+    speakKana(c.h, function(){
       setTimeout(next, 400);
     });
   }
@@ -485,16 +540,22 @@ function renderWordCards(){
 
     html += '<div class="word-grid">';
     chars.forEach(function(c){
-      html += '<div class="word-card" data-kana="'+c.h+'">';
-      html += '<div class="kana-area" onclick="playKana(this.parentNode,\''+c.h+'\')">';
+      html += '<div class="pcard" data-kana="'+c.h+'">';
+      // Top: kana
+      html += '<div class="kana-top" onclick="playKana(this.parentNode,\''+c.h+'\')">';
+      html += '<span class="kana-speaker">🔊</span>';
       html += '<div class="big-kana">'+c.h+'</div>';
       html += '<div class="romaji">'+c.r+'</div>';
       html += '</div>';
-      html += '<div class="word-area" onclick="playWord(this.parentNode,\''+c.word+'\')">';
-      html += '<div class="card-emoji">'+c.emoji+'</div>';
+      // Bottom: word with emoji
+      html += '<div class="word-bottom" onclick="playWord(this.parentNode,\''+c.word+'\')">';
+      html += '<div class="word-emoji">'+c.emoji+'</div>';
+      html += '<div class="word-info">';
       html += '<div class="word-jp">'+c.word+'</div>';
       html += '<div class="word-cn">'+c.cn+'</div>';
       html += '<div class="word-romaji">'+c.wr+'</div>';
+      html += '</div>';
+      html += '<span class="word-speaker">🔊</span>';
       html += '</div>';
       html += '</div>';
     });
@@ -523,15 +584,15 @@ function playWordRow(gi,btn){
     if(!playingWordRow || idx >= chars.length){
       playingWordRow = false;
       btn.textContent = '🔊 连播';
-      document.querySelectorAll('.word-card.playing').forEach(function(c){c.classList.remove('playing')});
+      document.querySelectorAll('.pcard.playing').forEach(function(c){c.classList.remove('playing')});
       return;
     }
     var c = chars[idx];
-    document.querySelectorAll('.word-card.playing').forEach(function(el){el.classList.remove('playing')});
-    var card = document.querySelector('.word-card[data-kana="'+c.h+'"]');
+    document.querySelectorAll('.pcard.playing').forEach(function(el){el.classList.remove('playing')});
+    var card = document.querySelector('.pcard[data-kana="'+c.h+'"]');
     if(card){card.classList.add('playing');card.scrollIntoView({behavior:'smooth',block:'nearest'})}
     idx++;
-    speakJP(c.h, function(){
+    speakKana(c.h, function(){
       setTimeout(function(){
         speakJP(c.word, function(){
           setTimeout(next, 300);
@@ -573,7 +634,7 @@ function showQuizQ(){
   var html = '<div style="font-size:13px;color:var(--text-sub);margin-bottom:8px">第 '+(quizIdx+1)+'/'+quizData.length+' 题 &nbsp; 得分: '+quizScore+'</div>';
 
   if(quizMode==='listen'){
-    html += '<div class="quiz-prompt" style="cursor:pointer" onclick="speakJP(\''+c.h+'\')">🔊</div>';
+    html += '<div class="quiz-prompt" style="cursor:pointer" onclick="speakKana(\''+c.h+'\')">🔊</div>';
     html += '<div class="quiz-prompt small">听发音，选出正确的假名</div>';
     html += '<div class="quiz-options">';
     opts.forEach(function(o,i){
@@ -581,7 +642,7 @@ function showQuizQ(){
     });
     html += '</div>';
     box.innerHTML = html;
-    speakJP(c.h);
+    speakKana(c.h);
 
   } else if(quizMode==='read'){
     html += '<div class="quiz-prompt" style="font-family:\'M PLUS Rounded 1c\',sans-serif">'+c.h+'</div>';
@@ -612,7 +673,7 @@ function quizAnswer(el,picked,correct){
   if(picked===correct){
     el.classList.add('correct');
     quizScore++;
-    speakJP(correct);
+    speakKana(correct);
   } else {
     el.classList.add('wrong');
     // Highlight the correct answer
@@ -621,7 +682,7 @@ function quizAnswer(el,picked,correct){
         b.classList.add('correct');
       }
     });
-    speakJP(correct);
+    speakKana(correct);
   }
 
   // Mark as practiced
@@ -654,6 +715,8 @@ function showQuizResult(){
 // ============================================================
 renderChart();
 renderWordCards();
+// Restore saved voice preference
+if(voiceMode!=='tts')setVoice(voiceMode);
 </script>
 </body>
 </html>
