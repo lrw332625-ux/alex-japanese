@@ -351,7 +351,7 @@ if(_origShowQ){
 <script>
 // Romaji toggle (shared across all pages)
 (function(){
-  var show=localStorage.getItem('alex_romaji')!=='hide';
+  var show=localStorage.getItem('alex_romaji')==='show';
   var sw=document.getElementById('romajiSwitch');
   if(!show){document.body.classList.add('hide-romaji')}
   if(show&&sw){sw.classList.add('on')}
