@@ -54,6 +54,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 .chart-cell.learned::after{content:'✓';position:absolute;top:2px;right:4px;font-size:10px;color:#3A8F5C;font-weight:900}
 .chart-cell .kana{font-family:'M PLUS Rounded 1c',sans-serif;font-size:22px;font-weight:900;line-height:1.2}
 .chart-cell .roma{font-size:9px;color:var(--text-sub)}
+body.hide-romaji .roma,body.hide-romaji .romaji{display:none!important}
 .chart-cell.empty{background:transparent;border-color:transparent;cursor:default}
 
 /* === ROW DETAIL VIEW === */
@@ -127,6 +128,8 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
   <span style="font-size:12px;color:var(--text-sub);align-self:center">发音:</span>
   <button class="mode-btn voice-btn active" onclick="setVoice('tts')" style="padding:6px 14px;font-size:12px">AI语音</button>
   <button class="mode-btn voice-btn" onclick="setVoice('human')" style="padding:6px 14px;font-size:12px">真人录音</button>
+  <span style="width:1px;height:20px;background:#e0dcd4;align-self:center;margin:0 4px"></span>
+  <button class="mode-btn romaji-btn active" onclick="toggleRomaji()" style="padding:6px 14px;font-size:12px" id="romajiBtn">罗马音</button>
 </div>
 
 <nav class="tab-nav" id="tabNav">
@@ -213,6 +216,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 <script src="../scripts/audio.js"></script>
 <script src="../scripts/cache-control.js"></script>
 <script src="../scripts/emoji-data.js"></script>
+<script src="../scripts/img-marker.js"></script>
 <script>
 // ============================================================
 // DATA
@@ -345,6 +349,14 @@ function setVoice(v){
   document.querySelectorAll('.voice-btn').forEach(function(b,i){
     b.classList.toggle('active',['tts','human'][i]===v);
   });
+}
+
+var showRomaji=localStorage.getItem('gojuon_romaji')!=='hide';
+function toggleRomaji(){
+  showRomaji=!showRomaji;
+  localStorage.setItem('gojuon_romaji',showRomaji?'show':'hide');
+  document.body.classList.toggle('hide-romaji',!showRomaji);
+  document.getElementById('romajiBtn').classList.toggle('active',showRomaji);
 }
 
 // ============================================================
@@ -665,6 +677,8 @@ renderAll();
 switchTab(0);
 // Restore saved voice preference
 if(voiceMode!=='tts')setVoice(voiceMode);
+// Restore saved romaji preference
+if(!showRomaji){document.body.classList.add('hide-romaji');document.getElementById('romajiBtn').classList.remove('active')}
 </script>
 </body>
 </html>
