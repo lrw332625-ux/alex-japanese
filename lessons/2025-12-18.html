@@ -137,6 +137,14 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
 .lang-toggle{display:flex;gap:0;margin:8px 16px;border-radius:20px;overflow:hidden;border:2px solid #e8e4dc;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.04)}
 .lang-btn{flex:1;padding:8px 0;font-size:13px;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--text-sub);transition:all .2s;text-align:center;white-space:nowrap}
 .lang-btn.on{background:var(--accent,#E8573A);color:#fff}
+
+/* Romaji toggle */
+.romaji-toggle{position:fixed;bottom:16px;right:16px;z-index:999;display:flex;align-items:center;gap:8px;background:rgba(255,254,249,.95);padding:8px 14px;border-radius:24px;box-shadow:0 2px 12px rgba(0,0,0,.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:13px;font-weight:700;color:var(--text,#2D2A24)}
+.romaji-toggle .toggle-switch{position:relative;width:44px;height:24px;background:#ccc;border-radius:12px;cursor:pointer;transition:background .2s}
+.romaji-toggle .toggle-switch.on{background:#3A8F5C}
+.romaji-toggle .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.romaji-toggle .toggle-switch.on::after{transform:translateX(20px)}
+body.hide-romaji .romaji,body.hide-romaji .romaji-text{display:none!important}
 </style>
 </head>
 <body>
@@ -181,6 +189,7 @@ h1 img{width:28px;height:28px;object-fit:contain;vertical-align:middle}
 <script src="../scripts/cache-control.js"></script>
 <script src="../scripts/audio.js"></script>
 <script src="../scripts/emoji-data.js"></script>
+<script src="../scripts/img-marker.js"></script>
 <script>
 var activeTab=0,speechRate=1,curEl=null,running=false;
 var reviewed={};
@@ -383,6 +392,25 @@ if(_origShowQ){
       setTimeout(function(){w.classList.remove('wb-playing')},1200);
     });
   });
+</script>
+<div class="romaji-toggle" id="romajiToggle">
+  <span>罗马音</span>
+  <div class="toggle-switch" id="romajiSwitch" onclick="toggleRomaji()"></div>
+</div>
+<script>
+// Romaji toggle (shared across all pages)
+(function(){
+  var show=localStorage.getItem('alex_romaji')!=='hide';
+  var sw=document.getElementById('romajiSwitch');
+  if(!show){document.body.classList.add('hide-romaji')}
+  if(show&&sw){sw.classList.add('on')}
+  window.toggleRomaji=function(){
+    show=!show;
+    localStorage.setItem('alex_romaji',show?'show':'hide');
+    document.body.classList.toggle('hide-romaji',!show);
+    if(sw)sw.classList.toggle('on',show);
+  };
+})();
 </script>
 </body>
 </html>
