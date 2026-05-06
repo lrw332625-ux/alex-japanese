@@ -1,3 +1,5 @@
 .DS_Store
 Thumbs.db
 *.tmp
+tmp/
+img_quality_backup_*/

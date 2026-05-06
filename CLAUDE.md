@@ -1,11 +1,14 @@
 # Alex Japanese Learning Project - Claude Code Context
 
 ## Project Overview
-Children's Japanese learning website for Alex (林之恒), deployed on GitHub Pages.
-- **Live URL**: https://lrw332625-ux.github.io/alex-japanese/
+Children's Japanese learning website for Alex (林之恒), deployed on GitHub Pages and the Shanghai VPS.
+- **Live URL**: https://jp2.lrw33.cc/
+- **GitHub Pages URL**: https://lrw332625-ux.github.io/alex-japanese/
 - **Repo**: https://github.com/lrw332625-ux/alex-japanese.git
 - **Auth**: SSH key (ed25519) over port 443 (~/.ssh/config)
+- **Local path**: /Volumes/Data/Dropbox/LL/MyApps/alex-japanese
 - **Host**: Mac Mini M4 24GB, macOS
+- **VPS**: Shanghai Tencent Cloud `150.158.114.74`, remote path `/home/lighthouse/apps/jp2-japanese/web`, service `jp2-japanese.service`, localhost port `8174`, Tunnel `date-shanghai`
 
 ## Project Structure
 ```
@@ -75,10 +78,11 @@ filename = hashlib.md5(text.strip().encode('utf-8')).hexdigest()[:12] + '.mp3'
 
 ## Deployment
 ```bash
-cd /Users/linrenwen/Desktop/汽车人打印文件夹/林之恒日语学习mac电脑/alex-japanese
+cd /Volumes/Data/Dropbox/LL/MyApps/alex-japanese
 git add <files> && git commit -m "message" && git push
 # GitHub Pages auto-deploys from main branch (1-2 min delay)
-# IMPORTANT: After pushing, always verify live site with WebFetch
+# VPS jp2.lrw33.cc pulls from GitHub main and is served by jp2-japanese.service on 127.0.0.1:8174
+# IMPORTANT: After pushing, redeploy/refresh the VPS copy and verify https://jp2.lrw33.cc/
 # IMPORTANT: Use cache-busting (?v=N) when updating images
 ```
 
