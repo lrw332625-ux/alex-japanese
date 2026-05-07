@@ -199,7 +199,7 @@ body{font-family:'Noto Sans SC','M PLUS Rounded 1c',sans-serif;background:var(--
 
 <script src="../scripts/audio.js"></script>
 <script src="../scripts/cache-control.js"></script>
-<script src="../scripts/emoji-data.js?v4"></script>
+<script src="../scripts/emoji-data.js?v5"></script>
 <script src="../scripts/img-marker.js"></script>
 <script>
 // ============================================================
@@ -373,7 +373,7 @@ function renderChart(){
         html+='<div class="roma'+(showRomaji?'':' hidden')+'">'+c.r+'</div>';
         html+='</div>';
         html+='<div class="word-area" onclick="event.stopPropagation();chartPlayWord(\''+c.h+'\')">';
-        html+='<img class="cell-img" src="../img/'+c.img+'?v4" alt="'+c.cn+'">';
+        html+='<img class="cell-img" src="../img/'+c.img+'?v5" alt="'+c.cn+'">';
         html+='<div class="word-text">'+c.word+'</div>';
         html+='<div class="word-r">'+c.wr+'</div>';
         html+='</div>';
@@ -395,7 +395,7 @@ function renderChart(){
       html+='<div class="roma'+(showRomaji?'':' hidden')+'">n</div>';
       html+='</div>';
       html+='<div class="word-area" onclick="event.stopPropagation();chartPlayWord(\'ん\')">';
-      html+='<img class="cell-img" src="../img/'+nChar.img+'?v4" alt="'+nChar.cn+'">';
+      html+='<img class="cell-img" src="../img/'+nChar.img+'?v5" alt="'+nChar.cn+'">';
       html+='<div class="word-text">'+nChar.word+'</div>';
       html+='<div class="word-r">'+nChar.wr+'</div>';
       html+='</div>';
@@ -418,7 +418,7 @@ function renderChart(){
       html+='<div class="roma'+(showRomaji?'':' hidden')+'">wo</div>';
       html+='</div>';
       html+='<div class="word-area" onclick="event.stopPropagation();chartPlayWord(\'を\')">';
-      html+='<img class="cell-img" src="../img/'+woChar.img+'?v4" alt="'+woChar.cn+'">';
+      html+='<img class="cell-img" src="../img/'+woChar.img+'?v5" alt="'+woChar.cn+'">';
       html+='<div class="word-text">'+woChar.word+'</div>';
       html+='<div class="word-r">'+woChar.wr+'</div>';
       html+='</div>';
@@ -524,7 +524,7 @@ function renderCards(filter){
       html+='</div>';
       // Bottom: word
       html+='<div class="word-bottom" onclick="cardPlayWord(\''+c.h+'\')">';
-      html+='<img class="word-img" src="../img/'+c.img+'?v4" alt="'+c.cn+'">';
+      html+='<img class="word-img" src="../img/'+c.img+'?v5" alt="'+c.cn+'">';
       html+='<div class="word-info">';
       html+='<div class="word-jp">'+highlightSpecial(c)+'</div>';
       html+='<div class="word-romaji'+(showRomaji?'':' hidden')+'">'+c.wr+'</div>';

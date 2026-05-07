@@ -19,5 +19,6 @@
 - 针对水墨/灰雾过重、动物主体不清的问题，已用内置 Image 2 工作流重新生成并透明化：`zebra.png`、`flamingo.png`、`panda.png`、`seal.png`、`hedgehog.png`、`fox.png`、`lizard.png`、`jellyfish.png`、`vocab_arikui.png`。
 - 同步把一批灰雾明显的通用图标换回干净版本：`balloon`、`banana`、`books`、`brain`、`cross_mark`、`fire`、`game`、`guitar`、`light_bulb`、`memo`、`music`、`notes`、`party_popper`、`question`、`raising_hands`、`repeat`、`taxi`、`thinking`、`tongue`、`umbrella`、`yum`、`dolphin`、`turtle`、`pen`、`pencil`、`graduation_cap`。
 - 根据后续反馈，已继续替换龙虾/蚕相关图片：`shrimp.png`、`gp_ebi.png` 改为清晰红色龙虾；`bug.png`、`caterpillar.png`、`gp_mushi.png` 改为白色蚕宝宝。
+- 追加全站引用图片复查后，已继续修正仍然灰雾或主体过弱的图：`book.png`、`clapping.png`、`crossed_flags.png`、`sparkles.png`、`tractor.png`、`wave.png`、`speaker_high.png`、`speaker_low.png`、`speaking.png`，以及 `vocab_akaidesu.png`、`vocab_getsuyōbi.png`、`vocab_goko.png`、`vocab_hakko.png`、`vocab_ichiko.png`、`vocab_ikko.png`、`vocab_kitanai.png`、`vocab_kyūko.png`、`vocab_morigamietekimashita.png`、`vocab_nanako.png`、`vocab_niko.png`、`vocab_rokko.png`、`vocab_tobasu.png`、`vocab_yoji.png`、`vocab_yonko.png`。
 - 原图已备份到 `/Volumes/Data/Dropbox/LL/MyApps/alex-japanese/img_quality_backup_20260507`。
-- `scripts/emoji-data.js` 的图标缓存版本已从 `?v2` 后续提升到 `?v4`，所有页面对 `emoji-data.js` 的引用也统一改为 `emoji-data.js?v4`，避免公网继续显示旧图。
+- `scripts/emoji-data.js` 的图标缓存版本已从 `?v2` 后续提升到 `?v5`，所有页面对 `emoji-data.js` 的引用也统一改为 `emoji-data.js?v5`，避免公网继续显示旧图。

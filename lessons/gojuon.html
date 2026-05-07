@@ -221,7 +221,7 @@ body.hide-romaji .romaji,body.hide-romaji .romaji-text{display:none!important}
 
 <script src="../scripts/audio.js"></script>
 <script src="../scripts/cache-control.js"></script>
-<script src="../scripts/emoji-data.js?v4"></script>
+<script src="../scripts/emoji-data.js?v5"></script>
 <script src="../scripts/img-marker.js"></script>
 <script>
 // ============================================================
@@ -471,7 +471,7 @@ function renderRowDetail(rowIdx){
     html+='</div>';
     // Bottom: word (vertical layout)
     html+='<div class="word-bottom" onclick="playCardWord(this.parentNode,\''+c.word+'\')">';
-    html+='<img class="word-img" src="../img/'+c.img+'?v4" alt="'+c.cn+'">';
+    html+='<img class="word-img" src="../img/'+c.img+'?v5" alt="'+c.cn+'">';
     html+='<div class="word-info"><div class="word-jp">'+c.word+'</div><div class="word-cn">'+c.cn+'</div></div>';
     html+='<span class="word-speaker">🔊</span>';
     html+='</div>';
@@ -619,7 +619,7 @@ function showQuizQ(){
     html+='</div>';
     box.innerHTML=html;
   }else if(quizMode==='word'){
-    html+='<div style="margin:12px 0"><img src="../img/'+c.img+'?v4" style="width:64px;height:64px;object-fit:contain"></div>';
+    html+='<div style="margin:12px 0"><img src="../img/'+c.img+'?v5" style="width:64px;height:64px;object-fit:contain"></div>';
     html+='<div class="quiz-prompt small">'+c.cn+' ('+c.word+') 的第一个假名是？</div>';
     html+='<div class="quiz-options">';
     opts.forEach(function(o,i){
