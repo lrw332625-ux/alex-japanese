@@ -304,7 +304,7 @@ function buildSentencesHTML(){
     }
     html += '</div>';
     html += '<div class="sent-img-area">';
-    html += '<img src="img/' + s.img + '?v3" alt="" onerror="this.parentElement.style.display=\'none\'">';
+    html += '<img src="img/' + s.img + '?v4" alt="" onerror="this.parentElement.style.display=\'none\'">';
     html += '</div>';
     html += '</div>';
   });
